@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "___",
+    "D D",
+    "___"
+  ],
+  "key": {
+    "_": {
+      "item": "upgrade_aquatic:river_slab"
+    },
+    "D": {
+      "item": "upgrade_aquatic:river_trapdoor"
+    }
+  },
+  "result": {
+    "item": "abnormals_delight:river_pantry"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "upgrade_aquatic"
+    }
+  ]
+}

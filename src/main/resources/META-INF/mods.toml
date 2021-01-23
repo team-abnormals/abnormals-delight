@@ -1,0 +1,36 @@
+modLoader = "javafml"
+loaderVersion = "[32,)"
+issueTrackerURL = "https://github.com/team-abnormals/abnormals-delight/issues"
+license = "https://github.com/team-abnormals/abnormals-delight/blob/main/LICENSE.txt"
+
+[[mods]]
+    modId = "abnormals_delight"
+    version = "${file.jarVersion}"
+    logoFile = "logo.png"
+    authors = "Team Abnormals"
+    credits = "bageldotjpg"
+    displayName = "Abnormal's Delight"
+    description = '''
+    Template description.
+    '''
+
+[[dependencies.abnormals_delight]]
+    modId = "minecraft"
+    mandatory = true
+    versionRange = "[1.16.3,1.17)"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.abnormals_delight]]
+    modId = "forge"
+    mandatory = true
+    versionRange = "[34.1.42,)"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.abnormals_delight]]
+    modId = "abnormals_core"
+    mandatory = true
+    versionRange = "[3.0.6,)"
+    ordering = "AFTER"
+    side = "BOTH"

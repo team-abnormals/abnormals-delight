@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "___",
+    "D D",
+    "___"
+  ],
+  "key": {
+    "_": {
+      "item": "atmospheric:morado_slab"
+    },
+    "D": {
+      "item": "atmospheric:morado_trapdoor"
+    }
+  },
+  "result": {
+    "item": "abnormals_delight:morado_pantry"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "atmospheric"
+    }
+  ]
+}

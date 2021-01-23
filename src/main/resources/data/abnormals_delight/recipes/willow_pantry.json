@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "___",
+    "D D",
+    "___"
+  ],
+  "key": {
+    "_": {
+      "item": "environmental:willow_slab"
+    },
+    "D": {
+      "item": "environmental:willow_trapdoor"
+    }
+  },
+  "result": {
+    "item": "abnormals_delight:willow_pantry"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "environmental"
+    }
+  ]
+}

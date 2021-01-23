@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "com.minecraftabnormals.abnormals_delight.core.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "minVersion": "0.8",
+  "refmap": "abnormals_delight.refmap.json",
+  "mixins": [
+    "ItemGroupMixin"
+  ],
+  "client": [
+    "ClientRecipeBookMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

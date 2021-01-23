@@ -1,0 +1,1 @@
+{  "parent": "minecraft:block/orientable",  "textures": {    "side": "abnormals_delight:block/rosewood_pantry_side",    "front": "abnormals_delight:block/rosewood_pantry_front_open",    "top": "abnormals_delight:block/rosewood_pantry_top"  }}

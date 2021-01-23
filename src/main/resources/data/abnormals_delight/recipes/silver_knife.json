@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    " m",    "s "  ],  "key": {    "m": {      "item": "caverns_and_chasms:silver_ingot"    },    "s": {      "item": "minecraft:stick"    }  },  "result": {    "item": "abnormals_delight:silver_knife"  },  "conditions": [    {      "type": "forge:mod_loaded",      "modid": "caverns_and_chasms"    }  ]}
