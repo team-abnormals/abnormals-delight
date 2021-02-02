@@ -17,6 +17,9 @@ public class ADBlocks {
 	public static final RegistryObject<Block> ROSEWOOD_PANTRY = HELPER.createCompatBlock("atmospheric", "rosewood_pantry", () -> new AbnormalsPantryBlock(Block.Properties.from(Blocks.BARREL)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> MORADO_PANTRY = HELPER.createCompatBlock("atmospheric", "morado_pantry", () -> new AbnormalsPantryBlock(Block.Properties.from(Blocks.BARREL)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> YUCCA_PANTRY = HELPER.createCompatBlock("atmospheric", "yucca_pantry", () -> new AbnormalsPantryBlock(Block.Properties.from(Blocks.BARREL)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> KOUSA_PANTRY = HELPER.createCompatBlock("atmospheric", "kousa_pantry", () -> new AbnormalsPantryBlock(Block.Properties.from(Blocks.BARREL)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> ASPEN_PANTRY = HELPER.createCompatBlock("atmospheric", "aspen_pantry", () -> new AbnormalsPantryBlock(Block.Properties.from(Blocks.BARREL)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> GRIMWOOD_PANTRY = HELPER.createCompatBlock("atmospheric", "grimwood_pantry", () -> new AbnormalsPantryBlock(Block.Properties.from(Blocks.BARREL)), ItemGroup.DECORATIONS);
 
 	public static final RegistryObject<Block> MAPLE_PANTRY = HELPER.createCompatBlock("autumnity", "maple_pantry", () -> new AbnormalsPantryBlock(Block.Properties.from(Blocks.BARREL)), ItemGroup.DECORATIONS);
 

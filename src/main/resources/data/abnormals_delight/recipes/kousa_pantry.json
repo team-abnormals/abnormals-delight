@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "___",
+    "D D",
+    "___"
+  ],
+  "key": {
+    "_": {
+      "item": "atmospheric:kousa_slab"
+    },
+    "D": {
+      "item": "atmospheric:kousa_trapdoor"
+    }
+  },
+  "result": {
+    "item": "abnormals_delight:kousa_pantry"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "atmospheric"
+    }
+  ]
+}
