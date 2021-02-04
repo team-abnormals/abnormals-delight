@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "abnormals_delight:duck_fillet"
+  },
+  "result": "abnormals_delight:cooked_duck_fillet",
+  "experience": 0.35,
+  "cookingtime": 100,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "environmental"
+    }
+  ]
+}

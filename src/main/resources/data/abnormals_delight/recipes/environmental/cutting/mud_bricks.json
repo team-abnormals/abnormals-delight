@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "environmental:mud_bricks"
+    }
+  ],
+  "tool": {
+    "type": "pickaxe"
+  },
+  "result": [
+    {
+      "item": "environmental:mud_brick",
+      "count": 4
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "environmental"
+    }
+  ]
+}

@@ -2,24 +2,14 @@ package com.minecraftabnormals.abnormals_delight.core;
 
 import com.minecraftabnormals.abnormals_core.core.util.registry.RegistryHelper;
 import com.minecraftabnormals.abnormals_delight.core.registry.ADModifications;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.ForgeRegistries;
-import vectorwing.farmersdelight.FDItemGroup;
-import vectorwing.farmersdelight.FarmersDelight;
-import vectorwing.farmersdelight.registry.ModItems;
-
-import java.util.Arrays;
 
 @Mod(AbnormalsDelight.MOD_ID)
 public class AbnormalsDelight {

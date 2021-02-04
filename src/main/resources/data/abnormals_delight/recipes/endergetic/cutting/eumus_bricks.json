@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "endergetic:eumus_bricks"
+    }
+  ],
+  "tool": {
+    "type": "pickaxe"
+  },
+  "result": [
+    {
+      "item": "endergetic:eumus_brick",
+      "count": 4
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "endergetic"
+    }
+  ]
+}
