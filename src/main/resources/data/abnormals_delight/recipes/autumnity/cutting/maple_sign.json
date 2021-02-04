@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "autumnity:maple_sign"
+    }
+  ],
+  "tool": {
+    "type": "axe"
+  },
+  "result": [
+    {
+      "item": "autumnity:maple_planks"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "autumnity"
+    }
+  ]
+}

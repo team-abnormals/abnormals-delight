@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "abnormals_delight:chocolate_cake_slice"
+    },
+    {
+      "item": "abnormals_delight:chocolate_cake_slice"
+    },
+    {
+      "item": "abnormals_delight:chocolate_cake_slice"
+    },
+    {
+      "item": "abnormals_delight:chocolate_cake_slice"
+    },
+    {
+      "item": "abnormals_delight:chocolate_cake_slice"
+    },
+    {
+      "item": "abnormals_delight:chocolate_cake_slice"
+    },
+    {
+      "item": "abnormals_delight:chocolate_cake_slice"
+    }
+  ],
+  "result": {
+    "item": "neapolitan:chocolate_cake"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "neapolitan"
+    }
+  ]
+}
