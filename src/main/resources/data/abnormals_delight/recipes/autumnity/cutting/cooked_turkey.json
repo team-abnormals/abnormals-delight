@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "autumnity:cooked_turkey"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  },
+  "result": [
+    {
+      "item": "autumnity:cooked_turkey_piece",
+      "count": 5
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "autumnity"
+    }
+  ]
+}

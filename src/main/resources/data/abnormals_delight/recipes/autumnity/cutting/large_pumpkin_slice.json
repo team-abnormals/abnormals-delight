@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "autumnity:large_pumpkin_slice"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  },
+  "result": [
+    {
+      "item": "farmersdelight:pumpkin_slice",
+      "count": 4
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "autumnity"
+    }
+  ]
+}
