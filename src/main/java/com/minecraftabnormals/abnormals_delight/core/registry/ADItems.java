@@ -36,7 +36,7 @@ public class ADItems {
 	public static final RegistryObject<Item> CHOCOLATE_CAKE_SLICE = HELPER.createItem("chocolate_cake_slice", () -> new CakeSliceItem(() -> new EffectInstance(CompatEffects.SUGAR_RUSH, 200), new Item.Properties().food(Foods.CHOCOLATE_CAKE_SLICE).group(ItemGroup.FOOD)));
 	public static final RegistryObject<Item> STRAWBERRY_CAKE_SLICE = HELPER.createItem("strawberry_cake_slice", () -> new CakeSliceItem(null, new Item.Properties().food(Foods.STRAWBERRY_CAKE_SLICE).group(ItemGroup.FOOD)));
 	public static final RegistryObject<Item> BANANA_CAKE_SLICE = HELPER.createItem("banana_cake_slice", () -> new CakeSliceItem(() -> new EffectInstance(CompatEffects.AGILITY, 200), new Item.Properties().food(Foods.BANANA_CAKE_SLICE).group(ItemGroup.FOOD)));
-	public static final RegistryObject<Item> YUCCA_GATEAU_SLICE = HELPER.createItem("yucca_gateau_slice", () -> new CakeSliceItem(() -> new EffectInstance(CompatEffects.PERSISTENCE, 320), new Item.Properties().food(Foods.YUCCA_GATEAU_SLICE).group(ItemGroup.FOOD)));
+	public static final RegistryObject<Item> YUCCA_GATEAU_SLICE = HELPER.createItem("yucca_gateau_slice", () -> new CakeSliceItem(() -> new EffectInstance(CompatEffects.PERSISTENCE, 640), new Item.Properties().food(Foods.YUCCA_GATEAU_SLICE).group(ItemGroup.FOOD)));
 
 	public static class Foods {
 		public static final Food DUCK_FILLET = (new Food.Builder()).hunger(1).saturation(0.1F).build();
@@ -48,7 +48,7 @@ public class ADItems {
 		public static final Food CHOCOLATE_CAKE_SLICE = (new Food.Builder()).hunger(1).saturation(0.1F).fastToEat().effect(() -> new EffectInstance(Effects.SPEED, 600, 0), 1.0F).build();
 		public static final Food STRAWBERRY_CAKE_SLICE = (new Food.Builder()).hunger(1).saturation(0.1F).fastToEat().effect(() -> new EffectInstance(Effects.SPEED, 600, 0), 1.0F).build();
 		public static final Food BANANA_CAKE_SLICE = (new Food.Builder()).hunger(1).saturation(0.1F).fastToEat().effect(() -> new EffectInstance(Effects.SPEED, 600, 0), 1.0F).build();
-		public static final Food YUCCA_GATEAU_SLICE = (new Food.Builder()).hunger(1).saturation(0.0F).fastToEat().build();
+		public static final Food YUCCA_GATEAU_SLICE = (new Food.Builder()).hunger(2).saturation(0.0F).fastToEat().build();
 	}
 
 	public static class CompatEffects {
