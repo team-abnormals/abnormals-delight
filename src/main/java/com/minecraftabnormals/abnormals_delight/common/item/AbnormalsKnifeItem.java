@@ -14,8 +14,8 @@ import vectorwing.farmersdelight.registry.ModItems;
 public class AbnormalsKnifeItem extends KnifeItem {
 	private static final TargetedItemGroupFiller FILLER = new TargetedItemGroupFiller(ModItems.GOLDEN_KNIFE);
 
-	public AbnormalsKnifeItem(IItemTier tier) {
-		super(tier, 1, -1.8F, ModList.get().isLoaded("caverns_and_chasms") ? new Item.Properties().group(ItemGroup.COMBAT) : new Item.Properties());
+	public AbnormalsKnifeItem(IItemTier tier, Properties properties) {
+		super(tier, 1, -1.8F, ModList.get().isLoaded("caverns_and_chasms") ? properties.group(ItemGroup.COMBAT) : properties);
 	}
 
 	@Override

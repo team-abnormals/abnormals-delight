@@ -5,6 +5,7 @@ import com.minecraftabnormals.abnormals_core.core.util.item.filling.TargetedItem
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.IItemTier;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
@@ -28,7 +29,7 @@ public class NecromiumKnifeItem extends AbnormalsKnifeItem {
 	public static final IItemTier NECROMIUM = new AbnormalsItemTier(4, 2251, 9.0F, 3.0F, 12, () -> Ingredient.fromItems(ForgeRegistries.ITEMS.getValue(new ResourceLocation("caverns_and_chasms", "necromium_ingot"))));
 
 	public NecromiumKnifeItem() {
-		super(NECROMIUM);
+		super(NECROMIUM, new Item.Properties().isImmuneToFire());
 	}
 
 	@Override

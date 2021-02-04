@@ -4,6 +4,7 @@ import com.minecraftabnormals.abnormals_core.core.api.AbnormalsItemTier;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.IItemTier;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
@@ -24,7 +25,7 @@ public class SilverKnifeItem extends AbnormalsKnifeItem {
 	public static final IItemTier SILVER = new AbnormalsItemTier(0, 111, 7.0F, 0.0F, 17, () -> Ingredient.fromItems(ForgeRegistries.ITEMS.getValue(new ResourceLocation("caverns_and_chasms", "silver_ingot"))));
 
 	public SilverKnifeItem() {
-		super(SILVER);
+		super(SILVER, new Item.Properties());
 	}
 
 	@Override
