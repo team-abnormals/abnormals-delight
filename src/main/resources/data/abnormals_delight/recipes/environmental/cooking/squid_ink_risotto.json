@@ -2,19 +2,19 @@
   "type": "farmersdelight:cooking",
   "ingredients": [
     {
-      "tag": "forge:grains/rice"
+      "tag": "forge:grain/rice"
     },
     {
-      "tag": "forge:grains/rice"
+      "tag": "forge:grain/rice"
     },
     {
-      "tag": "forge:grains/rice"
+      "tag": "forge:grain/rice"
     },
     {
-      "tag": "forge:grains/rice"
+      "tag": "forge:grain/rice"
     },
     {
-      "tag": "forge:grains/rice"
+      "tag": "forge:grain/rice"
     },
     {
       "item": "minecraft:ink_sac"
