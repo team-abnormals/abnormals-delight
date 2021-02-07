@@ -23,6 +23,8 @@ public class ADBlocks {
 	public static final RegistryObject<Block> MAPLE_PANTRY = HELPER.createCompatBlock("autumnity", "maple_pantry", () -> new AbnormalsPantryBlock(Block.Properties.from(Blocks.BARREL)), ItemGroup.DECORATIONS);
 
 	public static final RegistryObject<Block> WILLOW_PANTRY = HELPER.createCompatBlock("environmental", "willow_pantry", () -> new AbnormalsPantryBlock(Block.Properties.from(Blocks.BARREL)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> WISTERIA_PANTRY = HELPER.createCompatBlock("environmental", "wisteria_pantry", () -> new AbnormalsPantryBlock(Block.Properties.from(Blocks.BARREL)), ItemGroup.DECORATIONS);
+	public static final RegistryObject<Block> CHERRY_PANTRY = HELPER.createCompatBlock("environmental", "cherry_pantry", () -> new AbnormalsPantryBlock(Block.Properties.from(Blocks.BARREL)), ItemGroup.DECORATIONS);
 
 	public static final RegistryObject<Block> DRIFTWOOD_PANTRY = HELPER.createCompatBlock("upgrade_aquatic", "driftwood_pantry", () -> new AbnormalsPantryBlock(Block.Properties.from(Blocks.BARREL)), ItemGroup.DECORATIONS);
 	public static final RegistryObject<Block> RIVER_PANTRY = HELPER.createCompatBlock("upgrade_aquatic", "river_pantry", () -> new AbnormalsPantryBlock(Block.Properties.from(Blocks.BARREL)), ItemGroup.DECORATIONS);

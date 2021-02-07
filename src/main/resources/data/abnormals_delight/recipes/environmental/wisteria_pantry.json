@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "___",
+    "D D",
+    "___"
+  ],
+  "key": {
+    "_": {
+      "item": "environmental:wisteria_slab"
+    },
+    "D": {
+      "item": "environmental:wisteria_trapdoor"
+    }
+  },
+  "result": {
+    "item": "abnormals_delight:wisteria_pantry"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "environmental"
+    }
+  ]
+}
