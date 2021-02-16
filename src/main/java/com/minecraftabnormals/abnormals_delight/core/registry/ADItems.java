@@ -23,10 +23,12 @@ public class ADItems {
 	public static final RegistryObject<Item> SILVER_KNIFE = HELPER.createItem("silver_knife", SilverKnifeItem::new);
 	public static final RegistryObject<Item> NECROMIUM_KNIFE = HELPER.createItem("necromium_knife", NecromiumKnifeItem::new);
 
-	public static final RegistryObject<Item> DUCK_FILLET = HELPER.createItem("duck_fillet", () -> new Item(new Item.Properties().food(Foods.DUCK_FILLET).group(ItemGroup.FOOD)));
-	public static final RegistryObject<Item> COOKED_DUCK_FILLET = HELPER.createItem("cooked_duck_fillet", () -> new Item(new Item.Properties().food(Foods.COOKED_DUCK_FILLET).group(ItemGroup.FOOD)));
-	public static final RegistryObject<Item> VENISON_SHANKS = HELPER.createItem("venison_shanks", () -> new Item(new Item.Properties().food(Foods.VENISON_SHANKS).group(ItemGroup.FOOD)));
-	public static final RegistryObject<Item> COOKED_VENISON_SHANKS = HELPER.createItem("cooked_venison_shanks", () -> new Item(new Item.Properties().food(Foods.COOKED_VENISON_SHANKS).group(ItemGroup.FOOD)));
+	public static final RegistryObject<Item> DUCK_FILLET = HELPER.createCompatItem("environmental", "duck_fillet", new Item.Properties().food(Foods.DUCK_FILLET), ItemGroup.FOOD);
+	public static final RegistryObject<Item> COOKED_DUCK_FILLET = HELPER.createCompatItem("environmental", "cooked_duck_fillet", new Item.Properties().food(Foods.COOKED_DUCK_FILLET), ItemGroup.FOOD);
+	public static final RegistryObject<Item> VENISON_SHANKS = HELPER.createCompatItem("environmental", "venison_shanks", new Item.Properties().food(Foods.VENISON_SHANKS), ItemGroup.FOOD);
+	public static final RegistryObject<Item> COOKED_VENISON_SHANKS = HELPER.createCompatItem("environmental", "cooked_venison_shanks", new Item.Properties().food(Foods.COOKED_VENISON_SHANKS), ItemGroup.FOOD);
+	public static final RegistryObject<Item> PIKE_SLICE = HELPER.createCompatItem("upgrade_aquatic", "pike_slice", new Item.Properties().food(Foods.PIKE_SLICE), ItemGroup.FOOD);
+	public static final RegistryObject<Item> COOKED_PIKE_SLICE = HELPER.createCompatItem("upgrade_aquatic", "cooked_pike_slice", new Item.Properties().food(Foods.COOKED_PIKE_SLICE), ItemGroup.FOOD);
 
 	public static final RegistryObject<Item> VANILLA_CAKE_SLICE = HELPER.createItem("vanilla_cake_slice", () -> new CakeSliceItem(() -> new EffectInstance(CompatEffects.VANILLA_SCENT, 100), new Item.Properties().food(Foods.VANILLA_CAKE_SLICE).group(ItemGroup.FOOD)));
 	public static final RegistryObject<Item> CHOCOLATE_CAKE_SLICE = HELPER.createItem("chocolate_cake_slice", () -> new CakeSliceItem(() -> new EffectInstance(CompatEffects.SUGAR_RUSH, 200), new Item.Properties().food(Foods.CHOCOLATE_CAKE_SLICE).group(ItemGroup.FOOD)));
@@ -39,6 +41,8 @@ public class ADItems {
 		public static final Food COOKED_DUCK_FILLET = (new Food.Builder()).hunger(4).saturation(0.3F).meat().build();
 		public static final Food VENISON_SHANKS = (new Food.Builder()).hunger(1).saturation(0.3F).meat().build();
 		public static final Food COOKED_VENISON_SHANKS = (new Food.Builder()).hunger(3).saturation(0.8F).meat().build();
+		public static final Food PIKE_SLICE = (new Food.Builder()).hunger(1).saturation(0.3F).build();
+		public static final Food COOKED_PIKE_SLICE = (new Food.Builder()).hunger(4).saturation(0.8F).build();
 
 		public static final Food VANILLA_CAKE_SLICE = (new Food.Builder()).hunger(1).saturation(0.1F).fastToEat().effect(() -> new EffectInstance(Effects.SPEED, 600, 0), 1.0F).build();
 		public static final Food CHOCOLATE_CAKE_SLICE = (new Food.Builder()).hunger(1).saturation(0.1F).fastToEat().effect(() -> new EffectInstance(Effects.SPEED, 600, 0), 1.0F).build();

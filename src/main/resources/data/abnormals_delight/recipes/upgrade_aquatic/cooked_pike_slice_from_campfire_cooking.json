@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "ingredient": {
+    "item": "abnormals_delight:pike_slice"
+  },
+  "result": "abnormals_delight:cooked_pike_slice",
+  "experience": 0.35,
+  "cookingtime": 600,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "upgrade_aquatic"
+    }
+  ]
+}
