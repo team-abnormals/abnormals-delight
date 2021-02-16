@@ -1,5 +1,6 @@
 package com.minecraftabnormals.abnormals_delight.core.mixin;
 
+import com.minecraftabnormals.abnormals_delight.core.ADConfig;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -23,7 +24,9 @@ public abstract class SoupItemMixin extends Item {
 
 	@Override
 	public int getItemStackLimit(ItemStack stack) {
-		return 16;
+		if (ADConfig.COMMON.stackableSoupItems.get())
+			return 16;
+		else return super.getItemStackLimit(stack);
 	}
 
 	/**
@@ -31,36 +34,37 @@ public abstract class SoupItemMixin extends Item {
 	 */
 	@Inject(at = @At(value = "HEAD"), method = "onItemUseFinish", cancellable = true)
 	private void onItemUseFinish(ItemStack stack, World worldIn, LivingEntity subject, CallbackInfoReturnable<ItemStack> cir) {
-		ItemStack container = stack.getContainerItem();
-		if (container.isEmpty())
-			container = new ItemStack(Items.BOWL);
+		if (ADConfig.COMMON.stackableSoupItems.get()) {
+			ItemStack container = stack.getContainerItem();
+			if (container.isEmpty())
+				container = new ItemStack(Items.BOWL);
 
-		if (stack.isFood()) {
-			super.onItemUseFinish(stack, worldIn, subject);
-		} else {
-			PlayerEntity player = subject instanceof PlayerEntity ? (PlayerEntity) subject : null;
-			if (player instanceof ServerPlayerEntity) {
-				CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayerEntity) player, stack);
-			}
-			if (player != null) {
-				player.addStat(Stats.ITEM_USED.get(this));
-				if (!player.abilities.isCreativeMode) {
-					stack.shrink(1);
+			if (stack.isFood()) {
+				super.onItemUseFinish(stack, worldIn, subject);
+			} else {
+				PlayerEntity player = subject instanceof PlayerEntity ? (PlayerEntity) subject : null;
+				if (player instanceof ServerPlayerEntity) {
+					CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayerEntity) player, stack);
+				}
+				if (player != null) {
+					player.addStat(Stats.ITEM_USED.get(this));
+					if (!player.abilities.isCreativeMode) {
+						stack.shrink(1);
+					}
 				}
 			}
-		}
 
-		if (stack.isEmpty()) {
-			cir.setReturnValue(container);
-		} else {
-			if (subject instanceof PlayerEntity && !((PlayerEntity) subject).abilities.isCreativeMode) {
-				PlayerEntity player = (PlayerEntity) subject;
-				if (!player.inventory.addItemStackToInventory(container)) {
-					player.dropItem(container, false);
+			if (stack.isEmpty()) {
+				cir.setReturnValue(container);
+			} else {
+				if (subject instanceof PlayerEntity && !((PlayerEntity) subject).abilities.isCreativeMode) {
+					PlayerEntity player = (PlayerEntity) subject;
+					if (!player.inventory.addItemStackToInventory(container)) {
+						player.dropItem(container, false);
+					}
 				}
+				cir.setReturnValue(stack);
 			}
-			cir.setReturnValue(stack);
 		}
-
 	}
 }
