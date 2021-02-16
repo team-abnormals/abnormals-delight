@@ -3,11 +3,13 @@ package com.minecraftabnormals.abnormals_delight.common.item;
 import com.minecraftabnormals.abnormals_delight.core.registry.ADItems;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.ModList;
 
 import java.util.Random;
 import java.util.function.Supplier;
@@ -15,8 +17,8 @@ import java.util.function.Supplier;
 public class CakeSliceItem extends Item {
 	public Supplier<EffectInstance> effect;
 
-	public CakeSliceItem(Supplier<EffectInstance> effect, Properties properties) {
-		super(properties);
+	public CakeSliceItem(String modid, Supplier<EffectInstance> effect, Properties properties, ItemGroup group) {
+		super(ModList.get().isLoaded(modid) ? properties.group(group) : properties);
 		this.effect = effect;
 	}
 

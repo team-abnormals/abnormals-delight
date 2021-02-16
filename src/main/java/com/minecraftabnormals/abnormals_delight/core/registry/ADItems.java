@@ -30,11 +30,11 @@ public class ADItems {
 	public static final RegistryObject<Item> PIKE_SLICE = HELPER.createCompatItem("upgrade_aquatic", "pike_slice", new Item.Properties().food(Foods.PIKE_SLICE), ItemGroup.FOOD);
 	public static final RegistryObject<Item> COOKED_PIKE_SLICE = HELPER.createCompatItem("upgrade_aquatic", "cooked_pike_slice", new Item.Properties().food(Foods.COOKED_PIKE_SLICE), ItemGroup.FOOD);
 
-	public static final RegistryObject<Item> VANILLA_CAKE_SLICE = HELPER.createItem("vanilla_cake_slice", () -> new CakeSliceItem(() -> new EffectInstance(CompatEffects.VANILLA_SCENT, 100), new Item.Properties().food(Foods.VANILLA_CAKE_SLICE).group(ItemGroup.FOOD)));
-	public static final RegistryObject<Item> CHOCOLATE_CAKE_SLICE = HELPER.createItem("chocolate_cake_slice", () -> new CakeSliceItem(() -> new EffectInstance(CompatEffects.SUGAR_RUSH, 200), new Item.Properties().food(Foods.CHOCOLATE_CAKE_SLICE).group(ItemGroup.FOOD)));
-	public static final RegistryObject<Item> STRAWBERRY_CAKE_SLICE = HELPER.createItem("strawberry_cake_slice", () -> new CakeSliceItem(null, new Item.Properties().food(Foods.STRAWBERRY_CAKE_SLICE).group(ItemGroup.FOOD)));
-	public static final RegistryObject<Item> BANANA_CAKE_SLICE = HELPER.createItem("banana_cake_slice", () -> new CakeSliceItem(() -> new EffectInstance(CompatEffects.AGILITY, 200), new Item.Properties().food(Foods.BANANA_CAKE_SLICE).group(ItemGroup.FOOD)));
-	public static final RegistryObject<Item> YUCCA_GATEAU_SLICE = HELPER.createItem("yucca_gateau_slice", () -> new CakeSliceItem(() -> new EffectInstance(CompatEffects.PERSISTENCE, 320), new Item.Properties().food(Foods.YUCCA_GATEAU_SLICE).group(ItemGroup.FOOD)));
+	public static final RegistryObject<Item> VANILLA_CAKE_SLICE = HELPER.createItem("vanilla_cake_slice", () -> new CakeSliceItem("neapolitan", () -> new EffectInstance(CompatEffects.VANILLA_SCENT, 100), new Item.Properties().food(Foods.VANILLA_CAKE_SLICE), ItemGroup.FOOD));
+	public static final RegistryObject<Item> CHOCOLATE_CAKE_SLICE = HELPER.createItem("chocolate_cake_slice", () -> new CakeSliceItem("neapolitan", () -> new EffectInstance(CompatEffects.SUGAR_RUSH, 200), new Item.Properties().food(Foods.CHOCOLATE_CAKE_SLICE), ItemGroup.FOOD));
+	public static final RegistryObject<Item> STRAWBERRY_CAKE_SLICE = HELPER.createItem("strawberry_cake_slice", () -> new CakeSliceItem("neapolitan", null, new Item.Properties().food(Foods.STRAWBERRY_CAKE_SLICE), ItemGroup.FOOD));
+	public static final RegistryObject<Item> BANANA_CAKE_SLICE = HELPER.createItem("banana_cake_slice", () -> new CakeSliceItem("neapolitan", () -> new EffectInstance(CompatEffects.AGILITY, 200), new Item.Properties().food(Foods.BANANA_CAKE_SLICE), ItemGroup.FOOD));
+	public static final RegistryObject<Item> YUCCA_GATEAU_SLICE = HELPER.createItem("yucca_gateau_slice", () -> new CakeSliceItem("atmospheric", () -> new EffectInstance(CompatEffects.PERSISTENCE, 320), new Item.Properties().food(Foods.YUCCA_GATEAU_SLICE), ItemGroup.FOOD));
 
 	public static class Foods {
 		public static final Food DUCK_FILLET = (new Food.Builder()).hunger(2).saturation(0.1F).effect(() -> new EffectInstance(Effects.HUNGER, 600, 0), 0.3F).meat().build();
