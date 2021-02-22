@@ -30,10 +30,13 @@ public class ADItems {
 	public static final RegistryObject<Item> PIKE_SLICE = HELPER.createCompatItem("upgrade_aquatic", "pike_slice", new Item.Properties().food(Foods.PIKE_SLICE), ItemGroup.FOOD);
 	public static final RegistryObject<Item> COOKED_PIKE_SLICE = HELPER.createCompatItem("upgrade_aquatic", "cooked_pike_slice", new Item.Properties().food(Foods.COOKED_PIKE_SLICE), ItemGroup.FOOD);
 
-	public static final RegistryObject<Item> VANILLA_CAKE_SLICE = HELPER.createItem("vanilla_cake_slice", () -> new CakeSliceItem("neapolitan", () -> new EffectInstance(CompatEffects.VANILLA_SCENT, 100), new Item.Properties().food(Foods.VANILLA_CAKE_SLICE), ItemGroup.FOOD));
-	public static final RegistryObject<Item> CHOCOLATE_CAKE_SLICE = HELPER.createItem("chocolate_cake_slice", () -> new CakeSliceItem("neapolitan", () -> new EffectInstance(CompatEffects.SUGAR_RUSH, 200), new Item.Properties().food(Foods.CHOCOLATE_CAKE_SLICE), ItemGroup.FOOD));
-	public static final RegistryObject<Item> STRAWBERRY_CAKE_SLICE = HELPER.createItem("strawberry_cake_slice", () -> new CakeSliceItem("neapolitan", null, new Item.Properties().food(Foods.STRAWBERRY_CAKE_SLICE), ItemGroup.FOOD));
-	public static final RegistryObject<Item> BANANA_CAKE_SLICE = HELPER.createItem("banana_cake_slice", () -> new CakeSliceItem("neapolitan", () -> new EffectInstance(CompatEffects.AGILITY, 200), new Item.Properties().food(Foods.BANANA_CAKE_SLICE), ItemGroup.FOOD));
+	public static final RegistryObject<Item> VANILLA_CAKE_SLICE = HELPER.createItem("vanilla_cake_slice", () -> new CakeSliceItem("neapolitan", () -> new EffectInstance(CompatEffects.VANILLA_SCENT, 100), new Item.Properties().food(Foods.CAKE_SLICE), ItemGroup.FOOD));
+	public static final RegistryObject<Item> CHOCOLATE_CAKE_SLICE = HELPER.createItem("chocolate_cake_slice", () -> new CakeSliceItem("neapolitan", () -> new EffectInstance(CompatEffects.SUGAR_RUSH, 200), new Item.Properties().food(Foods.CAKE_SLICE), ItemGroup.FOOD));
+	public static final RegistryObject<Item> STRAWBERRY_CAKE_SLICE = HELPER.createItem("strawberry_cake_slice", () -> new CakeSliceItem("neapolitan", null, new Item.Properties().food(Foods.CAKE_SLICE), ItemGroup.FOOD));
+	public static final RegistryObject<Item> BANANA_CAKE_SLICE = HELPER.createItem("banana_cake_slice", () -> new CakeSliceItem("neapolitan", () -> new EffectInstance(CompatEffects.AGILITY, 200), new Item.Properties().food(Foods.CAKE_SLICE), ItemGroup.FOOD));
+	public static final RegistryObject<Item> MINT_CAKE_SLICE = HELPER.createItem("mint_cake_slice", () -> new CakeSliceItem("neapolitan", () -> new EffectInstance(CompatEffects.BERSERKING, 300), new Item.Properties().food(Foods.CAKE_SLICE), ItemGroup.FOOD));
+	public static final RegistryObject<Item> ADZUKI_CAKE_SLICE = HELPER.createItem("adzuki_cake_slice", () -> new CakeSliceItem("neapolitan", () -> new EffectInstance(CompatEffects.HARMONY, 200), new Item.Properties().food(Foods.CAKE_SLICE), ItemGroup.FOOD));
+
 	public static final RegistryObject<Item> YUCCA_GATEAU_SLICE = HELPER.createItem("yucca_gateau_slice", () -> new CakeSliceItem("atmospheric", () -> new EffectInstance(CompatEffects.PERSISTENCE, 320), new Item.Properties().food(Foods.YUCCA_GATEAU_SLICE), ItemGroup.FOOD));
 
 	public static class Foods {
@@ -44,10 +47,7 @@ public class ADItems {
 		public static final Food PIKE_SLICE = (new Food.Builder()).hunger(1).saturation(0.3F).build();
 		public static final Food COOKED_PIKE_SLICE = (new Food.Builder()).hunger(4).saturation(0.8F).build();
 
-		public static final Food VANILLA_CAKE_SLICE = (new Food.Builder()).hunger(1).saturation(0.1F).fastToEat().effect(() -> new EffectInstance(Effects.SPEED, 600, 0), 1.0F).build();
-		public static final Food CHOCOLATE_CAKE_SLICE = (new Food.Builder()).hunger(1).saturation(0.1F).fastToEat().effect(() -> new EffectInstance(Effects.SPEED, 600, 0), 1.0F).build();
-		public static final Food STRAWBERRY_CAKE_SLICE = (new Food.Builder()).hunger(1).saturation(0.1F).fastToEat().effect(() -> new EffectInstance(Effects.SPEED, 600, 0), 1.0F).build();
-		public static final Food BANANA_CAKE_SLICE = (new Food.Builder()).hunger(1).saturation(0.1F).fastToEat().effect(() -> new EffectInstance(Effects.SPEED, 600, 0), 1.0F).build();
+		public static final Food CAKE_SLICE = (new Food.Builder()).hunger(1).saturation(0.1F).fastToEat().effect(() -> new EffectInstance(Effects.SPEED, 600, 0), 1.0F).build();
 		public static final Food YUCCA_GATEAU_SLICE = (new Food.Builder()).hunger(1).saturation(0.0F).fastToEat().effect(() -> new EffectInstance(Effects.SPEED, 600, 0), 1.0F).build();
 	}
 
@@ -55,6 +55,9 @@ public class ADItems {
 		public static final Effect SUGAR_RUSH = ForgeRegistries.POTIONS.getValue(new ResourceLocation("neapolitan", "sugar_rush"));
 		public static final Effect VANILLA_SCENT = ForgeRegistries.POTIONS.getValue(new ResourceLocation("neapolitan", "vanilla_scent"));
 		public static final Effect AGILITY = ForgeRegistries.POTIONS.getValue(new ResourceLocation("neapolitan", "agility"));
+		public static final Effect BERSERKING = ForgeRegistries.POTIONS.getValue(new ResourceLocation("neapolitan", "berserking"));
+		public static final Effect HARMONY = ForgeRegistries.POTIONS.getValue(new ResourceLocation("neapolitan", "harmony"));
+
 		public static final Effect PERSISTENCE = ForgeRegistries.POTIONS.getValue(new ResourceLocation("atmospheric", "persistence"));
 	}
 }
