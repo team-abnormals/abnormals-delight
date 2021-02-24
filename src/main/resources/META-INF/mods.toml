@@ -9,9 +9,10 @@ license = "https://github.com/team-abnormals/abnormals-delight/blob/main/LICENSE
     logoFile = "logo.png"
     authors = "Team Abnormals"
     credits = "bageldotjpg"
-    displayName = "Abnormal's Delight"
+    displayName = "Abnormals Delight"
     description = '''
-    Template description.
+    Adds compatibility between mods by Team Abnormals and Farmer's Delight by vectorwing.
+    Includes pantries, cake slices, and some basic cutting & cooking recipes.
     '''
 
 [[dependencies.abnormals_delight]]
@@ -32,5 +33,12 @@ license = "https://github.com/team-abnormals/abnormals-delight/blob/main/LICENSE
     modId = "abnormals_core"
     mandatory = true
     versionRange = "[3.0.6,)"
+    ordering = "AFTER"
+    side = "BOTH"
+
+[[dependencies.abnormals_delight]]
+    modId = "farmersdelight"
+    mandatory = true
+    versionRange = "[0.3.2,)"
     ordering = "AFTER"
     side = "BOTH"
