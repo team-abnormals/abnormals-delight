@@ -10,12 +10,10 @@ public class ADConfig {
 
 	public static class Common {
 		public final ConfigValue<Boolean> replaceFDItemGroup;
-		public final ConfigValue<Boolean> stackableSoupItems;
 
 		Common(ForgeConfigSpec.Builder builder) {
 			builder.push("overrides");
 			replaceFDItemGroup = builder.comment("Removes and hides Farmer's Delight's ItemGroup and move the items to vanilla ItemGroups").define("replaceFDItemGroup", false);
-			stackableSoupItems = builder.comment("Modifies SoupItems to allow them to stack to 16").define("stackableSoupItems", true);
 			builder.pop();
 		}
 	}

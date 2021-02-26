@@ -2,10 +2,10 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "neapolitan:roasted_adzuki_beans"
+      "item": "neapolitan:adzuki_beans"
     },
     {
-      "item": "neapolitan:dried_banana"
+      "item": "neapolitan:banana"
     },
     {
       "item": "minecraft:carrot"

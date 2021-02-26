@@ -5,8 +5,7 @@
   "minVersion": "0.8",
   "refmap": "abnormals_delight.refmap.json",
   "mixins": [
-    "ItemGroupMixin",
-    "SoupItemMixin"
+    "ItemGroupMixin"
   ],
   "client": [
     "ClientRecipeBookMixin"

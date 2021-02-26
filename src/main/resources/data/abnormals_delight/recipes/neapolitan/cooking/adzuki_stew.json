@@ -5,17 +5,20 @@
       "item": "neapolitan:adzuki_beans"
     },
     {
-      "item": "neapolitan:banana"
+      "item": "neapolitan:adzuki_beans"
     },
     {
-      "item": "minecraft:carrot"
+      "item": "minecraft:beetroot"
     },
     {
-      "item": "farmersdelight:pumpkin_slice"
+      "tag": "forge:crops/tomato"
+    },
+    {
+      "item": "minecraft:brown_mushroom"
     }
   ],
   "result": {
-    "item": "neapolitan:adzuki_curry"
+    "item": "neapolitan:adzuki_stew"
   },
   "container": {
     "item": "minecraft:bowl"
