@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [],
+  "optional": [
+    "endergetic:ender_campfire",
+    "endergetic:ender_fire",
+    "caverns_and_chasms:cursed_campfire",
+    "caverns_and_chasms:cursed_fire"
+  ]
+}
