@@ -1,6 +1,7 @@
 package com.minecraftabnormals.abnormals_delight.core;
 
 import com.minecraftabnormals.abnormals_core.core.util.registry.RegistryHelper;
+import com.minecraftabnormals.abnormals_delight.core.other.ADCompat;
 import com.minecraftabnormals.abnormals_delight.core.registry.ADModifications;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -34,6 +35,7 @@ public class AbnormalsDelight {
 
 	private void commonSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
+			ADCompat.registerCompostables();
 			ADModifications.replaceItemGroups();
 		});
 	}
