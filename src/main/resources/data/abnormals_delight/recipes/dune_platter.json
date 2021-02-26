@@ -8,9 +8,6 @@
       "item": "atmospheric:aloe_leaves"
     },
     {
-      "item": "minecraft:bowl"
-    },
-    {
       "item": "atmospheric:roasted_yucca_fruit"
     },
     {
@@ -18,6 +15,9 @@
     },
     {
       "item": "atmospheric:barrel_cactus"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "result": {

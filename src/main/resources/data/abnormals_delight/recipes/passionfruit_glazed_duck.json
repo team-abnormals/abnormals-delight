@@ -8,10 +8,13 @@
       "tag": "forge:fruits/passionfruit"
     },
     {
-      "item": "minecraft:bowl"
+      "item": "minecraft:potato"
     },
     {
-      "item": "minecraft:potato"
+      "tag": "forge:crops/onion"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "result": {
