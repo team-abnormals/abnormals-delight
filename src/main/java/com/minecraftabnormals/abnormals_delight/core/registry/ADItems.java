@@ -5,6 +5,7 @@ import com.minecraftabnormals.abnormals_delight.common.item.CakeSliceItem;
 import com.minecraftabnormals.abnormals_delight.common.item.NecromiumKnifeItem;
 import com.minecraftabnormals.abnormals_delight.common.item.SilverKnifeItem;
 import com.minecraftabnormals.abnormals_delight.core.AbnormalsDelight;
+import com.minecraftabnormals.abnormals_delight.core.registry.util.ADItemSubRegistryHelper;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -15,10 +16,11 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
+import vectorwing.farmersdelight.registry.ModEffects;
 
 @Mod.EventBusSubscriber(modid = AbnormalsDelight.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ADItems {
-	public static final ItemSubRegistryHelper HELPER = AbnormalsDelight.REGISTRY_HELPER.getItemSubHelper();
+	public static final ADItemSubRegistryHelper HELPER = AbnormalsDelight.REGISTRY_HELPER.getItemSubHelper();
 
 	public static final RegistryObject<Item> SILVER_KNIFE = HELPER.createItem("silver_knife", SilverKnifeItem::new);
 	public static final RegistryObject<Item> NECROMIUM_KNIFE = HELPER.createItem("necromium_knife", NecromiumKnifeItem::new);
@@ -29,6 +31,10 @@ public class ADItems {
 	public static final RegistryObject<Item> COOKED_VENISON_SHANKS = HELPER.createCompatItem("environmental", "cooked_venison_shanks", new Item.Properties().food(Foods.COOKED_VENISON_SHANKS), ItemGroup.FOOD);
 	public static final RegistryObject<Item> PIKE_SLICE = HELPER.createCompatItem("upgrade_aquatic", "pike_slice", new Item.Properties().food(Foods.PIKE_SLICE), ItemGroup.FOOD);
 	public static final RegistryObject<Item> COOKED_PIKE_SLICE = HELPER.createCompatItem("upgrade_aquatic", "cooked_pike_slice", new Item.Properties().food(Foods.COOKED_PIKE_SLICE), ItemGroup.FOOD);
+
+	public static final RegistryObject<Item> SEARED_VENISON = HELPER.createCompatConsumableItem("seared_venison", new Item.Properties().food(Foods.SEARED_VENISON), ItemGroup.FOOD, "environmental");
+	public static final RegistryObject<Item> PASSIONFRUIT_GLAZED_DUCK = HELPER.createCompatConsumableItem("passionfruit_glazed_duck", new Item.Properties().food(Foods.PASSIONFRUIT_GLAZED_DUCK), ItemGroup.FOOD, "atmospheric", "environmental");
+	public static final RegistryObject<Item> DUNE_PLATTER = HELPER.createCompatConsumableItem("dune_platter", new Item.Properties().food(Foods.DUNE_PLATTER), ItemGroup.FOOD, "atmospheric");
 
 	public static final RegistryObject<Item> VANILLA_CAKE_SLICE = HELPER.createItem("vanilla_cake_slice", () -> new CakeSliceItem("neapolitan", () -> new EffectInstance(CompatEffects.VANILLA_SCENT, 100), new Item.Properties().food(Foods.CAKE_SLICE), ItemGroup.FOOD));
 	public static final RegistryObject<Item> CHOCOLATE_CAKE_SLICE = HELPER.createItem("chocolate_cake_slice", () -> new CakeSliceItem("neapolitan", () -> new EffectInstance(CompatEffects.SUGAR_RUSH, 200), new Item.Properties().food(Foods.CAKE_SLICE), ItemGroup.FOOD));
@@ -46,6 +52,10 @@ public class ADItems {
 		public static final Food COOKED_VENISON_SHANKS = (new Food.Builder()).hunger(3).saturation(0.8F).meat().build();
 		public static final Food PIKE_SLICE = (new Food.Builder()).hunger(1).saturation(0.3F).build();
 		public static final Food COOKED_PIKE_SLICE = (new Food.Builder()).hunger(4).saturation(0.8F).build();
+
+		public static final Food SEARED_VENISON = (new Food.Builder()).hunger(12).saturation(0.9F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 4800, 0), 1.0F).build();
+		public static final Food PASSIONFRUIT_GLAZED_DUCK = (new Food.Builder()).hunger(14).saturation(0.9F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 9600, 0), 1.0F).build();
+		public static final Food DUNE_PLATTER = (new Food.Builder()).hunger(10).saturation(0.8F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 4800, 0), 1.0F).build();
 
 		public static final Food CAKE_SLICE = (new Food.Builder()).hunger(1).saturation(0.1F).fastToEat().effect(() -> new EffectInstance(Effects.SPEED, 600, 0), 1.0F).build();
 		public static final Food YUCCA_GATEAU_SLICE = (new Food.Builder()).hunger(1).saturation(0.0F).fastToEat().effect(() -> new EffectInstance(Effects.SPEED, 600, 0), 1.0F).build();

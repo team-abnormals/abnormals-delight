@@ -3,6 +3,7 @@ package com.minecraftabnormals.abnormals_delight.core;
 import com.minecraftabnormals.abnormals_core.core.util.registry.RegistryHelper;
 import com.minecraftabnormals.abnormals_delight.core.other.ADCompat;
 import com.minecraftabnormals.abnormals_delight.core.registry.ADModifications;
+import com.minecraftabnormals.abnormals_delight.core.registry.util.ADItemSubRegistryHelper;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -13,11 +14,14 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod(AbnormalsDelight.MOD_ID)
 public class AbnormalsDelight {
 	public static final String MOD_ID = "abnormals_delight";
-	public static final RegistryHelper REGISTRY_HELPER = new RegistryHelper(MOD_ID);
+	public static final RegistryHelper REGISTRY_HELPER = RegistryHelper.create(MOD_ID, helper -> {
+		helper.putSubHelper(ForgeRegistries.ITEMS, new ADItemSubRegistryHelper(helper));
+	});
 
 	public AbnormalsDelight() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();

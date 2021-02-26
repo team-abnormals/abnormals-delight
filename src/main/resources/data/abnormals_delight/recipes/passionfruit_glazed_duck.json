@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:cooked_duck"
+    },
+    {
+      "tag": "forge:fruits/passionfruit"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "minecraft:potato"
+    }
+  ],
+  "result": {
+    "item": "abnormals_delight:passionfruit_glazed_duck"
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "atmospheric"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "environmental"
+        }
+      ]
+    }
+  ]
+}
