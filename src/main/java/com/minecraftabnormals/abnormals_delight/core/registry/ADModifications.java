@@ -56,6 +56,10 @@ public class ADModifications {
 				if (item.getRegistryName().getNamespace().equals(FarmersDelight.MODID)) {
 					setItemGroup(item, group);
 				}
+
+				if (item.getRegistryName().getNamespace().equals(AbnormalsDelight.MOD_ID)) {
+					setItemGroup(item, group);
+				}
 			}
 		}
 	}
