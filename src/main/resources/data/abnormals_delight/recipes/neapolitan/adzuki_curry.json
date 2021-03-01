@@ -19,5 +19,11 @@
   ],
   "result": {
     "item": "neapolitan:adzuki_curry"
-  }
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "neapolitan"
+    }
+  ]
 }
