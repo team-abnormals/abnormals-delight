@@ -1,6 +1,7 @@
 package com.minecraftabnormals.abnormals_delight.core.other;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.minecraftabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.minecraftabnormals.abnormals_delight.core.registry.ADItems;
 import net.minecraft.block.Block;
@@ -20,19 +21,20 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import vectorwing.farmersdelight.utils.tags.ModTags;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(modid = AbnormalsDelight.MOD_ID)
 public class ADEvents {
 	public static final IntegerProperty BITES = IntegerProperty.create("bites", 0, 9);
-	public static final List<Supplier<Item>> CAKES = Util.make(Lists.newArrayList(), (list) -> {
-		list.add(ADItems.VANILLA_CAKE_SLICE);
-		list.add(ADItems.CHOCOLATE_CAKE_SLICE);
-		list.add(ADItems.STRAWBERRY_CAKE_SLICE);
-		list.add(ADItems.BANANA_CAKE_SLICE);
-		list.add(ADItems.STRAWBERRY_CAKE_SLICE);
-		list.add(ADItems.BANANA_CAKE_SLICE);
+	public static final HashMap<ResourceLocation, Supplier<Item>> CAKES = Util.make(Maps.newHashMap(), (list) -> {
+		list.put(ADCompat.VANILLA_CAKE, ADItems.VANILLA_CAKE_SLICE);
+		list.put(ADCompat.CHOCOLATE_CAKE, ADItems.CHOCOLATE_CAKE_SLICE);
+		list.put(ADCompat.STRAWBERRY_CAKE, ADItems.STRAWBERRY_CAKE_SLICE);
+		list.put(ADCompat.BANANA_CAKE, ADItems.BANANA_CAKE_SLICE);
+		list.put(ADCompat.MINT_CAKE, ADItems.MINT_CAKE_SLICE);
+		list.put(ADCompat.ADZUKI_CAKE, ADItems.ADZUKI_CAKE_SLICE);
 	});
 
 	@SubscribeEvent
@@ -44,24 +46,22 @@ public class ADEvents {
 		ResourceLocation name = state.getBlock().getRegistryName();
 
 		if (ModTags.KNIVES.contains(tool.getItem()) && name != null) {
-			for (Supplier<Item> item : CAKES) {
-				ResourceLocation cakeName = item.get().getRegistryName();
-				if (cakeName != null && cakeName.equals(name)) {
-					int bites = state.get(CakeBlock.BITES);
-					if (bites < 6) {
-						world.setBlockState(pos, state.with(CakeBlock.BITES, bites + 1), 3);
-					} else {
-						world.removeBlock(pos, false);
-					}
-					InventoryHelper.spawnItemStack(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(item.get()));
-					world.playSound(null, pos, SoundEvents.BLOCK_WOOL_BREAK, SoundCategory.PLAYERS, 0.8F, 0.8F);
-
-					event.setCancellationResult(ActionResultType.SUCCESS);
-					event.setCanceled(true);
+			if (CAKES.containsKey(name)) {
+				Supplier<Item> item = CAKES.get(name);
+				int bites = state.get(CakeBlock.BITES);
+				if (bites < 6) {
+					world.setBlockState(pos, state.with(CakeBlock.BITES, bites + 1), 3);
+				} else {
+					world.removeBlock(pos, false);
 				}
+				InventoryHelper.spawnItemStack(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(item.get()));
+				world.playSound(null, pos, SoundEvents.BLOCK_WOOL_BREAK, SoundCategory.PLAYERS, 0.8F, 0.8F);
+
+				event.setCancellationResult(ActionResultType.SUCCESS);
+				event.setCanceled(true);
 			}
 
-			if (name.equals(ADItems.YUCCA_GATEAU_SLICE.get().getRegistryName())) {
+			if (name.equals(ADCompat.YUCCA_GATEAU)) {
 				int bites = state.get(BITES);
 				if (bites < 9) {
 					world.setBlockState(pos, state.with(BITES, bites + 1), 3);
@@ -82,25 +82,19 @@ public class ADEvents {
 		BlockState state = event.getState();
 		PlayerEntity player = event.getPlayer();
 		List<ItemStack> loot = Lists.newArrayList();
-		if (state != null && player.getHeldItemMainhand().getItem().isIn(ModTags.KNIVES)) {
-			ResourceLocation name = state.getBlock().getRegistryName();
+		ResourceLocation name = state.getBlock().getRegistryName();
 
-			if (name != null) {
-				for (Supplier<Item> item : CAKES) {
-					ResourceLocation cakeName = item.get().getRegistryName();
-					if (cakeName != null && cakeName.equals(name)) {
-						loot.add(new ItemStack(item.get(), 7 - state.get(CakeBlock.BITES)));
-					}
-				}
+		if (player.getHeldItemMainhand().getItem().isIn(ModTags.KNIVES) && name != null) {
+			if (CAKES.containsKey(name)) {
+				Supplier<Item> item = CAKES.get(name);
+				loot.add(new ItemStack(item.get(), 7 - state.get(CakeBlock.BITES)));
+			} else if (name.equals(ADCompat.YUCCA_GATEAU)) {
+				loot.add(new ItemStack(ADItems.YUCCA_GATEAU_SLICE.get(), 10 - state.get(BITES)));
+			}
 
-				if (name.equals(ADItems.YUCCA_GATEAU_SLICE.get().getRegistryName())) {
-					loot.add(new ItemStack(ADItems.YUCCA_GATEAU_SLICE.get(), 10 - state.get(BITES)));
-				}
-
-				if (!loot.isEmpty() && event.getWorld() instanceof World) {
-					for (ItemStack stack : loot) {
-						Block.spawnAsEntity((World) event.getWorld(), event.getPos(), stack);
-					}
+			if (!loot.isEmpty() && event.getWorld() instanceof World) {
+				for (ItemStack stack : loot) {
+					Block.spawnAsEntity((World) event.getWorld(), event.getPos(), stack);
 				}
 			}
 		}
