@@ -57,7 +57,7 @@ public class ADModifications {
 					setItemGroup(item, group);
 				}
 
-				if (item.getRegistryName().getNamespace().equals(AbnormalsDelight.MOD_ID)) {
+				if (item.getRegistryName().getNamespace().equals(AbnormalsDelight.MOD_ID) && item.getGroup() != null) {
 					setItemGroup(item, group);
 				}
 			}
