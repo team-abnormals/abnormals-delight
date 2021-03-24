@@ -31,6 +31,8 @@ public class ADItems {
 	public static final RegistryObject<Item> COOKED_VENISON_SHANKS = HELPER.createCompatItem("environmental", "cooked_venison_shanks", new Item.Properties().food(Foods.COOKED_VENISON_SHANKS), ItemGroup.FOOD);
 	public static final RegistryObject<Item> PIKE_SLICE = HELPER.createCompatItem("upgrade_aquatic", "pike_slice", new Item.Properties().food(Foods.PIKE_SLICE), ItemGroup.FOOD);
 	public static final RegistryObject<Item> COOKED_PIKE_SLICE = HELPER.createCompatItem("upgrade_aquatic", "cooked_pike_slice", new Item.Properties().food(Foods.COOKED_PIKE_SLICE), ItemGroup.FOOD);
+	public static final RegistryObject<Item> PERCH_SLICE = HELPER.createCompatItem("upgrade_aquatic", "perch_slice", new Item.Properties().food(Foods.PERCH_SLICE), ItemGroup.FOOD);
+	public static final RegistryObject<Item> COOKED_PERCH_SLICE = HELPER.createCompatItem("upgrade_aquatic", "cooked_perch_slice", new Item.Properties().food(Foods.COOKED_PERCH_SLICE), ItemGroup.FOOD);
 
 	public static final RegistryObject<Item> SEARED_VENISON = HELPER.createCompatConsumableItem("seared_venison", new Item.Properties().food(Foods.SEARED_VENISON).maxStackSize(16), ItemGroup.FOOD, "environmental");
 	public static final RegistryObject<Item> PASSIONFRUIT_GLAZED_DUCK = HELPER.createCompatConsumableItem("passionfruit_glazed_duck", new Item.Properties().food(Foods.PASSIONFRUIT_GLAZED_DUCK).maxStackSize(16), ItemGroup.FOOD, "atmospheric", "environmental");
@@ -52,6 +54,8 @@ public class ADItems {
 		public static final Food COOKED_VENISON_SHANKS = (new Food.Builder()).hunger(3).saturation(0.8F).meat().build();
 		public static final Food PIKE_SLICE = (new Food.Builder()).hunger(1).saturation(0.3F).build();
 		public static final Food COOKED_PIKE_SLICE = (new Food.Builder()).hunger(4).saturation(0.8F).build();
+		public static final Food PERCH_SLICE = (new Food.Builder()).hunger(1).saturation(0.2F).build();
+		public static final Food COOKED_PERCH_SLICE = (new Food.Builder()).hunger(2).saturation(0.7F).build();
 
 		public static final Food SEARED_VENISON = (new Food.Builder()).hunger(12).saturation(0.9F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 4800, 0), 1.0F).build();
 		public static final Food PASSIONFRUIT_GLAZED_DUCK = (new Food.Builder()).hunger(14).saturation(0.9F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 9600, 0), 1.0F).build();
