@@ -9,6 +9,7 @@ import com.minecraftabnormals.abnormals_delight.core.registry.util.ADItemSubRegi
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.Items;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
@@ -34,9 +35,10 @@ public class ADItems {
 	public static final RegistryObject<Item> PERCH_SLICE = HELPER.createCompatItem("upgrade_aquatic", "perch_slice", new Item.Properties().food(Foods.PERCH_SLICE), ItemGroup.FOOD);
 	public static final RegistryObject<Item> COOKED_PERCH_SLICE = HELPER.createCompatItem("upgrade_aquatic", "cooked_perch_slice", new Item.Properties().food(Foods.COOKED_PERCH_SLICE), ItemGroup.FOOD);
 
-	public static final RegistryObject<Item> SEARED_VENISON = HELPER.createCompatConsumableItem("seared_venison", new Item.Properties().food(Foods.SEARED_VENISON).maxStackSize(16), ItemGroup.FOOD, "environmental");
-	public static final RegistryObject<Item> PASSIONFRUIT_GLAZED_DUCK = HELPER.createCompatConsumableItem("passionfruit_glazed_duck", new Item.Properties().food(Foods.PASSIONFRUIT_GLAZED_DUCK).maxStackSize(16), ItemGroup.FOOD, "atmospheric", "environmental");
-	public static final RegistryObject<Item> DUNE_PLATTER = HELPER.createCompatConsumableItem("dune_platter", new Item.Properties().food(Foods.DUNE_PLATTER).maxStackSize(16), ItemGroup.FOOD, "atmospheric");
+	public static final RegistryObject<Item> SEARED_VENISON = HELPER.createCompatConsumableItem("seared_venison", new Item.Properties().containerItem(Items.BOWL).food(Foods.SEARED_VENISON).maxStackSize(16), ItemGroup.FOOD, "environmental");
+	public static final RegistryObject<Item> PASSIONFRUIT_GLAZED_DUCK = HELPER.createCompatConsumableItem("passionfruit_glazed_duck", new Item.Properties().containerItem(Items.BOWL).food(Foods.PASSIONFRUIT_GLAZED_DUCK).maxStackSize(16), ItemGroup.FOOD, "atmospheric", "environmental");
+	public static final RegistryObject<Item> DUNE_PLATTER = HELPER.createCompatConsumableItem("dune_platter", new Item.Properties().containerItem(Items.BOWL).food(Foods.DUNE_PLATTER).maxStackSize(16), ItemGroup.FOOD, "atmospheric");
+	public static final RegistryObject<Item> ESCARGOT = HELPER.createCompatContainerConsumableItem("escargot", new ResourceLocation("autumnity", "snail_shell_piece"), new Item.Properties().food(Foods.ESCARGOT).maxStackSize(16), ItemGroup.FOOD, "autumnity");
 
 	public static final RegistryObject<Item> VANILLA_CAKE_SLICE = HELPER.createItem("vanilla_cake_slice", () -> new CakeSliceItem("neapolitan", () -> new EffectInstance(CompatEffects.VANILLA_SCENT, 100), new Item.Properties().food(Foods.CAKE_SLICE), ItemGroup.FOOD));
 	public static final RegistryObject<Item> CHOCOLATE_CAKE_SLICE = HELPER.createItem("chocolate_cake_slice", () -> new CakeSliceItem("neapolitan", () -> new EffectInstance(CompatEffects.SUGAR_RUSH, 200), new Item.Properties().food(Foods.CAKE_SLICE), ItemGroup.FOOD));
@@ -60,6 +62,7 @@ public class ADItems {
 		public static final Food SEARED_VENISON = (new Food.Builder()).hunger(12).saturation(0.9F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 4800, 0), 1.0F).build();
 		public static final Food PASSIONFRUIT_GLAZED_DUCK = (new Food.Builder()).hunger(14).saturation(0.9F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 9600, 0), 1.0F).build();
 		public static final Food DUNE_PLATTER = (new Food.Builder()).hunger(10).saturation(0.8F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 4800, 0), 1.0F).build();
+		public static final Food ESCARGOT = (new Food.Builder()).hunger(8).saturation(0.5F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 4800, 0), 1.0F).build();
 
 		public static final Food CAKE_SLICE = (new Food.Builder()).hunger(1).saturation(0.1F).fastToEat().effect(() -> new EffectInstance(Effects.SPEED, 600, 0), 1.0F).build();
 		public static final Food YUCCA_GATEAU_SLICE = (new Food.Builder()).hunger(1).saturation(0.0F).fastToEat().effect(() -> new EffectInstance(Effects.SPEED, 600, 0), 1.0F).build();
