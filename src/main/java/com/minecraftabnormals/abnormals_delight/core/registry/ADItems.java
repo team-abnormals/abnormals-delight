@@ -1,6 +1,5 @@
 package com.minecraftabnormals.abnormals_delight.core.registry;
 
-import com.minecraftabnormals.abnormals_core.core.util.registry.ItemSubRegistryHelper;
 import com.minecraftabnormals.abnormals_delight.common.item.CakeSliceItem;
 import com.minecraftabnormals.abnormals_delight.common.item.NecromiumKnifeItem;
 import com.minecraftabnormals.abnormals_delight.common.item.SilverKnifeItem;
