@@ -61,7 +61,7 @@ public class ADItems {
 		public static final Food SEARED_VENISON = (new Food.Builder()).hunger(12).saturation(0.9F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 4800, 0), 1.0F).build();
 		public static final Food PASSIONFRUIT_GLAZED_DUCK = (new Food.Builder()).hunger(14).saturation(0.9F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 9600, 0), 1.0F).build();
 		public static final Food DUNE_PLATTER = (new Food.Builder()).hunger(10).saturation(0.8F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 4800, 0), 1.0F).build();
-		public static final Food ESCARGOT = (new Food.Builder()).hunger(8).saturation(0.5F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 4800, 0), 1.0F).build();
+		public static final Food ESCARGOT = (new Food.Builder()).hunger(8).saturation(0.5F).build();
 
 		public static final Food CAKE_SLICE = (new Food.Builder()).hunger(1).saturation(0.1F).fastToEat().effect(() -> new EffectInstance(Effects.SPEED, 600, 0), 1.0F).build();
 		public static final Food YUCCA_GATEAU_SLICE = (new Food.Builder()).hunger(1).saturation(0.0F).fastToEat().effect(() -> new EffectInstance(Effects.SPEED, 600, 0), 1.0F).build();
