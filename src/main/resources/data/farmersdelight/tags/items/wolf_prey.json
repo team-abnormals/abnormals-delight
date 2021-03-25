@@ -1,1 +1,7 @@
-{  "replace": false,  "values": [    "#forge:raw_venison"  ]}
+{
+  "replace": false,
+  "values": [
+    "#forge:raw_venison",
+    "#forge:raw_duck"
+  ]
+}

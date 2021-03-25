@@ -1,1 +1,14 @@
-{  "replace": false,  "values": [],  "optional": [    "#neapolitan:ice_creams",    "neapolitan:adzuki_curry",    "neapolitan:vanilla_pudding",    "neapolitan:adzuki_stew",    "autumnity:foul_soup",    "atmospheric:passionfruit_sorbet",    "environmental:squid_ink_risotto",    "environmental:scrambled_eggs"  ]}
+{
+  "replace": false,
+  "values": [],
+  "optional": [
+    "#neapolitan:ice_cream",
+    "neapolitan:adzuki_curry",
+    "neapolitan:vanilla_pudding",
+    "neapolitan:adzuki_stew",
+    "autumnity:foul_soup",
+    "atmospheric:passionfruit_sorbet",
+    "environmental:squid_ink_risotto",
+    "environmental:scrambled_eggs"
+  ]
+}

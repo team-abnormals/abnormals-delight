@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [],
+  "optional": [
+    "#forge:raw_duck",
+    "#forge:raw_rabbit",
+    "#forge:raw_venison"
+  ]
+}
