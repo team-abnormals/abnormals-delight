@@ -1,1 +1,6 @@
-{  "parent": "minecraft:item/generated",  "textures": {    "layer0": "abnormals_delight:item/dune_platter"  }}
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "abnormals_delight:item/dune_platter"
+  }
+}

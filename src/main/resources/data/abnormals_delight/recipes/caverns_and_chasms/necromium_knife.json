@@ -1,1 +1,18 @@
-{  "type": "minecraft:smithing",  "base": {    "item": "farmersdelight:diamond_knife"  },  "addition": {    "item": "caverns_and_chasms:necromium_ingot"  },  "result": {    "item": "abnormals_delight:necromium_knife"  },  "conditions": [    {      "type": "forge:mod_loaded",      "modid": "caverns_and_chasms"    }  ]}
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "farmersdelight:diamond_knife"
+  },
+  "addition": {
+    "item": "caverns_and_chasms:necromium_ingot"
+  },
+  "result": {
+    "item": "abnormals_delight:necromium_knife"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ]
+}

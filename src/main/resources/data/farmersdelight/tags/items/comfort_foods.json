@@ -1,1 +1,7 @@
-{  "replace": false,  "values": [],  "optional": [    "neapolitan:adzuki_stew"  ]}
+{
+  "replace": false,
+  "values": [],
+  "optional": [
+    "neapolitan:adzuki_stew"
+  ]
+}

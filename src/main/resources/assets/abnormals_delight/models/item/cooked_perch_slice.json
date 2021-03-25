@@ -1,1 +1,6 @@
-{  "parent": "minecraft:item/generated",  "textures": {    "layer0": "abnormals_delight:item/cooked_perch_slice"  }}
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "abnormals_delight:item/cooked_perch_slice"
+  }
+}

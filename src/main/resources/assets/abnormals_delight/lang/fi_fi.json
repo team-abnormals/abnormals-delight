@@ -1,1 +1,42 @@
-{  "block.abnormals_delight.rosewood_pantry": "Ruusupuukaappi",  "block.abnormals_delight.morado_pantry": "Kesalpiniakaappi",  "block.abnormals_delight.yucca_pantry": "Jukkakaappi",  "block.abnormals_delight.kousa_pantry": "Kanukkakaappi",  "block.abnormals_delight.aspen_pantry": "Haapakaappi",  "block.abnormals_delight.grimwood_pantry": "Synkkäpuukaappi",  "block.abnormals_delight.maple_pantry": "Vaahterakaappi",  "block.abnormals_delight.poise_pantry": "Kohopuukaappi",  "block.abnormals_delight.willow_pantry": "Pajukaappi",  "block.abnormals_delight.cherry_pantry": "Kirsikkapuukaappi",  "block.abnormals_delight.wisteria_pantry": "Sinisadekaappi",  "block.abnormals_delight.driftwood_pantry": "Ajopuukaappi",  "block.abnormals_delight.river_pantry": "Jokipuukaappi",  "item.abnormals_delight.silver_knife": "Hopeaveitsi",  "item.abnormals_delight.necromium_knife": "Nekromiumveitsi",  "item.abnormals_delight.duck_fillet": "Raaka sorsan filee",  "item.abnormals_delight.cooked_duck_fillet": "Paistettu sorsan filee",  "item.abnormals_delight.venison_shanks": "Raaka paloiteltu peuranliha",  "item.abnormals_delight.cooked_venison_shanks": "Paistettu paloiteltu peuranliha",  "item.abnormals_delight.pike_slice": "Raaka haukiviipale",  "item.abnormals_delight.cooked_pike_slice": "Paistettu haukiviipale",  "item.abnormals_delight.vanilla_cake_slice": "Pala vaniljakakkua",  "item.abnormals_delight.chocolate_cake_slice": "Pala suklaakakkua",  "item.abnormals_delight.strawberry_cake_slice": "Pala mansikkakakkua",  "item.abnormals_delight.banana_cake_slice": "Pala banaanikakkua",  "item.abnormals_delight.mint_cake_slice": "Pala minttukakkua",  "item.abnormals_delight.adzuki_cake_slice": "Pala adsukikakkua",  "item.abnormals_delight.yucca_gateau_slice": "Pala jukkaleivosta",  "tooltip.caverns_and_chasms.afflicting": "Piina",  "tooltip.caverns_and_chasms.slowing": "Hidastus",  "itemGroup.abnormals_delight": "Farmer's Delight"}
+{
+  "block.abnormals_delight.rosewood_pantry": "Ruusupuukaappi",
+  "block.abnormals_delight.morado_pantry": "Kesalpiniakaappi",
+  "block.abnormals_delight.yucca_pantry": "Jukkakaappi",
+  "block.abnormals_delight.kousa_pantry": "Kanukkakaappi",
+  "block.abnormals_delight.aspen_pantry": "Haapakaappi",
+  "block.abnormals_delight.grimwood_pantry": "Synkkäpuukaappi",
+
+  "block.abnormals_delight.maple_pantry": "Vaahterakaappi",
+
+  "block.abnormals_delight.poise_pantry": "Kohopuukaappi",
+
+  "block.abnormals_delight.willow_pantry": "Pajukaappi",
+  "block.abnormals_delight.cherry_pantry": "Kirsikkapuukaappi",
+  "block.abnormals_delight.wisteria_pantry": "Sinisadekaappi",
+
+  "block.abnormals_delight.driftwood_pantry": "Ajopuukaappi",
+  "block.abnormals_delight.river_pantry": "Jokipuukaappi",
+
+  "item.abnormals_delight.silver_knife": "Hopeaveitsi",
+  "item.abnormals_delight.necromium_knife": "Nekromiumveitsi",
+
+  "item.abnormals_delight.duck_fillet": "Raaka sorsan filee",
+  "item.abnormals_delight.cooked_duck_fillet": "Paistettu sorsan filee",
+  "item.abnormals_delight.venison_shanks": "Raaka paloiteltu peuranliha",
+  "item.abnormals_delight.cooked_venison_shanks": "Paistettu paloiteltu peuranliha",
+  "item.abnormals_delight.pike_slice": "Raaka haukiviipale",
+  "item.abnormals_delight.cooked_pike_slice": "Paistettu haukiviipale",
+
+  "item.abnormals_delight.vanilla_cake_slice": "Pala vaniljakakkua",
+  "item.abnormals_delight.chocolate_cake_slice": "Pala suklaakakkua",
+  "item.abnormals_delight.strawberry_cake_slice": "Pala mansikkakakkua",
+  "item.abnormals_delight.banana_cake_slice": "Pala banaanikakkua",
+  "item.abnormals_delight.mint_cake_slice": "Pala minttukakkua",
+  "item.abnormals_delight.adzuki_cake_slice": "Pala adsukikakkua",
+  "item.abnormals_delight.yucca_gateau_slice": "Pala jukkaleivosta",
+
+  "tooltip.caverns_and_chasms.afflicting": "Piina",
+  "tooltip.caverns_and_chasms.slowing": "Hidastus",
+
+  "itemGroup.abnormals_delight": "Farmer's Delight"
+}
