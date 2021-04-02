@@ -7,6 +7,7 @@ license = "https://github.com/team-abnormals/abnormals-delight/blob/main/LICENSE
     modId = "abnormals_delight"
     version = "${file.jarVersion}"
     logoFile = "logo.png"
+    itemIcon = "abnormals_delight:strawberry_cake_slice"
     authors = "Team Abnormals"
     credits = "bageldotjpg"
     displayName = "Abnormals Delight"
