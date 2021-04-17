@@ -19,7 +19,8 @@
 
   "item.abnormals_delight.seared_venison": "Venado braseado",
   "item.abnormals_delight.passionfruit_glazed_duck": "Pato a la maracuyá",
-  "item.abnormals_delight.dune_platter": "Aperitivos de dunas",
+  "item.abnormals_delight.dune_platter": "Platillos de duna",
+  "item.abnormals_delight.escargot": "Escargot",
 
   "item.abnormals_delight.silver_knife": "Cuchillo de plata",
   "item.abnormals_delight.necromium_knife": "Cuchillo de necronio",
@@ -28,8 +29,10 @@
   "item.abnormals_delight.cooked_duck_fillet": "Filete de pato asado",
   "item.abnormals_delight.venison_shanks": "Patas de venado crudas",
   "item.abnormals_delight.cooked_venison_shanks": "Patas de venado asadas",
-  "item.abnormals_delight.pike_slice": "Lonja de lucio cruda",
-  "item.abnormals_delight.cooked_pike_slice": "Lonja de lucio asada",
+  "item.abnormals_delight.pike_slice": "Rebanada de lucio cruda",
+  "item.abnormals_delight.cooked_pike_slice": "Rebanada de lucio asada",
+  "item.abnormals_delight.perch_slice": "Rebanada de perca cruda",
+  "item.abnormals_delight.cooked_perch_slice": "Rebanada de perca asada",
 
   "item.abnormals_delight.vanilla_cake_slice": "Porción de pastel de vainilla",
   "item.abnormals_delight.chocolate_cake_slice": "Porción de pastel de chocolate",
