@@ -8,6 +8,7 @@ license = "https://github.com/team-abnormals/abnormals-delight/blob/main/LICENSE
     version = "${file.jarVersion}"
     logoFile = "logo.png"
     itemIcon = "abnormals_delight:strawberry_cake_slice"
+    configBackground = "minecraft:textures/block/bricks.png"
     authors = "Team Abnormals"
     credits = "bageldotjpg"
     displayName = "Abnormals Delight"
