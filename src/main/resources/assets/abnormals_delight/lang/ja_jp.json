@@ -1,0 +1,46 @@
+{
+  "block.abnormals_delight.rosewood_pantry": "ローズウッドの食品庫",
+  "block.abnormals_delight.morado_pantry": "モラドの食品庫",
+  "block.abnormals_delight.yucca_pantry": "ユッカの食品庫",
+  "block.abnormals_delight.kousa_pantry": "ヤマボウシの食品庫",
+  "block.abnormals_delight.aspen_pantry": "ヤマナラシの食品庫",
+  "block.abnormals_delight.grimwood_pantry": "グリムウッドの食品庫",
+
+  "block.abnormals_delight.maple_pantry": "カエデの食品庫",
+
+  "block.abnormals_delight.poise_pantry": "ポイズの食品庫",
+
+  "block.abnormals_delight.willow_pantry": "ヤナギの食品庫",
+  "block.abnormals_delight.cherry_pantry": "サクラの食品庫",
+  "block.abnormals_delight.wisteria_pantry": "フジの食品庫",
+
+  "block.abnormals_delight.driftwood_pantry": "流木の食品庫",
+  "block.abnormals_delight.river_pantry": "リバーの食品庫",
+
+  "item.abnormals_delight.seared_venison": "鹿のソテー",
+  "item.abnormals_delight.passionfruit_glazed_duck": "カモのパッションフルーツソース",
+  "item.abnormals_delight.dune_platter": "砂丘の大皿",
+  "item.abnormals_delight.escargot": "エスカルゴ",
+
+  "item.abnormals_delight.silver_knife": "銀のナイフ",
+  "item.abnormals_delight.necromium_knife": "ネクロミウムのナイフ",
+
+  "item.abnormals_delight.duck_fillet": "生のカモの切り身",
+  "item.abnormals_delight.cooked_duck_fillet": "焼いたカモの切り身",
+  "item.abnormals_delight.venison_shanks": "生の鹿のすね肉",
+  "item.abnormals_delight.cooked_venison_shanks": "焼いた鹿のすね肉",
+  "item.abnormals_delight.pike_slice": "生のパイクの刺身",
+  "item.abnormals_delight.cooked_pike_slice": "焼いたパイクの刺身",
+  "item.abnormals_delight.perch_slice": "生のスズキの刺身",
+  "item.abnormals_delight.cooked_perch_slice": "焼いたスズキの刺身",
+
+  "item.abnormals_delight.vanilla_cake_slice": "一切れのバニラケーキ",
+  "item.abnormals_delight.chocolate_cake_slice": "一切れのチョコレートケーキ",
+  "item.abnormals_delight.strawberry_cake_slice": "一切れのストロベリーケーキ",
+  "item.abnormals_delight.banana_cake_slice": "一切れのバナナケーキ",
+  "item.abnormals_delight.mint_cake_slice": "一切れのミントケーキ",
+  "item.abnormals_delight.adzuki_cake_slice": "一切れの小豆ケーキ",
+  "item.abnormals_delight.yucca_gateau_slice": "一切れのユッカケーキ",
+
+  "itemGroup.abnormals_delight": "Farmer's Delight"
+}
