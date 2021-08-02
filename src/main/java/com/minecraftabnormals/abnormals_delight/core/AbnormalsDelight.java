@@ -1,5 +1,6 @@
 package com.minecraftabnormals.abnormals_delight.core;
 
+import com.minecraftabnormals.abnormals_core.core.util.DataUtil;
 import com.minecraftabnormals.abnormals_core.core.util.registry.RegistryHelper;
 import com.minecraftabnormals.abnormals_delight.core.other.ADCompat;
 import com.minecraftabnormals.abnormals_delight.core.registry.ADModifications;
@@ -35,6 +36,7 @@ public class AbnormalsDelight {
 		});
 
 		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ADConfig.COMMON_SPEC);
+		DataUtil.registerConfigCondition(AbnormalsDelight.MOD_ID, ADConfig.COMMON);
 	}
 
 	private void commonSetup(FMLCommonSetupEvent event) {

@@ -1,5 +1,6 @@
 package com.minecraftabnormals.abnormals_delight.core;
 
+import com.minecraftabnormals.abnormals_core.core.annotations.ConfigKey;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -9,6 +10,8 @@ import org.apache.commons.lang3.tuple.Pair;
 public class ADConfig {
 
 	public static class Common {
+
+		@ConfigKey("replace_fd_item_group")
 		public final ConfigValue<Boolean> replaceFDItemGroup;
 
 		Common(ForgeConfigSpec.Builder builder) {
