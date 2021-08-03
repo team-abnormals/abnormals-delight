@@ -20,20 +20,20 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class NecromiumKnifeItem extends AbnormalsKnifeItem {
-	public static final IItemTier NECROMIUM = new AbnormalsItemTier(4, 2251, 9.0F, 3.0F, 12, () -> Ingredient.fromItems(ForgeRegistries.ITEMS.getValue(new ResourceLocation("caverns_and_chasms", "necromium_ingot"))));
+	public static final IItemTier NECROMIUM = new AbnormalsItemTier(4, 2251, 9.0F, 3.0F, 12, () -> Ingredient.of(ForgeRegistries.ITEMS.getValue(new ResourceLocation("caverns_and_chasms", "necromium_ingot"))));
 
 	public NecromiumKnifeItem() {
-		super(NECROMIUM, new Item.Properties().isImmuneToFire());
+		super(NECROMIUM, new Item.Properties().fireResistant());
 	}
 
 	@Override
-	public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-		target.addPotionEffect(new EffectInstance(Effects.SLOWNESS, 60, 1));
-		return super.hitEntity(stack, target, attacker);
+	public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+		target.addEffect(new EffectInstance(Effects.MOVEMENT_SLOWDOWN, 60, 1));
+		return super.hurtEnemy(stack, target, attacker);
 	}
 
 	@Override
-	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new TranslationTextComponent("tooltip.caverns_and_chasms.slowing").mergeStyle(TextFormatting.GRAY));
+	public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+		tooltip.add(new TranslationTextComponent("tooltip.caverns_and_chasms.slowing").withStyle(TextFormatting.GRAY));
 	}
 }

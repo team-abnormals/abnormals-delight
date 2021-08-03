@@ -13,11 +13,11 @@ public class AbnormalsKnifeItem extends KnifeItem {
 	private static final TargetedItemGroupFiller FILLER = new TargetedItemGroupFiller(ModItems.GOLDEN_KNIFE);
 
 	public AbnormalsKnifeItem(IItemTier tier, Properties properties) {
-		super(tier, 1, -1.8F, ModList.get().isLoaded("caverns_and_chasms") ? properties.group(ItemGroup.COMBAT) : properties);
+		super(tier, 1, -1.8F, ModList.get().isLoaded("caverns_and_chasms") ? properties.tab(ItemGroup.TAB_COMBAT) : properties);
 	}
 
 	@Override
-	public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> items) {
+	public void fillItemCategory(ItemGroup group, NonNullList<ItemStack> items) {
 		FILLER.fillItem(this, group, items);
 	}
 }

@@ -33,19 +33,19 @@ public class ADModifications {
 	 */
 	public static void replaceItemGroups() {
 		if (ADConfig.COMMON.replaceFDItemGroup.get()) {
-			ItemGroup.COMBAT.setRelevantEnchantmentTypes(DataUtil.add(ItemGroup.COMBAT.getRelevantEnchantmentTypes(), ModEnchantments.KNIFE));
+			ItemGroup.TAB_COMBAT.setEnchantmentCategories(DataUtil.add(ItemGroup.TAB_COMBAT.getEnchantmentCategories(), ModEnchantments.KNIFE));
 			for (Item item : ForgeRegistries.ITEMS.getValues()) {
 				if (item.getRegistryName().getNamespace().equals(FarmersDelight.MODID)) {
-					if (item.isFood()) setItemGroup(item, ItemGroup.FOOD);
-					else if (item instanceof KnifeItem) setItemGroup(item, ItemGroup.COMBAT);
-					else if (MATERIALS.contains(item)) setItemGroup(item, ItemGroup.MATERIALS);
-					else if (DECORATIONS.contains(item)) setItemGroup(item, ItemGroup.DECORATIONS);
-					else if (BUILDING_BLOCKS.contains(item)) setItemGroup(item, ItemGroup.BUILDING_BLOCKS);
-					else if (FOOD.contains(item)) setItemGroup(item, ItemGroup.FOOD);
+					if (item.isEdible()) setItemGroup(item, ItemGroup.TAB_FOOD);
+					else if (item instanceof KnifeItem) setItemGroup(item, ItemGroup.TAB_COMBAT);
+					else if (MATERIALS.contains(item)) setItemGroup(item, ItemGroup.TAB_MATERIALS);
+					else if (DECORATIONS.contains(item)) setItemGroup(item, ItemGroup.TAB_DECORATIONS);
+					else if (BUILDING_BLOCKS.contains(item)) setItemGroup(item, ItemGroup.TAB_BUILDING_BLOCKS);
+					else if (FOOD.contains(item)) setItemGroup(item, ItemGroup.TAB_FOOD);
 					else if (item instanceof BlockItem) {
 						Block block = ((BlockItem) item).getBlock();
 						if (block instanceof PantryBlock || block instanceof WildPatchBlock || block instanceof WildRiceBlock) {
-							setItemGroup(item, ItemGroup.DECORATIONS);
+							setItemGroup(item, ItemGroup.TAB_DECORATIONS);
 						}
 					}
 				}
@@ -57,7 +57,7 @@ public class ADModifications {
 					setItemGroup(item, group);
 				}
 
-				if (item.getRegistryName().getNamespace().equals(AbnormalsDelight.MOD_ID) && item.getGroup() != null) {
+				if (item.getRegistryName().getNamespace().equals(AbnormalsDelight.MOD_ID) && item.getItemCategory() != null) {
 					setItemGroup(item, group);
 				}
 			}

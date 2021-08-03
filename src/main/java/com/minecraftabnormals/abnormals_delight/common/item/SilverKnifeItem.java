@@ -20,22 +20,22 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class SilverKnifeItem extends AbnormalsKnifeItem {
-	public static final IItemTier SILVER = new AbnormalsItemTier(0, 111, 7.0F, 0.0F, 17, () -> Ingredient.fromItems(ForgeRegistries.ITEMS.getValue(new ResourceLocation("caverns_and_chasms", "silver_ingot"))));
+	public static final IItemTier SILVER = new AbnormalsItemTier(0, 111, 7.0F, 0.0F, 17, () -> Ingredient.of(ForgeRegistries.ITEMS.getValue(new ResourceLocation("caverns_and_chasms", "silver_ingot"))));
 
 	public SilverKnifeItem() {
 		super(SILVER, new Item.Properties());
 	}
 
 	@Override
-	public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+	public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
 		Effect affliction = ForgeRegistries.POTIONS.getValue(new ResourceLocation("caverns_and_chasms", "affliction"));
-		if (affliction != null && target.isEntityUndead())
-			target.addPotionEffect(new EffectInstance(affliction, 60));
-		return super.hitEntity(stack, target, attacker);
+		if (affliction != null && target.isInvertedHealAndHarm())
+			target.addEffect(new EffectInstance(affliction, 60));
+		return super.hurtEnemy(stack, target, attacker);
 	}
 
 	@Override
-	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new TranslationTextComponent("tooltip.caverns_and_chasms.afflicting").mergeStyle(TextFormatting.GRAY));
+	public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+		tooltip.add(new TranslationTextComponent("tooltip.caverns_and_chasms.afflicting").withStyle(TextFormatting.GRAY));
 	}
 }

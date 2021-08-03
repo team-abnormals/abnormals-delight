@@ -16,10 +16,10 @@ public class ADItemSubRegistryHelper extends ItemSubRegistryHelper {
 	}
 
 	public RegistryObject<Item> createCompatConsumableItem(String name, Item.Properties properties, ItemGroup group, String... modIds) {
-		return this.deferredRegister.register(name, () -> new ConsumableItem(properties.group(areModsLoaded(modIds) ? group : null)));
+		return this.deferredRegister.register(name, () -> new ConsumableItem(properties.tab(areModsLoaded(modIds) ? group : null)));
 	}
 
 	public RegistryObject<Item> createCompatContainerConsumableItem(String name, ResourceLocation item, Item.Properties properties, ItemGroup group, String... modIds) {
-		return this.deferredRegister.register(name, () -> new CompatConsumableItem(item, properties.group(areModsLoaded(modIds) ? group : null)));
+		return this.deferredRegister.register(name, () -> new CompatConsumableItem(item, properties.tab(areModsLoaded(modIds) ? group : null)));
 	}
 }

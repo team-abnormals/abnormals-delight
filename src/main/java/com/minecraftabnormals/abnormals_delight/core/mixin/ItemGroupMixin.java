@@ -12,7 +12,7 @@ public abstract class ItemGroupMixin {
 
 	@Inject(at = @At("HEAD"), method = "addGroupSafe", cancellable = true, remap = false)
 	private static void addGroupSafe(int index, ItemGroup newGroup, CallbackInfoReturnable<Integer> cir) {
-		if (newGroup.tabLabel.equals(FarmersDelight.MODID)) {
+		if (newGroup.langId.equals(FarmersDelight.MODID)) {
 			cir.cancel();
 		}
 	}

@@ -18,28 +18,28 @@ public class CakeSliceItem extends Item {
 	public Supplier<EffectInstance> effect;
 
 	public CakeSliceItem(String modid, Supplier<EffectInstance> effect, Properties properties, ItemGroup group) {
-		super(ModList.get().isLoaded(modid) ? properties.group(group) : properties);
+		super(ModList.get().isLoaded(modid) ? properties.tab(group) : properties);
 		this.effect = effect;
 	}
 
-	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, LivingEntity entityLiving) {
-		if (!worldIn.isRemote && effect != null && effect.get().getPotion() != null)
-			entityLiving.addPotionEffect(new EffectInstance(effect.get().getPotion(), effect.get().getDuration(), effect.get().getAmplifier()));
+	public ItemStack finishUsingItem(ItemStack stack, World worldIn, LivingEntity entityLiving) {
+		if (!worldIn.isClientSide && effect != null && effect.get().getEffect() != null)
+			entityLiving.addEffect(new EffectInstance(effect.get().getEffect(), effect.get().getDuration(), effect.get().getAmplifier()));
 		if (this == ADItems.STRAWBERRY_CAKE_SLICE.get())
 			applyHealing(1.0F, worldIn, entityLiving);
-		return super.onItemUseFinish(stack, worldIn, entityLiving);
+		return super.finishUsingItem(stack, worldIn, entityLiving);
 	}
 
 	public static void applyHealing(float healAmount, IWorld world, LivingEntity entity) {
 		entity.heal(healAmount);
-		Random rand = entity.getRNG();
-		if (world.isRemote()) {
+		Random rand = entity.getRandom();
+		if (world.isClientSide()) {
 			int times = 2 * Math.round(healAmount);
 			for (int i = 0; i < times; ++i) {
 				double d0 = rand.nextGaussian() * 0.02D;
 				double d1 = rand.nextGaussian() * 0.02D;
 				double d2 = rand.nextGaussian() * 0.02D;
-				world.addParticle(ParticleTypes.HEART, entity.getPosXRandom(1.0D), entity.getPosYRandom() + 0.5D, entity.getPosZRandom(1.0D), d0, d1, d2);
+				world.addParticle(ParticleTypes.HEART, entity.getRandomX(1.0D), entity.getRandomY() + 0.5D, entity.getRandomZ(1.0D), d0, d1, d2);
 			}
 		}
 	}
