@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "neapolitan:adzuki_stew",
+      "required": false
+    }
+  ]
+}

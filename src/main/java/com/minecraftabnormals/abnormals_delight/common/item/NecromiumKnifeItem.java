@@ -1,6 +1,7 @@
 package com.minecraftabnormals.abnormals_delight.common.item;
 
 import com.minecraftabnormals.abnormals_core.core.api.AbnormalsItemTier;
+import com.minecraftabnormals.abnormals_delight.core.other.ADCompat;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.IItemTier;
@@ -14,13 +15,14 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
 public class NecromiumKnifeItem extends AbnormalsKnifeItem {
-	public static final IItemTier NECROMIUM = new AbnormalsItemTier(4, 2251, 9.0F, 3.0F, 12, () -> Ingredient.of(ForgeRegistries.ITEMS.getValue(new ResourceLocation("caverns_and_chasms", "necromium_ingot"))));
+	public static final IItemTier NECROMIUM = new AbnormalsItemTier(4, 2251, 9.0F, 3.0F, 12, () -> Ingredient.of(ForgeRegistries.ITEMS.getValue(new ResourceLocation(ADCompat.CAVERNS_AND_CHASMS, "necromium_ingot"))));
 
 	public NecromiumKnifeItem() {
 		super(NECROMIUM, new Item.Properties().fireResistant());
@@ -34,6 +36,7 @@ public class NecromiumKnifeItem extends AbnormalsKnifeItem {
 
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new TranslationTextComponent("tooltip.caverns_and_chasms.slowing").withStyle(TextFormatting.GRAY));
+		if (ModList.get().isLoaded(ADCompat.CAVERNS_AND_CHASMS))
+			tooltip.add(new TranslationTextComponent("tooltip.caverns_and_chasms.slowing").withStyle(TextFormatting.GRAY));
 	}
 }

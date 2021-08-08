@@ -70,12 +70,15 @@ minecraft {
     }
 }
 
+sourceSets.main.resources {
+    srcDir "src/generated/resources"
+}
+
 dependencies {
     minecraft "net.minecraftforge:forge:${project.minecraft}-${project.forge}"
     implementation fg.deobf("com.minecraftabnormals:abnormals-core:${project.minecraft}-${project.abnormalsCore}")
     implementation fg.deobf("curse.maven:farmers_delight-398521:${project.farmersDelight}")
-    implementation fg.deobf("curse.maven:configured-457570:3340535")
-    implementation fg.deobf("curse.maven:catalogue-459701:3335979")
+
     compileOnly fg.deobf("mezz.jei:jei-${project.minecraft}:${project.jei}:api")
     runtimeOnly fg.deobf("mezz.jei:jei-${project.minecraft}:${project.jei}")
 

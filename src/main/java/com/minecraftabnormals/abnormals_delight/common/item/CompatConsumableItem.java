@@ -7,7 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.items.ConsumableItem;
 
 public class CompatConsumableItem extends ConsumableItem {
-	private ResourceLocation compatItem;
+	private final ResourceLocation compatItem;
 
 	public CompatConsumableItem(ResourceLocation compatItem, Properties properties) {
 		super(properties);

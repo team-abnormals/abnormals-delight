@@ -1,6 +1,7 @@
 package com.minecraftabnormals.abnormals_delight.common.item;
 
 import com.minecraftabnormals.abnormals_core.core.api.AbnormalsItemTier;
+import com.minecraftabnormals.abnormals_delight.core.other.ADCompat;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.IItemTier;
@@ -14,13 +15,14 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
 public class SilverKnifeItem extends AbnormalsKnifeItem {
-	public static final IItemTier SILVER = new AbnormalsItemTier(0, 111, 7.0F, 0.0F, 17, () -> Ingredient.of(ForgeRegistries.ITEMS.getValue(new ResourceLocation("caverns_and_chasms", "silver_ingot"))));
+	public static final IItemTier SILVER = new AbnormalsItemTier(0, 111, 7.0F, 0.0F, 17, () -> Ingredient.of(ForgeRegistries.ITEMS.getValue(new ResourceLocation(ADCompat.CAVERNS_AND_CHASMS, "silver_ingot"))));
 
 	public SilverKnifeItem() {
 		super(SILVER, new Item.Properties());
@@ -36,6 +38,7 @@ public class SilverKnifeItem extends AbnormalsKnifeItem {
 
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(new TranslationTextComponent("tooltip.caverns_and_chasms.afflicting").withStyle(TextFormatting.GRAY));
+		if (ModList.get().isLoaded(ADCompat.CAVERNS_AND_CHASMS))
+			tooltip.add(new TranslationTextComponent("tooltip.caverns_and_chasms.afflicting").withStyle(TextFormatting.GRAY));
 	}
 }
