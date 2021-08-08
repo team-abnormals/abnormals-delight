@@ -23,6 +23,7 @@ public class AbnormalsDelight {
 
 	public AbnormalsDelight() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+		ModLoadingContext context = ModLoadingContext.get();
 
 		REGISTRY_HELPER.register(bus);
 		MinecraftForge.EVENT_BUS.register(this);
@@ -30,7 +31,7 @@ public class AbnormalsDelight {
 		bus.addListener(this::commonSetup);
 		bus.addListener(this::clientSetup);
 
-		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ADConfig.COMMON_SPEC);
+		context.registerConfig(ModConfig.Type.COMMON, ADConfig.COMMON_SPEC);
 	}
 
 	private void commonSetup(FMLCommonSetupEvent event) {
