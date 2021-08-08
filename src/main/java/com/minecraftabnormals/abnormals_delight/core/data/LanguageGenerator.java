@@ -48,13 +48,13 @@ public class LanguageGenerator extends LanguageProvider {
 		this.add(ADItems.DUNE_PLATTER.get());
 		this.add(ADItems.ESCARGOT.get());
 
-		this.add(ADItems.VANILLA_CAKE_SLICE.get());
-		this.add(ADItems.CHOCOLATE_CAKE_SLICE.get());
-		this.add(ADItems.STRAWBERRY_CAKE_SLICE.get());
-		this.add(ADItems.BANANA_CAKE_SLICE.get());
-		this.add(ADItems.MINT_CAKE_SLICE.get());
-		this.add(ADItems.ADZUKI_CAKE_SLICE.get());
-		this.add(ADItems.YUCCA_GATEAU_SLICE.get());
+		this.addSlice(ADItems.VANILLA_CAKE_SLICE.get());
+		this.addSlice(ADItems.CHOCOLATE_CAKE_SLICE.get());
+		this.addSlice(ADItems.STRAWBERRY_CAKE_SLICE.get());
+		this.addSlice(ADItems.BANANA_CAKE_SLICE.get());
+		this.addSlice(ADItems.MINT_CAKE_SLICE.get());
+		this.addSlice(ADItems.ADZUKI_CAKE_SLICE.get());
+		this.addSlice(ADItems.YUCCA_GATEAU_SLICE.get());
 
 		this.add("itemGroup.abnormals_delight", "Farmer's Delight");
 	}
@@ -76,5 +76,10 @@ public class LanguageGenerator extends LanguageProvider {
 
 	private String format(ResourceLocation registryName) {
 		return WordUtils.capitalizeFully(registryName.getPath().replace("_", " "));
+	}
+
+	private void addSlice(Item item) {
+		if (item.getRegistryName() != null)
+			this.add(item, "Slice of " + format(item.getRegistryName()).replace(" Slice", ""));
 	}
 }
