@@ -3,6 +3,7 @@ package com.minecraftabnormals.abnormals_delight.core.registry.util;
 import com.minecraftabnormals.abnormals_core.core.util.registry.ItemSubRegistryHelper;
 import com.minecraftabnormals.abnormals_core.core.util.registry.RegistryHelper;
 import com.minecraftabnormals.abnormals_delight.common.item.CompatConsumableItem;
+import com.minecraftabnormals.abnormals_delight.common.item.FastItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
@@ -17,6 +18,10 @@ public class ADItemSubRegistryHelper extends ItemSubRegistryHelper {
 
 	public RegistryObject<Item> createCompatConsumableItem(String name, Item.Properties properties, ItemGroup group, String... modIds) {
 		return this.deferredRegister.register(name, () -> new ConsumableItem(properties.tab(areModsLoaded(modIds) ? group : null)));
+	}
+
+	public RegistryObject<Item> createCompatFastItem(String name, Item.Properties properties, ItemGroup group, String... modIds) {
+		return this.deferredRegister.register(name, () -> new FastItem(properties.tab(areModsLoaded(modIds) ? group : null)));
 	}
 
 	public RegistryObject<Item> createCompatContainerConsumableItem(String name, ResourceLocation item, Item.Properties properties, ItemGroup group, String... modIds) {

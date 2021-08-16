@@ -34,6 +34,10 @@ public class LanguageGenerator extends LanguageProvider {
 		this.add(ADItems.SILVER_KNIFE.get());
 		this.add(ADItems.NECROMIUM_KNIFE.get());
 
+		this.add(ADItems.CHERRY_COOKIE.get());
+		this.add(ADItems.MULBERRY_COOKIE.get());
+		this.add(ADItems.MAPLE_COOKIE.get());
+
 		this.addRaw(ADItems.DUCK_FILLET.get());
 		this.add(ADItems.COOKED_DUCK_FILLET.get());
 		this.addRaw(ADItems.VENISON_SHANKS.get());

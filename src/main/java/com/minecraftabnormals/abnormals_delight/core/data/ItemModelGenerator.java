@@ -28,6 +28,10 @@ public class ItemModelGenerator extends ItemModelProvider {
 		this.generated(ADItems.PERCH_SLICE.get());
 		this.generated(ADItems.COOKED_PERCH_SLICE.get());
 
+		this.generated(ADItems.CHERRY_COOKIE.get());
+		this.generated(ADItems.MULBERRY_COOKIE.get());
+		this.generated(ADItems.MAPLE_COOKIE.get());
+
 		this.generated(ADItems.SEARED_VENISON.get());
 		this.generated(ADItems.PASSIONFRUIT_GLAZED_DUCK.get());
 		this.generated(ADItems.DUNE_PLATTER.get());

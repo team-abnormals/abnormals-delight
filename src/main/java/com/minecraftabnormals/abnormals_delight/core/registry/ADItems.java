@@ -35,6 +35,10 @@ public class ADItems {
 	public static final RegistryObject<Item> PERCH_SLICE = HELPER.createCompatItem(ADCompat.UPGRADE_AQUATIC, "perch_slice", new Item.Properties().food(Foods.PERCH_SLICE), ItemGroup.TAB_FOOD);
 	public static final RegistryObject<Item> COOKED_PERCH_SLICE = HELPER.createCompatItem(ADCompat.UPGRADE_AQUATIC, "cooked_perch_slice", new Item.Properties().food(Foods.COOKED_PERCH_SLICE), ItemGroup.TAB_FOOD);
 
+	public static final RegistryObject<Item> CHERRY_COOKIE = HELPER.createCompatFastItem("cherry_cookie", new Item.Properties().food(Foods.COOKIES), ItemGroup.TAB_FOOD, ADCompat.ENVIRONMENTAL);
+	public static final RegistryObject<Item> MULBERRY_COOKIE = HELPER.createCompatConsumableItem("mulberry_cookie", new Item.Properties().food(Foods.COOKIES), ItemGroup.TAB_FOOD, ADCompat.UPGRADE_AQUATIC);
+	public static final RegistryObject<Item> MAPLE_COOKIE = HELPER.createCompatConsumableItem("maple_cookie", new Item.Properties().food(Foods.COOKIES), ItemGroup.TAB_FOOD, ADCompat.AUTUMNITY);
+
 	public static final RegistryObject<Item> SEARED_VENISON = HELPER.createCompatConsumableItem("seared_venison", new Item.Properties().craftRemainder(Items.BOWL).food(Foods.SEARED_VENISON).stacksTo(16), ItemGroup.TAB_FOOD, ADCompat.ENVIRONMENTAL);
 	public static final RegistryObject<Item> PASSIONFRUIT_GLAZED_DUCK = HELPER.createCompatConsumableItem("passionfruit_glazed_duck", new Item.Properties().craftRemainder(Items.BOWL).food(Foods.PASSIONFRUIT_GLAZED_DUCK).stacksTo(16), ItemGroup.TAB_FOOD, ADCompat.ATMOSPHERIC, ADCompat.ENVIRONMENTAL);
 	public static final RegistryObject<Item> DUNE_PLATTER = HELPER.createCompatConsumableItem("dune_platter", new Item.Properties().craftRemainder(Items.BOWL).food(Foods.DUNE_PLATTER).stacksTo(16), ItemGroup.TAB_FOOD, ADCompat.ATMOSPHERIC);
@@ -64,6 +68,7 @@ public class ADItems {
 		public static final Food DUNE_PLATTER = (new Food.Builder()).nutrition(10).saturationMod(0.8F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 4800, 0), 1.0F).build();
 		public static final Food ESCARGOT = (new Food.Builder()).nutrition(8).saturationMod(0.5F).build();
 
+		public static final Food COOKIES = (new Food.Builder()).nutrition(2).saturationMod(0.1F).fast().build();
 		public static final Food CAKE_SLICE = (new Food.Builder()).nutrition(1).saturationMod(0.1F).fast().effect(() -> new EffectInstance(Effects.MOVEMENT_SPEED, 600, 0), 1.0F).build();
 		public static final Food YUCCA_GATEAU_SLICE = (new Food.Builder()).nutrition(1).saturationMod(0.0F).fast().effect(() -> new EffectInstance(Effects.MOVEMENT_SPEED, 600, 0), 1.0F).build();
 	}

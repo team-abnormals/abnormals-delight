@@ -29,6 +29,10 @@ public class ADCompat {
 	public static final ResourceLocation GLOWING_OBSIDIAN = new ResourceLocation(NETHER_EXTENSION, "glowing_obsidian");
 
 	public static void registerCompostables() {
+		DataUtil.registerCompostable(ADItems.CHERRY_COOKIE.get(), 0.85F);
+		DataUtil.registerCompostable(ADItems.MULBERRY_COOKIE.get(), 0.85F);
+		DataUtil.registerCompostable(ADItems.MAPLE_COOKIE.get(), 0.85F);
+
 		DataUtil.registerCompostable(ADItems.VANILLA_CAKE_SLICE.get(), 0.85F);
 		DataUtil.registerCompostable(ADItems.CHOCOLATE_CAKE_SLICE.get(), 0.85F);
 		DataUtil.registerCompostable(ADItems.STRAWBERRY_CAKE_SLICE.get(), 0.85F);

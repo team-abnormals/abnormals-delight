@@ -40,6 +40,7 @@ public class AbnormalsDelight {
 	private void commonSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
 			ADCompat.registerCompostables();
+			ADModifications.modifyCookies();
 			ADModifications.replaceItemGroups();
 		});
 	}
