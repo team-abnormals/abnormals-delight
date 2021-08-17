@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "autumnity:maple_syrup"
+      "item": "autumnity:syrup_bottle"
     },
     {
       "item": "minecraft:wheat"
