@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "upgrade_aquatic:flowering_rush"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  },
+  "result": [
+    {
+      "item": "minecraft:pink_dye",
+      "count": 2
+    },
+    {
+      "item": "minecraft:lime_dye"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "environmental:white_delphinium"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  },
+  "result": [
+    {
+      "item": "minecraft:white_dye",
+      "count": 2
+    },
+    {
+      "item": "minecraft:lime_dye"
+    }
+  ]
+}
