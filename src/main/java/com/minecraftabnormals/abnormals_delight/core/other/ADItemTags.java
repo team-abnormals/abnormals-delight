@@ -18,12 +18,12 @@ public class ADItemTags {
 	public static final ITag.INamedTag<Item> RAW_FISHES_PERCH = forgeTag("raw_fishes/perch");
 	public static final ITag.INamedTag<Item> RAW_FISHES_PIKE = forgeTag("raw_fishes/pike");
 
-	public static final ITag.INamedTag<Item> SNAIL_BREEDING_ITEMS = modTag(ADCompat.AUTUMNITY, "snail_breeding_items");
-	public static final ITag.INamedTag<Item> AFFLICTION_ITEMS = modTag(ADCompat.CAVERNS_AND_CHASMS, "affliction_items");
-	public static final ITag.INamedTag<Item> EXPERIENCE_BOOST_ITEMS = modTag(ADCompat.CAVERNS_AND_CHASMS, "experience_boost_items");
-	public static final ITag.INamedTag<Item> NECROMIUM_GEAR = modTag(ADCompat.CAVERNS_AND_CHASMS, "necromium_gear");
-	public static final ITag.INamedTag<Item> SILVER_GEAR = modTag(ADCompat.CAVERNS_AND_CHASMS, "silver_gear");
-	public static final ITag.INamedTag<Item> NETHERITE_GEAR = modTag(ADCompat.NETHER_EXTENSION, "netherite_gear");
+	public static final ITag.INamedTag<Item> SNAIL_BREEDING_ITEMS = modTag(ADConstants.AUTUMNITY, "snail_breeding_items");
+	public static final ITag.INamedTag<Item> AFFLICTION_ITEMS = modTag(ADConstants.CAVERNS_AND_CHASMS, "affliction_items");
+	public static final ITag.INamedTag<Item> EXPERIENCE_BOOST_ITEMS = modTag(ADConstants.CAVERNS_AND_CHASMS, "experience_boost_items");
+	public static final ITag.INamedTag<Item> NECROMIUM_GEAR = modTag(ADConstants.CAVERNS_AND_CHASMS, "necromium_gear");
+	public static final ITag.INamedTag<Item> SILVER_GEAR = modTag(ADConstants.CAVERNS_AND_CHASMS, "silver_gear");
+	public static final ITag.INamedTag<Item> NETHERITE_GEAR = modTag(ADConstants.NETHER_EXTENSION, "netherite_gear");
 
 	private static ITag.INamedTag<Item> tag(String name) {
 		return ItemTags.bind(AbnormalsDelight.MOD_ID + ":" + name);

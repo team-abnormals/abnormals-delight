@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableSet;
 import com.minecraftabnormals.abnormals_core.core.util.DataUtil;
 import com.minecraftabnormals.abnormals_delight.core.ADConfig;
 import com.minecraftabnormals.abnormals_delight.core.AbnormalsDelight;
-import com.minecraftabnormals.abnormals_delight.core.other.ADCompat;
+import com.minecraftabnormals.abnormals_delight.core.other.ADConstants;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -30,8 +30,13 @@ public class ADModifications {
 	private static final Set<Item> BUILDING_BLOCKS = ImmutableSet.of(ModItems.ORGANIC_COMPOST.get(), ModItems.RICH_SOIL.get(), ModItems.TATAMI.get());
 	private static final Set<Item> FOOD = ImmutableSet.of(ModItems.HORSE_FEED.get(), ModItems.ROAST_CHICKEN_BLOCK.get(), ModItems.STUFFED_PUMPKIN_BLOCK.get(), ModItems.HONEY_GLAZED_HAM_BLOCK.get(), ModItems.APPLE_PIE.get(), ModItems.SWEET_BERRY_CHEESECAKE.get(), ModItems.CHOCOLATE_PIE.get(), ModItems.HOT_COCOA.get(), ModItems.MILK_BOTTLE.get());
 
+	public static void makeModifications() {
+		modifyCookies();
+		replaceItemGroups();
+	}
+
 	public static void modifyCookies() {
-		if (!ModList.get().isLoaded(ADCompat.NEAPOLITAN)) {
+		if (!ModList.get().isLoaded(ADConstants.NEAPOLITAN)) {
 			ADItems.Foods.COOKIES.saturationModifier = 0.3F;
 			Foods.COOKIES.saturationModifier = 0.3F;
 		}

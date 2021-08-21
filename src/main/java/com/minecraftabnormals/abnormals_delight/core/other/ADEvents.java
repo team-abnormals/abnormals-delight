@@ -29,12 +29,12 @@ import java.util.function.Supplier;
 public class ADEvents {
 	public static final IntegerProperty BITES = IntegerProperty.create("bites", 0, 9);
 	public static final HashMap<ResourceLocation, Supplier<Item>> CAKES = Util.make(Maps.newHashMap(), (list) -> {
-		list.put(ADCompat.VANILLA_CAKE, ADItems.VANILLA_CAKE_SLICE);
-		list.put(ADCompat.CHOCOLATE_CAKE, ADItems.CHOCOLATE_CAKE_SLICE);
-		list.put(ADCompat.STRAWBERRY_CAKE, ADItems.STRAWBERRY_CAKE_SLICE);
-		list.put(ADCompat.BANANA_CAKE, ADItems.BANANA_CAKE_SLICE);
-		list.put(ADCompat.MINT_CAKE, ADItems.MINT_CAKE_SLICE);
-		list.put(ADCompat.ADZUKI_CAKE, ADItems.ADZUKI_CAKE_SLICE);
+		list.put(ADConstants.VANILLA_CAKE, ADItems.VANILLA_CAKE_SLICE);
+		list.put(ADConstants.CHOCOLATE_CAKE, ADItems.CHOCOLATE_CAKE_SLICE);
+		list.put(ADConstants.STRAWBERRY_CAKE, ADItems.STRAWBERRY_CAKE_SLICE);
+		list.put(ADConstants.BANANA_CAKE, ADItems.BANANA_CAKE_SLICE);
+		list.put(ADConstants.MINT_CAKE, ADItems.MINT_CAKE_SLICE);
+		list.put(ADConstants.ADZUKI_CAKE, ADItems.ADZUKI_CAKE_SLICE);
 	});
 
 	@SubscribeEvent
@@ -61,7 +61,7 @@ public class ADEvents {
 				event.setCanceled(true);
 			}
 
-			if (name.equals(ADCompat.YUCCA_GATEAU)) {
+			if (name.equals(ADConstants.YUCCA_GATEAU)) {
 				int bites = state.getValue(BITES);
 				if (bites < 9) {
 					world.setBlock(pos, state.setValue(BITES, bites + 1), 3);
@@ -88,7 +88,7 @@ public class ADEvents {
 			if (CAKES.containsKey(name)) {
 				Supplier<Item> item = CAKES.get(name);
 				loot.add(new ItemStack(item.get(), 7 - state.getValue(CakeBlock.BITES)));
-			} else if (name.equals(ADCompat.YUCCA_GATEAU)) {
+			} else if (name.equals(ADConstants.YUCCA_GATEAU)) {
 				loot.add(new ItemStack(ADItems.YUCCA_GATEAU_SLICE.get(), 10 - state.getValue(BITES)));
 			}
 

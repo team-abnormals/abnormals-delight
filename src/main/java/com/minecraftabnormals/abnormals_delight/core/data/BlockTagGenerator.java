@@ -1,7 +1,7 @@
 package com.minecraftabnormals.abnormals_delight.core.data;
 
 import com.minecraftabnormals.abnormals_delight.core.AbnormalsDelight;
-import com.minecraftabnormals.abnormals_delight.core.other.ADCompat;
+import com.minecraftabnormals.abnormals_delight.core.other.ADConstants;
 import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -15,7 +15,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 
 	@Override
 	protected void addTags() {
-		this.tag(ModTags.HEAT_SOURCES).addOptional(ADCompat.GLOWING_OBSIDIAN);
-		this.tag(ModTags.TRAY_HEAT_SOURCES).addOptionalTag(ADCompat.BRAZIERS);
+		this.tag(ModTags.HEAT_SOURCES).addOptional(ADConstants.GLOWING_OBSIDIAN);
+		this.tag(ModTags.TRAY_HEAT_SOURCES).addOptionalTag(ADConstants.BRAZIERS);
 	}
 }

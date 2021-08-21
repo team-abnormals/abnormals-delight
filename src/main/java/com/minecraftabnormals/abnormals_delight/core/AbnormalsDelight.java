@@ -3,6 +3,7 @@ package com.minecraftabnormals.abnormals_delight.core;
 import com.minecraftabnormals.abnormals_core.core.util.registry.RegistryHelper;
 import com.minecraftabnormals.abnormals_delight.core.data.*;
 import com.minecraftabnormals.abnormals_delight.core.other.ADCompat;
+import com.minecraftabnormals.abnormals_delight.core.other.ADConstants;
 import com.minecraftabnormals.abnormals_delight.core.registry.ADModifications;
 import com.minecraftabnormals.abnormals_delight.core.registry.util.ADItemSubRegistryHelper;
 import net.minecraft.data.DataGenerator;
@@ -39,9 +40,8 @@ public class AbnormalsDelight {
 
 	private void commonSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-			ADCompat.registerCompostables();
-			ADModifications.modifyCookies();
-			ADModifications.replaceItemGroups();
+			ADCompat.registerCompat();
+			ADModifications.makeModifications();
 		});
 	}
 
