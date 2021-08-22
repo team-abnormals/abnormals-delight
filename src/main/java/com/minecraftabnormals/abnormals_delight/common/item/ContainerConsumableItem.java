@@ -6,10 +6,10 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.items.ConsumableItem;
 
-public class CompatConsumableItem extends ConsumableItem {
+public class ContainerConsumableItem extends ConsumableItem {
 	private final ResourceLocation compatItem;
 
-	public CompatConsumableItem(ResourceLocation compatItem, Properties properties) {
+	public ContainerConsumableItem(ResourceLocation compatItem, Properties properties) {
 		super(properties);
 		this.compatItem = compatItem;
 	}

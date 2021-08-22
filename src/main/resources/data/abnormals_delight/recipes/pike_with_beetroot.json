@@ -1,0 +1,27 @@
+{
+  "type": "farmersdelight:cooking",
+  "ingredients": [
+    {
+      "tag": "forge:raw_fishes/pike"
+    },
+    {
+      "item": "upgrade_aquatic:blue_pickerelweed"
+    },
+    {
+      "item": "upgrade_aquatic:purple_pickerelweed"
+    },
+    {
+      "item": "minecraft:beetroot"
+    }
+  ],
+  "result": {
+    "item": "abnormals_delight:pike_with_beetroot"
+  },
+  "cookingtime": 200,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "upgrade_aquatic"
+    }
+  ]
+}

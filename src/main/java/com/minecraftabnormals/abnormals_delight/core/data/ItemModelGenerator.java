@@ -6,7 +6,10 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import vectorwing.farmersdelight.FarmersDelight;
 
 public class ItemModelGenerator extends ItemModelProvider {
 
@@ -35,7 +38,17 @@ public class ItemModelGenerator extends ItemModelProvider {
 		this.generated(ADItems.SEARED_VENISON.get());
 		this.generated(ADItems.PASSIONFRUIT_GLAZED_DUCK.get());
 		this.generated(ADItems.DUNE_PLATTER.get());
+		this.generated(ADItems.DUCK_NOODLES.get());
+		this.generated(ADItems.PERCH_WITH_MUSHROOMS.get());
+		this.generated(ADItems.PIKE_WITH_BEETROOT.get());
+		this.generated(ADItems.VENISON_WITH_BAMBOO_SHOOTS.get());
+
 		this.generated(ADItems.ESCARGOT.get());
+		this.generated(ADItems.MAPLE_GLAZED_BACON.get());
+
+		this.mug(ADItems.CHERRY_CREAM_SODA.get());
+		this.mug(ADItems.PASSION_ALOE_NECTAR.get());
+		this.mug(ADItems.PICKERELWEED_JUICE.get());
 
 		this.generated(ADItems.VANILLA_CAKE_SLICE.get());
 		this.generated(ADItems.CHOCOLATE_CAKE_SLICE.get());
@@ -52,6 +65,12 @@ public class ItemModelGenerator extends ItemModelProvider {
 
 	private void handheld(IItemProvider item) {
 		this.model(item, "handheld");
+	}
+
+	private void mug(IItemProvider item) {
+		ResourceLocation name = item.asItem().getRegistryName();
+		if (name != null)
+			this.getBuilder(name.getPath()).parent(new UncheckedModelFile(new ResourceLocation(FarmersDelight.MODID, "item/mug"))).texture("layer0", new ResourceLocation(this.modid, "item/" + name.getPath()));
 	}
 
 	private void model(IItemProvider item, String parent) {

@@ -3,9 +3,9 @@ package com.minecraftabnormals.abnormals_delight.common.item;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class FastItem extends Item {
+public class UseTimeItem extends Item {
 
-	public FastItem(Properties properties) {
+	public UseTimeItem(Properties properties) {
 		super(properties);
 	}
 

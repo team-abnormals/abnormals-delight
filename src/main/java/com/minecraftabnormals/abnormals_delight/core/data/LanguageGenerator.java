@@ -34,10 +34,6 @@ public class LanguageGenerator extends LanguageProvider {
 		this.add(ADItems.SILVER_KNIFE.get());
 		this.add(ADItems.NECROMIUM_KNIFE.get());
 
-		this.add(ADItems.CHERRY_COOKIE.get());
-		this.add(ADItems.MULBERRY_COOKIE.get());
-		this.add(ADItems.MAPLE_COOKIE.get());
-
 		this.addRaw(ADItems.DUCK_FILLET.get());
 		this.add(ADItems.COOKED_DUCK_FILLET.get());
 		this.addRaw(ADItems.VENISON_SHANKS.get());
@@ -47,10 +43,24 @@ public class LanguageGenerator extends LanguageProvider {
 		this.addRaw(ADItems.PERCH_SLICE.get());
 		this.add(ADItems.COOKED_PERCH_SLICE.get());
 
+		this.add(ADItems.CHERRY_COOKIE.get());
+		this.add(ADItems.MULBERRY_COOKIE.get());
+		this.add(ADItems.MAPLE_COOKIE.get());
+
 		this.add(ADItems.SEARED_VENISON.get());
 		this.add(ADItems.PASSIONFRUIT_GLAZED_DUCK.get());
 		this.add(ADItems.DUNE_PLATTER.get());
+		this.add(ADItems.DUCK_NOODLES.get());
+		this.add(ADItems.PERCH_WITH_MUSHROOMS.get());
+		this.add(ADItems.PIKE_WITH_BEETROOT.get());
+		this.add(ADItems.VENISON_WITH_BAMBOO_SHOOTS.get());
+
 		this.add(ADItems.ESCARGOT.get());
+		this.add(ADItems.MAPLE_GLAZED_BACON.get());
+
+		this.add(ADItems.CHERRY_CREAM_SODA.get());
+		this.add(ADItems.PASSION_ALOE_NECTAR.get());
+		this.add(ADItems.PICKERELWEED_JUICE.get());
 
 		this.addSlice(ADItems.VANILLA_CAKE_SLICE.get());
 		this.addSlice(ADItems.CHOCOLATE_CAKE_SLICE.get());
@@ -79,7 +89,7 @@ public class LanguageGenerator extends LanguageProvider {
 	}
 
 	private String format(ResourceLocation registryName) {
-		return WordUtils.capitalizeFully(registryName.getPath().replace("_", " "));
+		return WordUtils.capitalizeFully(registryName.getPath().replace("_", " ")).replace("With", "with");
 	}
 
 	private void addSlice(Item item) {
