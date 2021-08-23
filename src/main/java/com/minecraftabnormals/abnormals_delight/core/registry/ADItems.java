@@ -70,8 +70,8 @@ public class ADItems {
 		public static final Food SEARED_VENISON = (new Food.Builder()).nutrition(12).saturationMod(0.9F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 2400, 0), 1.0F).build();
 		public static final Food PASSIONFRUIT_GLAZED_DUCK = (new Food.Builder()).nutrition(14).saturationMod(0.9F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 4800, 0), 1.0F).build();
 		public static final Food DUNE_PLATTER = (new Food.Builder()).nutrition(10).saturationMod(0.8F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 2400, 0), 1.0F).build();
-		public static final Food DUCK_NOODLES = (new Food.Builder()).nutrition(14).saturationMod(0.9F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 4800, 0), 1.0F).build();
-		public static final Food PERCH_WITH_MUSHROOMS = (new Food.Builder()).nutrition(12).saturationMod(0.8F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 4800, 0), 1.0F).build();
+		public static final Food DUCK_NOODLES = (new Food.Builder()).nutrition(12).saturationMod(0.8F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 4800, 0), 1.0F).build();
+		public static final Food PERCH_WITH_MUSHROOMS = (new Food.Builder()).nutrition(14).saturationMod(0.9F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 4800, 0), 1.0F).build();
 		public static final Food PIKE_WITH_BEETROOT = (new Food.Builder()).nutrition(9).saturationMod(0.7F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 1200, 0), 1.0F).build();
 		public static final Food VENISON_WITH_BAMBOO_SHOOTS = (new Food.Builder()).nutrition(11).saturationMod(0.9F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 2400, 0), 1.0F).build();
 
