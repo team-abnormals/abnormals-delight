@@ -57,6 +57,7 @@ public class LanguageGenerator extends LanguageProvider {
 
 		this.add(ADItems.ESCARGOT.get());
 		this.add(ADItems.MAPLE_GLAZED_BACON.get());
+		this.add(ADItems.SLABDISH.get());
 
 		this.add(ADItems.CHERRY_CREAM_SODA.get());
 		this.add(ADItems.PASSION_ALOE_NECTAR.get());
@@ -70,7 +71,8 @@ public class LanguageGenerator extends LanguageProvider {
 		this.addSlice(ADItems.ADZUKI_CAKE_SLICE.get());
 		this.addSlice(ADItems.YUCCA_GATEAU_SLICE.get());
 
-		this.add("itemGroup.abnormals_delight", "Farmer's Delight");
+		this.add("itemGroup." + AbnormalsDelight.MOD_ID, "Farmer's Delight");
+		this.add("tooltip." + AbnormalsDelight.MOD_ID + "tamed_slabfish.when_feeding", "When fed to a tamed Slabfish:");
 	}
 
 	private void add(Item item) {

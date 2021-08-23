@@ -21,6 +21,8 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 	@Override
 	protected void addTags() {
+		this.tag(ADItemTags.SLABDISH_INGREDIENTS).add(Items.LILY_PAD, Items.SEAGRASS, ModItems.RICE_PANICLE.get()).addOptional(ADConstants.DUCKWEED);
+
 		this.tag(ADItemTags.COOKED_DUCK).add(ADItems.COOKED_DUCK_FILLET.get());
 		this.tag(ADItemTags.COOKED_RABBIT).add(Items.COOKED_RABBIT);
 		this.tag(ADItemTags.COOKED_VENISON).add(ADItems.COOKED_VENISON_SHANKS.get());
@@ -47,6 +49,7 @@ public class ItemTagGenerator extends ItemTagsProvider {
 		this.tag(ADItemTags.EXPERIENCE_BOOST_ITEMS).add(ModItems.GOLDEN_KNIFE.get());
 		this.tag(ADItemTags.NECROMIUM_GEAR).add(ADItems.NECROMIUM_KNIFE.get());
 		this.tag(ADItemTags.SILVER_GEAR).add(ADItems.SILVER_KNIFE.get());
+		this.tag(ADItemTags.SLABFISH_FOOD).add(ADItems.SLABDISH.get());
 		this.tag(ADItemTags.NETHERITE_GEAR).add(ModItems.NETHERITE_KNIFE.get());
 	}
 }

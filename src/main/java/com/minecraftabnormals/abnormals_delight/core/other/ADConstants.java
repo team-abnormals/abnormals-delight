@@ -16,6 +16,7 @@ public class ADConstants {
 	// Items & Blocks
 	public static final ResourceLocation YUCCA_GATEAU = new ResourceLocation(ATMOSPHERIC, "yucca_gateau");
 	public static final ResourceLocation SNAIL_SHELL_PIECE = new ResourceLocation(ADConstants.AUTUMNITY, "snail_shell_piece");
+	public static final ResourceLocation DUCKWEED = new ResourceLocation(ENVIRONMENTAL, "duckweed");
 	public static final ResourceLocation ADZUKI_STEW = new ResourceLocation(NEAPOLITAN, "adzuki_stew");
 	public static final ResourceLocation VANILLA_CAKE = new ResourceLocation(NEAPOLITAN, "vanilla_cake");
 	public static final ResourceLocation CHOCOLATE_CAKE = new ResourceLocation(NEAPOLITAN, "chocolate_cake");
@@ -27,6 +28,9 @@ public class ADConstants {
 
 	// Tags
 	public static final ResourceLocation BRAZIERS = new ResourceLocation(CAVERNS_AND_CHASMS, "braziers");
+
+	// EntityTypes
+	public static final ResourceLocation SLABFISH = new ResourceLocation(ADConstants.ENVIRONMENTAL, "slabfish");
 
 	// Effects
 	public static final ResourceLocation PERSISTENCE = new ResourceLocation(ADConstants.ATMOSPHERIC, "persistence");

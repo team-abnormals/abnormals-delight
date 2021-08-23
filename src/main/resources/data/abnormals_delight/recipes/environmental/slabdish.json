@@ -1,0 +1,30 @@
+{
+  "type": "farmersdelight:cooking",
+  "ingredients": [
+    {
+      "tag": "forge:raw_fishes"
+    },
+    {
+      "item": "environmental:dianthus"
+    },
+    {
+      "item": "minecraft:bone_meal"
+    },
+    {
+      "tag": "abnormals_delight:slabdish_ingredients"
+    },
+    {
+      "tag": "abnormals_delight:slabdish_ingredients"
+    }
+  ],
+  "result": {
+    "item": "abnormals_delight:slabdish"
+  },
+  "cookingtime": 200,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "environmental"
+    }
+  ]
+}

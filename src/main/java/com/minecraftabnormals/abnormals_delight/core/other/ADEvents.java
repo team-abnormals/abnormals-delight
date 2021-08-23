@@ -2,15 +2,19 @@ package com.minecraftabnormals.abnormals_delight.core.other;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.minecraftabnormals.abnormals_delight.common.item.SlabdishItem;
 import com.minecraftabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.minecraftabnormals.abnormals_delight.core.registry.ADItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CakeBlock;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.EffectInstance;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
@@ -19,6 +23,8 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import vectorwing.farmersdelight.registry.ModParticleTypes;
+import vectorwing.farmersdelight.utils.MathUtils;
 import vectorwing.farmersdelight.utils.tags.ModTags;
 
 import java.util.HashMap;
@@ -96,6 +102,40 @@ public class ADEvents {
 				for (ItemStack stack : loot) {
 					Block.popResource((World) event.getWorld(), event.getPos(), stack);
 				}
+			}
+		}
+	}
+
+	@SubscribeEvent
+	public static void onSlabdishUse(PlayerInteractEvent.EntityInteract event) {
+		PlayerEntity player = event.getPlayer();
+		Entity target = event.getTarget();
+		ItemStack itemStack = event.getItemStack();
+
+		if (target instanceof TameableEntity && target.getType().getRegistryName().equals(ADConstants.SLABFISH)) {
+			TameableEntity entity = (TameableEntity) target;
+
+			if (entity.isAlive() && entity.isTame() && itemStack.getItem().equals(ADItems.SLABDISH.get())) {
+				entity.setHealth(entity.getMaxHealth());
+				for (EffectInstance effect : SlabdishItem.EFFECTS) {
+					entity.addEffect(new EffectInstance(effect));
+				}
+				entity.level.playSound(null, target.blockPosition(), SoundEvents.GENERIC_EAT, SoundCategory.PLAYERS, 0.8F, 0.8F);
+
+				for (int i = 0; i < 5; ++i) {
+					double d0 = MathUtils.RAND.nextGaussian() * 0.02D;
+					double d1 = MathUtils.RAND.nextGaussian() * 0.02D;
+					double d2 = MathUtils.RAND.nextGaussian() * 0.02D;
+					entity.level.addParticle(ModParticleTypes.STAR_PARTICLE.get(), entity.getRandomX(1.0D), entity.getRandomY() + 0.5D, entity.getRandomZ(1.0D), d0, d1, d2);
+				}
+
+				if (itemStack.getContainerItem() != ItemStack.EMPTY && !player.isCreative()) {
+					player.addItem(itemStack.getContainerItem());
+					itemStack.shrink(1);
+				}
+
+				event.setCancellationResult(ActionResultType.SUCCESS);
+				event.setCanceled(true);
 			}
 		}
 	}

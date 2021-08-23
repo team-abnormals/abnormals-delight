@@ -45,6 +45,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 
 		this.generated(ADItems.ESCARGOT.get());
 		this.generated(ADItems.MAPLE_GLAZED_BACON.get());
+		this.generated(ADItems.SLABDISH.get());
 
 		this.mug(ADItems.CHERRY_CREAM_SODA.get());
 		this.mug(ADItems.PASSION_ALOE_NECTAR.get());

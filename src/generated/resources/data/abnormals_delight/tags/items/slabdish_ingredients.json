@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:lily_pad",
+    "minecraft:seagrass",
+    "farmersdelight:rice_panicle",
+    {
+      "id": "environmental:duckweed",
+      "required": false
+    }
+  ]
+}

@@ -44,6 +44,7 @@ public class ADItems {
 
 	public static final RegistryObject<Item> MAPLE_GLAZED_BACON = HELPER.createCompatItem("maple_glazed_bacon", new Item.Properties().food(Foods.MAPLE_GLAZED_BACON), ItemGroup.TAB_FOOD, ADConstants.AUTUMNITY);
 	public static final RegistryObject<Item> ESCARGOT = HELPER.createCompatContainerConsumableItem("escargot", ADConstants.SNAIL_SHELL_PIECE, new Item.Properties().food(Foods.ESCARGOT).stacksTo(16), ItemGroup.TAB_FOOD, ADConstants.AUTUMNITY);
+	public static final RegistryObject<Item> SLABDISH = HELPER.createItem("slabdish", () -> new SlabdishItem(new Item.Properties().craftRemainder(Items.BOWL).food(Foods.SLABDISH).stacksTo(16)));
 
 	public static final RegistryObject<Item> CHERRY_CREAM_SODA = HELPER.createItem("cherry_cream_soda", () -> new EffectDrinkItem(Effects.SLOW_FALLING, new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16), ADConstants.ENVIRONMENTAL));
 	public static final RegistryObject<Item> PASSION_ALOE_NECTAR = HELPER.createItem("passion_aloe_nectar", () -> new NectarItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
@@ -75,7 +76,8 @@ public class ADItems {
 		public static final Food PIKE_WITH_BEETROOT = (new Food.Builder()).nutrition(9).saturationMod(0.7F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 1200, 0), 1.0F).build();
 		public static final Food VENISON_WITH_BAMBOO_SHOOTS = (new Food.Builder()).nutrition(11).saturationMod(0.9F).effect(() -> new EffectInstance(ModEffects.NOURISHED.get(), 2400, 0), 1.0F).build();
 
-		public static final Food MAPLE_GLAZED_BACON = (new Food.Builder()).nutrition(6).saturationMod(0.8F).effect(() -> new EffectInstance(Effects.DAMAGE_RESISTANCE, 100), 1.0F).build();
+		public static final Food SLABDISH = (new Food.Builder()).nutrition(4).saturationMod(0.2F).effect(() -> new EffectInstance(Effects.CONFUSION, 200), 1.0F).build();
+		public static final Food MAPLE_GLAZED_BACON = (new Food.Builder()).nutrition(6).saturationMod(0.8F).meat().effect(() -> new EffectInstance(Effects.DAMAGE_RESISTANCE, 200), 1.0F).build();
 		public static final Food ESCARGOT = (new Food.Builder()).nutrition(8).saturationMod(0.5F).build();
 
 		public static final Food COOKIES = (new Food.Builder()).nutrition(2).saturationMod(0.1F).fast().build();

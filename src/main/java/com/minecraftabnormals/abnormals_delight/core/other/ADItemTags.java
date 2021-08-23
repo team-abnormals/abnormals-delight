@@ -6,6 +6,8 @@ import net.minecraft.tags.ITag;
 import net.minecraft.tags.ItemTags;
 
 public class ADItemTags {
+	public static final ITag.INamedTag<Item> SLABDISH_INGREDIENTS = tag("slabdish_ingredients");
+
 	public static final ITag.INamedTag<Item> COOKED_DUCK = forgeTag("cooked_duck");
 	public static final ITag.INamedTag<Item> COOKED_RABBIT = forgeTag("cooked_rabbit");
 	public static final ITag.INamedTag<Item> COOKED_VENISON = forgeTag("cooked_venison");
@@ -23,6 +25,7 @@ public class ADItemTags {
 	public static final ITag.INamedTag<Item> EXPERIENCE_BOOST_ITEMS = modTag(ADConstants.CAVERNS_AND_CHASMS, "experience_boost_items");
 	public static final ITag.INamedTag<Item> NECROMIUM_GEAR = modTag(ADConstants.CAVERNS_AND_CHASMS, "necromium_gear");
 	public static final ITag.INamedTag<Item> SILVER_GEAR = modTag(ADConstants.CAVERNS_AND_CHASMS, "silver_gear");
+	public static final ITag.INamedTag<Item> SLABFISH_FOOD = modTag(ADConstants.ENVIRONMENTAL, "slabfish_food");
 	public static final ITag.INamedTag<Item> NETHERITE_GEAR = modTag(ADConstants.NETHER_EXTENSION, "netherite_gear");
 
 	private static ITag.INamedTag<Item> tag(String name) {
