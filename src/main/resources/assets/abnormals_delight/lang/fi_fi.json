@@ -15,10 +15,6 @@
 
   "item.abnormals_delight.silver_knife": "Hopeaveitsi",
   "item.abnormals_delight.necromium_knife": "Nekromiumveitsi",
-  
-  "item.abnormals_delight.cherry_cookie": "Kirsikkakeksi",
-  "item.abnormals_delight.mulberry_cookie": "Mulperikeksi",
-  "item.abnormals_delight.maple_cookie": "Vaahterakeksi",
 
   "item.abnormals_delight.duck_fillet": "Raaka sorsan filee",
   "item.abnormals_delight.cooked_duck_fillet": "Paistettu sorsan filee",
@@ -29,10 +25,25 @@
   "item.abnormals_delight.perch_slice": "Raaka ahvenviipale",
   "item.abnormals_delight.cooked_perch_slice": "Paistettu ahvenviipale",
 
+  "item.abnormals_delight.cherry_cookie": "Kirsikkakeksi",
+  "item.abnormals_delight.mulberry_cookie": "Mulperikeksi",
+  "item.abnormals_delight.maple_cookie": "Vaahterakeksi",
+
   "item.abnormals_delight.seared_venison": "Ruskistettu peuranliha",
   "item.abnormals_delight.passionfruit_glazed_duck": "Passionhedelmällä kuorrutettu sorsa",
   "item.abnormals_delight.dune_platter": "Dyyniateria",
+  "item.abnormals_delight.duck_noodles": "Sorsanuudelit",
+  "item.abnormals_delight.perch_with_mushrooms": "Ahven ja sienet",
+  "item.abnormals_delight.pike_with_beetroot": "Hauki ja punajuuri",
+  "item.abnormals_delight.venison_with_bamboo_shoots": "Peuranliha ja bambunversot",
+
+  "item.abnormals_delight.maple_glazed_bacon": "Siirapilla kuorrutettu pekoni",
   "item.abnormals_delight.escargot": "Escargot",
+  "item.abnormals_delight.slabdish": "Laattarehu",
+
+  "item.abnormals_delight.cherry_cream_soda": "Kirsikkavaniljalimonadi",
+  "item.abnormals_delight.passion_aloe_nectar": "Passioaaloemehu",
+  "item.abnormals_delight.pickerelweed_juice": "Herttasoikkomehu",
 
   "item.abnormals_delight.vanilla_cake_slice": "Pala vaniljakakkua",
   "item.abnormals_delight.chocolate_cake_slice": "Pala suklaakakkua",
@@ -42,8 +53,6 @@
   "item.abnormals_delight.adzuki_cake_slice": "Pala adsukikakkua",
   "item.abnormals_delight.yucca_gateau_slice": "Pala jukkaleivosta",
 
-  "tooltip.caverns_and_chasms.afflicting": "Piina",
-  "tooltip.caverns_and_chasms.slowing": "Hidastus",
-
-  "itemGroup.abnormals_delight": "Farmer's Delight"
+  "itemGroup.abnormals_delight": "Farmer's Delight",
+  "tooltip.abnormals_delighttamed_slabfish.when_feeding": "Syötettäessä kesytetylle laattakalalle:"
 }
