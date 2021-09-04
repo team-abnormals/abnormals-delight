@@ -31,10 +31,10 @@
   "item.abnormals_delight.mulberry_cookie": "Biscotto alla mora",
   "item.abnormals_delight.necromium_knife": "Coltello di necromio",
   "item.abnormals_delight.passion_aloe_nectar": "Passion Aloe Nectar",
-  "item.abnormals_delight.passionfruit_glazed_duck": "Anatra glassata alPassionfruit Glazed Duck",
-  "item.abnormals_delight.perch_slice": "Fetta di Raw Perch Slice",
-  "item.abnormals_delight.perch_with_mushrooms": "Perch with Mushrooms con funghi",
-  "item.abnormals_delight.pickerelweed_juice": "Pickerelweed Juice",
+  "item.abnormals_delight.passionfruit_glazed_duck": "Anatra glassata al frutto della passione",
+  "item.abnormals_delight.perch_slice": "Fetta di perca cruda",
+  "item.abnormals_delight.perch_with_mushrooms": "Perca con funghi",
+  "item.abnormals_delight.pickerelweed_juice": "Succo di pontederia",
   "item.abnormals_delight.pike_slice": "Fetta di luccio crudo",
   "item.abnormals_delight.pike_with_beetroot": "Luccio con barbabietole",
   "item.abnormals_delight.seared_venison": "Seared Venison",
@@ -46,5 +46,5 @@
   "item.abnormals_delight.venison_with_bamboo_shoots": "Venison with Bamboo Shoots",
   "item.abnormals_delight.yucca_gateau_slice": "Fetta di torta di yucca",
   "itemGroup.abnormals_delight": "Farmer's Delight",
-  "tooltip.abnormals_delighttamed_slabfish.when_feeding": "When fed to a tamed Slabfish:"
+  "tooltip.abnormals_delighttamed_slabfish.when_feeding": "Quando alimentato a un slabfish addomesticato:"
 }
