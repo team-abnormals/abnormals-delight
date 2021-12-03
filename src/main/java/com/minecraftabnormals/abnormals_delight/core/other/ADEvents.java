@@ -126,7 +126,7 @@ public class ADEvents {
 					double d0 = MathUtils.RAND.nextGaussian() * 0.02D;
 					double d1 = MathUtils.RAND.nextGaussian() * 0.02D;
 					double d2 = MathUtils.RAND.nextGaussian() * 0.02D;
-					entity.level.addParticle(ModParticleTypes.STAR_PARTICLE.get(), entity.getRandomX(1.0D), entity.getRandomY() + 0.5D, entity.getRandomZ(1.0D), d0, d1, d2);
+					entity.level.addParticle(ModParticleTypes.STAR.get(), entity.getRandomX(1.0D), entity.getRandomY() + 0.5D, entity.getRandomZ(1.0D), d0, d1, d2);
 				}
 
 				if (itemStack.getContainerItem() != ItemStack.EMPTY && !player.isCreative()) {

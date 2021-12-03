@@ -42,6 +42,6 @@ license = "https://github.com/team-abnormals/abnormals-delight/blob/main/LICENSE
 [[dependencies.abnormals_delight]]
     modId = "farmersdelight"
     mandatory = true
-    versionRange = "[0.4.5,)"
+    versionRange = "[0.5.1,)"
     ordering = "AFTER"
     side = "BOTH"
