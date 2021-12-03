@@ -72,7 +72,7 @@ public class LanguageGenerator extends LanguageProvider {
 		this.addSlice(ADItems.YUCCA_GATEAU_SLICE.get());
 
 		this.add("itemGroup." + AbnormalsDelight.MOD_ID, "Farmer's Delight");
-		this.add("tooltip." + AbnormalsDelight.MOD_ID + "tamed_slabfish.when_feeding", "When fed to a tamed Slabfish:");
+		this.add("tooltip." + AbnormalsDelight.MOD_ID + ".slabdish.when_feeding", "When fed to a tamed Slabfish:");
 	}
 
 	private void add(Item item) {
