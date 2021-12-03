@@ -39,7 +39,7 @@ public class SlabdishItem extends ConsumableItem {
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		IFormattableTextComponent whenFeeding = new TranslationTextComponent("tooltip." + AbnormalsDelight.MOD_ID + "tamed_slabfish.when_feeding");
+		IFormattableTextComponent whenFeeding = new TranslationTextComponent("tooltip." + AbnormalsDelight.MOD_ID + ".slabdish.when_feeding");
 		tooltip.add(whenFeeding.withStyle(TextFormatting.GRAY));
 
 		for (EffectInstance effectinstance : EFFECTS) {
