@@ -26,7 +26,8 @@
   "container": {
     "item": "autumnity:large_pumpkin_slice"
   },
-  "cookingtime": 200,
+  "experience": 0.5,
+  "cookingtime": 400,
   "conditions": [
     {
       "type": "forge:mod_loaded",

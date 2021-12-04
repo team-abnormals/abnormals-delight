@@ -17,6 +17,8 @@
   "result": {
     "item": "neapolitan:adzuki_curry"
   },
+  "experience": 0.35,
+  "cookingtime": 200,
   "container": {
     "item": "minecraft:bowl"
   },

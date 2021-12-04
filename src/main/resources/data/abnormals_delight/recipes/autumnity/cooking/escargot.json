@@ -17,6 +17,8 @@
   "result": {
     "item": "abnormals_delight:escargot"
   },
+  "experience": 0.35,
+  "cookingtime": 200,
   "container": {
     "item": "autumnity:snail_shell_piece"
   },

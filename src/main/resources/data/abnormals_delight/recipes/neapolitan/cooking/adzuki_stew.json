@@ -20,6 +20,8 @@
   "result": {
     "item": "neapolitan:adzuki_stew"
   },
+  "experience": 0.35,
+  "cookingtime": 200,
   "container": {
     "item": "minecraft:bowl"
   },
