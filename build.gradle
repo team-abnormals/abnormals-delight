@@ -4,7 +4,7 @@ buildscript {
         maven { url = "https://repo.spongepowered.org/repository/maven-public/" }
     }
     dependencies {
-        classpath group: "net.minecraftforge.gradle", name: "ForgeGradle", version: "4.1.+", changing: true
+        classpath group: "net.minecraftforge.gradle", name: "ForgeGradle", version: "5.1.+", changing: true
         classpath group: "org.spongepowered", name: "mixingradle", version: "0.7-SNAPSHOT"
     }
 }
@@ -13,6 +13,7 @@ apply plugin: "net.minecraftforge.gradle"
 apply plugin: "eclipse"
 apply plugin: "maven-publish"
 apply plugin: "org.spongepowered.mixin"
+apply from: 'https://raw.githubusercontent.com/SizableShrimp/Forge-Class-Remapper/main/classremapper.gradle'
 
 mixin {
     add sourceSets.main, "${project.modId}.refmap.json"
@@ -22,10 +23,10 @@ version = "${project.minecraft}-${project.modVersion}"
 group = "com.minecraftabnormals"
 archivesBaseName = project.modId
 
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = "1.8"
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
-    mappings channel: "official", version: "1.16.5"
+    mappings channel: "official", version: "1.18"
     accessTransformer = file("src/main/resources/META-INF/accesstransformer.cfg")
     runs {
         client {
@@ -76,19 +77,19 @@ sourceSets.main.resources {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${project.minecraft}-${project.forge}"
-    implementation fg.deobf("com.minecraftabnormals:abnormals-core:${project.minecraft}-${project.abnormalsCore}")
+    implementation fg.deobf("com.teamabnormals:blueprint:${project.minecraft}-${project.blueprint}")
     implementation fg.deobf("curse.maven:farmers_delight-398521:${project.farmersDelight}")
 
-    runtimeOnly fg.deobf("curse.maven:atmospheric-362393:3249309")
-    runtimeOnly fg.deobf("curse.maven:autumnity-365045:3295700")
-    runtimeOnly fg.deobf("curse.maven:environmental-388992:3416597")
-    runtimeOnly fg.deobf("curse.maven:neapolitan-382016:3221772")
-    runtimeOnly fg.deobf("curse.maven:upgrade_aquatic-326895:3249419")
+//    runtimeOnly fg.deobf("curse.maven:atmospheric-362393:3249309")
+//    runtimeOnly fg.deobf("curse.maven:autumnity-365045:3295700")
+//    runtimeOnly fg.deobf("curse.maven:environmental-388992:3416597")
+//    runtimeOnly fg.deobf("curse.maven:neapolitan-382016:3221772")
+//    runtimeOnly fg.deobf("curse.maven:upgrade_aquatic-326895:3249419")
 
-    compileOnly fg.deobf("mezz.jei:jei-${project.minecraft}:${project.jei}:api")
-    runtimeOnly fg.deobf("mezz.jei:jei-${project.minecraft}:${project.jei}")
+    compileOnly fg.deobf("mezz.jei:jei-1.18:${project.jei}:api")
+    runtimeOnly fg.deobf("mezz.jei:jei-1.18:${project.jei}")
 
-    annotationProcessor "org.spongepowered:mixin:0.8.2:processor"
+    annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 }
 
 repositories {

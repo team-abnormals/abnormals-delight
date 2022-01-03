@@ -1,21 +1,21 @@
 {
-  "block.abnormals_delight.rosewood_pantry": "ローズウッドの食品庫",
-  "block.abnormals_delight.morado_pantry": "モラドの食品庫",
-  "block.abnormals_delight.yucca_pantry": "ユッカの食品庫",
-  "block.abnormals_delight.kousa_pantry": "ヤマボウシの食品庫",
-  "block.abnormals_delight.aspen_pantry": "ヤマナラシの食品庫",
-  "block.abnormals_delight.grimwood_pantry": "グリムウッドの食品庫",
+  "block.abnormals_delight.rosewood_cabinet": "ローズウッドの食品庫",
+  "block.abnormals_delight.morado_cabinet": "モラドの食品庫",
+  "block.abnormals_delight.yucca_cabinet": "ユッカの食品庫",
+  "block.abnormals_delight.kousa_cabinet": "ヤマボウシの食品庫",
+  "block.abnormals_delight.aspen_cabinet": "ヤマナラシの食品庫",
+  "block.abnormals_delight.grimwood_cabinet": "グリムウッドの食品庫",
 
-  "block.abnormals_delight.maple_pantry": "カエデの食品庫",
+  "block.abnormals_delight.maple_cabinet": "カエデの食品庫",
 
-  "block.abnormals_delight.poise_pantry": "ポイズの食品庫",
+  "block.abnormals_delight.poise_cabinet": "ポイズの食品庫",
 
-  "block.abnormals_delight.willow_pantry": "ヤナギの食品庫",
-  "block.abnormals_delight.cherry_pantry": "サクラの食品庫",
-  "block.abnormals_delight.wisteria_pantry": "フジの食品庫",
+  "block.abnormals_delight.willow_cabinet": "ヤナギの食品庫",
+  "block.abnormals_delight.cherry_cabinet": "サクラの食品庫",
+  "block.abnormals_delight.wisteria_cabinet": "フジの食品庫",
 
-  "block.abnormals_delight.driftwood_pantry": "流木の食品庫",
-  "block.abnormals_delight.river_pantry": "リバーの食品庫",
+  "block.abnormals_delight.driftwood_cabinet": "流木の食品庫",
+  "block.abnormals_delight.river_cabinet": "リバーの食品庫",
 
   "item.abnormals_delight.seared_venison": "鹿のソテー",
   "item.abnormals_delight.passionfruit_glazed_duck": "カモのパッションフルーツソース",

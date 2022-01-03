@@ -1,21 +1,21 @@
 {
-  "block.abnormals_delight.rosewood_pantry": "Палисандровая кладовая",
-  "block.abnormals_delight.morado_pantry": "Морадовая кладовая",
-  "block.abnormals_delight.yucca_pantry": "Юкковая кладовая",
-  "block.abnormals_delight.kousa_pantry": "Кизиловая кладовая",
-  "block.abnormals_delight.aspen_pantry": "Осиновая кладовая",
-  "block.abnormals_delight.grimwood_pantry": "Кладовая из мрачного дерева",
+  "block.abnormals_delight.rosewood_cabinet": "Палисандровая кладовая",
+  "block.abnormals_delight.morado_cabinet": "Морадовая кладовая",
+  "block.abnormals_delight.yucca_cabinet": "Юкковая кладовая",
+  "block.abnormals_delight.kousa_cabinet": "Кизиловая кладовая",
+  "block.abnormals_delight.aspen_cabinet": "Осиновая кладовая",
+  "block.abnormals_delight.grimwood_cabinet": "Кладовая из мрачного дерева",
 
-  "block.abnormals_delight.maple_pantry": "Кленовая кладовая",
+  "block.abnormals_delight.maple_cabinet": "Кленовая кладовая",
 
-  "block.abnormals_delight.poise_pantry": "Пуазовая кладовая",
+  "block.abnormals_delight.poise_cabinet": "Пуазовая кладовая",
 
-  "block.abnormals_delight.willow_pantry": "Ивовая кладовая",
-  "block.abnormals_delight.cherry_pantry": "Вишнёвая кладовая",
-  "block.abnormals_delight.wisteria_pantry": "Глициниевая кладовая",
+  "block.abnormals_delight.willow_cabinet": "Ивовая кладовая",
+  "block.abnormals_delight.cherry_cabinet": "Вишнёвая кладовая",
+  "block.abnormals_delight.wisteria_cabinet": "Глициниевая кладовая",
 
-  "block.abnormals_delight.driftwood_pantry": "Плавниковая кладовая",
-  "block.abnormals_delight.river_pantry": "Кладовая из речного дерева",
+  "block.abnormals_delight.driftwood_cabinet": "Плавниковая кладовая",
+  "block.abnormals_delight.river_cabinet": "Кладовая из речного дерева",
 
   "item.abnormals_delight.seared_venison": "Жареная оленина",
   "item.abnormals_delight.passionfruit_glazed_duck": "Утка в глазури из маракуйи",

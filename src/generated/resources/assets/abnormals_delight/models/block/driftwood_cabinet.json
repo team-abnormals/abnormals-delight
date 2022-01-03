@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "side": "abnormals_delight:block/driftwood_cabinet_side",
+    "front": "abnormals_delight:block/driftwood_cabinet_front",
+    "top": "abnormals_delight:block/driftwood_cabinet_top"
+  }
+}
