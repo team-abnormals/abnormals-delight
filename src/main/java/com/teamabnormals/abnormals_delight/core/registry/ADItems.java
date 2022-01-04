@@ -49,12 +49,12 @@ public class ADItems {
 	public static final RegistryObject<Item> PASSION_ALOE_NECTAR = HELPER.createItem("passion_aloe_nectar", () -> new NectarItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
 	public static final RegistryObject<Item> PICKERELWEED_JUICE = HELPER.createItem("pickerelweed_juice", () -> new EffectDrinkItem(MobEffects.WATER_BREATHING, new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16), ADConstants.UPGRADE_AQUATIC));
 
-	public static final RegistryObject<Item> VANILLA_CAKE_SLICE = HELPER.createItem("vanilla_cake_slice", () -> new CakeSliceItem(ADConstants.NEAPOLITAN, ADConstants.VANILLA_SCENT, 100, new Item.Properties().food(FoodValues.CAKE_SLICE), CreativeModeTab.TAB_FOOD));
-	public static final RegistryObject<Item> CHOCOLATE_CAKE_SLICE = HELPER.createItem("chocolate_cake_slice", () -> new CakeSliceItem(ADConstants.NEAPOLITAN, ADConstants.SUGAR_RUSH, 200, new Item.Properties().food(FoodValues.CAKE_SLICE), CreativeModeTab.TAB_FOOD));
-	public static final RegistryObject<Item> STRAWBERRY_CAKE_SLICE = HELPER.createItem("strawberry_cake_slice", () -> new CakeSliceItem(ADConstants.NEAPOLITAN, new Item.Properties().food(FoodValues.CAKE_SLICE), CreativeModeTab.TAB_FOOD));
-	public static final RegistryObject<Item> BANANA_CAKE_SLICE = HELPER.createItem("banana_cake_slice", () -> new CakeSliceItem(ADConstants.NEAPOLITAN, ADConstants.AGILITY, 200, new Item.Properties().food(FoodValues.CAKE_SLICE), CreativeModeTab.TAB_FOOD));
-	public static final RegistryObject<Item> MINT_CAKE_SLICE = HELPER.createItem("mint_cake_slice", () -> new CakeSliceItem(ADConstants.NEAPOLITAN, ADConstants.BERSERKING, 300, new Item.Properties().food(FoodValues.CAKE_SLICE), CreativeModeTab.TAB_FOOD));
-	public static final RegistryObject<Item> ADZUKI_CAKE_SLICE = HELPER.createItem("adzuki_cake_slice", () -> new CakeSliceItem(ADConstants.NEAPOLITAN, ADConstants.HARMONY, 200, new Item.Properties().food(FoodValues.CAKE_SLICE), CreativeModeTab.TAB_FOOD));
+	public static final RegistryObject<Item> VANILLA_CAKE_SLICE = HELPER.createItem("vanilla_cake_slice", () -> new CakeSliceItem(ADConstants.NEAPOLITAN, ADConstants.VANILLA_SCENT, 100, new Item.Properties().food(ADFoods.CAKE_SLICE), CreativeModeTab.TAB_FOOD));
+	public static final RegistryObject<Item> CHOCOLATE_CAKE_SLICE = HELPER.createItem("chocolate_cake_slice", () -> new CakeSliceItem(ADConstants.NEAPOLITAN, ADConstants.SUGAR_RUSH, 200, new Item.Properties().food(ADFoods.CAKE_SLICE), CreativeModeTab.TAB_FOOD));
+	public static final RegistryObject<Item> STRAWBERRY_CAKE_SLICE = HELPER.createItem("strawberry_cake_slice", () -> new CakeSliceItem(ADConstants.NEAPOLITAN, new Item.Properties().food(ADFoods.CAKE_SLICE), CreativeModeTab.TAB_FOOD));
+	public static final RegistryObject<Item> BANANA_CAKE_SLICE = HELPER.createItem("banana_cake_slice", () -> new CakeSliceItem(ADConstants.NEAPOLITAN, ADConstants.AGILITY, 200, new Item.Properties().food(ADFoods.CAKE_SLICE), CreativeModeTab.TAB_FOOD));
+	public static final RegistryObject<Item> MINT_CAKE_SLICE = HELPER.createItem("mint_cake_slice", () -> new CakeSliceItem(ADConstants.NEAPOLITAN, ADConstants.BERSERKING, 300, new Item.Properties().food(ADFoods.CAKE_SLICE), CreativeModeTab.TAB_FOOD));
+	public static final RegistryObject<Item> ADZUKI_CAKE_SLICE = HELPER.createItem("adzuki_cake_slice", () -> new CakeSliceItem(ADConstants.NEAPOLITAN, ADConstants.HARMONY, 200, new Item.Properties().food(ADFoods.CAKE_SLICE), CreativeModeTab.TAB_FOOD));
 	public static final RegistryObject<Item> YUCCA_GATEAU_SLICE = HELPER.createItem("yucca_gateau_slice", () -> new CakeSliceItem(ADConstants.ATMOSPHERIC, ADConstants.PERSISTENCE, 320, new Item.Properties().food(ADFoods.YUCCA_GATEAU_SLICE), CreativeModeTab.TAB_FOOD));
 
 	public static class ADFoods {
@@ -79,6 +79,7 @@ public class ADItems {
 		public static final FoodProperties MAPLE_GLAZED_BACON = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.8F).meat().effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, FoodValues.BURST_EFFECT), 1.0F).build();
 		public static final FoodProperties ESCARGOT = (new FoodProperties.Builder()).nutrition(8).saturationMod(0.5F).build();
 
+		public static final FoodProperties CAKE_SLICE = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.1F).fast().effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 0), 1.0F).build();
 		public static final FoodProperties YUCCA_GATEAU_SLICE = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.0F).fast().effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 0), 1.0F).build();
 	}
 }
