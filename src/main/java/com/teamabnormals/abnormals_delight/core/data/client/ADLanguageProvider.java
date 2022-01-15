@@ -11,8 +11,9 @@ import net.minecraftforge.common.data.LanguageProvider;
 import org.apache.commons.lang3.text.WordUtils;
 
 public class ADLanguageProvider extends LanguageProvider {
-	public ADLanguageProvider(DataGenerator gen) {
-		super(gen, AbnormalsDelight.MOD_ID, "en_us");
+
+	public ADLanguageProvider(DataGenerator generator) {
+		super(generator, AbnormalsDelight.MOD_ID, "en_us");
 	}
 
 	@Override

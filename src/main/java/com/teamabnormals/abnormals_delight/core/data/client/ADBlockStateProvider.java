@@ -6,15 +6,17 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraftforge.client.model.generators.*;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.ModelFile.ExistingModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 public class ADBlockStateProvider extends BlockStateProvider {
 
-	public ADBlockStateProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-		super(generator, AbnormalsDelight.MOD_ID, existingFileHelper);
+	public ADBlockStateProvider(DataGenerator generator, ExistingFileHelper fileHelper) {
+		super(generator, AbnormalsDelight.MOD_ID, fileHelper);
 	}
 
 	@Override

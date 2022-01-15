@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import vectorwing.farmersdelight.FarmersDelight;
 
 @Mixin(CreativeModeTab.class)
-public abstract class ItemGroupMixin {
+public abstract class CreativeModeTabMixin {
 
 	@Inject(at = @At("HEAD"), method = "addGroupSafe", cancellable = true, remap = false)
 	private static void addGroupSafe(int index, CreativeModeTab newGroup, CallbackInfoReturnable<Integer> cir) {

@@ -1,13 +1,20 @@
 package com.teamabnormals.abnormals_delight.core.registry;
 
-import com.teamabnormals.abnormals_delight.common.item.*;
+import com.teamabnormals.abnormals_delight.common.item.CakeSliceItem;
+import com.teamabnormals.abnormals_delight.common.item.EffectDrinkItem;
+import com.teamabnormals.abnormals_delight.common.item.NecromiumKnifeItem;
+import com.teamabnormals.abnormals_delight.common.item.NectarItem;
+import com.teamabnormals.abnormals_delight.common.item.SilverKnifeItem;
+import com.teamabnormals.abnormals_delight.common.item.SlabdishItem;
 import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.teamabnormals.abnormals_delight.core.other.ADConstants;
 import com.teamabnormals.abnormals_delight.core.registry.util.ADItemSubRegistryHelper;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.FoodValues;

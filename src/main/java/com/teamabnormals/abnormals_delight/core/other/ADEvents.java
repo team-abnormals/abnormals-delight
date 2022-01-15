@@ -111,7 +111,7 @@ public class ADEvents {
 	}
 
 	@SubscribeEvent
-	public static void onSlabdishUse(PlayerInteractEvent.EntityInteract event) {
+	public static void onEntityInteract(PlayerInteractEvent.EntityInteract event) {
 		Player player = event.getPlayer();
 		Entity target = event.getTarget();
 		ItemStack itemStack = event.getItemStack();

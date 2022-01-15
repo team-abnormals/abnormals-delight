@@ -1,6 +1,8 @@
 package com.teamabnormals.abnormals_delight.core;
 
-import com.teamabnormals.abnormals_delight.core.data.client.*;
+import com.teamabnormals.abnormals_delight.core.data.client.ADBlockStateProvider;
+import com.teamabnormals.abnormals_delight.core.data.client.ADItemModelProvider;
+import com.teamabnormals.abnormals_delight.core.data.client.ADLanguageProvider;
 import com.teamabnormals.abnormals_delight.core.data.server.ADLootTableProvider;
 import com.teamabnormals.abnormals_delight.core.data.server.tags.ADBlockTagsProvider;
 import com.teamabnormals.abnormals_delight.core.data.server.tags.ADItemTagsProvider;
@@ -48,20 +50,20 @@ public class AbnormalsDelight {
 	}
 
 	private void dataSetup(GatherDataEvent event) {
-		DataGenerator dataGenerator = event.getGenerator();
-		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+		DataGenerator generator = event.getGenerator();
+		ExistingFileHelper fileHelper = event.getExistingFileHelper();
 
 		if (event.includeServer()) {
-			ADBlockTagsProvider blockTagGen = new ADBlockTagsProvider(dataGenerator, existingFileHelper);
-			dataGenerator.addProvider(blockTagGen);
-			dataGenerator.addProvider(new ADItemTagsProvider(dataGenerator, blockTagGen, existingFileHelper));
-			dataGenerator.addProvider(new ADLootTableProvider(dataGenerator));
+			ADBlockTagsProvider blockTagsProvider = new ADBlockTagsProvider(generator, fileHelper);
+			generator.addProvider(blockTagsProvider);
+			generator.addProvider(new ADItemTagsProvider(generator, blockTagsProvider, fileHelper));
+			generator.addProvider(new ADLootTableProvider(generator));
 		}
 
 		if (event.includeClient()) {
-			dataGenerator.addProvider(new ADBlockStateProvider(dataGenerator, existingFileHelper));
-			dataGenerator.addProvider(new ADItemModelProvider(dataGenerator, existingFileHelper));
-			dataGenerator.addProvider(new ADLanguageProvider(dataGenerator));
+			generator.addProvider(new ADBlockStateProvider(generator, fileHelper));
+			generator.addProvider(new ADItemModelProvider(generator, fileHelper));
+			generator.addProvider(new ADLanguageProvider(generator));
 		}
 	}
 }

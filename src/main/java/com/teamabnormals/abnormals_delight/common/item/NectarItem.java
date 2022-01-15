@@ -1,8 +1,12 @@
 package com.teamabnormals.abnormals_delight.common.item;
 
 import com.teamabnormals.abnormals_delight.core.other.ADConstants;
-import net.minecraft.network.chat.*;
-import net.minecraft.world.effect.*;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffectUtil;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
