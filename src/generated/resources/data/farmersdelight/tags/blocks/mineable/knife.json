@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "neapolitan:vanilla_cake",
+      "required": false
+    },
+    {
+      "id": "neapolitan:chocolate_cake",
+      "required": false
+    },
+    {
+      "id": "neapolitan:strawberry_cake",
+      "required": false
+    },
+    {
+      "id": "neapolitan:banana_cake",
+      "required": false
+    },
+    {
+      "id": "neapolitan:mint_cake",
+      "required": false
+    },
+    {
+      "id": "neapolitan:adzuki_cake",
+      "required": false
+    }
+  ]
+}
