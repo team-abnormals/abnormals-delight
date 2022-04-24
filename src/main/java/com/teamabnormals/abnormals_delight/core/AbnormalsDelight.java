@@ -25,9 +25,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 @Mod(AbnormalsDelight.MOD_ID)
 public class AbnormalsDelight {
 	public static final String MOD_ID = "abnormals_delight";
-	public static final RegistryHelper REGISTRY_HELPER = RegistryHelper.create(MOD_ID, helper -> {
-		helper.putSubHelper(ForgeRegistries.ITEMS, new ADItemSubRegistryHelper(helper));
-	});
+	public static final RegistryHelper REGISTRY_HELPER = RegistryHelper.create(MOD_ID, helper -> helper.putSubHelper(ForgeRegistries.ITEMS, new ADItemSubRegistryHelper(helper)));
 
 	public AbnormalsDelight() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();

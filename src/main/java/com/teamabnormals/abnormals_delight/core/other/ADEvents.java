@@ -55,7 +55,7 @@ public class ADEvents {
 		ItemStack tool = event.getPlayer().getItemInHand(event.getHand());
 		ResourceLocation name = state.getBlock().getRegistryName();
 
-		if (ModTags.KNIVES.contains(tool.getItem()) && name != null) {
+		if (tool.is(ModTags.KNIVES) && name != null) {
 			if (CAKES.containsKey(name)) {
 				Supplier<Item> item = CAKES.get(name);
 				int bites = state.getValue(CakeBlock.BITES);

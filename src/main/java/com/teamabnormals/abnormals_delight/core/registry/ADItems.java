@@ -82,8 +82,8 @@ public class ADItems {
 		public static final FoodProperties PIKE_WITH_BEETROOT = (new FoodProperties.Builder()).nutrition(9).saturationMod(0.7F).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), FoodValues.SHORT_DURATION, 0), 1.0F).build();
 		public static final FoodProperties VENISON_WITH_BAMBOO_SHOOTS = (new FoodProperties.Builder()).nutrition(11).saturationMod(0.9F).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), FoodValues.LONG_DURATION, 0), 1.0F).build();
 
-		public static final FoodProperties SLABDISH = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.2F).effect(() -> new MobEffectInstance(MobEffects.CONFUSION, FoodValues.BURST_EFFECT), 1.0F).build();
-		public static final FoodProperties MAPLE_GLAZED_BACON = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.8F).meat().effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, FoodValues.BURST_EFFECT), 1.0F).build();
+		public static final FoodProperties SLABDISH = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.2F).effect(() -> new MobEffectInstance(MobEffects.CONFUSION, FoodValues.BRIEF_DURATION), 1.0F).build();
+		public static final FoodProperties MAPLE_GLAZED_BACON = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.8F).meat().effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, FoodValues.BRIEF_DURATION), 1.0F).build();
 		public static final FoodProperties ESCARGOT = (new FoodProperties.Builder()).nutrition(8).saturationMod(0.5F).build();
 
 		public static final FoodProperties CAKE_SLICE = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.1F).fast().effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 0), 1.0F).build();
