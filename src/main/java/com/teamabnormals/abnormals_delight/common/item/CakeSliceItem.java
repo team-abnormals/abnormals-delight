@@ -17,7 +17,7 @@ import java.util.Random;
 import java.util.function.Supplier;
 
 public class CakeSliceItem extends Item {
-	public Supplier<MobEffectInstance> effect;
+	private final Supplier<MobEffectInstance> effect;
 
 	public CakeSliceItem(String modid, ResourceLocation effectName, int duration, Properties properties, CreativeModeTab group) {
 		super(ModList.get().isLoaded(modid) ? properties.tab(group) : properties);

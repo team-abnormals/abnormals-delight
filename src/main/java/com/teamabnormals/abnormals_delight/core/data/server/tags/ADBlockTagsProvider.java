@@ -2,6 +2,7 @@ package com.teamabnormals.abnormals_delight.core.data.server.tags;
 
 import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.teamabnormals.abnormals_delight.core.other.ADConstants;
+import com.teamabnormals.abnormals_delight.core.other.tags.ADBlockTags;
 import com.teamabnormals.abnormals_delight.core.registry.ADBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -21,5 +22,13 @@ public class ADBlockTagsProvider extends BlockTagsProvider {
 		this.tag(ModTags.HEAT_SOURCES).addOptional(ADConstants.GLOWING_OBSIDIAN);
 		this.tag(ModTags.TRAY_HEAT_SOURCES).addOptionalTag(ADConstants.BRAZIERS);
 		this.tag(ModTags.MINEABLE_WITH_KNIFE).addOptional(ADConstants.VANILLA_CAKE).addOptional(ADConstants.CHOCOLATE_CAKE).addOptional(ADConstants.STRAWBERRY_CAKE).addOptional(ADConstants.BANANA_CAKE).addOptional(ADConstants.MINT_CAKE).addOptional(ADConstants.ADZUKI_CAKE);
+
+		this.tag(ADBlockTags.DROPS_FLAVORED_CAKE_SLICE).addTags(ADBlockTags.DROPS_VANILLA_CAKE_SLICE, ADBlockTags.DROPS_CHOCOLATE_CAKE_SLICE, ADBlockTags.DROPS_STRAWBERRY_CAKE_SLICE, ADBlockTags.DROPS_BANANA_CAKE_SLICE, ADBlockTags.DROPS_MINT_CAKE_SLICE, ADBlockTags.DROPS_ADZUKI_CAKE_SLICE);
+		this.tag(ADBlockTags.DROPS_VANILLA_CAKE_SLICE);
+		this.tag(ADBlockTags.DROPS_CHOCOLATE_CAKE_SLICE);
+		this.tag(ADBlockTags.DROPS_STRAWBERRY_CAKE_SLICE);
+		this.tag(ADBlockTags.DROPS_BANANA_CAKE_SLICE);
+		this.tag(ADBlockTags.DROPS_MINT_CAKE_SLICE);
+		this.tag(ADBlockTags.DROPS_ADZUKI_CAKE_SLICE);
 	}
 }

@@ -1,11 +1,6 @@
 package com.teamabnormals.abnormals_delight.core.registry;
 
-import com.teamabnormals.abnormals_delight.common.item.CakeSliceItem;
-import com.teamabnormals.abnormals_delight.common.item.EffectDrinkItem;
-import com.teamabnormals.abnormals_delight.common.item.NecromiumKnifeItem;
-import com.teamabnormals.abnormals_delight.common.item.NectarItem;
-import com.teamabnormals.abnormals_delight.common.item.SilverKnifeItem;
-import com.teamabnormals.abnormals_delight.common.item.SlabdishItem;
+import com.teamabnormals.abnormals_delight.common.item.*;
 import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.teamabnormals.abnormals_delight.core.other.ADConstants;
 import com.teamabnormals.abnormals_delight.core.registry.util.ADItemSubRegistryHelper;
@@ -15,12 +10,12 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
-@Mod.EventBusSubscriber(modid = AbnormalsDelight.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = AbnormalsDelight.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class ADItems {
 	public static final ADItemSubRegistryHelper HELPER = AbnormalsDelight.REGISTRY_HELPER.getItemSubHelper();
 

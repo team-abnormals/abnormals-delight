@@ -4,12 +4,14 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.teamabnormals.abnormals_delight.common.item.SlabdishItem;
 import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
+import com.teamabnormals.abnormals_delight.core.other.tags.ADBlockTags;
 import com.teamabnormals.abnormals_delight.core.registry.ADItems;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -20,13 +22,16 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CakeBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.registries.ForgeRegistries;
+import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.registry.ModParticleTypes;
 import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.MathUtils;
@@ -35,16 +40,26 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.function.Supplier;
 
-@Mod.EventBusSubscriber(modid = AbnormalsDelight.MOD_ID)
+@EventBusSubscriber(modid = AbnormalsDelight.MOD_ID)
 public class ADEvents {
 	public static final IntegerProperty BITES = IntegerProperty.create("bites", 0, 9);
-	public static final HashMap<ResourceLocation, Supplier<Item>> CAKES = Util.make(Maps.newHashMap(), (list) -> {
-		list.put(ADConstants.VANILLA_CAKE, ADItems.VANILLA_CAKE_SLICE);
-		list.put(ADConstants.CHOCOLATE_CAKE, ADItems.CHOCOLATE_CAKE_SLICE);
-		list.put(ADConstants.STRAWBERRY_CAKE, ADItems.STRAWBERRY_CAKE_SLICE);
-		list.put(ADConstants.BANANA_CAKE, ADItems.BANANA_CAKE_SLICE);
-		list.put(ADConstants.MINT_CAKE, ADItems.MINT_CAKE_SLICE);
-		list.put(ADConstants.ADZUKI_CAKE, ADItems.ADZUKI_CAKE_SLICE);
+
+	public static final HashMap<Supplier<Item>, ResourceLocation> SLICES_TO_CAKES = Util.make(Maps.newHashMap(), (list) -> {
+		list.put(ADItems.VANILLA_CAKE_SLICE, ADConstants.VANILLA_CAKE);
+		list.put(ADItems.CHOCOLATE_CAKE_SLICE, ADConstants.CHOCOLATE_CAKE);
+		list.put(ADItems.STRAWBERRY_CAKE_SLICE, ADConstants.STRAWBERRY_CAKE);
+		list.put(ADItems.BANANA_CAKE_SLICE, ADConstants.BANANA_CAKE);
+		list.put(ADItems.MINT_CAKE_SLICE, ADConstants.MINT_CAKE);
+		list.put(ADItems.ADZUKI_CAKE_SLICE, ADConstants.ADZUKI_CAKE);
+	});
+
+	public static final HashMap<TagKey<Block>, Supplier<Item>> TAGS_TO_SLICES = Util.make(Maps.newHashMap(), (list) -> {
+		list.put(ADBlockTags.DROPS_VANILLA_CAKE_SLICE, ADItems.VANILLA_CAKE_SLICE);
+		list.put(ADBlockTags.DROPS_CHOCOLATE_CAKE_SLICE, ADItems.CHOCOLATE_CAKE_SLICE);
+		list.put(ADBlockTags.DROPS_STRAWBERRY_CAKE_SLICE, ADItems.STRAWBERRY_CAKE_SLICE);
+		list.put(ADBlockTags.DROPS_BANANA_CAKE_SLICE, ADItems.BANANA_CAKE_SLICE);
+		list.put(ADBlockTags.DROPS_MINT_CAKE_SLICE, ADItems.MINT_CAKE_SLICE);
+		list.put(ADBlockTags.DROPS_ADZUKI_CAKE_SLICE, ADItems.ADZUKI_CAKE_SLICE);
 	});
 
 	@SubscribeEvent
@@ -56,22 +71,32 @@ public class ADEvents {
 		ResourceLocation name = state.getBlock().getRegistryName();
 
 		if (tool.is(ModTags.KNIVES) && name != null) {
-			if (CAKES.containsKey(name)) {
-				Supplier<Item> item = CAKES.get(name);
-				int bites = state.getValue(CakeBlock.BITES);
-				if (bites < 6) {
-					world.setBlock(pos, state.setValue(CakeBlock.BITES, bites + 1), 3);
-				} else {
-					world.removeBlock(pos, false);
+			if (state.is(ADBlockTags.DROPS_FLAVORED_CAKE_SLICE)) {
+				TagKey<Block> cakeTag = ADBlockTags.DROPS_FLAVORED_CAKE_SLICE;
+				for (TagKey<Block> tagKey : TAGS_TO_SLICES.keySet()) {
+					if (state.is(tagKey)) {
+						cakeTag = tagKey;
+					}
 				}
-				Containers.dropItemStack(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(item.get()));
-				world.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
 
+				Supplier<Item> cakeSlice = TAGS_TO_SLICES.get(cakeTag);
+				if (state.hasProperty(CakeBlock.BITES)) {
+					int bites = state.getValue(CakeBlock.BITES);
+					if (bites < 6) {
+						world.setBlock(pos, state.setValue(CakeBlock.BITES, bites + 1), 3);
+					} else {
+						world.removeBlock(pos, false);
+					}
+				} else {
+					world.setBlock(pos, ForgeRegistries.BLOCKS.getValue(SLICES_TO_CAKES.get(cakeSlice)).defaultBlockState().setValue(CakeBlock.BITES, 1), 3);
+					Block.dropResources(state, world, pos);
+				}
+
+				Containers.dropItemStack(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(cakeSlice.get()));
+				world.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
 				event.setCancellationResult(InteractionResult.SUCCESS);
 				event.setCanceled(true);
-			}
-
-			if (name.equals(ADConstants.YUCCA_GATEAU)) {
+			} else if (name.equals(ADConstants.YUCCA_GATEAU)) {
 				int bites = state.getValue(BITES);
 				if (bites < 9) {
 					world.setBlock(pos, state.setValue(BITES, bites + 1), 3);
@@ -95,8 +120,8 @@ public class ADEvents {
 		ResourceLocation name = state.getBlock().getRegistryName();
 
 		if (player.getMainHandItem().is(ModTags.KNIVES) && name != null) {
-			if (CAKES.containsKey(name)) {
-				Supplier<Item> item = CAKES.get(name);
+			if (TAGS_TO_SLICES.containsKey(name)) {
+				Supplier<Item> item = TAGS_TO_SLICES.get(name);
 				loot.add(new ItemStack(item.get(), 7 - state.getValue(CakeBlock.BITES)));
 			} else if (name.equals(ADConstants.YUCCA_GATEAU)) {
 				loot.add(new ItemStack(ADItems.YUCCA_GATEAU_SLICE.get(), 10 - state.getValue(BITES)));
