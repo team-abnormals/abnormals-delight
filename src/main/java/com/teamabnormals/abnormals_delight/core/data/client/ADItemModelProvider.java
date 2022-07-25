@@ -12,8 +12,8 @@ import vectorwing.farmersdelight.FarmersDelight;
 
 public class ADItemModelProvider extends ItemModelProvider {
 
-	public ADItemModelProvider(DataGenerator generator, ExistingFileHelper fileHelper) {
-		super(generator, AbnormalsDelight.MOD_ID, fileHelper);
+	public ADItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
+		super(generator, AbnormalsDelight.MOD_ID, existingFileHelper);
 	}
 
 	@Override

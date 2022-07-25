@@ -12,8 +12,8 @@ import vectorwing.farmersdelight.common.tag.ModTags;
 
 public class ADBlockTagsProvider extends BlockTagsProvider {
 
-	public ADBlockTagsProvider(DataGenerator generator, ExistingFileHelper fileHelper) {
-		super(generator, AbnormalsDelight.MOD_ID, fileHelper);
+	public ADBlockTagsProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
+		super(generator, AbnormalsDelight.MOD_ID, existingFileHelper);
 	}
 
 	@Override

@@ -1,7 +1,7 @@
 {
   "required": true,
   "package": "com.teamabnormals.abnormals_delight.core.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
   "refmap": "abnormals_delight.refmap.json",
   "mixins": [

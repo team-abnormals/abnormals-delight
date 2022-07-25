@@ -49,18 +49,18 @@ public class AbnormalsDelight {
 
 	private void dataSetup(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
-		ExistingFileHelper fileHelper = event.getExistingFileHelper();
+		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
 		if (event.includeServer()) {
-			ADBlockTagsProvider blockTagsProvider = new ADBlockTagsProvider(generator, fileHelper);
-			generator.addProvider(blockTagsProvider);
-			generator.addProvider(new ADItemTagsProvider(generator, blockTagsProvider, fileHelper));
+			ADBlockTagsProvider blockTags = new ADBlockTagsProvider(generator, existingFileHelper);
+			generator.addProvider(blockTags);
+			generator.addProvider(new ADItemTagsProvider(generator, blockTags, existingFileHelper));
 			generator.addProvider(new ADLootTableProvider(generator));
 		}
 
 		if (event.includeClient()) {
-			generator.addProvider(new ADBlockStateProvider(generator, fileHelper));
-			generator.addProvider(new ADItemModelProvider(generator, fileHelper));
+			generator.addProvider(new ADBlockStateProvider(generator, existingFileHelper));
+			generator.addProvider(new ADItemModelProvider(generator, existingFileHelper));
 			generator.addProvider(new ADLanguageProvider(generator));
 		}
 	}

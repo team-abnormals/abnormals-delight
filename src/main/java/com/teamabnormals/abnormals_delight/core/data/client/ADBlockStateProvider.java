@@ -15,8 +15,8 @@ import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 public class ADBlockStateProvider extends BlockStateProvider {
 
-	public ADBlockStateProvider(DataGenerator generator, ExistingFileHelper fileHelper) {
-		super(generator, AbnormalsDelight.MOD_ID, fileHelper);
+	public ADBlockStateProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
+		super(generator, AbnormalsDelight.MOD_ID, existingFileHelper);
 	}
 
 	@Override

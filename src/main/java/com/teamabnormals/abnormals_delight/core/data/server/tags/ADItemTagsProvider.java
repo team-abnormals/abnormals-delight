@@ -15,8 +15,8 @@ import vectorwing.farmersdelight.common.tag.ModTags;
 
 public class ADItemTagsProvider extends ItemTagsProvider {
 
-	public ADItemTagsProvider(DataGenerator generator, BlockTagsProvider blockTagsProvider, ExistingFileHelper fileHelper) {
-		super(generator, blockTagsProvider, AbnormalsDelight.MOD_ID, fileHelper);
+	public ADItemTagsProvider(DataGenerator generator, BlockTagsProvider blockTags, ExistingFileHelper existingFileHelper) {
+		super(generator, blockTags, AbnormalsDelight.MOD_ID, existingFileHelper);
 	}
 
 	@Override
