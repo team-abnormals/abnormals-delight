@@ -22,7 +22,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CakeBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
@@ -31,7 +30,6 @@ import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.registries.ForgeRegistries;
-import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.registry.ModParticleTypes;
 import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.MathUtils;
@@ -62,6 +60,17 @@ public class ADEvents {
 		list.put(ADBlockTags.DROPS_ADZUKI_CAKE_SLICE, ADItems.ADZUKI_CAKE_SLICE);
 	});
 
+	public static Supplier<Item> getCakeSlice(BlockState state) {
+		TagKey<Block> cakeTag = ADBlockTags.DROPS_FLAVORED_CAKE_SLICE;
+		for (TagKey<Block> tagKey : TAGS_TO_SLICES.keySet()) {
+			if (state.is(tagKey)) {
+				cakeTag = tagKey;
+			}
+		}
+
+		return TAGS_TO_SLICES.get(cakeTag);
+	}
+
 	@SubscribeEvent
 	public static void onCakeInteraction(PlayerInteractEvent.RightClickBlock event) {
 		Level world = event.getWorld();
@@ -72,14 +81,7 @@ public class ADEvents {
 
 		if (tool.is(ModTags.KNIVES) && name != null) {
 			if (state.is(ADBlockTags.DROPS_FLAVORED_CAKE_SLICE)) {
-				TagKey<Block> cakeTag = ADBlockTags.DROPS_FLAVORED_CAKE_SLICE;
-				for (TagKey<Block> tagKey : TAGS_TO_SLICES.keySet()) {
-					if (state.is(tagKey)) {
-						cakeTag = tagKey;
-					}
-				}
-
-				Supplier<Item> cakeSlice = TAGS_TO_SLICES.get(cakeTag);
+				Supplier<Item> cakeSlice = getCakeSlice(state);
 				if (state.hasProperty(CakeBlock.BITES)) {
 					int bites = state.getValue(CakeBlock.BITES);
 					if (bites < 6) {
@@ -120,9 +122,10 @@ public class ADEvents {
 		ResourceLocation name = state.getBlock().getRegistryName();
 
 		if (player.getMainHandItem().is(ModTags.KNIVES) && name != null) {
-			if (TAGS_TO_SLICES.containsKey(name)) {
-				Supplier<Item> item = TAGS_TO_SLICES.get(name);
-				loot.add(new ItemStack(item.get(), 7 - state.getValue(CakeBlock.BITES)));
+			if (state.is(ADBlockTags.DROPS_FLAVORED_CAKE_SLICE)) {
+				Supplier<Item> cakeSlice = getCakeSlice(state);
+				int subtraction = !state.hasProperty(CakeBlock.BITES) ? 0 : state.getValue(CakeBlock.BITES);
+				loot.add(new ItemStack(cakeSlice.get(), 7 - subtraction));
 			} else if (name.equals(ADConstants.YUCCA_GATEAU)) {
 				loot.add(new ItemStack(ADItems.YUCCA_GATEAU_SLICE.get(), 10 - state.getValue(BITES)));
 			}
