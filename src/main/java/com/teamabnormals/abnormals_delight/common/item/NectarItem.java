@@ -26,13 +26,13 @@ public class NectarItem extends EffectDrinkItem {
 
 	@Override
 	public void affectConsumer(ItemStack stack, Level worldIn, LivingEntity consumer) {
-		if (!worldIn.isClientSide() && ForgeRegistries.POTIONS.getValue(ADConstants.RELIEF) != null)
+		if (!worldIn.isClientSide() && ForgeRegistries.MOB_EFFECTS.getValue(ADConstants.RELIEF) != null)
 			consumer.addEffect(new MobEffectInstance(ForgeRegistries.MOB_EFFECTS.getValue(ADConstants.RELIEF), 300));
 	}
 
 	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn) {
-		if (ForgeRegistries.POTIONS.getValue(ADConstants.RELIEF) != null) {
+		if (ForgeRegistries.MOB_EFFECTS.getValue(ADConstants.RELIEF) != null) {
 			MobEffect effect = ForgeRegistries.MOB_EFFECTS.getValue(ADConstants.RELIEF);
 			MutableComponent component = new TranslatableComponent(effect.getDescriptionId());
 			component = new TranslatableComponent("potion.withDuration", component, MobEffectUtil.formatDuration(new MobEffectInstance(effect, 300), 1.0F));
