@@ -2,10 +2,10 @@
   "type": "farmersdelight:cooking",
   "ingredients": [
     {
-      "item": "autumnity:snail_slime"
+      "item": "autumnity:snail_goo"
     },
     {
-      "item": "autumnity:snail_slime"
+      "item": "autumnity:snail_goo"
     },
     {
       "tag": "forge:crops/onion"
