@@ -4,7 +4,6 @@ import com.teamabnormals.abnormals_delight.core.other.ADConstants;
 import com.teamabnormals.blueprint.core.api.BlueprintItemTier;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -37,6 +36,6 @@ public class NecromiumKnifeItem extends AbnormalsKnifeItem {
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn) {
 		if (ModList.get().isLoaded(ADConstants.CAVERNS_AND_CHASMS))
-			tooltip.add(new TranslatableComponent("tooltip.caverns_and_chasms.slowing").withStyle(ChatFormatting.GRAY));
+			tooltip.add(Component.translatable("tooltip.caverns_and_chasms.slowing").withStyle(ChatFormatting.GRAY));
 	}
 }

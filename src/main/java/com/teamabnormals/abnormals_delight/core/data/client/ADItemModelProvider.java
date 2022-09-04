@@ -8,6 +8,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.FarmersDelight;
 
 public class ADItemModelProvider extends ItemModelProvider {
@@ -68,13 +69,13 @@ public class ADItemModelProvider extends ItemModelProvider {
 	}
 
 	private void mug(ItemLike item) {
-		ResourceLocation name = item.asItem().getRegistryName();
+		ResourceLocation name = ForgeRegistries.ITEMS.getKey(item.asItem());
 		if (name != null)
 			this.getBuilder(name.getPath()).parent(new UncheckedModelFile(new ResourceLocation(FarmersDelight.MODID, "item/mug"))).texture("layer0", new ResourceLocation(this.modid, "item/" + name.getPath()));
 	}
 
 	private void model(ItemLike item, String parent) {
-		ResourceLocation name = item.asItem().getRegistryName();
+		ResourceLocation name = ForgeRegistries.ITEMS.getKey(item.asItem());
 		if (name != null)
 			this.withExistingParent(name.getPath(), "item/" + parent).texture("layer0", new ResourceLocation(this.modid, "item/" + name.getPath()));
 	}

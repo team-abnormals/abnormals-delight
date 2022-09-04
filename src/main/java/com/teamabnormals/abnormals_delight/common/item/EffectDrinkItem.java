@@ -2,7 +2,6 @@ package com.teamabnormals.abnormals_delight.common.item;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffect;
@@ -49,8 +48,8 @@ public class EffectDrinkItem extends ConsumableItem {
 	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn) {
 		if (effect != null) {
-			MutableComponent component = new TranslatableComponent(effect.getDescriptionId());
-			component = new TranslatableComponent("potion.withDuration", component, MobEffectUtil.formatDuration(new MobEffectInstance(effect, 300), 1.0F));
+			MutableComponent component = Component.translatable(effect.getDescriptionId());
+			component = Component.translatable("potion.withDuration", component, MobEffectUtil.formatDuration(new MobEffectInstance(effect, 300), 1.0F));
 			tooltip.add(component.withStyle(effect.getCategory().getTooltipFormatting()));
 		}
 	}

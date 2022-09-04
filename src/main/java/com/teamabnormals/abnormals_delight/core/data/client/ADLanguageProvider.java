@@ -8,6 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.commons.lang3.text.WordUtils;
 
 public class ADLanguageProvider extends LanguageProvider {
@@ -78,18 +79,15 @@ public class ADLanguageProvider extends LanguageProvider {
 	}
 
 	private void add(Item item) {
-		if (item.getRegistryName() != null)
-			this.add(item, format(item.getRegistryName()));
+		this.add(item, format(ForgeRegistries.ITEMS.getKey(item)));
 	}
 
 	private void addRaw(Item item) {
-		if (item.getRegistryName() != null)
-			this.add(item, "Raw " + format(item.getRegistryName()));
+		this.add(item, "Raw " + format(ForgeRegistries.ITEMS.getKey(item)));
 	}
 
 	private void add(Block block) {
-		if (block.getRegistryName() != null)
-			this.add(block, format(block.getRegistryName()));
+		this.add(block, format(ForgeRegistries.BLOCKS.getKey(block)));
 	}
 
 	private String format(ResourceLocation registryName) {
@@ -97,7 +95,7 @@ public class ADLanguageProvider extends LanguageProvider {
 	}
 
 	private void addSlice(Item item) {
-		if (item.getRegistryName() != null)
-			this.add(item, "Slice of " + format(item.getRegistryName()).replace(" Slice", ""));
+		if (ForgeRegistries.ITEMS.getKey(item) != null)
+			this.add(item, "Slice of " + format(ForgeRegistries.ITEMS.getKey(item)).replace(" Slice", ""));
 	}
 }

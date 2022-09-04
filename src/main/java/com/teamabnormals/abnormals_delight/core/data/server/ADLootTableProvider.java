@@ -61,7 +61,7 @@ public class ADLootTableProvider extends LootTableProvider {
 
 		@Override
 		protected Iterable<Block> getKnownBlocks() {
-			return ForgeRegistries.BLOCKS.getValues().stream().filter(block -> block.getRegistryName() != null && AbnormalsDelight.MOD_ID.equals(block.getRegistryName().getNamespace())).collect(Collectors.toSet());
+			return ForgeRegistries.BLOCKS.getValues().stream().filter(block -> ForgeRegistries.BLOCKS.getKey(block) != null && AbnormalsDelight.MOD_ID.equals(ForgeRegistries.BLOCKS.getKey(block).getNamespace())).collect(Collectors.toSet());
 		}
 	}
 }

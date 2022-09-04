@@ -11,6 +11,7 @@ import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.ModelFile.ExistingModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 public class ADBlockStateProvider extends BlockStateProvider {
@@ -38,8 +39,9 @@ public class ADBlockStateProvider extends BlockStateProvider {
 	}
 
 	private void cabinet(Block cabinet) {
-		if (cabinet.getRegistryName() != null) {
-			ResourceLocation name = this.prefix("block/", cabinet.getRegistryName());
+		ResourceLocation registryName = ForgeRegistries.BLOCKS.getKey(cabinet);
+		if (registryName != null) {
+			ResourceLocation name = this.prefix("block/", registryName);
 
 			ModelFile cabinetModel = models().orientable(name(cabinet), suffix(name, "_side"), suffix(name, "_front"), suffix(name, "_top"));
 			ModelFile cabinetOpenModel = models().orientable(name(cabinet) + "_open", suffix(name, "_side"), suffix(name, "_front_open"), suffix(name, "_top"));
@@ -59,7 +61,7 @@ public class ADBlockStateProvider extends BlockStateProvider {
 	}
 
 	private String name(Block block) {
-		return block.getRegistryName().getPath();
+		return ForgeRegistries.BLOCKS.getKey(block).getPath();
 	}
 
 	private ResourceLocation prefix(String prefix, ResourceLocation rl) {

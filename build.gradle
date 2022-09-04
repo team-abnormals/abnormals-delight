@@ -86,8 +86,9 @@ dependencies {
 //    runtimeOnly fg.deobf("curse.maven:neapolitan-382016:3221772")
 //    runtimeOnly fg.deobf("curse.maven:upgrade_aquatic-326895:3249419")
 
-    compileOnly fg.deobf("mezz.jei:jei-${project.minecraft}:${project.jei}:api")
-    runtimeOnly fg.deobf("mezz.jei:jei-${project.minecraft}:${project.jei}")
+    compileOnly fg.deobf("mezz.jei:jei-${project.minecraft}-common-api:${project.jei}")
+    compileOnly fg.deobf("mezz.jei:jei-${project.minecraft}-forge-api:${project.jei}")
+    runtimeOnly fg.deobf("mezz.jei:jei-${project.minecraft}-forge:${project.jei}")
 
     annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 }

@@ -26,7 +26,7 @@ import net.minecraft.world.level.block.CakeBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -73,11 +73,11 @@ public class ADEvents {
 
 	@SubscribeEvent
 	public static void onCakeInteraction(PlayerInteractEvent.RightClickBlock event) {
-		Level world = event.getWorld();
+		Level level = event.getLevel();
 		BlockPos pos = event.getPos();
-		BlockState state = event.getWorld().getBlockState(pos);
-		ItemStack tool = event.getPlayer().getItemInHand(event.getHand());
-		ResourceLocation name = state.getBlock().getRegistryName();
+		BlockState state = level.getBlockState(pos);
+		ItemStack tool = event.getEntity().getItemInHand(event.getHand());
+		ResourceLocation name = ForgeRegistries.BLOCKS.getKey(state.getBlock());
 
 		if (tool.is(ModTags.KNIVES) && name != null) {
 			if (state.is(ADBlockTags.DROPS_FLAVORED_CAKE_SLICE)) {
@@ -85,28 +85,28 @@ public class ADEvents {
 				if (state.hasProperty(CakeBlock.BITES)) {
 					int bites = state.getValue(CakeBlock.BITES);
 					if (bites < 6) {
-						world.setBlock(pos, state.setValue(CakeBlock.BITES, bites + 1), 3);
+						level.setBlock(pos, state.setValue(CakeBlock.BITES, bites + 1), 3);
 					} else {
-						world.removeBlock(pos, false);
+						level.removeBlock(pos, false);
 					}
 				} else {
-					world.setBlock(pos, ForgeRegistries.BLOCKS.getValue(SLICES_TO_CAKES.get(cakeSlice)).defaultBlockState().setValue(CakeBlock.BITES, 1), 3);
-					Block.dropResources(state, world, pos);
+					level.setBlock(pos, ForgeRegistries.BLOCKS.getValue(SLICES_TO_CAKES.get(cakeSlice)).defaultBlockState().setValue(CakeBlock.BITES, 1), 3);
+					Block.dropResources(state, level, pos);
 				}
 
-				Containers.dropItemStack(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(cakeSlice.get()));
-				world.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
+				Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(cakeSlice.get()));
+				level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
 				event.setCancellationResult(InteractionResult.SUCCESS);
 				event.setCanceled(true);
 			} else if (name.equals(ADConstants.YUCCA_GATEAU)) {
 				int bites = state.getValue(BITES);
 				if (bites < 9) {
-					world.setBlock(pos, state.setValue(BITES, bites + 1), 3);
+					level.setBlock(pos, state.setValue(BITES, bites + 1), 3);
 				} else {
-					world.removeBlock(pos, false);
+					level.removeBlock(pos, false);
 				}
-				Containers.dropItemStack(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ADItems.YUCCA_GATEAU_SLICE.get()));
-				world.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
+				Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ADItems.YUCCA_GATEAU_SLICE.get()));
+				level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
 
 				event.setCancellationResult(InteractionResult.SUCCESS);
 				event.setCanceled(true);
@@ -119,7 +119,7 @@ public class ADEvents {
 		BlockState state = event.getState();
 		Player player = event.getPlayer();
 		List<ItemStack> loot = Lists.newArrayList();
-		ResourceLocation name = state.getBlock().getRegistryName();
+		ResourceLocation name = ForgeRegistries.BLOCKS.getKey(state.getBlock());
 
 		if (player.getMainHandItem().is(ModTags.KNIVES) && name != null) {
 			if (state.is(ADBlockTags.DROPS_FLAVORED_CAKE_SLICE)) {
@@ -130,9 +130,9 @@ public class ADEvents {
 				loot.add(new ItemStack(ADItems.YUCCA_GATEAU_SLICE.get(), 10 - state.getValue(BITES)));
 			}
 
-			if (!loot.isEmpty() && event.getWorld() instanceof Level) {
+			if (!loot.isEmpty() && event.getLevel() instanceof Level) {
 				for (ItemStack stack : loot) {
-					Block.popResource((Level) event.getWorld(), event.getPos(), stack);
+					Block.popResource((Level) event.getLevel(), event.getPos(), stack);
 				}
 			}
 		}
@@ -140,12 +140,12 @@ public class ADEvents {
 
 	@SubscribeEvent
 	public static void onEntityInteract(PlayerInteractEvent.EntityInteract event) {
-		Player player = event.getPlayer();
+		Player player = event.getEntity();
 		Entity target = event.getTarget();
-		ItemStack itemStack = event.getItemStack();
+		ItemStack stack = event.getItemStack();
 
-		if (target instanceof TamableAnimal entity && target.getType().getRegistryName().equals(ADConstants.SLABFISH)) {
-			if (entity.isAlive() && entity.isTame() && itemStack.getItem().equals(ADItems.SLABDISH.get())) {
+		if (target instanceof TamableAnimal entity && ForgeRegistries.ENTITY_TYPES.getKey(target.getType()).equals(ADConstants.SLABFISH)) {
+			if (entity.isAlive() && entity.isTame() && stack.getItem().equals(ADItems.SLABDISH.get())) {
 				entity.setHealth(entity.getMaxHealth());
 				for (MobEffectInstance effect : SlabdishItem.EFFECTS) {
 					entity.addEffect(new MobEffectInstance(effect));
@@ -159,9 +159,9 @@ public class ADEvents {
 					entity.level.addParticle(ModParticleTypes.STAR.get(), entity.getRandomX(1.0D), entity.getRandomY() + 0.5D, entity.getRandomZ(1.0D), d0, d1, d2);
 				}
 
-				if (itemStack.getContainerItem() != ItemStack.EMPTY && !player.isCreative()) {
-					player.addItem(itemStack.getContainerItem());
-					itemStack.shrink(1);
+				if (stack.getCraftingRemainingItem() != ItemStack.EMPTY && !player.isCreative()) {
+					player.addItem(stack.getCraftingRemainingItem());
+					stack.shrink(1);
 				}
 
 				event.setCancellationResult(InteractionResult.SUCCESS);

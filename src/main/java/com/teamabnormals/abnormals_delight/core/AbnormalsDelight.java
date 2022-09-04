@@ -13,13 +13,13 @@ import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod(AbnormalsDelight.MOD_ID)
@@ -51,17 +51,16 @@ public class AbnormalsDelight {
 		DataGenerator generator = event.getGenerator();
 		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
-		if (event.includeServer()) {
-			ADBlockTagsProvider blockTags = new ADBlockTagsProvider(generator, existingFileHelper);
-			generator.addProvider(blockTags);
-			generator.addProvider(new ADItemTagsProvider(generator, blockTags, existingFileHelper));
-			generator.addProvider(new ADLootTableProvider(generator));
-		}
+		boolean includeServer = event.includeServer();
+		ADBlockTagsProvider blockTags = new ADBlockTagsProvider(generator, existingFileHelper);
+		generator.addProvider(includeServer, blockTags);
+		generator.addProvider(includeServer, new ADItemTagsProvider(generator, blockTags, existingFileHelper));
+		generator.addProvider(includeServer, new ADLootTableProvider(generator));
 
-		if (event.includeClient()) {
-			generator.addProvider(new ADBlockStateProvider(generator, existingFileHelper));
-			generator.addProvider(new ADItemModelProvider(generator, existingFileHelper));
-			generator.addProvider(new ADLanguageProvider(generator));
-		}
+		boolean includeClient = event.includeClient();
+		generator.addProvider(includeClient, new ADBlockStateProvider(generator, existingFileHelper));
+		generator.addProvider(includeClient, new ADItemModelProvider(generator, existingFileHelper));
+		generator.addProvider(includeClient, new ADLanguageProvider(generator));
+
 	}
 }

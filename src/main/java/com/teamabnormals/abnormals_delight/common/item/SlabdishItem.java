@@ -6,8 +6,6 @@ import com.teamabnormals.abnormals_delight.core.other.ADConstants;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffect;
@@ -24,6 +22,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.ModList;
+import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 
 import javax.annotation.Nullable;
@@ -43,17 +42,17 @@ public class SlabdishItem extends ConsumableItem {
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn) {
-		MutableComponent whenFeeding = new TranslatableComponent("tooltip." + AbnormalsDelight.MOD_ID + ".slabdish.when_feeding");
+		MutableComponent whenFeeding = Component.translatable("tooltip." + AbnormalsDelight.MOD_ID + ".slabdish.when_feeding");
 		tooltip.add(whenFeeding.withStyle(ChatFormatting.GRAY));
 
 		for (MobEffectInstance effectinstance : EFFECTS) {
-			MutableComponent effectDescription = new TextComponent(" ");
-			MutableComponent effectName = new TranslatableComponent(effectinstance.getDescriptionId());
+			MutableComponent effectDescription = Component.literal(" ");
+			MutableComponent effectName = Component.translatable(effectinstance.getDescriptionId());
 			effectDescription.append(effectName);
 			MobEffect effect = effectinstance.getEffect();
 
 			if (effectinstance.getAmplifier() > 0) {
-				effectDescription.append(" ").append(new TranslatableComponent("potion.potency." + effectinstance.getAmplifier()));
+				effectDescription.append(" ").append(Component.translatable("potion.potency." + effectinstance.getAmplifier()));
 			}
 
 			if (effectinstance.getDuration() > 20) {
@@ -66,7 +65,7 @@ public class SlabdishItem extends ConsumableItem {
 
 	@Override
 	public InteractionResult interactLivingEntity(ItemStack stack, Player playerIn, LivingEntity target, InteractionHand hand) {
-		if (target.getType().getRegistryName().equals(ADConstants.SLABFISH)) {
+		if (ForgeRegistries.ENTITY_TYPES.getKey(target.getType()).equals(ADConstants.SLABFISH)) {
 			TamableAnimal slabfish = (TamableAnimal) target;
 			if (slabfish.isAlive() && slabfish.isTame()) {
 				return InteractionResult.SUCCESS;

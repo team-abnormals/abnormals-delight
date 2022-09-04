@@ -15,7 +15,7 @@ public class ContainerConsumableItem extends ConsumableItem {
 	}
 
 	@Override
-	public ItemStack getContainerItem(ItemStack stack) {
+	public ItemStack getCraftingRemainingItem(ItemStack stack) {
 		Item item = ForgeRegistries.ITEMS.getValue(this.compatItem);
 		return item == null ? ItemStack.EMPTY : new ItemStack(item);
 	}
