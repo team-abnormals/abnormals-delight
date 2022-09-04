@@ -6,8 +6,8 @@
     }
   ],
   "tool": {
-    "type": "farmersdelight:tool",
-    "tool": "axe"
+    "type": "farmersdelight:tool_action",
+    "action": "axe_dig"
   },
   "result": [
     {
