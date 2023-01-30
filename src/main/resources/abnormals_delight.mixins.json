@@ -7,9 +7,6 @@
   "mixins": [
     "CreativeModeTabMixin"
   ],
-  "client": [
-    "ClientRecipeBookMixin"
-  ],
   "injectors": {
     "defaultRequire": 1
   }
