@@ -14,25 +14,28 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.function.Supplier;
-
 public class CakeSliceItem extends Item {
-	private final Supplier<MobEffectInstance> effect;
+	private final ResourceLocation effectName;
+	private final int duration;
 
 	public CakeSliceItem(String modid, ResourceLocation effectName, int duration, Properties properties, CreativeModeTab group) {
 		super(ModList.get().isLoaded(modid) ? properties.tab(group) : properties);
-		this.effect = () -> new MobEffectInstance(ForgeRegistries.MOB_EFFECTS.getValue(effectName), duration);
+		this.effectName = effectName;
+		this.duration = duration;
 	}
 
 	public CakeSliceItem(String modid, Properties properties, CreativeModeTab group) {
 		this(modid, null, 0, properties, group);
 	}
 
+	@Override
 	public ItemStack finishUsingItem(ItemStack stack, Level worldIn, LivingEntity entityLiving) {
-		if (!worldIn.isClientSide && effect != null && effect.get().getEffect() != null)
-			entityLiving.addEffect(new MobEffectInstance(effect.get().getEffect(), effect.get().getDuration(), effect.get().getAmplifier()));
-		if (this == ADItems.STRAWBERRY_CAKE_SLICE.get())
+		if (!worldIn.isClientSide && this.effectName != null && ForgeRegistries.MOB_EFFECTS.getValue(this.effectName) != null) {
+			entityLiving.addEffect(new MobEffectInstance(ForgeRegistries.MOB_EFFECTS.getValue(this.effectName), this.duration));
+		} else if (this == ADItems.STRAWBERRY_CAKE_SLICE.get()) {
 			applyHealing(1.0F, worldIn, entityLiving);
+		}
+
 		return super.finishUsingItem(stack, worldIn, entityLiving);
 	}
 
