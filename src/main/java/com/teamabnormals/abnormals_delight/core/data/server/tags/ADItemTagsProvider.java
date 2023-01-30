@@ -37,6 +37,8 @@ public class ADItemTagsProvider extends ItemTagsProvider {
 		this.tag(ADItemTags.RAW_FISHES_PERCH).add(ADItems.PERCH_SLICE.get());
 		this.tag(ADItemTags.RAW_FISHES_PIKE).add(ADItems.PIKE_SLICE.get());
 
+		this.tag(ADItemTags.FRUITS_BANANA);
+
 		this.tag(ForgeTags.TOOLS_KNIVES).add(ADItems.SILVER_KNIFE.get(), ADItems.NECROMIUM_KNIFE.get());
 
 		this.tag(ModTags.KNIVES).add(ADItems.SILVER_KNIFE.get(), ADItems.NECROMIUM_KNIFE.get());

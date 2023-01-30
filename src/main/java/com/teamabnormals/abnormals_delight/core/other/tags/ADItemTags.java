@@ -21,6 +21,8 @@ public class ADItemTags {
 	public static final TagKey<Item> RAW_FISHES_PERCH = TagUtil.itemTag("forge", "raw_fishes/perch");
 	public static final TagKey<Item> RAW_FISHES_PIKE = TagUtil.itemTag("forge", "raw_fishes/pike");
 
+	public static final TagKey<Item> FRUITS_BANANA = TagUtil.itemTag("forge", "fruits/banana");
+
 	public static final TagKey<Item> SNAIL_BREEDING_ITEMS = TagUtil.itemTag(ADConstants.AUTUMNITY, "snail_breeding_items");
 	public static final TagKey<Item> AFFLICTION_ITEMS = TagUtil.itemTag(ADConstants.CAVERNS_AND_CHASMS, "affliction_items");
 	public static final TagKey<Item> EXPERIENCE_BOOST_ITEMS = TagUtil.itemTag(ADConstants.CAVERNS_AND_CHASMS, "experience_boost_items");
