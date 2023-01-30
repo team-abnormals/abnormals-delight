@@ -5,7 +5,7 @@
       "item": "neapolitan:adzuki_beans"
     },
     {
-      "item": "neapolitan:banana"
+      "tag": "forge:fruits/banana"
     },
     {
       "item": "minecraft:carrot"
