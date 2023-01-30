@@ -60,7 +60,7 @@ public class ADModifications {
 				}
 			}
 		} else {
-			CreativeModeTab group = new CreativeModeTab(AbnormalsDelight.MOD_ID) {
+			CreativeModeTab group = new CreativeModeTab(FarmersDelight.MODID) {
 				@Override
 				public ItemStack makeIcon() {
 					return new ItemStack(ModBlocks.STOVE.get());
@@ -68,11 +68,7 @@ public class ADModifications {
 			};
 			for (Item item : ForgeRegistries.ITEMS.getValues()) {
 				String namespace = ForgeRegistries.ITEMS.getKey(item).getNamespace();
-				if (namespace.equals(FarmersDelight.MODID)) {
-					setItemGroup(item, group);
-				}
-
-				if (namespace.equals(AbnormalsDelight.MOD_ID) && item.getItemCategory() != null) {
+				if (item.getItemCategory() != null && (item.getItemCategory() == FarmersDelight.CREATIVE_TAB || namespace.equals(AbnormalsDelight.MOD_ID))) {
 					setItemGroup(item, group);
 				}
 			}
