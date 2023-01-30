@@ -43,7 +43,7 @@ public class ADModifications {
 		if (ADConfig.COMMON.replaceFDItemGroup.get()) {
 			CreativeModeTab.TAB_COMBAT.setEnchantmentCategories(DataUtil.concatArrays(CreativeModeTab.TAB_COMBAT.getEnchantmentCategories(), ModEnchantments.KNIFE));
 			for (Item item : ForgeRegistries.ITEMS.getValues()) {
-				if (item.getRegistryName().getNamespace().equals(FarmersDelight.MODID)) {
+				if (item.getItemCategory() == FarmersDelight.CREATIVE_TAB) {
 					if (item.isEdible()) setItemGroup(item, CreativeModeTab.TAB_FOOD);
 					else if (item instanceof KnifeItem) setItemGroup(item, CreativeModeTab.TAB_COMBAT);
 					else if (MATERIALS.contains(item)) setItemGroup(item, CreativeModeTab.TAB_MATERIALS);
@@ -60,7 +60,7 @@ public class ADModifications {
 				}
 			}
 		} else {
-			CreativeModeTab group = new CreativeModeTab(FarmersDelight.MODID) {
+			CreativeModeTab group = new CreativeModeTab(AbnormalsDelight.MOD_ID) {
 				@Override
 				public ItemStack makeIcon() {
 					return new ItemStack(ModBlocks.STOVE.get());
