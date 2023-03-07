@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "buzzier_bees:soul_candle_cake",
+      "required": false
+    },
+    {
+      "id": "caverns_and_chasms:cupric_candle_cake",
+      "required": false
+    }
+  ]
+}

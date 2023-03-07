@@ -7,6 +7,7 @@ public class ADConstants {
 	// Mod IDs
 	public static final String ATMOSPHERIC = "atmospheric";
 	public static final String AUTUMNITY = "autumnity";
+	public static final String BUZZIER_BEES = "buzzier_bees";
 	public static final String ENDERGETIC = "endergetic";
 	public static final String ENVIRONMENTAL = "environmental";
 	public static final String CAVERNS_AND_CHASMS = "caverns_and_chasms";
@@ -17,6 +18,8 @@ public class ADConstants {
 	// Items & Blocks
 	public static final ResourceLocation YUCCA_GATEAU = new ResourceLocation(ATMOSPHERIC, "yucca_gateau");
 	public static final ResourceLocation SNAIL_SHELL_PIECE = new ResourceLocation(ADConstants.AUTUMNITY, "snail_shell_piece");
+	public static final ResourceLocation SOUL_CANDLE_CAKE = new ResourceLocation(BUZZIER_BEES, "soul_candle_cake");
+	public static final ResourceLocation CUPRIC_CANDLE_CAKE = new ResourceLocation(CAVERNS_AND_CHASMS, "cupric_candle_cake");
 	public static final ResourceLocation DUCKWEED = new ResourceLocation(ENVIRONMENTAL, "duckweed");
 	public static final ResourceLocation ADZUKI_STEW = new ResourceLocation(NEAPOLITAN, "adzuki_stew");
 	public static final ResourceLocation VANILLA_CAKE = new ResourceLocation(NEAPOLITAN, "vanilla_cake");

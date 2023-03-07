@@ -23,6 +23,7 @@ public class ADBlockTagsProvider extends BlockTagsProvider {
 		this.tag(ModTags.TRAY_HEAT_SOURCES).addOptionalTag(ADConstants.BRAZIERS);
 		this.tag(ModTags.MINEABLE_WITH_KNIFE).addOptional(ADConstants.VANILLA_CAKE).addOptional(ADConstants.CHOCOLATE_CAKE).addOptional(ADConstants.STRAWBERRY_CAKE).addOptional(ADConstants.BANANA_CAKE).addOptional(ADConstants.MINT_CAKE).addOptional(ADConstants.ADZUKI_CAKE);
 
+		this.tag(ModTags.DROPS_CAKE_SLICE).addOptional(ADConstants.SOUL_CANDLE_CAKE).addOptional(ADConstants.CUPRIC_CANDLE_CAKE);
 		this.tag(ADBlockTags.DROPS_FLAVORED_CAKE_SLICE).addTags(ADBlockTags.DROPS_VANILLA_CAKE_SLICE, ADBlockTags.DROPS_CHOCOLATE_CAKE_SLICE, ADBlockTags.DROPS_STRAWBERRY_CAKE_SLICE, ADBlockTags.DROPS_BANANA_CAKE_SLICE, ADBlockTags.DROPS_MINT_CAKE_SLICE, ADBlockTags.DROPS_ADZUKI_CAKE_SLICE);
 		this.tag(ADBlockTags.DROPS_VANILLA_CAKE_SLICE);
 		this.tag(ADBlockTags.DROPS_CHOCOLATE_CAKE_SLICE);
