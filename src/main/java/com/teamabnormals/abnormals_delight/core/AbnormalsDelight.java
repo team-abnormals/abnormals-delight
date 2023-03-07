@@ -5,6 +5,7 @@ import com.teamabnormals.abnormals_delight.core.data.client.ADItemModelProvider;
 import com.teamabnormals.abnormals_delight.core.data.client.ADLanguageProvider;
 import com.teamabnormals.abnormals_delight.core.data.server.ADLootTableProvider;
 import com.teamabnormals.abnormals_delight.core.data.server.tags.ADBlockTagsProvider;
+import com.teamabnormals.abnormals_delight.core.data.server.tags.ADEntityTypeTagsProvider;
 import com.teamabnormals.abnormals_delight.core.data.server.tags.ADItemTagsProvider;
 import com.teamabnormals.abnormals_delight.core.other.ADCompat;
 import com.teamabnormals.abnormals_delight.core.registry.ADModifications;
@@ -49,17 +50,18 @@ public class AbnormalsDelight {
 
 	private void dataSetup(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
-		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+		ExistingFileHelper helper = event.getExistingFileHelper();
 
 		boolean includeServer = event.includeServer();
-		ADBlockTagsProvider blockTags = new ADBlockTagsProvider(generator, existingFileHelper);
+		ADBlockTagsProvider blockTags = new ADBlockTagsProvider(generator, helper);
 		generator.addProvider(includeServer, blockTags);
-		generator.addProvider(includeServer, new ADItemTagsProvider(generator, blockTags, existingFileHelper));
+		generator.addProvider(includeServer, new ADItemTagsProvider(generator, blockTags, helper));
+		generator.addProvider(includeServer, new ADEntityTypeTagsProvider(generator, helper));
 		generator.addProvider(includeServer, new ADLootTableProvider(generator));
 
 		boolean includeClient = event.includeClient();
-		generator.addProvider(includeClient, new ADBlockStateProvider(generator, existingFileHelper));
-		generator.addProvider(includeClient, new ADItemModelProvider(generator, existingFileHelper));
+		generator.addProvider(includeClient, new ADBlockStateProvider(generator, helper));
+		generator.addProvider(includeClient, new ADItemModelProvider(generator, helper));
 		generator.addProvider(includeClient, new ADLanguageProvider(generator));
 
 	}

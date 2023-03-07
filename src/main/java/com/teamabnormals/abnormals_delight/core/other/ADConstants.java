@@ -13,6 +13,7 @@ public class ADConstants {
 	public static final String CAVERNS_AND_CHASMS = "caverns_and_chasms";
 	public static final String NEAPOLITAN = "neapolitan";
 	public static final String NETHER_EXTENSION = "nether_extension";
+	public static final String PET_CEMETERY = "pet_cemetery";
 	public static final String UPGRADE_AQUATIC = "upgrade_aquatic";
 
 	// Items & Blocks
@@ -35,6 +36,8 @@ public class ADConstants {
 
 	// EntityTypes
 	public static final ResourceLocation SLABFISH = new ResourceLocation(ADConstants.ENVIRONMENTAL, "slabfish");
+	public static final ResourceLocation ZOMBIE_WOLF = new ResourceLocation(ADConstants.PET_CEMETERY, "zombie_wolf");
+	public static final ResourceLocation SKELETON_WOLF = new ResourceLocation(ADConstants.PET_CEMETERY, "skeleton_wolf");
 
 	// Effects
 	public static final ResourceLocation PERSISTENCE = new ResourceLocation(ADConstants.ATMOSPHERIC, "persistence");
