@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "___",
+    "D D",
+    "___"
+  ],
+  "key": {
+    "_": {
+      "item": "atmospheric:laurel_slab"
+    },
+    "D": {
+      "item": "atmospheric:laurel_trapdoor"
+    }
+  },
+  "result": {
+    "item": "abnormals_delight:laurel_cabinet"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "atmospheric"
+    }
+  ]
+}

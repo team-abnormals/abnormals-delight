@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "___",
+    "D D",
+    "___"
+  ],
+  "key": {
+    "_": {
+      "item": "caverns_and_chasms:azalea_slab"
+    },
+    "D": {
+      "item": "caverns_and_chasms:azalea_trapdoor"
+    }
+  },
+  "result": {
+    "item": "abnormals_delight:azalea_cabinet"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ]
+}
