@@ -3,6 +3,10 @@
     {
       "id": "#caverns_and_chasms:braziers",
       "required": false
+    },
+    {
+      "id": "caverns_and_chasms:lava_lamp",
+      "required": false
     }
   ]
 }

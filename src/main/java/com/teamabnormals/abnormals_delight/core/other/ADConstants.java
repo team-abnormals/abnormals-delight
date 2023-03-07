@@ -21,6 +21,7 @@ public class ADConstants {
 	public static final ResourceLocation SNAIL_SHELL_PIECE = new ResourceLocation(ADConstants.AUTUMNITY, "snail_shell_piece");
 	public static final ResourceLocation SOUL_CANDLE_CAKE = new ResourceLocation(BUZZIER_BEES, "soul_candle_cake");
 	public static final ResourceLocation CUPRIC_CANDLE_CAKE = new ResourceLocation(CAVERNS_AND_CHASMS, "cupric_candle_cake");
+	public static final ResourceLocation LAVA_LAMP = new ResourceLocation(CAVERNS_AND_CHASMS, "lava_lamp");
 	public static final ResourceLocation DUCKWEED = new ResourceLocation(ENVIRONMENTAL, "duckweed");
 	public static final ResourceLocation ADZUKI_STEW = new ResourceLocation(NEAPOLITAN, "adzuki_stew");
 	public static final ResourceLocation VANILLA_CAKE = new ResourceLocation(NEAPOLITAN, "vanilla_cake");
