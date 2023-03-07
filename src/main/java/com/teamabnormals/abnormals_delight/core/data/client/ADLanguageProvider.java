@@ -24,6 +24,7 @@ public class ADLanguageProvider extends LanguageProvider {
 		this.add(ADBlocks.YUCCA_CABINET.get());
 		this.add(ADBlocks.KOUSA_CABINET.get());
 		this.add(ADBlocks.ASPEN_CABINET.get());
+		this.add(ADBlocks.LAUREL_CABINET.get());
 		this.add(ADBlocks.GRIMWOOD_CABINET.get());
 		this.add(ADBlocks.MAPLE_CABINET.get());
 		this.add(ADBlocks.AZALEA_CABINET.get());

@@ -48,6 +48,7 @@ public class ADLootTableProvider extends LootTableProvider {
 			this.add(ADBlocks.YUCCA_CABINET.get(), BlockLoot::createNameableBlockEntityTable);
 			this.add(ADBlocks.KOUSA_CABINET.get(), BlockLoot::createNameableBlockEntityTable);
 			this.add(ADBlocks.ASPEN_CABINET.get(), BlockLoot::createNameableBlockEntityTable);
+			this.add(ADBlocks.LAUREL_CABINET.get(), BlockLoot::createNameableBlockEntityTable);
 			this.add(ADBlocks.GRIMWOOD_CABINET.get(), BlockLoot::createNameableBlockEntityTable);
 			this.add(ADBlocks.MAPLE_CABINET.get(), BlockLoot::createNameableBlockEntityTable);
 			this.add(ADBlocks.AZALEA_CABINET.get(), BlockLoot::createNameableBlockEntityTable);
