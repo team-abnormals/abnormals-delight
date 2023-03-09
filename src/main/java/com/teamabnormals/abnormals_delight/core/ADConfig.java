@@ -1,7 +1,7 @@
 package com.teamabnormals.abnormals_delight.core;
 
 import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.common.ForgeConfigSpec.ConfigValue;
+import net.minecraftforge.common.ForgeConfigSpec.BooleanValue;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -9,7 +9,7 @@ import org.apache.commons.lang3.tuple.Pair;
 public class ADConfig {
 
 	public static class Common {
-		public final ConfigValue<Boolean> replaceFDItemGroup;
+		public final BooleanValue replaceFDItemGroup;
 
 		Common(ForgeConfigSpec.Builder builder) {
 			builder.push("overrides");
