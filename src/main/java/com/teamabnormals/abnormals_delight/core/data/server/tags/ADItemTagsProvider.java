@@ -45,12 +45,10 @@ public class ADItemTagsProvider extends ItemTagsProvider {
 		this.tag(ModTags.CABBAGE_ROLL_INGREDIENTS).addTags(ADItemTags.RAW_DUCK, ADItemTags.RAW_RABBIT, ADItemTags.RAW_VENISON);
 		this.tag(ModTags.WOLF_PREY).addTags(ADItemTags.RAW_DUCK, ADItemTags.RAW_VENISON);
 
+		this.tag(ADItemTags.INGOTS_SILVER);
+		this.tag(ADItemTags.INGOTS_NECROMIUM);
+
 		this.tag(ADItemTags.SNAIL_BREEDING_ITEMS).add(ModItems.NETHER_SALAD.get());
-		this.tag(ADItemTags.AFFLICTION_ITEMS).add(ADItems.SILVER_KNIFE.get());
-		this.tag(ADItemTags.EXPERIENCE_BOOST_ITEMS).add(ModItems.GOLDEN_KNIFE.get());
-		this.tag(ADItemTags.NECROMIUM_GEAR).add(ADItems.NECROMIUM_KNIFE.get());
-		this.tag(ADItemTags.SILVER_GEAR).add(ADItems.SILVER_KNIFE.get());
 		this.tag(ADItemTags.SLABFISH_FOOD).add(ADItems.SLABDISH.get());
-		this.tag(ADItemTags.NETHERITE_GEAR).add(ModItems.NETHERITE_KNIFE.get());
 	}
 }

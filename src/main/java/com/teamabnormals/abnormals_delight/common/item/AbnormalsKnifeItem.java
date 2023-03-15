@@ -14,7 +14,7 @@ public class AbnormalsKnifeItem extends KnifeItem {
 	private static final TargetedItemCategoryFiller FILLER = new TargetedItemCategoryFiller(ModItems.GOLDEN_KNIFE);
 
 	public AbnormalsKnifeItem(Tier tier, Properties properties) {
-		super(tier, 1, -1.8F, ModList.get().isLoaded(ADConstants.CAVERNS_AND_CHASMS) ? properties.tab(CreativeModeTab.TAB_COMBAT) : properties);
+		super(tier, 0.5F, -2.0F, ModList.get().isLoaded(ADConstants.CAVERNS_AND_CHASMS) ? properties.tab(CreativeModeTab.TAB_COMBAT) : properties);
 	}
 
 	@Override
