@@ -3,6 +3,7 @@ package com.teamabnormals.abnormals_delight.core.registry;
 import com.teamabnormals.abnormals_delight.common.item.*;
 import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.teamabnormals.abnormals_delight.core.other.ADConstants;
+import com.teamabnormals.abnormals_delight.core.other.ADTiers;
 import com.teamabnormals.abnormals_delight.core.registry.util.ADItemSubRegistryHelper;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -19,8 +20,8 @@ import vectorwing.farmersdelight.common.registry.ModEffects;
 public class ADItems {
 	public static final ADItemSubRegistryHelper HELPER = AbnormalsDelight.REGISTRY_HELPER.getItemSubHelper();
 
-	public static final RegistryObject<Item> SILVER_KNIFE = HELPER.createItem("silver_knife", SilverKnifeItem::new);
-	public static final RegistryObject<Item> NECROMIUM_KNIFE = HELPER.createItem("necromium_knife", NecromiumKnifeItem::new);
+	public static final RegistryObject<Item> SILVER_KNIFE = HELPER.createItem("silver_knife", () -> new AbnormalsKnifeItem(ADTiers.SILVER, new Item.Properties()));
+	public static final RegistryObject<Item> NECROMIUM_KNIFE = HELPER.createItem("necromium_knife", () -> new AbnormalsKnifeItem(ADTiers.NECROMIUM, new Item.Properties().fireResistant()));
 
 	public static final RegistryObject<Item> DUCK_FILLET = HELPER.createCompatItem(ADConstants.ENVIRONMENTAL, "duck_fillet", new Item.Properties().food(ADFoods.DUCK_FILLET), CreativeModeTab.TAB_FOOD);
 	public static final RegistryObject<Item> COOKED_DUCK_FILLET = HELPER.createCompatItem(ADConstants.ENVIRONMENTAL, "cooked_duck_fillet", new Item.Properties().food(ADFoods.COOKED_DUCK_FILLET), CreativeModeTab.TAB_FOOD);
