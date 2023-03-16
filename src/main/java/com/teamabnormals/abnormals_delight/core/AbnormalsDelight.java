@@ -58,6 +58,7 @@ public class AbnormalsDelight {
 		generator.addProvider(includeServer, new ADItemTagsProvider(generator, blockTags, helper));
 		generator.addProvider(includeServer, new ADEntityTypeTagsProvider(generator, helper));
 		generator.addProvider(includeServer, new ADLootTableProvider(generator));
+//		generator.addProvider(includeServer, new ADLootModifierProvider(generator));
 
 		boolean includeClient = event.includeClient();
 		generator.addProvider(includeClient, new ADBlockStateProvider(generator, helper));
