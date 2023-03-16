@@ -18,7 +18,7 @@ public class ADConstants {
 
 	// Items & Blocks
 	public static final ResourceLocation YUCCA_GATEAU = new ResourceLocation(ATMOSPHERIC, "yucca_gateau");
-	public static final ResourceLocation SNAIL_SHELL_PIECE = new ResourceLocation(ADConstants.AUTUMNITY, "snail_shell_piece");
+	public static final ResourceLocation SNAIL_SHELL_PIECE = new ResourceLocation(AUTUMNITY, "snail_shell_piece");
 	public static final ResourceLocation SOUL_CANDLE_CAKE = new ResourceLocation(BUZZIER_BEES, "soul_candle_cake");
 	public static final ResourceLocation CUPRIC_CANDLE_CAKE = new ResourceLocation(CAVERNS_AND_CHASMS, "cupric_candle_cake");
 	public static final ResourceLocation LAVA_LAMP = new ResourceLocation(CAVERNS_AND_CHASMS, "lava_lamp");
@@ -36,16 +36,20 @@ public class ADConstants {
 	public static final ResourceLocation BRAZIERS = new ResourceLocation(CAVERNS_AND_CHASMS, "braziers");
 
 	// EntityTypes
-	public static final ResourceLocation SLABFISH = new ResourceLocation(ADConstants.ENVIRONMENTAL, "slabfish");
-	public static final ResourceLocation ZOMBIE_WOLF = new ResourceLocation(ADConstants.PET_CEMETERY, "zombie_wolf");
-	public static final ResourceLocation SKELETON_WOLF = new ResourceLocation(ADConstants.PET_CEMETERY, "skeleton_wolf");
+	public static final ResourceLocation TURKEY = new ResourceLocation(AUTUMNITY, "turkey");
+	public static final ResourceLocation DEER = new ResourceLocation(ENVIRONMENTAL, "deer");
+	public static final ResourceLocation DUCK = new ResourceLocation(ENVIRONMENTAL, "duck");
+	public static final ResourceLocation REINDEER = new ResourceLocation(ENVIRONMENTAL, "reindeer");
+	public static final ResourceLocation SLABFISH = new ResourceLocation(ENVIRONMENTAL, "slabfish");
+	public static final ResourceLocation ZOMBIE_WOLF = new ResourceLocation(PET_CEMETERY, "zombie_wolf");
+	public static final ResourceLocation SKELETON_WOLF = new ResourceLocation(PET_CEMETERY, "skeleton_wolf");
 
 	// Effects
-	public static final ResourceLocation PERSISTENCE = new ResourceLocation(ADConstants.ATMOSPHERIC, "persistence");
-	public static final ResourceLocation RELIEF = new ResourceLocation(ADConstants.ATMOSPHERIC, "relief");
-	public static final ResourceLocation SUGAR_RUSH = new ResourceLocation(ADConstants.NEAPOLITAN, "sugar_rush");
-	public static final ResourceLocation VANILLA_SCENT = new ResourceLocation(ADConstants.NEAPOLITAN, "vanilla_scent");
-	public static final ResourceLocation AGILITY = new ResourceLocation(ADConstants.NEAPOLITAN, "agility");
-	public static final ResourceLocation BERSERKING = new ResourceLocation(ADConstants.NEAPOLITAN, "berserking");
-	public static final ResourceLocation HARMONY = new ResourceLocation(ADConstants.NEAPOLITAN, "harmony");
+	public static final ResourceLocation PERSISTENCE = new ResourceLocation(ATMOSPHERIC, "persistence");
+	public static final ResourceLocation RELIEF = new ResourceLocation(ATMOSPHERIC, "relief");
+	public static final ResourceLocation SUGAR_RUSH = new ResourceLocation(NEAPOLITAN, "sugar_rush");
+	public static final ResourceLocation VANILLA_SCENT = new ResourceLocation(NEAPOLITAN, "vanilla_scent");
+	public static final ResourceLocation AGILITY = new ResourceLocation(NEAPOLITAN, "agility");
+	public static final ResourceLocation BERSERKING = new ResourceLocation(NEAPOLITAN, "berserking");
+	public static final ResourceLocation HARMONY = new ResourceLocation(NEAPOLITAN, "harmony");
 }

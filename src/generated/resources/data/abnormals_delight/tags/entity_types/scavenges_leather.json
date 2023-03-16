@@ -1,0 +1,17 @@
+{
+  "values": [
+    "minecraft:cow",
+    "minecraft:donkey",
+    "minecraft:horse",
+    "minecraft:llama",
+    "minecraft:mule",
+    {
+      "id": "environmental:deer",
+      "required": false
+    },
+    {
+      "id": "environmental:reindeer",
+      "required": false
+    }
+  ]
+}
