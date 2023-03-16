@@ -24,6 +24,7 @@ public class ADItemTagsProvider extends ItemTagsProvider {
 		this.tag(ADItemTags.SLABDISH_INGREDIENTS).add(Items.LILY_PAD, Items.SEAGRASS, ModItems.RICE_PANICLE.get()).addOptional(ADConstants.DUCKWEED);
 
 		this.tag(ADItemTags.COOKED_DUCK).add(ADItems.COOKED_DUCK_FILLET.get());
+		this.tag(ADItemTags.COOKED_TURKEY);
 		this.tag(ADItemTags.COOKED_RABBIT).add(Items.COOKED_RABBIT);
 		this.tag(ADItemTags.COOKED_VENISON).add(ADItems.COOKED_VENISON_SHANKS.get());
 		this.tag(ForgeTags.COOKED_FISHES).addTags(ADItemTags.COOKED_FISHES_PERCH, ADItemTags.COOKED_FISHES_PIKE);
@@ -31,6 +32,7 @@ public class ADItemTagsProvider extends ItemTagsProvider {
 		this.tag(ADItemTags.COOKED_FISHES_PIKE).add(ADItems.COOKED_PIKE_SLICE.get());
 
 		this.tag(ADItemTags.RAW_DUCK).add(ADItems.DUCK_FILLET.get());
+		this.tag(ADItemTags.RAW_TURKEY);
 		this.tag(ADItemTags.RAW_RABBIT).add(Items.RABBIT);
 		this.tag(ADItemTags.RAW_VENISON).add(ADItems.VENISON_SHANKS.get());
 		this.tag(ForgeTags.RAW_FISHES).addTags(ADItemTags.RAW_FISHES_PERCH, ADItemTags.RAW_FISHES_PIKE);
@@ -44,6 +46,8 @@ public class ADItemTagsProvider extends ItemTagsProvider {
 		this.tag(ModTags.KNIVES).add(ADItems.SILVER_KNIFE.get(), ADItems.NECROMIUM_KNIFE.get());
 		this.tag(ModTags.CABBAGE_ROLL_INGREDIENTS).addTags(ADItemTags.RAW_DUCK, ADItemTags.RAW_RABBIT, ADItemTags.RAW_VENISON);
 		this.tag(ModTags.WOLF_PREY).addTags(ADItemTags.RAW_DUCK, ADItemTags.RAW_VENISON);
+
+		this.tag(ADItemTags.BARBECUE_STICK_INGREDIENTS).addTags(ForgeTags.COOKED_BEEF, ForgeTags.COOKED_PORK, ForgeTags.COOKED_CHICKEN, ForgeTags.COOKED_MUTTON, ForgeTags.COOKED_FISHES, ADItemTags.COOKED_RABBIT, ADItemTags.COOKED_DUCK, ADItemTags.COOKED_TURKEY, ADItemTags.COOKED_VENISON);
 
 		this.tag(ADItemTags.INGOTS_SILVER);
 		this.tag(ADItemTags.INGOTS_NECROMIUM);

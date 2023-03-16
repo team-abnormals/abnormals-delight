@@ -61,7 +61,7 @@ minecraft {
             property "forge.logging.console.level", "debug"
             property "mixin.env.remapRefMap", "true"
             property "mixin.env.refMapRemappingFile", "${projectDir}/build/createSrgToMcp/output.srg"
-            args "--mod", project.modId, "--all", "--output", file("src/generated/resources/"), "--existing", file("src/main/resources")
+            args "--mod", project.modId, "--all", "--output", file("src/generated/resources/"), "--existing", file("src/main/resources"), "--existing-mod", "blueprint",  "--existing-mod", "farmersdelight"
             mods {
                 abnormals_delight {
                     source sourceSets.main
