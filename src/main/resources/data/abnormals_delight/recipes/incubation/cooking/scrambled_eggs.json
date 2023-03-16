@@ -11,6 +11,7 @@
       "tag": "forge:milk"
     }
   ],
+  "recipe_book_tab": "meals",
   "result": {
     "item": "incubation:scrambled_eggs"
   },

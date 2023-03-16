@@ -14,6 +14,7 @@
       "item": "farmersdelight:pumpkin_slice"
     }
   ],
+  "recipe_book_tab": "meals",
   "result": {
     "item": "neapolitan:adzuki_curry"
   },

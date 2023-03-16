@@ -11,6 +11,7 @@
       "item": "minecraft:sugar"
     }
   ],
+  "recipe_book_tab": "drinks",
   "result": {
     "item": "abnormals_delight:pickerelweed_juice"
   },

@@ -17,6 +17,7 @@
       "tag": "forge:milk"
     }
   ],
+  "recipe_book_tab": "meals",
   "result": {
     "item": "environmental:truffle_mash"
   },

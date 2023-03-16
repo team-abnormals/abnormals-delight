@@ -14,6 +14,7 @@
       "tag": "forge:crops/onion"
     }
   ],
+  "recipe_book_tab": "misc",
   "result": {
     "item": "autumnity:foul_soup"
   },

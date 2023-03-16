@@ -14,6 +14,7 @@
       "tag": "forge:vegetables"
     }
   ],
+  "recipe_book_tab": "meals",
   "result": {
     "item": "abnormals_delight:duck_noodles"
   },

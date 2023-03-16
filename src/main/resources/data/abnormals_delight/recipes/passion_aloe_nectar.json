@@ -14,6 +14,7 @@
       "tag": "forge:fruits/passionfruit"
     }
   ],
+  "recipe_book_tab": "drinks",
   "result": {
     "item": "abnormals_delight:passion_aloe_nectar"
   },

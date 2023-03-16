@@ -17,6 +17,7 @@
       "item": "minecraft:bowl"
     }
   ],
+  "recipe_book_tab": "meals",
   "result": {
     "item": "abnormals_delight:passionfruit_glazed_duck"
   },

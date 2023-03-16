@@ -14,6 +14,7 @@
       "tag": "forge:crops/tomato"
     }
   ],
+  "recipe_book_tab": "meals",
   "result": {
     "item": "abnormals_delight:perch_with_mushrooms"
   },

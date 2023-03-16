@@ -17,6 +17,7 @@
       "item": "neapolitan:dried_vanilla_pods"
     }
   ],
+  "recipe_book_tab": "drinks",
   "result": {
     "item": "abnormals_delight:cherry_cream_soda"
   },
