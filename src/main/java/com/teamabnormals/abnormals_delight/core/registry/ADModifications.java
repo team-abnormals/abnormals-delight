@@ -11,6 +11,7 @@ import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
+import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
 import vectorwing.farmersdelight.common.block.WildRiceBlock;
 import vectorwing.farmersdelight.common.item.KnifeItem;
@@ -24,7 +25,7 @@ public class ADModifications {
 	private static final Set<Item> MATERIALS = ImmutableSet.of(ModItems.STRAW.get(), ModItems.CANVAS.get(), ModItems.TREE_BARK.get(), ModItems.CABBAGE_SEEDS.get(), ModItems.TOMATO_SEEDS.get(), ModItems.RICE_PANICLE.get(), ModItems.RICE.get());
 	private static final Set<Item> DECORATIONS = ImmutableSet.of(ModItems.STOVE.get(), ModItems.COOKING_POT.get(), ModItems.SKILLET.get(), ModItems.CUTTING_BOARD.get(), ModItems.BEETROOT_CRATE.get(), ModItems.CARROT_CRATE.get(), ModItems.POTATO_CRATE.get(), ModItems.ONION_CRATE.get(), ModItems.CABBAGE_CRATE.get(), ModItems.RICE_BAG.get(), ModItems.TOMATO_CRATE.get(), ModItems.RICE_BALE.get(), ModItems.STRAW_BALE.get(), ModItems.RICH_SOIL_FARMLAND.get(), ModItems.FULL_TATAMI_MAT.get(), ModItems.HALF_TATAMI_MAT.get(), ModItems.BROWN_MUSHROOM_COLONY.get(), ModItems.RED_MUSHROOM_COLONY.get(), ModItems.BASKET.get(), ModItems.SAFETY_NET.get(), ModItems.ROPE.get(), ModItems.CANVAS_RUG.get());
 	private static final Set<Item> BUILDING_BLOCKS = ImmutableSet.of(ModItems.ORGANIC_COMPOST.get(), ModItems.RICH_SOIL.get(), ModItems.TATAMI.get());
-	private static final Set<Item> FOOD = ImmutableSet.of(ModItems.HORSE_FEED.get(), ModItems.ROAST_CHICKEN_BLOCK.get(), ModItems.STUFFED_PUMPKIN_BLOCK.get(), ModItems.HONEY_GLAZED_HAM_BLOCK.get(), ModItems.SHEPHERDS_PIE_BLOCK.get(), ModItems.APPLE_PIE.get(), ModItems.SWEET_BERRY_CHEESECAKE.get(), ModItems.CHOCOLATE_PIE.get(), ModItems.HOT_COCOA.get(), ModItems.MILK_BOTTLE.get(), ModItems.APPLE_CIDER.get(), ModItems.MELON_JUICE.get());
+	private static final Set<Item> FOOD = ImmutableSet.of(ModItems.HORSE_FEED.get(), ModItems.APPLE_PIE.get(), ModItems.SWEET_BERRY_CHEESECAKE.get(), ModItems.CHOCOLATE_PIE.get(), ModItems.HOT_COCOA.get(), ModItems.MILK_BOTTLE.get(), ModItems.APPLE_CIDER.get(), ModItems.MELON_JUICE.get());
 
 	public static void makeModifications() {
 		modifyCookies();
@@ -55,6 +56,8 @@ public class ADModifications {
 						Block block = ((BlockItem) item).getBlock();
 						if (block instanceof CabinetBlock || block instanceof WildCropBlock || block instanceof WildRiceBlock) {
 							setItemGroup(item, CreativeModeTab.TAB_DECORATIONS);
+						} else if (block instanceof FeastBlock) {
+							setItemGroup(item, CreativeModeTab.TAB_FOOD);
 						}
 					}
 				}
