@@ -4,16 +4,6 @@
       "type": "criteria",
       "config": {
         "criteria": {
-          "abnormals_delight:apple_cider": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "farmersdelight:apple_cider"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
           "abnormals_delight:apple_pie_slice": {
             "conditions": {
               "item": {
@@ -299,16 +289,6 @@
               "item": {
                 "items": [
                   "farmersdelight:fish_stew"
-                ]
-              }
-            },
-            "trigger": "minecraft:consume_item"
-          },
-          "abnormals_delight:fried_egg": {
-            "conditions": {
-              "item": {
-                "items": [
-                  "farmersdelight:fried_egg"
                 ]
               }
             },
@@ -754,12 +734,6 @@
           ],
           [
             "abnormals_delight:onion"
-          ],
-          [
-            "abnormals_delight:fried_egg"
-          ],
-          [
-            "abnormals_delight:apple_cider"
           ],
           [
             "abnormals_delight:tomato_sauce"
