@@ -1,0 +1,53 @@
+{
+  "modifiers": [
+    {
+      "type": "criteria",
+      "config": {
+        "criteria": {
+          "abnormals_delight:dune_platter": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "abnormals_delight:dune_platter"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "abnormals_delight:yucca_gateau_slice": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "abnormals_delight:yucca_gateau_slice"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          }
+        },
+        "requirements": [
+          [
+            "abnormals_delight:yucca_gateau_slice"
+          ],
+          [
+            "abnormals_delight:dune_platter"
+          ]
+        ],
+        "should_replace_requirements": false
+      }
+    }
+  ],
+  "priority": "normal",
+  "selector": {
+    "type": "names",
+    "conditions": [
+      {
+        "type": "forge:mod_loaded",
+        "modid": "atmospheric"
+      }
+    ],
+    "config": [
+      "minecraft:husbandry/balanced_diet"
+    ]
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "modifiers": [
+    {
+      "type": "criteria",
+      "config": {
+        "criteria": {
+          "abnormals_delight:cooked_perch_slice": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "abnormals_delight:cooked_perch_slice"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "abnormals_delight:cooked_pike_slice": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "abnormals_delight:cooked_pike_slice"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "abnormals_delight:mulberry_cookie": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "abnormals_delight:mulberry_cookie"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "abnormals_delight:perch_slice": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "abnormals_delight:perch_slice"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "abnormals_delight:perch_with_mushrooms": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "abnormals_delight:perch_with_mushrooms"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "abnormals_delight:pike_slice": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "abnormals_delight:pike_slice"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "abnormals_delight:pike_with_beetroot": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "abnormals_delight:pike_with_beetroot"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          }
+        },
+        "requirements": [
+          [
+            "abnormals_delight:cooked_perch_slice"
+          ],
+          [
+            "abnormals_delight:perch_slice"
+          ],
+          [
+            "abnormals_delight:mulberry_cookie"
+          ],
+          [
+            "abnormals_delight:pike_slice"
+          ],
+          [
+            "abnormals_delight:cooked_pike_slice"
+          ],
+          [
+            "abnormals_delight:perch_with_mushrooms"
+          ],
+          [
+            "abnormals_delight:pike_with_beetroot"
+          ]
+        ],
+        "should_replace_requirements": false
+      }
+    }
+  ],
+  "priority": "normal",
+  "selector": {
+    "type": "names",
+    "conditions": [
+      {
+        "type": "forge:mod_loaded",
+        "modid": "upgrade_aquatic"
+      }
+    ],
+    "config": [
+      "minecraft:husbandry/balanced_diet"
+    ]
+  }
+}

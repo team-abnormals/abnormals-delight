@@ -1,0 +1,105 @@
+{
+  "modifiers": [
+    {
+      "type": "criteria",
+      "config": {
+        "criteria": {
+          "abnormals_delight:adzuki_cake_slice": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "abnormals_delight:adzuki_cake_slice"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "abnormals_delight:banana_cake_slice": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "abnormals_delight:banana_cake_slice"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "abnormals_delight:chocolate_cake_slice": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "abnormals_delight:chocolate_cake_slice"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "abnormals_delight:mint_cake_slice": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "abnormals_delight:mint_cake_slice"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "abnormals_delight:strawberry_cake_slice": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "abnormals_delight:strawberry_cake_slice"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "abnormals_delight:vanilla_cake_slice": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "abnormals_delight:vanilla_cake_slice"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          }
+        },
+        "requirements": [
+          [
+            "abnormals_delight:banana_cake_slice"
+          ],
+          [
+            "abnormals_delight:strawberry_cake_slice"
+          ],
+          [
+            "abnormals_delight:mint_cake_slice"
+          ],
+          [
+            "abnormals_delight:chocolate_cake_slice"
+          ],
+          [
+            "abnormals_delight:vanilla_cake_slice"
+          ],
+          [
+            "abnormals_delight:adzuki_cake_slice"
+          ]
+        ],
+        "should_replace_requirements": false
+      }
+    }
+  ],
+  "priority": "normal",
+  "selector": {
+    "type": "names",
+    "conditions": [
+      {
+        "type": "forge:mod_loaded",
+        "modid": "neapolitan"
+      }
+    ],
+    "config": [
+      "minecraft:husbandry/balanced_diet"
+    ]
+  }
+}

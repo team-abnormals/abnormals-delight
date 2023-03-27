@@ -11,6 +11,7 @@ public class ADConstants {
 	public static final String ENDERGETIC = "endergetic";
 	public static final String ENVIRONMENTAL = "environmental";
 	public static final String CAVERNS_AND_CHASMS = "caverns_and_chasms";
+	public static final String INCUBATION = "incubation";
 	public static final String NEAPOLITAN = "neapolitan";
 	public static final String NETHER_EXTENSION = "nether_extension";
 	public static final String PET_CEMETERY = "pet_cemetery";

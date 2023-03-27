@@ -1,0 +1,43 @@
+{
+  "modifiers": [
+    {
+      "type": "criteria",
+      "config": {
+        "criteria": {
+          "abnormals_delight:fried_egg": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "farmersdelight:fried_egg"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          }
+        },
+        "requirements": [
+          [
+            "abnormals_delight:fried_egg"
+          ]
+        ],
+        "should_replace_requirements": false
+      }
+    }
+  ],
+  "priority": "normal",
+  "selector": {
+    "type": "names",
+    "conditions": [
+      {
+        "type": "forge:not",
+        "value": {
+          "type": "forge:mod_loaded",
+          "modid": "incubation"
+        }
+      }
+    ],
+    "config": [
+      "minecraft:husbandry/balanced_diet"
+    ]
+  }
+}

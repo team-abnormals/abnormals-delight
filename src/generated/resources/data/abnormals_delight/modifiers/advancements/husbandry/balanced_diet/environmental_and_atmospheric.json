@@ -1,0 +1,49 @@
+{
+  "modifiers": [
+    {
+      "type": "criteria",
+      "config": {
+        "criteria": {
+          "abnormals_delight:passionfruit_glazed_duck": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "abnormals_delight:passionfruit_glazed_duck"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          }
+        },
+        "requirements": [
+          [
+            "abnormals_delight:passionfruit_glazed_duck"
+          ]
+        ],
+        "should_replace_requirements": false
+      }
+    }
+  ],
+  "priority": "normal",
+  "selector": {
+    "type": "names",
+    "conditions": [
+      {
+        "type": "forge:and",
+        "values": [
+          {
+            "type": "forge:mod_loaded",
+            "modid": "environmental"
+          },
+          {
+            "type": "forge:mod_loaded",
+            "modid": "atmospheric"
+          }
+        ]
+      }
+    ],
+    "config": [
+      "minecraft:husbandry/balanced_diet"
+    ]
+  }
+}

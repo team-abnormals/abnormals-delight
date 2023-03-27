@@ -1,0 +1,66 @@
+{
+  "modifiers": [
+    {
+      "type": "criteria",
+      "config": {
+        "criteria": {
+          "abnormals_delight:escargot": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "abnormals_delight:escargot"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "abnormals_delight:maple_cookie": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "abnormals_delight:maple_cookie"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "abnormals_delight:maple_glazed_bacon": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "abnormals_delight:maple_glazed_bacon"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          }
+        },
+        "requirements": [
+          [
+            "abnormals_delight:maple_cookie"
+          ],
+          [
+            "abnormals_delight:maple_glazed_bacon"
+          ],
+          [
+            "abnormals_delight:escargot"
+          ]
+        ],
+        "should_replace_requirements": false
+      }
+    }
+  ],
+  "priority": "normal",
+  "selector": {
+    "type": "names",
+    "conditions": [
+      {
+        "type": "forge:mod_loaded",
+        "modid": "autumnity"
+      }
+    ],
+    "config": [
+      "minecraft:husbandry/balanced_diet"
+    ]
+  }
+}
