@@ -9,6 +9,9 @@
     },
     {
       "tag": "abnormals_delight:barbecue_stick_ingredients"
+    },
+    {
+      "item": "minecraft:stick" 
     }
   ],
   "result": {
