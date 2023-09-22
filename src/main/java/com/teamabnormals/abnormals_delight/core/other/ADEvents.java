@@ -30,8 +30,10 @@ import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.registries.ForgeRegistries;
+import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.registry.ModParticleTypes;
 import vectorwing.farmersdelight.common.tag.ModTags;
+import vectorwing.farmersdelight.common.utility.ItemUtils;
 import vectorwing.farmersdelight.common.utility.MathUtils;
 
 import java.util.HashMap;
@@ -82,8 +84,10 @@ public class ADEvents {
 		if (tool.is(ModTags.KNIVES) && name != null) {
 			if (state.is(ADBlockTags.DROPS_FLAVORED_CAKE_SLICE)) {
 				Supplier<Item> cakeSlice = getCakeSlice(state);
+				float offset = 0.0F;
 				if (state.hasProperty(CakeBlock.BITES)) {
 					int bites = state.getValue(CakeBlock.BITES);
+					offset = bites * 0.1F;
 					if (bites < 6) {
 						level.setBlock(pos, state.setValue(CakeBlock.BITES, bites + 1), 3);
 					} else {
@@ -94,7 +98,7 @@ public class ADEvents {
 					Block.dropResources(state, level, pos);
 				}
 
-				Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(cakeSlice.get()));
+				ItemUtils.spawnItemEntity(level, new ItemStack(cakeSlice.get()), pos.getX() + offset, pos.getY() + 0.2F, pos.getZ() + 0.5F, -0.05F, 0.0F, 0.0F);
 				level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
 				event.setCancellationResult(InteractionResult.SUCCESS);
 				event.setCanceled(true);
@@ -105,7 +109,8 @@ public class ADEvents {
 				} else {
 					level.removeBlock(pos, false);
 				}
-				Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ADItems.YUCCA_GATEAU_SLICE.get()));
+
+				ItemUtils.spawnItemEntity(level, new ItemStack(ADItems.YUCCA_GATEAU_SLICE.get()), pos.getX() + (bites * 0.075F), pos.getY() + 0.2F, pos.getZ() + 0.5F, -0.05F, 0.0F, 0.0F);
 				level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
 
 				event.setCancellationResult(InteractionResult.SUCCESS);

@@ -80,10 +80,10 @@ dependencies {
     implementation fg.deobf("com.teamabnormals:blueprint:${project.minecraft}-${project.blueprint}")
     implementation fg.deobf("curse.maven:farmers_delight-398521:${project.farmersDelight}")
 
-//    runtimeOnly fg.deobf("curse.maven:atmospheric-362393:3249309")
+//    runtimeOnly fg.deobf("curse.maven:atmospheric-362393:4415516")
 //    runtimeOnly fg.deobf("curse.maven:autumnity-365045:3295700")
 //    runtimeOnly fg.deobf("curse.maven:environmental-388992:3416597")
-//    runtimeOnly fg.deobf("curse.maven:neapolitan-382016:3221772")
+//    runtimeOnly fg.deobf("curse.maven:neapolitan-382016:4023083")
 //    runtimeOnly fg.deobf("curse.maven:upgrade_aquatic-326895:3249419")
 
     compileOnly fg.deobf("mezz.jei:jei-${project.minecraft}-common-api:${project.jei}")
