@@ -97,15 +97,6 @@
         },
         "requirements": [
           [
-            "abnormals_delight:seared_venison"
-          ],
-          [
-            "abnormals_delight:venison_shanks"
-          ],
-          [
-            "abnormals_delight:cooked_duck_fillet"
-          ],
-          [
             "abnormals_delight:cherry_cookie"
           ],
           [
@@ -122,6 +113,15 @@
           ],
           [
             "abnormals_delight:cooked_venison_shanks"
+          ],
+          [
+            "abnormals_delight:seared_venison"
+          ],
+          [
+            "abnormals_delight:venison_shanks"
+          ],
+          [
+            "abnormals_delight:cooked_duck_fillet"
           ]
         ],
         "should_replace_requirements": false

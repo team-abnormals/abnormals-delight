@@ -56,6 +56,7 @@ public class ADLootTableProvider extends LootTableProvider {
 			this.add(ADBlocks.WILLOW_CABINET.get(), BlockLoot::createNameableBlockEntityTable);
 			this.add(ADBlocks.CHERRY_CABINET.get(), BlockLoot::createNameableBlockEntityTable);
 			this.add(ADBlocks.WISTERIA_CABINET.get(), BlockLoot::createNameableBlockEntityTable);
+			this.add(ADBlocks.PINE_CABINET.get(), BlockLoot::createNameableBlockEntityTable);
 			this.add(ADBlocks.DRIFTWOOD_CABINET.get(), BlockLoot::createNameableBlockEntityTable);
 			this.add(ADBlocks.RIVER_CABINET.get(), BlockLoot::createNameableBlockEntityTable);
 		}

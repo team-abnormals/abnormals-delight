@@ -27,6 +27,7 @@ public class ADBlocks {
 	public static final RegistryObject<Block> WILLOW_CABINET = HELPER.createCompatFuelBlock(ADConstants.ENVIRONMENTAL, "willow_cabinet", () -> new AbnormalsCabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300, CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> WISTERIA_CABINET = HELPER.createCompatFuelBlock(ADConstants.ENVIRONMENTAL, "wisteria_cabinet", () -> new AbnormalsCabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300, CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> CHERRY_CABINET = HELPER.createCompatFuelBlock(ADConstants.ENVIRONMENTAL, "cherry_cabinet", () -> new AbnormalsCabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300, CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Block> PINE_CABINET = HELPER.createCompatFuelBlock(ADConstants.ENVIRONMENTAL, "pine_cabinet", () -> new AbnormalsCabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300, CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> DRIFTWOOD_CABINET = HELPER.createCompatFuelBlock(ADConstants.UPGRADE_AQUATIC, "driftwood_cabinet", () -> new AbnormalsCabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300, CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Block> RIVER_CABINET = HELPER.createCompatFuelBlock(ADConstants.UPGRADE_AQUATIC, "river_cabinet", () -> new AbnormalsCabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300, CreativeModeTab.TAB_DECORATIONS);
 }

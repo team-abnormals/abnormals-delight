@@ -23,7 +23,7 @@ public class ADItemTagsProvider extends ItemTagsProvider {
 
 	@Override
 	protected void addTags() {
-		this.tag(ModTags.WOODEN_CABINETS).add(ModBlocks.MANGROVE_CABINET.get().asItem(), ADBlocks.ROSEWOOD_CABINET.get().asItem(), ADBlocks.MORADO_CABINET.get().asItem(), ADBlocks.YUCCA_CABINET.get().asItem(), ADBlocks.KOUSA_CABINET.get().asItem(), ADBlocks.ASPEN_CABINET.get().asItem(), ADBlocks.LAUREL_CABINET.get().asItem(), ADBlocks.GRIMWOOD_CABINET.get().asItem(), ADBlocks.MAPLE_CABINET.get().asItem(), ADBlocks.AZALEA_CABINET.get().asItem(), ADBlocks.POISE_CABINET.get().asItem(), ADBlocks.WILLOW_CABINET.get().asItem(), ADBlocks.CHERRY_CABINET.get().asItem(), ADBlocks.WISTERIA_CABINET.get().asItem(), ADBlocks.DRIFTWOOD_CABINET.get().asItem(), ADBlocks.RIVER_CABINET.get().asItem());
+		this.tag(ModTags.WOODEN_CABINETS).add(ModBlocks.MANGROVE_CABINET.get().asItem(), ADBlocks.ROSEWOOD_CABINET.get().asItem(), ADBlocks.MORADO_CABINET.get().asItem(), ADBlocks.YUCCA_CABINET.get().asItem(), ADBlocks.KOUSA_CABINET.get().asItem(), ADBlocks.ASPEN_CABINET.get().asItem(), ADBlocks.LAUREL_CABINET.get().asItem(), ADBlocks.GRIMWOOD_CABINET.get().asItem(), ADBlocks.MAPLE_CABINET.get().asItem(), ADBlocks.AZALEA_CABINET.get().asItem(), ADBlocks.POISE_CABINET.get().asItem(), ADBlocks.WILLOW_CABINET.get().asItem(), ADBlocks.CHERRY_CABINET.get().asItem(), ADBlocks.WISTERIA_CABINET.get().asItem(), ADBlocks.PINE_CABINET.get().asItem(), ADBlocks.DRIFTWOOD_CABINET.get().asItem(), ADBlocks.RIVER_CABINET.get().asItem());
 		this.tag(ADItemTags.SLABDISH_INGREDIENTS).add(Items.LILY_PAD, Items.SEAGRASS, ModItems.RICE_PANICLE.get()).addOptional(ADConstants.DUCKWEED);
 
 		this.tag(ADItemTags.COOKED_DUCK).add(ADItems.COOKED_DUCK_FILLET.get());
