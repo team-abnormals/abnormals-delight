@@ -4,7 +4,7 @@
     "item": "abnormals_delight:pike_slice"
   },
   "result": "abnormals_delight:cooked_pike_slice",
-  "experience": 0.35,
+  "experience": 1.0,
   "cookingtime": 200,
   "conditions": [
     {

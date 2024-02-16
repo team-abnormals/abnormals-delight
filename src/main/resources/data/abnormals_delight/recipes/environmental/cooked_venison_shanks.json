@@ -4,7 +4,7 @@
     "item": "abnormals_delight:venison_shanks"
   },
   "result": "abnormals_delight:cooked_venison_shanks",
-  "experience": 0.35,
+  "experience": 1.0,
   "cookingtime": 200,
   "conditions": [
     {

@@ -4,7 +4,7 @@
     "item": "abnormals_delight:perch_slice"
   },
   "result": "abnormals_delight:cooked_perch_slice",
-  "experience": 0.35,
+  "experience": 1.0,
   "cookingtime": 200,
   "conditions": [
     {
