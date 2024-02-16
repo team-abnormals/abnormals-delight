@@ -6,7 +6,8 @@ import com.teamabnormals.blueprint.common.loot.modification.modifiers.LootPoolsM
 import com.teamabnormals.blueprint.core.util.modification.selection.ConditionedResourceSelector;
 import com.teamabnormals.blueprint.core.util.modification.selection.selectors.NamesResourceSelector;
 import net.minecraft.advancements.critereon.ItemPredicate;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup.Provider;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -21,15 +22,16 @@ import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import vectorwing.farmersdelight.FarmersDelight;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 public class ADLootModifierProvider extends LootModifierProvider {
 
-	public ADLootModifierProvider(DataGenerator dataGenerator) {
-		super(dataGenerator, AbnormalsDelight.MOD_ID);
+	public ADLootModifierProvider(PackOutput output, CompletableFuture<Provider> provider) {
+		super(AbnormalsDelight.MOD_ID, output, provider);
 	}
 
 	@Override
-	protected void registerEntries() {
+	protected void registerEntries(Provider provider) {
 		this.entry("wild_potatoes").selector(new ConditionedResourceSelector(new NamesResourceSelector(new ResourceLocation(FarmersDelight.MODID, "blocks/wild_potatoes")), new ModLoadedCondition("environmental")))
 				.addModifier(new LootPoolsModifier(List.of(LootPool.lootPool()
 						.name(AbnormalsDelight.MOD_ID + ":wild_potatoes")

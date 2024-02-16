@@ -20,7 +20,7 @@ import java.util.List;
 public class NectarItem extends EffectDrinkItem {
 
 	public NectarItem(Properties properties) {
-		super(null, properties, ADConstants.ATMOSPHERIC);
+		super(null, properties);
 	}
 
 	@Override

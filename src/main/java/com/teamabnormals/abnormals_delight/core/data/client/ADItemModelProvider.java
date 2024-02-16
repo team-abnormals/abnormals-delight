@@ -2,7 +2,7 @@ package com.teamabnormals.abnormals_delight.core.data.client;
 
 import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.teamabnormals.abnormals_delight.core.registry.ADItems;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -13,8 +13,8 @@ import vectorwing.farmersdelight.FarmersDelight;
 
 public class ADItemModelProvider extends ItemModelProvider {
 
-	public ADItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-		super(generator, AbnormalsDelight.MOD_ID, existingFileHelper);
+	public ADItemModelProvider(PackOutput output, ExistingFileHelper helper) {
+		super(output, AbnormalsDelight.MOD_ID, helper);
 	}
 
 	@Override

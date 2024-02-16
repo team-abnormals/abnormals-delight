@@ -97,6 +97,9 @@
         },
         "requirements": [
           [
+            "abnormals_delight:cherry_cookie"
+          ],
+          [
             "abnormals_delight:duck_fillet"
           ],
           [
@@ -119,9 +122,6 @@
           ],
           [
             "abnormals_delight:cooked_duck_fillet"
-          ],
-          [
-            "abnormals_delight:cherry_cookie"
           ]
         ],
         "should_replace_requirements": false

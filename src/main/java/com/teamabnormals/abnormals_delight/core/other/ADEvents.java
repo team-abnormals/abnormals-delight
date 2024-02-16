@@ -153,13 +153,13 @@ public class ADEvents {
 				for (MobEffectInstance effect : SlabdishItem.EFFECTS) {
 					entity.addEffect(new MobEffectInstance(effect));
 				}
-				entity.level.playSound(null, target.blockPosition(), SoundEvents.GENERIC_EAT, SoundSource.PLAYERS, 0.8F, 0.8F);
+				entity.level().playSound(null, target.blockPosition(), SoundEvents.GENERIC_EAT, SoundSource.PLAYERS, 0.8F, 0.8F);
 
 				for (int i = 0; i < 5; ++i) {
 					double d0 = MathUtils.RAND.nextGaussian() * 0.02D;
 					double d1 = MathUtils.RAND.nextGaussian() * 0.02D;
 					double d2 = MathUtils.RAND.nextGaussian() * 0.02D;
-					entity.level.addParticle(ModParticleTypes.STAR.get(), entity.getRandomX(1.0D), entity.getRandomY() + 0.5D, entity.getRandomZ(1.0D), d0, d1, d2);
+					entity.level().addParticle(ModParticleTypes.STAR.get(), entity.getRandomX(1.0D), entity.getRandomY() + 0.5D, entity.getRandomZ(1.0D), d0, d1, d2);
 				}
 
 				if (stack.getCraftingRemainingItem() != ItemStack.EMPTY && !player.isCreative()) {

@@ -6,26 +6,24 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class CakeSliceItem extends Item {
 	private final ResourceLocation effectName;
 	private final int duration;
 
-	public CakeSliceItem(String modid, ResourceLocation effectName, int duration, Properties properties, CreativeModeTab group) {
-		super(ModList.get().isLoaded(modid) ? properties.tab(group) : properties);
+	public CakeSliceItem(ResourceLocation effectName, int duration, Properties properties) {
+		super(properties);
 		this.effectName = effectName;
 		this.duration = duration;
 	}
 
-	public CakeSliceItem(String modid, Properties properties, CreativeModeTab group) {
-		this(modid, null, 0, properties, group);
+	public CakeSliceItem(Properties properties) {
+		this(null, 0, properties);
 	}
 
 	@Override

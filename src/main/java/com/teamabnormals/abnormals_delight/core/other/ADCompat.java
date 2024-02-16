@@ -2,10 +2,12 @@ package com.teamabnormals.abnormals_delight.core.other;
 
 import com.teamabnormals.abnormals_delight.core.registry.ADItems;
 import com.teamabnormals.blueprint.core.util.DataUtil;
+import net.minecraft.world.food.Foods;
 
 public class ADCompat {
 
 	public static void registerCompat() {
+		Foods.COOKIE.fastFood = true;
 		registerCompostables();
 	}
 

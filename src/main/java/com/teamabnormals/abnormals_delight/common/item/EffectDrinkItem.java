@@ -9,11 +9,13 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffectUtil;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUtils;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.fml.ModList;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 
 import javax.annotation.Nullable;
@@ -22,8 +24,8 @@ import java.util.List;
 public class EffectDrinkItem extends ConsumableItem {
 	public MobEffect effect;
 
-	public EffectDrinkItem(MobEffect effect, Properties properties, String modid) {
-		super(ModList.get().isLoaded(modid) ? properties.tab(CreativeModeTab.TAB_FOOD) : properties);
+	public EffectDrinkItem(MobEffect effect, Properties properties) {
+		super(properties);
 		this.effect = effect;
 	}
 

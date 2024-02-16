@@ -3,7 +3,7 @@ package com.teamabnormals.abnormals_delight.core.data.client;
 import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.teamabnormals.abnormals_delight.core.registry.ADBlocks;
 import com.teamabnormals.abnormals_delight.core.registry.ADItems;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -13,8 +13,8 @@ import org.apache.commons.lang3.text.WordUtils;
 
 public class ADLanguageProvider extends LanguageProvider {
 
-	public ADLanguageProvider(DataGenerator generator) {
-		super(generator, AbnormalsDelight.MOD_ID, "en_us");
+	public ADLanguageProvider(PackOutput output) {
+		super(output, AbnormalsDelight.MOD_ID, "en_us");
 	}
 
 	@Override

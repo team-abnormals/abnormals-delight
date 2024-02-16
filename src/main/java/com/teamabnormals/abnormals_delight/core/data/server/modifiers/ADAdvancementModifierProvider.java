@@ -8,7 +8,8 @@ import com.teamabnormals.blueprint.core.util.modification.selection.ConditionedR
 import com.teamabnormals.blueprint.core.util.modification.selection.selectors.NamesResourceSelector;
 import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.ConsumeItemTrigger;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup.Provider;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.crafting.conditions.AndCondition;
 import net.minecraftforge.common.crafting.conditions.ICondition;
@@ -21,6 +22,7 @@ import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 import static com.teamabnormals.abnormals_delight.core.registry.ADItems.*;
@@ -33,12 +35,12 @@ public class ADAdvancementModifierProvider extends AdvancementModifierProvider {
 	public static final ModLoadedCondition NEAPOLITAN_LOADED = new ModLoadedCondition(ADConstants.NEAPOLITAN);
 	public static final ModLoadedCondition UPGRADE_AQUATIC_LOADED = new ModLoadedCondition(ADConstants.UPGRADE_AQUATIC);
 
-	public ADAdvancementModifierProvider(DataGenerator generator) {
-		super(generator, AbnormalsDelight.MOD_ID);
+	public ADAdvancementModifierProvider(PackOutput output, CompletableFuture<Provider> provider) {
+		super(AbnormalsDelight.MOD_ID, output, provider);
 	}
 
 	@Override
-	protected void registerEntries() {
+	protected void registerEntries(Provider provider) {
 		CriteriaModifier.Builder balancedDiet = CriteriaModifier.builder(this.modId);
 		List<Item> items = ForgeRegistries.ITEMS.getValues().stream().filter(item -> ForgeRegistries.ITEMS.getKey(item) != null && FarmersDelight.MODID.equals(ForgeRegistries.ITEMS.getKey(item).getNamespace())).collect(Collectors.toList());
 		items.forEach(item -> {

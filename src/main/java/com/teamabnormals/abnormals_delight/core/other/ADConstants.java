@@ -1,9 +1,11 @@
 package com.teamabnormals.abnormals_delight.core.other;
 
 import net.minecraft.resources.ResourceLocation;
+import vectorwing.farmersdelight.FarmersDelight;
 
 public class ADConstants {
 
+	public static final String FARMERS_DELIGHT = FarmersDelight.MODID;
 	// Mod IDs
 	public static final String ATMOSPHERIC = "atmospheric";
 	public static final String AUTUMNITY = "autumnity";

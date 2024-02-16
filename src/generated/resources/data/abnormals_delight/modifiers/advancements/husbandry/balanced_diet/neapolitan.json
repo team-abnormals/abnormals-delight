@@ -67,6 +67,9 @@
         },
         "requirements": [
           [
+            "abnormals_delight:mint_cake_slice"
+          ],
+          [
             "abnormals_delight:chocolate_cake_slice"
           ],
           [
@@ -80,9 +83,6 @@
           ],
           [
             "abnormals_delight:strawberry_cake_slice"
-          ],
-          [
-            "abnormals_delight:mint_cake_slice"
           ]
         ],
         "should_replace_requirements": false

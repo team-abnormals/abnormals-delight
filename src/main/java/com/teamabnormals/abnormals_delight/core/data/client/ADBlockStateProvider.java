@@ -2,7 +2,7 @@ package com.teamabnormals.abnormals_delight.core.data.client;
 
 import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.teamabnormals.abnormals_delight.core.registry.ADBlocks;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -16,8 +16,8 @@ import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 public class ADBlockStateProvider extends BlockStateProvider {
 
-	public ADBlockStateProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-		super(generator, AbnormalsDelight.MOD_ID, existingFileHelper);
+	public ADBlockStateProvider(PackOutput output, ExistingFileHelper helper) {
+		super(output, AbnormalsDelight.MOD_ID, helper);
 	}
 
 	@Override
