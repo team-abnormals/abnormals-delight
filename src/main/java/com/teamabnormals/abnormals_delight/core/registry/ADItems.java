@@ -65,9 +65,9 @@ public class ADItems {
 		public static final FoodProperties COOKED_DUCK_FILLET = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.3F).meat().fast().build();
 		public static final FoodProperties VENISON_SHANKS = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.3F).meat().fast().build();
 		public static final FoodProperties COOKED_VENISON_SHANKS = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.8F).meat().fast().build();
-		public static final FoodProperties PIKE_SLICE = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.3F).fast().build();
+		public static final FoodProperties PIKE_SLICE = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.3F).effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F).fast().build();
 		public static final FoodProperties COOKED_PIKE_SLICE = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.8F).fast().build();
-		public static final FoodProperties PERCH_SLICE = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.2F).fast().build();
+		public static final FoodProperties PERCH_SLICE = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.2F).effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F).fast().build();
 		public static final FoodProperties COOKED_PERCH_SLICE = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.7F).fast().build();
 
 		public static final FoodProperties SEARED_VENISON = (new FoodProperties.Builder()).nutrition(12).saturationMod(0.9F).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), FoodValues.LONG_DURATION, 0), 1.0F).build();
