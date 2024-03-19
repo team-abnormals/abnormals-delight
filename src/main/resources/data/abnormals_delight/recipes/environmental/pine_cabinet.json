@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "___",
+    "D D",
+    "___"
+  ],
+  "key": {
+    "_": {
+      "item": "environmental:pine_slab"
+    },
+    "D": {
+      "item": "environmental:pine_trapdoor"
+    }
+  },
+  "result": {
+    "item": "abnormals_delight:pine_cabinet"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "environmental"
+    }
+  ]
+}
