@@ -53,7 +53,7 @@ public class ADAdvancementModifierProvider extends AdvancementModifierProvider {
 		compatBalancedDiet("autumnity", AUTUMNITY_LOADED, Set.of(MAPLE_COOKIE, MAPLE_GLAZED_BACON, ESCARGOT));
 		compatBalancedDiet("atmospheric", ATMOSPHERIC_LOADED, Set.of(DUNE_PLATTER, YUCCA_GATEAU_SLICE));
 		compatBalancedDiet("environmental", ENVIRONMENTAL_LOADED, Set.of(DUCK_FILLET, COOKED_DUCK_FILLET, VENISON_SHANKS, COOKED_VENISON_SHANKS, CHERRY_COOKIE, SEARED_VENISON, DUCK_NOODLES, VENISON_WITH_BAMBOO_SHOOTS, SLABDISH));
-		compatBalancedDiet("environmental_and_atmospheric", new AndCondition(ENVIRONMENTAL_LOADED, ATMOSPHERIC_LOADED), Set.of(PASSIONFRUIT_GLAZED_DUCK));
+		compatBalancedDiet("environmental_and_atmospheric", new AndCondition(ENVIRONMENTAL_LOADED, ATMOSPHERIC_LOADED), Set.of(PASSION_FRUIT_GLAZED_DUCK));
 		compatBalancedDiet("incubation", new NotCondition(INCUBATION_LOADED), Set.of(ModItems.FRIED_EGG));
 		compatBalancedDiet("neapolitan", NEAPOLITAN_LOADED, Set.of(VANILLA_CAKE_SLICE, CHOCOLATE_CAKE_SLICE, STRAWBERRY_CAKE_SLICE, BANANA_CAKE_SLICE, MINT_CAKE_SLICE, ADZUKI_CAKE_SLICE));
 		compatBalancedDiet("upgrade_aquatic", UPGRADE_AQUATIC_LOADED, Set.of(PIKE_SLICE, COOKED_PIKE_SLICE, PERCH_SLICE, COOKED_PERCH_SLICE, MULBERRY_COOKIE, PERCH_WITH_MUSHROOMS, PIKE_WITH_BEETROOT));

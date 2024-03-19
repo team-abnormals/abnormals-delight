@@ -36,7 +36,7 @@ public class ADItemModelProvider extends ItemModelProvider {
 		this.generated(ADItems.MAPLE_COOKIE.get());
 
 		this.generated(ADItems.SEARED_VENISON.get());
-		this.generated(ADItems.PASSIONFRUIT_GLAZED_DUCK.get());
+		this.generated(ADItems.PASSION_FRUIT_GLAZED_DUCK.get());
 		this.generated(ADItems.DUNE_PLATTER.get());
 		this.generated(ADItems.DUCK_NOODLES.get());
 		this.generated(ADItems.PERCH_WITH_MUSHROOMS.get());

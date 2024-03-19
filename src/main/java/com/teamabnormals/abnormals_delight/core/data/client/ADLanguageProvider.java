@@ -53,7 +53,7 @@ public class ADLanguageProvider extends LanguageProvider {
 		this.add(ADItems.MAPLE_COOKIE.get());
 
 		this.add(ADItems.SEARED_VENISON.get());
-		this.add(ADItems.PASSIONFRUIT_GLAZED_DUCK.get());
+		this.add(ADItems.PASSION_FRUIT_GLAZED_DUCK.get());
 		this.add(ADItems.DUNE_PLATTER.get());
 		this.add(ADItems.DUCK_NOODLES.get());
 		this.add(ADItems.PERCH_WITH_MUSHROOMS.get());
