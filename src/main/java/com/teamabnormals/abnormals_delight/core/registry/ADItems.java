@@ -7,9 +7,11 @@ import com.teamabnormals.abnormals_delight.core.other.ADConstants;
 import com.teamabnormals.abnormals_delight.core.other.ADTiers;
 import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
 import com.teamabnormals.blueprint.core.util.registry.ItemSubRegistryHelper;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -19,6 +21,7 @@ import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.KnifeItem;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
+import vectorwing.farmersdelight.common.registry.ModCreativeTabs;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
@@ -97,62 +100,48 @@ public class ADItems {
 
 	public static void setupTabEditors() {
 		CreativeModeTabContentsPopulator.mod(AbnormalsDelight.MOD_ID)
-				.predicate(event -> modPredicate())
-				.tab(FOOD_AND_DRINKS)
+				.predicate(event -> modPredicate(event, FOOD_AND_DRINKS))
 				.addItemsAfter(of(Items.CAKE), ModItems.CAKE_SLICE)
-				.tab(COMBAT)
+				.predicate(event -> modPredicate(event, COMBAT))
 				.addItemsBefore(of(Items.FLINT_AND_STEEL), ModItems.FLINT_KNIFE)
 				.addItemsAfter(of(Items.IRON_HOE), ModItems.IRON_KNIFE)
 				.addItemsAfter(of(Items.GOLDEN_HOE), ModItems.GOLDEN_KNIFE)
 				.addItemsAfter(of(Items.DIAMOND_HOE), ModItems.DIAMOND_KNIFE)
 				.addItemsAfter(of(Items.NETHERITE_HOE), ModItems.NETHERITE_KNIFE)
-				.tab(FUNCTIONAL_BLOCKS)
+				.predicate(event -> modPredicate(event, FUNCTIONAL_BLOCKS))
 				.addItemsAfter(of(Items.BARREL), ModBlocks.OAK_CABINET, ModBlocks.SPRUCE_CABINET, ModBlocks.BIRCH_CABINET, ModBlocks.JUNGLE_CABINET, ModBlocks.ACACIA_CABINET, ModBlocks.DARK_OAK_CABINET, ModBlocks.MANGROVE_CABINET, ModBlocks.CHERRY_CABINET, ModBlocks.BAMBOO_CABINET)
 
-				.predicate(event -> modPredicate(ADConstants.FARMERS_DELIGHT))
-				.tab(FUNCTIONAL_BLOCKS)
-				.addItemsBefore(of(Items.ENDER_CHEST), ADBlocks.ROSEWOOD_CABINET, ADBlocks.MORADO_CABINET, ADBlocks.YUCCA_CABINET, ADBlocks.KOUSA_CABINET, ADBlocks.ASPEN_CABINET, ADBlocks.LAUREL_CABINET, ADBlocks.GRIMWOOD_CABINET)
+				.predicate(event -> modPredicate(event, FOOD_AND_DRINKS, ADConstants.FARMERS_DELIGHT))
+				.addItemsAfter(of(Items.CAKE), VANILLA_CAKE_SLICE, CHOCOLATE_CAKE_SLICE, STRAWBERRY_CAKE_SLICE, BANANA_CAKE_SLICE, MINT_CAKE_SLICE, ADZUKI_CAKE_SLICE)
 
-				.predicate(event -> modPredicate(ADConstants.FARMERS_DELIGHT))
-				.tab(FUNCTIONAL_BLOCKS)
-				.addItemsBefore(of(Items.ENDER_CHEST), ADBlocks.MAPLE_CABINET)
+				.predicate(event -> modPredicate(event, FUNCTIONAL_BLOCKS, ADConstants.FARMERS_DELIGHT))
+				.addItemsAfter(of(Items.BARREL), ADBlocks.ROSEWOOD_CABINET, ADBlocks.MORADO_CABINET, ADBlocks.YUCCA_CABINET, ADBlocks.KOUSA_CABINET, ADBlocks.ASPEN_CABINET, ADBlocks.LAUREL_CABINET, ADBlocks.GRIMWOOD_CABINET)
 
-				.predicate(event -> modPredicate())
-				.tab(FUNCTIONAL_BLOCKS)
-				.addItemsBefore(of(Items.ENDER_CHEST), ModBlocks.CRIMSON_CABINET, ModBlocks.WARPED_CABINET)
+				.predicate(event -> modPredicate(event, FUNCTIONAL_BLOCKS, ADConstants.FARMERS_DELIGHT))
+				.addItemsAfter(of(Items.BARREL), ADBlocks.MAPLE_CABINET)
 
-				.predicate(event -> modPredicate(ADConstants.FARMERS_DELIGHT))
-				.tab(FUNCTIONAL_BLOCKS)
-				.addItemsBefore(of(Items.ENDER_CHEST), ADBlocks.POISE_CABINET)
+				.predicate(event -> modPredicate(event, FUNCTIONAL_BLOCKS, ADConstants.FARMERS_DELIGHT))
+				.addItemsAfter(of(Items.BARREL), ADBlocks.AZALEA_CABINET)
+
+				.predicate(event -> modPredicate(event, FUNCTIONAL_BLOCKS, ADConstants.FARMERS_DELIGHT))
+				.addItemsAfter(of(Items.BARREL), ADBlocks.WILLOW_CABINET, ADBlocks.PINE_CABINET, ADBlocks.CHERRY_CABINET, ADBlocks.WISTERIA_CABINET)
+
+				.predicate(event -> modPredicate(event, FUNCTIONAL_BLOCKS, ADConstants.FARMERS_DELIGHT))
+				.addItemsAfter(of(Items.BARREL), ADBlocks.DRIFTWOOD_CABINET, ADBlocks.RIVER_CABINET)
+
+				.predicate(event -> modPredicate(event, FUNCTIONAL_BLOCKS, ADConstants.FARMERS_DELIGHT))
+				.addItemsAfter(of(Items.BARREL), ModBlocks.CRIMSON_CABINET, ModBlocks.WARPED_CABINET)
+
+				.predicate(event -> modPredicate(event, FUNCTIONAL_BLOCKS, ADConstants.FARMERS_DELIGHT))
+				.addItemsAfter(of(Items.BARREL), ADBlocks.POISE_CABINET)
 		;
-
-//		CreativeModeTabContentsPopulator.mod(AbnormalsDelight.MOD_ID)
-//				.predicate(event -> modPredicate(ADConstants.FARMERS_DELIGHT))
-//				.tab(FUNCTIONAL_BLOCKS)
-//				.addItemsAfter(of(Items.BARREL), ADBlocks.DRIFTWOOD_CABINET, ADBlocks.RIVER_CABINET);
-//
-//		CreativeModeTabContentsPopulator.mod(AbnormalsDelight.MOD_ID)
-//				.predicate(event -> modPredicate(ADConstants.FARMERS_DELIGHT))
-//				.tab(FOOD_AND_DRINKS)
-//				.addItemsAfter(of(Items.CAKE), VANILLA_CAKE_SLICE, CHOCOLATE_CAKE_SLICE, STRAWBERRY_CAKE_SLICE, BANANA_CAKE_SLICE, MINT_CAKE_SLICE, ADZUKI_CAKE_SLICE);
-//
-//		CreativeModeTabContentsPopulator.mod(AbnormalsDelight.MOD_ID)
-//				.predicate(event -> modPredicate(ADConstants.FARMERS_DELIGHT))
-//				.tab(FUNCTIONAL_BLOCKS)
-//				.addItemsAfter(of(Items.BARREL), ADBlocks.WILLOW_CABINET, ADBlocks.WISTERIA_CABINET, ADBlocks.CHERRY_CABINET, ADBlocks.PINE_CABINET);
-//
-//		CreativeModeTabContentsPopulator.mod(AbnormalsDelight.MOD_ID)
-//				.predicate(event -> modPredicate(ADConstants.FARMERS_DELIGHT))
-//				.tab(FUNCTIONAL_BLOCKS)
-//				.addItemsAfter(of(Items.BARREL), ADBlocks.AZALEA_CABINET);
-
 	}
 
 	public static boolean fdGroupPredicate(BuildCreativeModeTabContentsEvent event, String... modids) {
-		return !ADConfig.COMMON.replaceFDItemGroup.get() && ItemSubRegistryHelper.areModsLoaded(modids);
+		return !ADConfig.COMMON.replaceFDItemGroup.get() && ItemSubRegistryHelper.areModsLoaded(modids) && event.getTabKey() == ModCreativeTabs.TAB_FARMERS_DELIGHT.getKey();
 	}
 
-	public static boolean modPredicate(String... modids) {
-		return ADConfig.COMMON.replaceFDItemGroup.get() && ItemSubRegistryHelper.areModsLoaded(modids);
+	public static boolean modPredicate(BuildCreativeModeTabContentsEvent event, ResourceKey<CreativeModeTab> tab, String... modids) {
+		return ADConfig.COMMON.replaceFDItemGroup.get() && ItemSubRegistryHelper.areModsLoaded(modids) && event.getTabKey() == tab;
 	}
 }
