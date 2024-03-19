@@ -37,13 +37,13 @@
         },
         "requirements": [
           [
-            "abnormals_delight:escargot"
+            "abnormals_delight:maple_cookie"
           ],
           [
             "abnormals_delight:maple_glazed_bacon"
           ],
           [
-            "abnormals_delight:maple_cookie"
+            "abnormals_delight:escargot"
           ]
         ],
         "should_replace_requirements": false

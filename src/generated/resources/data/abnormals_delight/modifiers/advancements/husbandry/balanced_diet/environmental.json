@@ -97,31 +97,31 @@
         },
         "requirements": [
           [
-            "abnormals_delight:seared_venison"
-          ],
-          [
-            "abnormals_delight:cooked_venison_shanks"
-          ],
-          [
-            "abnormals_delight:duck_noodles"
-          ],
-          [
-            "abnormals_delight:venison_with_bamboo_shoots"
-          ],
-          [
-            "abnormals_delight:slabdish"
-          ],
-          [
-            "abnormals_delight:duck_fillet"
-          ],
-          [
-            "abnormals_delight:cherry_cookie"
+            "abnormals_delight:venison_shanks"
           ],
           [
             "abnormals_delight:cooked_duck_fillet"
           ],
           [
-            "abnormals_delight:venison_shanks"
+            "abnormals_delight:cherry_cookie"
+          ],
+          [
+            "abnormals_delight:duck_fillet"
+          ],
+          [
+            "abnormals_delight:slabdish"
+          ],
+          [
+            "abnormals_delight:venison_with_bamboo_shoots"
+          ],
+          [
+            "abnormals_delight:duck_noodles"
+          ],
+          [
+            "abnormals_delight:cooked_venison_shanks"
+          ],
+          [
+            "abnormals_delight:seared_venison"
           ]
         ],
         "should_replace_requirements": false

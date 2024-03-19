@@ -27,10 +27,10 @@
         },
         "requirements": [
           [
-            "abnormals_delight:dune_platter"
+            "abnormals_delight:yucca_gateau_slice"
           ],
           [
-            "abnormals_delight:yucca_gateau_slice"
+            "abnormals_delight:dune_platter"
           ]
         ],
         "should_replace_requirements": false
