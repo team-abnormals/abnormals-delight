@@ -37,7 +37,7 @@ public class ADItems {
 	public static final RegistryObject<Item> MAPLE_COOKIE = HELPER.createCompatConsumableItem("maple_cookie", new Item.Properties().food(FoodValues.COOKIES), CreativeModeTab.TAB_FOOD, ADConstants.AUTUMNITY);
 
 	public static final RegistryObject<Item> SEARED_VENISON = HELPER.createCompatConsumableItem("seared_venison", new Item.Properties().craftRemainder(Items.BOWL).food(ADFoods.SEARED_VENISON).stacksTo(16), CreativeModeTab.TAB_FOOD, ADConstants.ENVIRONMENTAL);
-	public static final RegistryObject<Item> PASSIONFRUIT_GLAZED_DUCK = HELPER.createCompatConsumableItem("passionfruit_glazed_duck", new Item.Properties().craftRemainder(Items.BOWL).food(ADFoods.PASSIONFRUIT_GLAZED_DUCK).stacksTo(16), CreativeModeTab.TAB_FOOD, ADConstants.ATMOSPHERIC, ADConstants.ENVIRONMENTAL);
+	public static final RegistryObject<Item> PASSION_FRUIT_GLAZED_DUCK = HELPER.createCompatConsumableItem("passion_fruit_glazed_duck", new Item.Properties().craftRemainder(Items.BOWL).food(ADFoods.PASSION_FRUIT_GLAZED_DUCK).stacksTo(16), CreativeModeTab.TAB_FOOD, ADConstants.ATMOSPHERIC, ADConstants.ENVIRONMENTAL);
 	public static final RegistryObject<Item> DUNE_PLATTER = HELPER.createCompatConsumableItem("dune_platter", new Item.Properties().craftRemainder(Items.BOWL).food(ADFoods.DUNE_PLATTER).stacksTo(16), CreativeModeTab.TAB_FOOD, ADConstants.ATMOSPHERIC);
 	public static final RegistryObject<Item> DUCK_NOODLES = HELPER.createCompatConsumableItem("duck_noodles", new Item.Properties().craftRemainder(Items.BOWL).food(ADFoods.DUCK_NOODLES).stacksTo(16), CreativeModeTab.TAB_FOOD, ADConstants.ENVIRONMENTAL);
 	public static final RegistryObject<Item> PERCH_WITH_MUSHROOMS = HELPER.createCompatConsumableItem("perch_with_mushrooms", new Item.Properties().craftRemainder(Items.BOWL).food(ADFoods.PERCH_WITH_MUSHROOMS).stacksTo(16), CreativeModeTab.TAB_FOOD, ADConstants.UPGRADE_AQUATIC);
@@ -71,7 +71,7 @@ public class ADItems {
 		public static final FoodProperties COOKED_PERCH_SLICE = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.7F).fast().build();
 
 		public static final FoodProperties SEARED_VENISON = (new FoodProperties.Builder()).nutrition(12).saturationMod(0.9F).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), FoodValues.LONG_DURATION, 0), 1.0F).build();
-		public static final FoodProperties PASSIONFRUIT_GLAZED_DUCK = (new FoodProperties.Builder()).nutrition(14).saturationMod(0.9F).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), FoodValues.LONG_DURATION, 0), 1.0F).build();
+		public static final FoodProperties PASSION_FRUIT_GLAZED_DUCK = (new FoodProperties.Builder()).nutrition(14).saturationMod(0.9F).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), FoodValues.LONG_DURATION, 0), 1.0F).build();
 		public static final FoodProperties DUNE_PLATTER = (new FoodProperties.Builder()).nutrition(10).saturationMod(0.8F).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), FoodValues.MEDIUM_DURATION, 0), 1.0F).build();
 		public static final FoodProperties DUCK_NOODLES = (new FoodProperties.Builder()).nutrition(12).saturationMod(0.8F).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), FoodValues.LONG_DURATION, 0), 1.0F).build();
 		public static final FoodProperties PERCH_WITH_MUSHROOMS = (new FoodProperties.Builder()).nutrition(14).saturationMod(0.9F).effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), FoodValues.LONG_DURATION, 0), 1.0F).build();

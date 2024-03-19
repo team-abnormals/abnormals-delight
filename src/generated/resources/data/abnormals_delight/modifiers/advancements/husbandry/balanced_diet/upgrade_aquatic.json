@@ -77,9 +77,6 @@
         },
         "requirements": [
           [
-            "abnormals_delight:mulberry_cookie"
-          ],
-          [
             "abnormals_delight:pike_slice"
           ],
           [
@@ -96,6 +93,9 @@
           ],
           [
             "abnormals_delight:perch_slice"
+          ],
+          [
+            "abnormals_delight:mulberry_cookie"
           ]
         ],
         "should_replace_requirements": false

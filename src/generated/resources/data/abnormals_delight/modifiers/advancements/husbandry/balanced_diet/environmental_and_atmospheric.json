@@ -4,11 +4,11 @@
       "type": "criteria",
       "config": {
         "criteria": {
-          "abnormals_delight:passionfruit_glazed_duck": {
+          "abnormals_delight:passion_fruit_glazed_duck": {
             "conditions": {
               "item": {
                 "items": [
-                  "abnormals_delight:passionfruit_glazed_duck"
+                  "abnormals_delight:passion_fruit_glazed_duck"
                 ]
               }
             },
@@ -17,7 +17,7 @@
         },
         "requirements": [
           [
-            "abnormals_delight:passionfruit_glazed_duck"
+            "abnormals_delight:passion_fruit_glazed_duck"
           ]
         ],
         "should_replace_requirements": false

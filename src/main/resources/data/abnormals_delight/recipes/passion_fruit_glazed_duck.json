@@ -5,7 +5,7 @@
       "tag": "forge:cooked_duck"
     },
     {
-      "tag": "forge:fruits/passionfruit"
+      "tag": "forge:fruits/passion_fruit"
     },
     {
       "item": "minecraft:potato"
@@ -19,7 +19,7 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "abnormals_delight:passionfruit_glazed_duck"
+    "item": "abnormals_delight:passion_fruit_glazed_duck"
   },
   "conditions": [
     {

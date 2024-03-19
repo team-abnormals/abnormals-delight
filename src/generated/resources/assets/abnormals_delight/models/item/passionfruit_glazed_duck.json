@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "abnormals_delight:item/passionfruit_glazed_duck"
-  }
-}
