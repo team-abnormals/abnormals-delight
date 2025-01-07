@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "envrionmental:plum_log"
+      "item": "environmental:plum_log"
     }
   ],
   "tool": {
