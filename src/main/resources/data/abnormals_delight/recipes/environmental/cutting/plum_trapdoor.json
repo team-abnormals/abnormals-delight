@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "envrionmental:plum_trapdoor"
+      "item": "environmental:plum_trapdoor"
     }
   ],
   "tool": {
@@ -11,7 +11,7 @@
   },
   "result": [
     {
-      "item": "envrionmental:plum_planks"
+      "item": "environmental:plum_planks"
     }
   ],
   "conditions": [
