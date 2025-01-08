@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "envrionmental:plum_log"
+      "item": "environmental:plum_log"
     }
   ],
   "tool": {
@@ -11,7 +11,7 @@
   },
   "result": [
     {
-      "item": "environmental:stripped_cherry_log"
+      "item": "environmental:stripped_plum_log"
     },
     {
       "item": "farmersdelight:tree_bark"
