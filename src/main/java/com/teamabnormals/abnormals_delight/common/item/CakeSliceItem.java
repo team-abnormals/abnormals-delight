@@ -28,13 +28,14 @@ public class CakeSliceItem extends Item {
 
 	@Override
 	public ItemStack finishUsingItem(ItemStack stack, Level worldIn, LivingEntity entityLiving) {
+		ItemStack returnStack = super.finishUsingItem(stack, worldIn, entityLiving);
 		if (!worldIn.isClientSide && this.effectName != null && ForgeRegistries.MOB_EFFECTS.getValue(this.effectName) != null) {
 			entityLiving.addEffect(new MobEffectInstance(ForgeRegistries.MOB_EFFECTS.getValue(this.effectName), this.duration));
 		} else if (this == ADItems.STRAWBERRY_CAKE_SLICE.get()) {
 			applyHealing(1.0F, worldIn, entityLiving);
 		}
 
-		return super.finishUsingItem(stack, worldIn, entityLiving);
+		return returnStack;
 	}
 
 	public static void applyHealing(float healAmount, LevelAccessor world, LivingEntity entity) {
