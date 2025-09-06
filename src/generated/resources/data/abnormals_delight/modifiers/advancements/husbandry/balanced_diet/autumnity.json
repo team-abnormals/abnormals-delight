@@ -7,9 +7,7 @@
           "abnormals_delight:escargot": {
             "conditions": {
               "item": {
-                "items": [
-                  "abnormals_delight:escargot"
-                ]
+                "items": "abnormals_delight:escargot"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -17,9 +15,7 @@
           "abnormals_delight:maple_cookie": {
             "conditions": {
               "item": {
-                "items": [
-                  "abnormals_delight:maple_cookie"
-                ]
+                "items": "abnormals_delight:maple_cookie"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -27,23 +23,22 @@
           "abnormals_delight:maple_glazed_bacon": {
             "conditions": {
               "item": {
-                "items": [
-                  "abnormals_delight:maple_glazed_bacon"
-                ]
+                "items": "abnormals_delight:maple_glazed_bacon"
               }
             },
             "trigger": "minecraft:consume_item"
           }
         },
+        "indexed_requirements": [],
         "requirements": [
           [
-            "abnormals_delight:maple_cookie"
+            "abnormals_delight:escargot"
           ],
           [
             "abnormals_delight:maple_glazed_bacon"
           ],
           [
-            "abnormals_delight:escargot"
+            "abnormals_delight:maple_cookie"
           ]
         ],
         "should_replace_requirements": false
@@ -55,7 +50,7 @@
     "type": "names",
     "conditions": [
       {
-        "type": "forge:mod_loaded",
+        "type": "neoforge:mod_loaded",
         "modid": "autumnity"
       }
     ],

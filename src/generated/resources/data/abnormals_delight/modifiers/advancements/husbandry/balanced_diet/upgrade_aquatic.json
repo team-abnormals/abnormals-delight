@@ -7,9 +7,7 @@
           "abnormals_delight:cooked_perch_slice": {
             "conditions": {
               "item": {
-                "items": [
-                  "abnormals_delight:cooked_perch_slice"
-                ]
+                "items": "abnormals_delight:cooked_perch_slice"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -17,9 +15,7 @@
           "abnormals_delight:cooked_pike_slice": {
             "conditions": {
               "item": {
-                "items": [
-                  "abnormals_delight:cooked_pike_slice"
-                ]
+                "items": "abnormals_delight:cooked_pike_slice"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -27,9 +23,7 @@
           "abnormals_delight:mulberry_cookie": {
             "conditions": {
               "item": {
-                "items": [
-                  "abnormals_delight:mulberry_cookie"
-                ]
+                "items": "abnormals_delight:mulberry_cookie"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -37,9 +31,7 @@
           "abnormals_delight:perch_slice": {
             "conditions": {
               "item": {
-                "items": [
-                  "abnormals_delight:perch_slice"
-                ]
+                "items": "abnormals_delight:perch_slice"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -47,9 +39,7 @@
           "abnormals_delight:perch_with_mushrooms": {
             "conditions": {
               "item": {
-                "items": [
-                  "abnormals_delight:perch_with_mushrooms"
-                ]
+                "items": "abnormals_delight:perch_with_mushrooms"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -57,9 +47,7 @@
           "abnormals_delight:pike_slice": {
             "conditions": {
               "item": {
-                "items": [
-                  "abnormals_delight:pike_slice"
-                ]
+                "items": "abnormals_delight:pike_slice"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -67,35 +55,34 @@
           "abnormals_delight:pike_with_beetroot": {
             "conditions": {
               "item": {
-                "items": [
-                  "abnormals_delight:pike_with_beetroot"
-                ]
+                "items": "abnormals_delight:pike_with_beetroot"
               }
             },
             "trigger": "minecraft:consume_item"
           }
         },
+        "indexed_requirements": [],
         "requirements": [
           [
-            "abnormals_delight:perch_slice"
-          ],
-          [
-            "abnormals_delight:mulberry_cookie"
-          ],
-          [
-            "abnormals_delight:pike_slice"
-          ],
-          [
-            "abnormals_delight:cooked_pike_slice"
-          ],
-          [
-            "abnormals_delight:perch_with_mushrooms"
+            "abnormals_delight:cooked_perch_slice"
           ],
           [
             "abnormals_delight:pike_with_beetroot"
           ],
           [
-            "abnormals_delight:cooked_perch_slice"
+            "abnormals_delight:pike_slice"
+          ],
+          [
+            "abnormals_delight:perch_with_mushrooms"
+          ],
+          [
+            "abnormals_delight:mulberry_cookie"
+          ],
+          [
+            "abnormals_delight:perch_slice"
+          ],
+          [
+            "abnormals_delight:cooked_pike_slice"
           ]
         ],
         "should_replace_requirements": false
@@ -107,7 +94,7 @@
     "type": "names",
     "conditions": [
       {
-        "type": "forge:mod_loaded",
+        "type": "neoforge:mod_loaded",
         "modid": "upgrade_aquatic"
       }
     ],

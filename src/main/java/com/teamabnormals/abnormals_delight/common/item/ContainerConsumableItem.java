@@ -1,9 +1,8 @@
 package com.teamabnormals.abnormals_delight.common.item;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 
 public class ContainerConsumableItem extends ConsumableItem {
@@ -16,7 +15,6 @@ public class ContainerConsumableItem extends ConsumableItem {
 
 	@Override
 	public ItemStack getCraftingRemainingItem(ItemStack stack) {
-		Item item = ForgeRegistries.ITEMS.getValue(this.compatItem);
-		return item == null ? ItemStack.EMPTY : new ItemStack(item);
+		return BuiltInRegistries.ITEM.getHolder(this.compatItem).map(ItemStack::new).orElse(ItemStack.EMPTY);
 	}
 }

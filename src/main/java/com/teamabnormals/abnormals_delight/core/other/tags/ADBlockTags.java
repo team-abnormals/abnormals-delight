@@ -1,11 +1,15 @@
 package com.teamabnormals.abnormals_delight.core.other.tags;
 
 import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
+import com.teamabnormals.abnormals_delight.core.other.ADConstants;
 import com.teamabnormals.blueprint.core.util.TagUtil;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
 
 public class ADBlockTags {
+	public static final TagKey<Block> INCORRECT_FOR_SILVER_TOOL = TagUtil.blockTag(ADConstants.CAVERNS_AND_CHASMS, "incorrect_for_silver_tool");
+	public static final TagKey<Block> INCORRECT_FOR_NECROMIUM_TOOL = TagUtil.blockTag(ADConstants.CAVERNS_AND_CHASMS, "incorrect_for_necromium_tool");
+
 	public static final TagKey<Block> DROPS_FLAVORED_CAKE_SLICE = blockTag("drops_flavored_cake_slice");
 	public static final TagKey<Block> DROPS_VANILLA_CAKE_SLICE = blockTag("drops_vanilla_cake_slice");
 	public static final TagKey<Block> DROPS_CHOCOLATE_CAKE_SLICE = blockTag("drops_chocolate_cake_slice");

@@ -3,34 +3,36 @@ package com.teamabnormals.abnormals_delight.core.data.server;
 import com.google.common.collect.ImmutableList;
 import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.teamabnormals.abnormals_delight.core.registry.ADBlocks;
+import net.minecraft.core.HolderLookup.Provider;
+import net.minecraft.core.WritableRegistry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.data.loot.packs.VanillaBlockLoot;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ProblemReporter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 public class ADLootTableProvider extends LootTableProvider {
 
-	public ADLootTableProvider(PackOutput output) {
-		super(output, BuiltInLootTables.all(), ImmutableList.of(new LootTableProvider.SubProviderEntry(BlockProvider::new, LootContextParamSets.BLOCK)));
+	public ADLootTableProvider(PackOutput output, CompletableFuture<Provider> provider) {
+		super(output, BuiltInLootTables.all(), ImmutableList.of(new LootTableProvider.SubProviderEntry(BlockProvider::new, LootContextParamSets.BLOCK)), provider);
 	}
 
 	@Override
-	protected void validate(Map<ResourceLocation, LootTable> map, ValidationContext context) {
+	protected void validate(WritableRegistry<LootTable> registry, ValidationContext context, ProblemReporter.Collector collector) {
 	}
 
 	private static class BlockProvider extends VanillaBlockLoot {
 
-		protected BlockProvider() {
-			super();
+		protected BlockProvider(Provider provider) {
+			super(provider);
 		}
 
 		@Override
@@ -54,8 +56,9 @@ public class ADLootTableProvider extends LootTableProvider {
 		}
 
 		@Override
-		protected Iterable<Block> getKnownBlocks() {
-			return ForgeRegistries.BLOCKS.getValues().stream().filter(block -> ForgeRegistries.BLOCKS.getKey(block) != null && AbnormalsDelight.MOD_ID.equals(ForgeRegistries.BLOCKS.getKey(block).getNamespace())).collect(Collectors.toSet());
+		public Iterable<Block> getKnownBlocks() {
+			return BuiltInRegistries.BLOCK.stream().filter(block -> BuiltInRegistries.BLOCK.getKey(block).getNamespace().equals(AbnormalsDelight.MOD_ID)).collect(Collectors.toSet());
 		}
+
 	}
 }

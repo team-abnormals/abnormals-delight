@@ -7,9 +7,7 @@
           "abnormals_delight:adzuki_cake_slice": {
             "conditions": {
               "item": {
-                "items": [
-                  "abnormals_delight:adzuki_cake_slice"
-                ]
+                "items": "abnormals_delight:adzuki_cake_slice"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -17,9 +15,7 @@
           "abnormals_delight:banana_cake_slice": {
             "conditions": {
               "item": {
-                "items": [
-                  "abnormals_delight:banana_cake_slice"
-                ]
+                "items": "abnormals_delight:banana_cake_slice"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -27,9 +23,7 @@
           "abnormals_delight:chocolate_cake_slice": {
             "conditions": {
               "item": {
-                "items": [
-                  "abnormals_delight:chocolate_cake_slice"
-                ]
+                "items": "abnormals_delight:chocolate_cake_slice"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -37,9 +31,7 @@
           "abnormals_delight:mint_cake_slice": {
             "conditions": {
               "item": {
-                "items": [
-                  "abnormals_delight:mint_cake_slice"
-                ]
+                "items": "abnormals_delight:mint_cake_slice"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -47,9 +39,7 @@
           "abnormals_delight:strawberry_cake_slice": {
             "conditions": {
               "item": {
-                "items": [
-                  "abnormals_delight:strawberry_cake_slice"
-                ]
+                "items": "abnormals_delight:strawberry_cake_slice"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -57,20 +47,16 @@
           "abnormals_delight:vanilla_cake_slice": {
             "conditions": {
               "item": {
-                "items": [
-                  "abnormals_delight:vanilla_cake_slice"
-                ]
+                "items": "abnormals_delight:vanilla_cake_slice"
               }
             },
             "trigger": "minecraft:consume_item"
           }
         },
+        "indexed_requirements": [],
         "requirements": [
           [
             "abnormals_delight:strawberry_cake_slice"
-          ],
-          [
-            "abnormals_delight:mint_cake_slice"
           ],
           [
             "abnormals_delight:chocolate_cake_slice"
@@ -80,6 +66,9 @@
           ],
           [
             "abnormals_delight:adzuki_cake_slice"
+          ],
+          [
+            "abnormals_delight:mint_cake_slice"
           ],
           [
             "abnormals_delight:banana_cake_slice"
@@ -94,7 +83,7 @@
     "type": "names",
     "conditions": [
       {
-        "type": "forge:mod_loaded",
+        "type": "neoforge:mod_loaded",
         "modid": "neapolitan"
       }
     ],

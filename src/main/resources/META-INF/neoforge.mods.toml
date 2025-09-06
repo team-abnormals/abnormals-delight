@@ -1,0 +1,47 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+issueTrackerURL = "https://github.com/team-abnormals/abnormals-delight/issues"
+license = "https://github.com/team-abnormals/abnormals-delight/blob/main/LICENSE.txt"
+
+[[mods]]
+    modId = "abnormals_delight"
+    version = "${mod_version}"
+    logoFile = "logo.png"
+    itemIcon = "abnormals_delight:strawberry_cake_slice"
+    configBackground = "minecraft:textures/block/mud_bricks.png"
+    authors = "Team Abnormals"
+    credits = "bageldotjpg, five"
+    displayURL = "https://www.teamabnormals.com/mods/abnormals-delight"
+    displayName = "Abnormals Delight"
+    description = '''
+    Adds compatibility between mods by Team Abnormals and Farmer's Delight by vectorwing.
+    Includes cabinets, cake slices, and some basic cutting & cooking recipes.
+    '''
+
+[[dependencies.abnormals_delight]]
+    modId = "minecraft"
+    type = "required"
+    versionRange = "[${mc_version}]"
+    ordering = "AFTER"
+    side = "BOTH"
+
+[[dependencies.abnormals_delight]]
+    modId = "neoforge"
+    type = "required"
+    versionRange = "[${neoforge},)"
+    ordering = "AFTER"
+    side = "BOTH"
+
+[[dependencies.abnormals_delight]]
+    modId = "blueprint"
+    type = "required"
+    versionRange = "[${blueprint},)"
+    ordering = "AFTER"
+    side = "BOTH"
+
+[[dependencies.abnormals_delight]]
+    modId = "farmersdelight"
+    type = "required"
+    versionRange = "[${farmers_delight},)"
+    ordering = "AFTER"
+    side = "BOTH"

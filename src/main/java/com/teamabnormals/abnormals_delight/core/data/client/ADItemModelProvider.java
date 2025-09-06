@@ -2,13 +2,13 @@ package com.teamabnormals.abnormals_delight.core.data.client;
 
 import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.teamabnormals.abnormals_delight.core.registry.ADItems;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.client.model.generators.ModelFile.UncheckedModelFile;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import vectorwing.farmersdelight.FarmersDelight;
 
 public class ADItemModelProvider extends ItemModelProvider {
@@ -69,14 +69,12 @@ public class ADItemModelProvider extends ItemModelProvider {
 	}
 
 	private void mug(ItemLike item) {
-		ResourceLocation name = ForgeRegistries.ITEMS.getKey(item.asItem());
-		if (name != null)
-			this.getBuilder(name.getPath()).parent(new UncheckedModelFile(new ResourceLocation(FarmersDelight.MODID, "item/mug"))).texture("layer0", new ResourceLocation(this.modid, "item/" + name.getPath()));
+		ResourceLocation name = BuiltInRegistries.ITEM.getKey(item.asItem());
+		this.getBuilder(name.getPath()).parent(new UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(FarmersDelight.MODID, "item/mug"))).texture("layer0", ResourceLocation.fromNamespaceAndPath(this.modid, "item/" + name.getPath()));
 	}
 
 	private void model(ItemLike item, String parent) {
-		ResourceLocation name = ForgeRegistries.ITEMS.getKey(item.asItem());
-		if (name != null)
-			this.withExistingParent(name.getPath(), "item/" + parent).texture("layer0", new ResourceLocation(this.modid, "item/" + name.getPath()));
+		ResourceLocation name = BuiltInRegistries.ITEM.getKey(item.asItem());
+		this.withExistingParent(name.getPath(), "item/" + parent).texture("layer0", ResourceLocation.fromNamespaceAndPath(this.modid, "item/" + name.getPath()));
 	}
 }
