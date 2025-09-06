@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "upgrade_aquatic"
+    }
+  ],
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "abnormals_delight:perch_slice"
+  },
+  "result": {
+    "count": 1,
+    "id": "abnormals_delight:cooked_perch_slice"
+  }
+}

@@ -1,7 +1,7 @@
 package com.teamabnormals.abnormals_delight.core.data.server.modifiers;
 
 import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
-import com.teamabnormals.abnormals_delight.core.other.ADConstants;
+import com.teamabnormals.abnormals_delight.core.other.ADConditions;
 import com.teamabnormals.blueprint.common.advancement.modification.AdvancementModifierProvider;
 import com.teamabnormals.blueprint.common.advancement.modification.modifiers.CriteriaModifier;
 import com.teamabnormals.blueprint.core.api.conditions.BlueprintAndCondition;
@@ -14,7 +14,6 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.common.conditions.ICondition;
-import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import net.neoforged.neoforge.common.conditions.NotCondition;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.registry.ModItems;
@@ -26,13 +25,7 @@ import java.util.function.Supplier;
 
 import static com.teamabnormals.abnormals_delight.core.registry.ADItems.*;
 
-public class ADAdvancementModifierProvider extends AdvancementModifierProvider {
-	public static final ModLoadedCondition AUTUMNITY_LOADED = new ModLoadedCondition(ADConstants.AUTUMNITY);
-	public static final ModLoadedCondition ATMOSPHERIC_LOADED = new ModLoadedCondition(ADConstants.ATMOSPHERIC);
-	public static final ModLoadedCondition ENVIRONMENTAL_LOADED = new ModLoadedCondition(ADConstants.ENVIRONMENTAL);
-	public static final ModLoadedCondition INCUBATION_LOADED = new ModLoadedCondition(ADConstants.INCUBATION);
-	public static final ModLoadedCondition NEAPOLITAN_LOADED = new ModLoadedCondition(ADConstants.NEAPOLITAN);
-	public static final ModLoadedCondition UPGRADE_AQUATIC_LOADED = new ModLoadedCondition(ADConstants.UPGRADE_AQUATIC);
+public class ADAdvancementModifierProvider extends AdvancementModifierProvider implements ADConditions {
 
 	public ADAdvancementModifierProvider(PackOutput output, CompletableFuture<Provider> provider) {
 		super(AbnormalsDelight.MOD_ID, output, provider);

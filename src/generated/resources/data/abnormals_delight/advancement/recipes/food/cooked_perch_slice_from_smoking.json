@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "upgrade_aquatic"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_perch_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "abnormals_delight:perch_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "abnormals_delight:cooked_perch_slice_from_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_perch_slice"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "abnormals_delight:cooked_perch_slice_from_smoking"
+    ]
+  }
+}

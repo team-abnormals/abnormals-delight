@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "environmental"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "abnormals_delight:cooked_venison_shanks_from_campfire_cooking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_venison_shanks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "abnormals_delight:venison_shanks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_venison_shanks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "abnormals_delight:cooked_venison_shanks_from_campfire_cooking"
+    ]
+  }
+}

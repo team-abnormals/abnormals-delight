@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "environmental"
+    }
+  ],
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "abnormals_delight:venison_shanks"
+  },
+  "result": {
+    "count": 1,
+    "id": "abnormals_delight:cooked_venison_shanks"
+  }
+}

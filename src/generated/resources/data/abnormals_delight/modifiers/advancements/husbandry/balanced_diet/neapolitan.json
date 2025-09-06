@@ -56,13 +56,7 @@
         "indexed_requirements": [],
         "requirements": [
           [
-            "abnormals_delight:mint_cake_slice"
-          ],
-          [
-            "abnormals_delight:strawberry_cake_slice"
-          ],
-          [
-            "abnormals_delight:adzuki_cake_slice"
+            "abnormals_delight:vanilla_cake_slice"
           ],
           [
             "abnormals_delight:chocolate_cake_slice"
@@ -71,7 +65,13 @@
             "abnormals_delight:banana_cake_slice"
           ],
           [
-            "abnormals_delight:vanilla_cake_slice"
+            "abnormals_delight:mint_cake_slice"
+          ],
+          [
+            "abnormals_delight:strawberry_cake_slice"
+          ],
+          [
+            "abnormals_delight:adzuki_cake_slice"
           ]
         ],
         "should_replace_requirements": false

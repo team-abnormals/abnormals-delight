@@ -5,6 +5,7 @@ import com.teamabnormals.abnormals_delight.core.data.client.ADItemModelProvider;
 import com.teamabnormals.abnormals_delight.core.data.client.ADLanguageProvider;
 import com.teamabnormals.abnormals_delight.core.data.server.ADDataMapProvider;
 import com.teamabnormals.abnormals_delight.core.data.server.ADLootTableProvider;
+import com.teamabnormals.abnormals_delight.core.data.server.ADRecipeProvider;
 import com.teamabnormals.abnormals_delight.core.data.server.modifiers.ADAdvancementModifierProvider;
 import com.teamabnormals.abnormals_delight.core.data.server.tags.ADBlockTagsProvider;
 import com.teamabnormals.abnormals_delight.core.data.server.tags.ADEntityTypeTagsProvider;
@@ -63,6 +64,7 @@ public class AbnormalsDelight {
 		generator.addProvider(server, new ADLootTableProvider(output, provider));
 		generator.addProvider(server, new ADAdvancementModifierProvider(output, provider));
 		generator.addProvider(server, new ADDataMapProvider(output, provider));
+		generator.addProvider(server, new ADRecipeProvider(output, provider));
 
 		boolean client = event.includeClient();
 		generator.addProvider(client, new ADBlockStateProvider(output, helper));

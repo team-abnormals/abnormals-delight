@@ -64,25 +64,25 @@
         "indexed_requirements": [],
         "requirements": [
           [
-            "abnormals_delight:mulberry_cookie"
-          ],
-          [
-            "abnormals_delight:pike_with_beetroot"
+            "abnormals_delight:cooked_perch_slice"
           ],
           [
             "abnormals_delight:perch_slice"
           ],
           [
-            "abnormals_delight:pike_slice"
-          ],
-          [
-            "abnormals_delight:cooked_perch_slice"
+            "abnormals_delight:cooked_pike_slice"
           ],
           [
             "abnormals_delight:perch_with_mushrooms"
           ],
           [
-            "abnormals_delight:cooked_pike_slice"
+            "abnormals_delight:pike_slice"
+          ],
+          [
+            "abnormals_delight:mulberry_cookie"
+          ],
+          [
+            "abnormals_delight:pike_with_beetroot"
           ]
         ],
         "should_replace_requirements": false

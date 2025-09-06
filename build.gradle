@@ -48,6 +48,18 @@ dependencies {
 
     implementation("maven.modrinth:farmers-delight:${project.mc_version}-${project.farmers_delight}")
 
+//    implementation("curse.maven:incubation-361718:6449915")
+//    implementation("curse.maven:buzzier-bees-355458:6961149")
+//
+//    implementation("curse.maven:atmospheric-362393:6393127")
+//    implementation("curse.maven:autumnity-365045:6151402")
+//    implementation("curse.maven:neapolitan-382016:6248885")
+//    implementation("curse.maven:upgrade_aquatic-326895:6393133")
+//
+//    implementation("curse.maven:endergetic-291509:6157658")
+//    implementation("curse.maven:environmental-388992:6949540")
+//    implementation("curse.maven:caverns-and-chasms-438005:6040957")
+
     compileOnly("mezz.jei:jei-${project.mc_version}-neoforge-api:${project.jei}")
     runtimeOnly("mezz.jei:jei-${project.mc_version}-neoforge:${project.jei}")
 }
