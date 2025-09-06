@@ -14,7 +14,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.neoforged.fml.ModList;
+import net.minecraftforge.fml.ModList;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.List;
@@ -25,7 +25,7 @@ public class ADPlugin implements IModPlugin {
 
 	@Override
 	public ResourceLocation getPluginUid() {
-		return ResourceLocation.fromNamespaceAndPath(AbnormalsDelight.MOD_ID, AbnormalsDelight.MOD_ID);
+		return new ResourceLocation(AbnormalsDelight.MOD_ID, AbnormalsDelight.MOD_ID);
 	}
 
 	@Override

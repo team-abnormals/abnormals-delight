@@ -7,8 +7,8 @@ import com.teamabnormals.abnormals_delight.core.registry.ADBlocks;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
-import net.neoforged.neoforge.common.data.BlockTagsProvider;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.minecraftforge.common.data.BlockTagsProvider;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.concurrent.CompletableFuture;
@@ -34,8 +34,5 @@ public class ADBlockTagsProvider extends BlockTagsProvider {
 		this.tag(ADBlockTags.DROPS_BANANA_CAKE_SLICE);
 		this.tag(ADBlockTags.DROPS_MINT_CAKE_SLICE);
 		this.tag(ADBlockTags.DROPS_ADZUKI_CAKE_SLICE);
-
-		this.tag(ADBlockTags.INCORRECT_FOR_SILVER_TOOL);
-		this.tag(ADBlockTags.INCORRECT_FOR_NECROMIUM_TOOL);
 	}
 }

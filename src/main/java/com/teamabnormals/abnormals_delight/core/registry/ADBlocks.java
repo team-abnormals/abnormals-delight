@@ -4,26 +4,28 @@ import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.neoforged.neoforge.registries.DeferredBlock;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 
+@EventBusSubscriber(modid = AbnormalsDelight.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class ADBlocks {
-	public static final BlockSubRegistryHelper BLOCKS = AbnormalsDelight.REGISTRY_HELPER.getBlockSubHelper();
+	public static final BlockSubRegistryHelper HELPER = AbnormalsDelight.REGISTRY_HELPER.getBlockSubHelper();
 
-	public static final DeferredBlock<Block> ROSEWOOD_CABINET = BLOCKS.createFuelBlock("rosewood_cabinet", () -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)), 300);
-	public static final DeferredBlock<Block> MORADO_CABINET = BLOCKS.createFuelBlock("morado_cabinet", () -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)), 300);
-	public static final DeferredBlock<Block> YUCCA_CABINET = BLOCKS.createFuelBlock("yucca_cabinet", () -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)), 300);
-	public static final DeferredBlock<Block> KOUSA_CABINET = BLOCKS.createFuelBlock("kousa_cabinet", () -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)), 300);
-	public static final DeferredBlock<Block> ASPEN_CABINET = BLOCKS.createFuelBlock("aspen_cabinet", () -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)), 300);
-	public static final DeferredBlock<Block> LAUREL_CABINET = BLOCKS.createFuelBlock("laurel_cabinet", () -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)), 300);
-	public static final DeferredBlock<Block> GRIMWOOD_CABINET = BLOCKS.createFuelBlock("grimwood_cabinet", () -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)), 300);
-	public static final DeferredBlock<Block> MAPLE_CABINET = BLOCKS.createFuelBlock("maple_cabinet", () -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)), 300);
-	public static final DeferredBlock<Block> AZALEA_CABINET = BLOCKS.createFuelBlock("azalea_cabinet", () -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)), 300);
-	public static final DeferredBlock<Block> POISE_CABINET = BLOCKS.createFuelBlock("poise_cabinet", () -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)), 300);
-	public static final DeferredBlock<Block> WILLOW_CABINET = BLOCKS.createFuelBlock("willow_cabinet", () -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)), 300);
-	public static final DeferredBlock<Block> WISTERIA_CABINET = BLOCKS.createFuelBlock("wisteria_cabinet", () -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)), 300);
-	public static final DeferredBlock<Block> PLUM_CABINET = BLOCKS.createFuelBlock("plum_cabinet", () -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)), 300);
-	public static final DeferredBlock<Block> PINE_CABINET = BLOCKS.createFuelBlock("pine_cabinet", () -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)), 300);
-	public static final DeferredBlock<Block> DRIFTWOOD_CABINET = BLOCKS.createFuelBlock("driftwood_cabinet", () -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)), 300);
-	public static final DeferredBlock<Block> RIVER_CABINET = BLOCKS.createFuelBlock("river_cabinet", () -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)), 300);
+	public static final RegistryObject<Block> ROSEWOOD_CABINET = HELPER.createFuelBlock("rosewood_cabinet", () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300);
+	public static final RegistryObject<Block> MORADO_CABINET = HELPER.createFuelBlock("morado_cabinet", () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300);
+	public static final RegistryObject<Block> YUCCA_CABINET = HELPER.createFuelBlock("yucca_cabinet", () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300);
+	public static final RegistryObject<Block> KOUSA_CABINET = HELPER.createFuelBlock("kousa_cabinet", () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300);
+	public static final RegistryObject<Block> ASPEN_CABINET = HELPER.createFuelBlock("aspen_cabinet", () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300);
+	public static final RegistryObject<Block> LAUREL_CABINET = HELPER.createFuelBlock("laurel_cabinet", () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300);
+	public static final RegistryObject<Block> GRIMWOOD_CABINET = HELPER.createFuelBlock("grimwood_cabinet", () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300);
+	public static final RegistryObject<Block> MAPLE_CABINET = HELPER.createFuelBlock("maple_cabinet", () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300);
+	public static final RegistryObject<Block> AZALEA_CABINET = HELPER.createFuelBlock("azalea_cabinet", () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300);
+	public static final RegistryObject<Block> POISE_CABINET = HELPER.createFuelBlock("poise_cabinet", () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300);
+	public static final RegistryObject<Block> WILLOW_CABINET = HELPER.createFuelBlock("willow_cabinet", () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300);
+	public static final RegistryObject<Block> WISTERIA_CABINET = HELPER.createFuelBlock("wisteria_cabinet", () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300);
+	public static final RegistryObject<Block> PLUM_CABINET = HELPER.createFuelBlock("plum_cabinet", () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300);
+	public static final RegistryObject<Block> PINE_CABINET = HELPER.createFuelBlock("pine_cabinet", () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300);
+	public static final RegistryObject<Block> DRIFTWOOD_CABINET = HELPER.createFuelBlock("driftwood_cabinet", () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300);
+	public static final RegistryObject<Block> RIVER_CABINET = HELPER.createFuelBlock("river_cabinet", () -> new CabinetBlock(Block.Properties.copy(Blocks.BARREL)), 300);
 }

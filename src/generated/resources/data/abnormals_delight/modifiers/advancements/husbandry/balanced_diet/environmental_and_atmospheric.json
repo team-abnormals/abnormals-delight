@@ -7,13 +7,14 @@
           "abnormals_delight:passion_fruit_glazed_duck": {
             "conditions": {
               "item": {
-                "items": "abnormals_delight:passion_fruit_glazed_duck"
+                "items": [
+                  "abnormals_delight:passion_fruit_glazed_duck"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
           }
         },
-        "indexed_requirements": [],
         "requirements": [
           [
             "abnormals_delight:passion_fruit_glazed_duck"
@@ -28,14 +29,14 @@
     "type": "names",
     "conditions": [
       {
-        "type": "blueprint:and",
+        "type": "forge:and",
         "values": [
           {
-            "type": "neoforge:mod_loaded",
+            "type": "forge:mod_loaded",
             "modid": "environmental"
           },
           {
-            "type": "neoforge:mod_loaded",
+            "type": "forge:mod_loaded",
             "modid": "atmospheric"
           }
         ]

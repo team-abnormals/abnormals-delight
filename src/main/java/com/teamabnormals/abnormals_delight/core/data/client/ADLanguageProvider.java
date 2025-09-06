@@ -3,15 +3,18 @@ package com.teamabnormals.abnormals_delight.core.data.client;
 import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.teamabnormals.abnormals_delight.core.registry.ADBlocks;
 import com.teamabnormals.abnormals_delight.core.registry.ADItems;
-import com.teamabnormals.blueprint.core.data.client.BlueprintLanguageProvider;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.data.LanguageProvider;
+import net.minecraftforge.registries.ForgeRegistries;
+import org.apache.commons.lang3.text.WordUtils;
 
-public class ADLanguageProvider extends BlueprintLanguageProvider {
+public class ADLanguageProvider extends LanguageProvider {
 
 	public ADLanguageProvider(PackOutput output) {
-		super(output, AbnormalsDelight.MOD_ID);
+		super(output, AbnormalsDelight.MOD_ID, "en_us");
 	}
 
 	@Override
@@ -77,16 +80,24 @@ public class ADLanguageProvider extends BlueprintLanguageProvider {
 		this.add("tooltip." + AbnormalsDelight.MOD_ID + ".slabdish.when_feeding", "When fed to a tamed Slabfish:");
 	}
 
+	private void add(Item item) {
+		this.add(item, format(ForgeRegistries.ITEMS.getKey(item)));
+	}
+
 	private void addRaw(Item item) {
-		this.add(item, "Raw " + format(BuiltInRegistries.ITEM.getKey(item)));
+		this.add(item, "Raw " + format(ForgeRegistries.ITEMS.getKey(item)));
+	}
+
+	private void add(Block block) {
+		this.add(block, format(ForgeRegistries.BLOCKS.getKey(block)));
+	}
+
+	private String format(ResourceLocation registryName) {
+		return WordUtils.capitalizeFully(registryName.getPath().replace("_", " ")).replace("With", "with");
 	}
 
 	private void addSlice(Item item) {
-		this.add(item, "Slice of " + format(BuiltInRegistries.ITEM.getKey(item)).replace(" Slice", ""));
-	}
-
-	@Override
-	public String format(String path) {
-		return super.format(path).replace("With", "with");
+		if (ForgeRegistries.ITEMS.getKey(item) != null)
+			this.add(item, "Slice of " + format(ForgeRegistries.ITEMS.getKey(item)).replace(" Slice", ""));
 	}
 }

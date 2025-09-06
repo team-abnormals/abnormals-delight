@@ -7,13 +7,14 @@
           "abnormals_delight:fried_egg": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:fried_egg"
+                "items": [
+                  "farmersdelight:fried_egg"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
           }
         },
-        "indexed_requirements": [],
         "requirements": [
           [
             "abnormals_delight:fried_egg"
@@ -28,9 +29,9 @@
     "type": "names",
     "conditions": [
       {
-        "type": "neoforge:not",
+        "type": "forge:not",
         "value": {
-          "type": "neoforge:mod_loaded",
+          "type": "forge:mod_loaded",
           "modid": "incubation"
         }
       }

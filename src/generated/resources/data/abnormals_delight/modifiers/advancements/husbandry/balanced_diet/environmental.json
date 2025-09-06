@@ -7,7 +7,9 @@
           "abnormals_delight:cherry_cookie": {
             "conditions": {
               "item": {
-                "items": "abnormals_delight:cherry_cookie"
+                "items": [
+                  "abnormals_delight:cherry_cookie"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -15,7 +17,9 @@
           "abnormals_delight:cooked_duck_fillet": {
             "conditions": {
               "item": {
-                "items": "abnormals_delight:cooked_duck_fillet"
+                "items": [
+                  "abnormals_delight:cooked_duck_fillet"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -23,7 +27,9 @@
           "abnormals_delight:cooked_venison_shanks": {
             "conditions": {
               "item": {
-                "items": "abnormals_delight:cooked_venison_shanks"
+                "items": [
+                  "abnormals_delight:cooked_venison_shanks"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -31,7 +37,9 @@
           "abnormals_delight:duck_fillet": {
             "conditions": {
               "item": {
-                "items": "abnormals_delight:duck_fillet"
+                "items": [
+                  "abnormals_delight:duck_fillet"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -39,7 +47,9 @@
           "abnormals_delight:duck_noodles": {
             "conditions": {
               "item": {
-                "items": "abnormals_delight:duck_noodles"
+                "items": [
+                  "abnormals_delight:duck_noodles"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -47,7 +57,9 @@
           "abnormals_delight:seared_venison": {
             "conditions": {
               "item": {
-                "items": "abnormals_delight:seared_venison"
+                "items": [
+                  "abnormals_delight:seared_venison"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -55,7 +67,9 @@
           "abnormals_delight:slabdish": {
             "conditions": {
               "item": {
-                "items": "abnormals_delight:slabdish"
+                "items": [
+                  "abnormals_delight:slabdish"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -63,7 +77,9 @@
           "abnormals_delight:venison_shanks": {
             "conditions": {
               "item": {
-                "items": "abnormals_delight:venison_shanks"
+                "items": [
+                  "abnormals_delight:venison_shanks"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -71,22 +87,20 @@
           "abnormals_delight:venison_with_bamboo_shoots": {
             "conditions": {
               "item": {
-                "items": "abnormals_delight:venison_with_bamboo_shoots"
+                "items": [
+                  "abnormals_delight:venison_with_bamboo_shoots"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
           }
         },
-        "indexed_requirements": [],
         "requirements": [
           [
-            "abnormals_delight:venison_with_bamboo_shoots"
+            "abnormals_delight:venison_shanks"
           ],
           [
-            "abnormals_delight:duck_noodles"
-          ],
-          [
-            "abnormals_delight:cooked_venison_shanks"
+            "abnormals_delight:cooked_duck_fillet"
           ],
           [
             "abnormals_delight:cherry_cookie"
@@ -95,13 +109,16 @@
             "abnormals_delight:duck_fillet"
           ],
           [
-            "abnormals_delight:cooked_duck_fillet"
-          ],
-          [
-            "abnormals_delight:venison_shanks"
-          ],
-          [
             "abnormals_delight:slabdish"
+          ],
+          [
+            "abnormals_delight:venison_with_bamboo_shoots"
+          ],
+          [
+            "abnormals_delight:duck_noodles"
+          ],
+          [
+            "abnormals_delight:cooked_venison_shanks"
           ],
           [
             "abnormals_delight:seared_venison"
@@ -116,7 +133,7 @@
     "type": "names",
     "conditions": [
       {
-        "type": "neoforge:mod_loaded",
+        "type": "forge:mod_loaded",
         "modid": "environmental"
       }
     ],

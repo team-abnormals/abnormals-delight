@@ -7,7 +7,9 @@
           "abnormals_delight:apple_pie_slice": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:apple_pie_slice"
+                "items": [
+                  "farmersdelight:apple_pie_slice"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -15,7 +17,9 @@
           "abnormals_delight:bacon": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:bacon"
+                "items": [
+                  "farmersdelight:bacon"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -23,7 +27,9 @@
           "abnormals_delight:bacon_and_eggs": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:bacon_and_eggs"
+                "items": [
+                  "farmersdelight:bacon_and_eggs"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -31,7 +37,9 @@
           "abnormals_delight:bacon_sandwich": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:bacon_sandwich"
+                "items": [
+                  "farmersdelight:bacon_sandwich"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -39,7 +47,9 @@
           "abnormals_delight:baked_cod_stew": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:baked_cod_stew"
+                "items": [
+                  "farmersdelight:baked_cod_stew"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -47,7 +57,9 @@
           "abnormals_delight:barbecue_stick": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:barbecue_stick"
+                "items": [
+                  "farmersdelight:barbecue_stick"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -55,7 +67,9 @@
           "abnormals_delight:beef_patty": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:beef_patty"
+                "items": [
+                  "farmersdelight:beef_patty"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -63,7 +77,9 @@
           "abnormals_delight:beef_stew": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:beef_stew"
+                "items": [
+                  "farmersdelight:beef_stew"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -71,7 +87,9 @@
           "abnormals_delight:bone_broth": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:bone_broth"
+                "items": [
+                  "farmersdelight:bone_broth"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -79,7 +97,9 @@
           "abnormals_delight:cabbage": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:cabbage"
+                "items": [
+                  "farmersdelight:cabbage"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -87,7 +107,9 @@
           "abnormals_delight:cabbage_leaf": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:cabbage_leaf"
+                "items": [
+                  "farmersdelight:cabbage_leaf"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -95,7 +117,9 @@
           "abnormals_delight:cabbage_rolls": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:cabbage_rolls"
+                "items": [
+                  "farmersdelight:cabbage_rolls"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -103,7 +127,9 @@
           "abnormals_delight:cake_slice": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:cake_slice"
+                "items": [
+                  "farmersdelight:cake_slice"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -111,7 +137,9 @@
           "abnormals_delight:chicken_cuts": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:chicken_cuts"
+                "items": [
+                  "farmersdelight:chicken_cuts"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -119,7 +147,9 @@
           "abnormals_delight:chicken_sandwich": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:chicken_sandwich"
+                "items": [
+                  "farmersdelight:chicken_sandwich"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -127,7 +157,9 @@
           "abnormals_delight:chicken_soup": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:chicken_soup"
+                "items": [
+                  "farmersdelight:chicken_soup"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -135,7 +167,9 @@
           "abnormals_delight:chocolate_pie_slice": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:chocolate_pie_slice"
+                "items": [
+                  "farmersdelight:chocolate_pie_slice"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -143,7 +177,9 @@
           "abnormals_delight:cod_roll": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:cod_roll"
+                "items": [
+                  "farmersdelight:cod_roll"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -151,7 +187,9 @@
           "abnormals_delight:cod_slice": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:cod_slice"
+                "items": [
+                  "farmersdelight:cod_slice"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -159,7 +197,9 @@
           "abnormals_delight:cooked_bacon": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:cooked_bacon"
+                "items": [
+                  "farmersdelight:cooked_bacon"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -167,7 +207,9 @@
           "abnormals_delight:cooked_chicken_cuts": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:cooked_chicken_cuts"
+                "items": [
+                  "farmersdelight:cooked_chicken_cuts"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -175,7 +217,9 @@
           "abnormals_delight:cooked_cod_slice": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:cooked_cod_slice"
+                "items": [
+                  "farmersdelight:cooked_cod_slice"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -183,7 +227,9 @@
           "abnormals_delight:cooked_mutton_chops": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:cooked_mutton_chops"
+                "items": [
+                  "farmersdelight:cooked_mutton_chops"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -191,7 +237,9 @@
           "abnormals_delight:cooked_rice": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:cooked_rice"
+                "items": [
+                  "farmersdelight:cooked_rice"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -199,7 +247,9 @@
           "abnormals_delight:cooked_salmon_slice": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:cooked_salmon_slice"
+                "items": [
+                  "farmersdelight:cooked_salmon_slice"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -207,7 +257,9 @@
           "abnormals_delight:dog_food": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:dog_food"
+                "items": [
+                  "farmersdelight:dog_food"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -215,7 +267,9 @@
           "abnormals_delight:dumplings": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:dumplings"
+                "items": [
+                  "farmersdelight:dumplings"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -223,7 +277,9 @@
           "abnormals_delight:egg_sandwich": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:egg_sandwich"
+                "items": [
+                  "farmersdelight:egg_sandwich"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -231,7 +287,9 @@
           "abnormals_delight:fish_stew": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:fish_stew"
+                "items": [
+                  "farmersdelight:fish_stew"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -239,7 +297,9 @@
           "abnormals_delight:fried_rice": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:fried_rice"
+                "items": [
+                  "farmersdelight:fried_rice"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -247,7 +307,9 @@
           "abnormals_delight:fruit_salad": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:fruit_salad"
+                "items": [
+                  "farmersdelight:fruit_salad"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -255,7 +317,9 @@
           "abnormals_delight:glow_berry_custard": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:glow_berry_custard"
+                "items": [
+                  "farmersdelight:glow_berry_custard"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -263,7 +327,9 @@
           "abnormals_delight:grilled_salmon": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:grilled_salmon"
+                "items": [
+                  "farmersdelight:grilled_salmon"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -271,7 +337,9 @@
           "abnormals_delight:ham": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:ham"
+                "items": [
+                  "farmersdelight:ham"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -279,7 +347,9 @@
           "abnormals_delight:hamburger": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:hamburger"
+                "items": [
+                  "farmersdelight:hamburger"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -287,7 +357,9 @@
           "abnormals_delight:honey_cookie": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:honey_cookie"
+                "items": [
+                  "farmersdelight:honey_cookie"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -295,7 +367,9 @@
           "abnormals_delight:honey_glazed_ham": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:honey_glazed_ham"
+                "items": [
+                  "farmersdelight:honey_glazed_ham"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -303,7 +377,9 @@
           "abnormals_delight:kelp_roll": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:kelp_roll"
+                "items": [
+                  "farmersdelight:kelp_roll"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -311,7 +387,9 @@
           "abnormals_delight:kelp_roll_slice": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:kelp_roll_slice"
+                "items": [
+                  "farmersdelight:kelp_roll_slice"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -319,7 +397,9 @@
           "abnormals_delight:melon_popsicle": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:melon_popsicle"
+                "items": [
+                  "farmersdelight:melon_popsicle"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -327,7 +407,9 @@
           "abnormals_delight:minced_beef": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:minced_beef"
+                "items": [
+                  "farmersdelight:minced_beef"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -335,7 +417,9 @@
           "abnormals_delight:mixed_salad": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:mixed_salad"
+                "items": [
+                  "farmersdelight:mixed_salad"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -343,7 +427,9 @@
           "abnormals_delight:mushroom_rice": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:mushroom_rice"
+                "items": [
+                  "farmersdelight:mushroom_rice"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -351,7 +437,9 @@
           "abnormals_delight:mutton_chops": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:mutton_chops"
+                "items": [
+                  "farmersdelight:mutton_chops"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -359,7 +447,9 @@
           "abnormals_delight:mutton_wrap": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:mutton_wrap"
+                "items": [
+                  "farmersdelight:mutton_wrap"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -367,7 +457,9 @@
           "abnormals_delight:nether_salad": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:nether_salad"
+                "items": [
+                  "farmersdelight:nether_salad"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -375,7 +467,9 @@
           "abnormals_delight:noodle_soup": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:noodle_soup"
+                "items": [
+                  "farmersdelight:noodle_soup"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -383,7 +477,9 @@
           "abnormals_delight:onion": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:onion"
+                "items": [
+                  "farmersdelight:onion"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -391,7 +487,9 @@
           "abnormals_delight:pasta_with_meatballs": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:pasta_with_meatballs"
+                "items": [
+                  "farmersdelight:pasta_with_meatballs"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -399,7 +497,9 @@
           "abnormals_delight:pasta_with_mutton_chop": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:pasta_with_mutton_chop"
+                "items": [
+                  "farmersdelight:pasta_with_mutton_chop"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -407,7 +507,9 @@
           "abnormals_delight:pie_crust": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:pie_crust"
+                "items": [
+                  "farmersdelight:pie_crust"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -415,7 +517,9 @@
           "abnormals_delight:pumpkin_slice": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:pumpkin_slice"
+                "items": [
+                  "farmersdelight:pumpkin_slice"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -423,7 +527,9 @@
           "abnormals_delight:pumpkin_soup": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:pumpkin_soup"
+                "items": [
+                  "farmersdelight:pumpkin_soup"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -431,7 +537,9 @@
           "abnormals_delight:ratatouille": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:ratatouille"
+                "items": [
+                  "farmersdelight:ratatouille"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -439,7 +547,9 @@
           "abnormals_delight:raw_pasta": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:raw_pasta"
+                "items": [
+                  "farmersdelight:raw_pasta"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -447,7 +557,9 @@
           "abnormals_delight:roast_chicken": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:roast_chicken"
+                "items": [
+                  "farmersdelight:roast_chicken"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -455,7 +567,9 @@
           "abnormals_delight:roasted_mutton_chops": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:roasted_mutton_chops"
+                "items": [
+                  "farmersdelight:roasted_mutton_chops"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -463,7 +577,9 @@
           "abnormals_delight:salmon_roll": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:salmon_roll"
+                "items": [
+                  "farmersdelight:salmon_roll"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -471,7 +587,9 @@
           "abnormals_delight:salmon_slice": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:salmon_slice"
+                "items": [
+                  "farmersdelight:salmon_slice"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -479,7 +597,9 @@
           "abnormals_delight:shepherds_pie": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:shepherds_pie"
+                "items": [
+                  "farmersdelight:shepherds_pie"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -487,7 +607,9 @@
           "abnormals_delight:smoked_ham": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:smoked_ham"
+                "items": [
+                  "farmersdelight:smoked_ham"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -495,7 +617,9 @@
           "abnormals_delight:squid_ink_pasta": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:squid_ink_pasta"
+                "items": [
+                  "farmersdelight:squid_ink_pasta"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -503,7 +627,9 @@
           "abnormals_delight:steak_and_potatoes": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:steak_and_potatoes"
+                "items": [
+                  "farmersdelight:steak_and_potatoes"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -511,7 +637,9 @@
           "abnormals_delight:stuffed_potato": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:stuffed_potato"
+                "items": [
+                  "farmersdelight:stuffed_potato"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -519,7 +647,9 @@
           "abnormals_delight:stuffed_pumpkin": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:stuffed_pumpkin"
+                "items": [
+                  "farmersdelight:stuffed_pumpkin"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -527,7 +657,9 @@
           "abnormals_delight:sweet_berry_cheesecake_slice": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:sweet_berry_cheesecake_slice"
+                "items": [
+                  "farmersdelight:sweet_berry_cheesecake_slice"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -535,7 +667,9 @@
           "abnormals_delight:sweet_berry_cookie": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:sweet_berry_cookie"
+                "items": [
+                  "farmersdelight:sweet_berry_cookie"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -543,7 +677,9 @@
           "abnormals_delight:tomato": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:tomato"
+                "items": [
+                  "farmersdelight:tomato"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -551,7 +687,9 @@
           "abnormals_delight:tomato_sauce": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:tomato_sauce"
+                "items": [
+                  "farmersdelight:tomato_sauce"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -559,7 +697,9 @@
           "abnormals_delight:vegetable_noodles": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:vegetable_noodles"
+                "items": [
+                  "farmersdelight:vegetable_noodles"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -567,7 +707,9 @@
           "abnormals_delight:vegetable_soup": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:vegetable_soup"
+                "items": [
+                  "farmersdelight:vegetable_soup"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -575,13 +717,14 @@
           "abnormals_delight:wheat_dough": {
             "conditions": {
               "item": {
-                "items": "farmersdelight:wheat_dough"
+                "items": [
+                  "farmersdelight:wheat_dough"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
           }
         },
-        "indexed_requirements": [],
         "requirements": [
           [
             "abnormals_delight:cabbage"

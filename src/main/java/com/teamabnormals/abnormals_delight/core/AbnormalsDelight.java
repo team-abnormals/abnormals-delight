@@ -3,26 +3,28 @@ package com.teamabnormals.abnormals_delight.core;
 import com.teamabnormals.abnormals_delight.core.data.client.ADBlockStateProvider;
 import com.teamabnormals.abnormals_delight.core.data.client.ADItemModelProvider;
 import com.teamabnormals.abnormals_delight.core.data.client.ADLanguageProvider;
-import com.teamabnormals.abnormals_delight.core.data.server.ADDataMapProvider;
 import com.teamabnormals.abnormals_delight.core.data.server.ADLootTableProvider;
 import com.teamabnormals.abnormals_delight.core.data.server.modifiers.ADAdvancementModifierProvider;
 import com.teamabnormals.abnormals_delight.core.data.server.tags.ADBlockTagsProvider;
 import com.teamabnormals.abnormals_delight.core.data.server.tags.ADEntityTypeTagsProvider;
 import com.teamabnormals.abnormals_delight.core.data.server.tags.ADItemTagsProvider;
-import com.teamabnormals.abnormals_delight.core.registry.ADBlocks;
+import com.teamabnormals.abnormals_delight.core.other.ADCompat;
 import com.teamabnormals.abnormals_delight.core.registry.ADItems;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.config.ModConfig;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import net.neoforged.neoforge.data.event.GatherDataEvent;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.fml.ModLoadingContext;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -31,22 +33,27 @@ public class AbnormalsDelight {
 	public static final String MOD_ID = "abnormals_delight";
 	public static final RegistryHelper REGISTRY_HELPER = new RegistryHelper(MOD_ID);
 
-	public AbnormalsDelight(IEventBus bus, ModContainer container) {
-		ADBlocks.BLOCKS.register(bus);
-		ADItems.ITEMS.register(bus);
+	public AbnormalsDelight() {
+		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+		ModLoadingContext context = ModLoadingContext.get();
+
+		REGISTRY_HELPER.register(bus);
+		MinecraftForge.EVENT_BUS.register(this);
 
 		bus.addListener(this::commonSetup);
-		bus.addListener(this::clientSetup);
 		bus.addListener(this::dataSetup);
 
-		container.registerConfig(ModConfig.Type.COMMON, ADConfig.COMMON_SPEC);
+		DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+			ADItems.setupTabEditors();
+		});
+
+		context.registerConfig(ModConfig.Type.COMMON, ADConfig.COMMON_SPEC);
 	}
 
 	private void commonSetup(FMLCommonSetupEvent event) {
-	}
-
-	private void clientSetup(FMLClientSetupEvent event) {
-		event.enqueueWork(ADItems::setupTabEditors);
+		event.enqueueWork(() -> {
+			ADCompat.registerCompat();
+		});
 	}
 
 	private void dataSetup(GatherDataEvent event) {
@@ -55,18 +62,18 @@ public class AbnormalsDelight {
 		CompletableFuture<Provider> provider = event.getLookupProvider();
 		ExistingFileHelper helper = event.getExistingFileHelper();
 
-		boolean server = event.includeServer();
+		boolean includeServer = event.includeServer();
 		ADBlockTagsProvider blockTags = new ADBlockTagsProvider(output, provider, helper);
-		generator.addProvider(server, blockTags);
-		generator.addProvider(server, new ADItemTagsProvider(output, provider, blockTags.contentsGetter(), helper));
-		generator.addProvider(server, new ADEntityTypeTagsProvider(output, provider, helper));
-		generator.addProvider(server, new ADLootTableProvider(output, provider));
-		generator.addProvider(server, new ADAdvancementModifierProvider(output, provider));
-		generator.addProvider(server, new ADDataMapProvider(output, provider));
+		generator.addProvider(includeServer, blockTags);
+		generator.addProvider(includeServer, new ADItemTagsProvider(output, provider, blockTags.contentsGetter(), helper));
+		generator.addProvider(includeServer, new ADEntityTypeTagsProvider(output, provider, helper));
+		generator.addProvider(includeServer, new ADLootTableProvider(output));
+		generator.addProvider(includeServer, new ADAdvancementModifierProvider(output, provider));
+//		generator.addProvider(includeServer, new ADLootModifierProvider(output));
 
-		boolean client = event.includeClient();
-		generator.addProvider(client, new ADBlockStateProvider(output, helper));
-		generator.addProvider(client, new ADItemModelProvider(output, helper));
-		generator.addProvider(client, new ADLanguageProvider(output));
+		boolean includeClient = event.includeClient();
+		generator.addProvider(includeClient, new ADBlockStateProvider(output, helper));
+		generator.addProvider(includeClient, new ADItemModelProvider(output, helper));
+		generator.addProvider(includeClient, new ADLanguageProvider(output));
 	}
 }

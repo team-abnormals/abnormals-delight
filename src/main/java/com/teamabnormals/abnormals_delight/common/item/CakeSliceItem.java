@@ -2,7 +2,6 @@ package com.teamabnormals.abnormals_delight.common.item;
 
 import com.teamabnormals.abnormals_delight.core.registry.ADItems;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -11,6 +10,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class CakeSliceItem extends Item {
 	private final ResourceLocation effectName;
@@ -29,8 +29,8 @@ public class CakeSliceItem extends Item {
 	@Override
 	public ItemStack finishUsingItem(ItemStack stack, Level worldIn, LivingEntity entityLiving) {
 		ItemStack returnStack = super.finishUsingItem(stack, worldIn, entityLiving);
-		if (!worldIn.isClientSide && this.effectName != null && BuiltInRegistries.MOB_EFFECT.getHolder(this.effectName).isPresent()) {
-			entityLiving.addEffect(new MobEffectInstance(BuiltInRegistries.MOB_EFFECT.getHolder(this.effectName).get(), this.duration));
+		if (!worldIn.isClientSide && this.effectName != null && ForgeRegistries.MOB_EFFECTS.getValue(this.effectName) != null) {
+			entityLiving.addEffect(new MobEffectInstance(ForgeRegistries.MOB_EFFECTS.getValue(this.effectName), this.duration));
 		} else if (this == ADItems.STRAWBERRY_CAKE_SLICE.get()) {
 			applyHealing(1.0F, worldIn, entityLiving);
 		}

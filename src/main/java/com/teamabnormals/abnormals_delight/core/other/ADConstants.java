@@ -20,42 +20,42 @@ public class ADConstants {
 	public static final String UPGRADE_AQUATIC = "upgrade_aquatic";
 
 	// Items & Blocks
-	public static final ResourceLocation YUCCA_GATEAU = ResourceLocation.fromNamespaceAndPath(ATMOSPHERIC, "yucca_gateau");
-	public static final ResourceLocation SNAIL_SHELL_PIECE = ResourceLocation.fromNamespaceAndPath(AUTUMNITY, "snail_shell_piece");
-	public static final ResourceLocation SOUL_CANDLE_CAKE = ResourceLocation.fromNamespaceAndPath(BUZZIER_BEES, "soul_candle_cake");
-	public static final ResourceLocation CUPRIC_CANDLE_CAKE = ResourceLocation.fromNamespaceAndPath(CAVERNS_AND_CHASMS, "cupric_candle_cake");
-	public static final ResourceLocation LAVA_LAMP = ResourceLocation.fromNamespaceAndPath(CAVERNS_AND_CHASMS, "lava_lamp");
-	public static final ResourceLocation NECROMIUM_HOE = ResourceLocation.fromNamespaceAndPath(CAVERNS_AND_CHASMS, "necromium_hoe");
-	public static final ResourceLocation SILVER_HOE = ResourceLocation.fromNamespaceAndPath(CAVERNS_AND_CHASMS, "silver_hoe");
-	public static final ResourceLocation DUCKWEED = ResourceLocation.fromNamespaceAndPath(ENVIRONMENTAL, "duckweed");
-	public static final ResourceLocation ADZUKI_STEW = ResourceLocation.fromNamespaceAndPath(NEAPOLITAN, "adzuki_stew");
-	public static final ResourceLocation VANILLA_CAKE = ResourceLocation.fromNamespaceAndPath(NEAPOLITAN, "vanilla_cake");
-	public static final ResourceLocation CHOCOLATE_CAKE = ResourceLocation.fromNamespaceAndPath(NEAPOLITAN, "chocolate_cake");
-	public static final ResourceLocation STRAWBERRY_CAKE = ResourceLocation.fromNamespaceAndPath(NEAPOLITAN, "strawberry_cake");
-	public static final ResourceLocation BANANA_CAKE = ResourceLocation.fromNamespaceAndPath(NEAPOLITAN, "banana_cake");
-	public static final ResourceLocation MINT_CAKE = ResourceLocation.fromNamespaceAndPath(NEAPOLITAN, "mint_cake");
-	public static final ResourceLocation ADZUKI_CAKE = ResourceLocation.fromNamespaceAndPath(NEAPOLITAN, "adzuki_cake");
-	public static final ResourceLocation GLOWING_OBSIDIAN = ResourceLocation.fromNamespaceAndPath(NETHER_EXTENSION, "glowing_obsidian");
+	public static final ResourceLocation YUCCA_GATEAU = new ResourceLocation(ATMOSPHERIC, "yucca_gateau");
+	public static final ResourceLocation SNAIL_SHELL_PIECE = new ResourceLocation(AUTUMNITY, "snail_shell_piece");
+	public static final ResourceLocation SOUL_CANDLE_CAKE = new ResourceLocation(BUZZIER_BEES, "soul_candle_cake");
+	public static final ResourceLocation CUPRIC_CANDLE_CAKE = new ResourceLocation(CAVERNS_AND_CHASMS, "cupric_candle_cake");
+	public static final ResourceLocation LAVA_LAMP = new ResourceLocation(CAVERNS_AND_CHASMS, "lava_lamp");
+	public static final ResourceLocation NECROMIUM_HOE = new ResourceLocation(CAVERNS_AND_CHASMS, "necromium_hoe");
+	public static final ResourceLocation SILVER_HOE = new ResourceLocation(CAVERNS_AND_CHASMS, "silver_hoe");
+	public static final ResourceLocation DUCKWEED = new ResourceLocation(ENVIRONMENTAL, "duckweed");
+	public static final ResourceLocation ADZUKI_STEW = new ResourceLocation(NEAPOLITAN, "adzuki_stew");
+	public static final ResourceLocation VANILLA_CAKE = new ResourceLocation(NEAPOLITAN, "vanilla_cake");
+	public static final ResourceLocation CHOCOLATE_CAKE = new ResourceLocation(NEAPOLITAN, "chocolate_cake");
+	public static final ResourceLocation STRAWBERRY_CAKE = new ResourceLocation(NEAPOLITAN, "strawberry_cake");
+	public static final ResourceLocation BANANA_CAKE = new ResourceLocation(NEAPOLITAN, "banana_cake");
+	public static final ResourceLocation MINT_CAKE = new ResourceLocation(NEAPOLITAN, "mint_cake");
+	public static final ResourceLocation ADZUKI_CAKE = new ResourceLocation(NEAPOLITAN, "adzuki_cake");
+	public static final ResourceLocation GLOWING_OBSIDIAN = new ResourceLocation(NETHER_EXTENSION, "glowing_obsidian");
 
 	// Tags
-	public static final ResourceLocation BRAZIERS = ResourceLocation.fromNamespaceAndPath(CAVERNS_AND_CHASMS, "braziers");
+	public static final ResourceLocation BRAZIERS = new ResourceLocation(CAVERNS_AND_CHASMS, "braziers");
 
 	// EntityTypes
-	public static final ResourceLocation TURKEY = ResourceLocation.fromNamespaceAndPath(AUTUMNITY, "turkey");
-	public static final ResourceLocation DEER = ResourceLocation.fromNamespaceAndPath(ENVIRONMENTAL, "deer");
-	public static final ResourceLocation DUCK = ResourceLocation.fromNamespaceAndPath(ENVIRONMENTAL, "duck");
-	public static final ResourceLocation REINDEER = ResourceLocation.fromNamespaceAndPath(ENVIRONMENTAL, "reindeer");
-	public static final ResourceLocation SLABFISH = ResourceLocation.fromNamespaceAndPath(ENVIRONMENTAL, "slabfish");
-	public static final ResourceLocation ZEBRA = ResourceLocation.fromNamespaceAndPath(ENVIRONMENTAL, "zebra");
-	public static final ResourceLocation ZOMBIE_WOLF = ResourceLocation.fromNamespaceAndPath(PET_CEMETERY, "zombie_wolf");
-	public static final ResourceLocation SKELETON_WOLF = ResourceLocation.fromNamespaceAndPath(PET_CEMETERY, "skeleton_wolf");
+	public static final ResourceLocation TURKEY = new ResourceLocation(AUTUMNITY, "turkey");
+	public static final ResourceLocation DEER = new ResourceLocation(ENVIRONMENTAL, "deer");
+	public static final ResourceLocation DUCK = new ResourceLocation(ENVIRONMENTAL, "duck");
+	public static final ResourceLocation REINDEER = new ResourceLocation(ENVIRONMENTAL, "reindeer");
+	public static final ResourceLocation SLABFISH = new ResourceLocation(ENVIRONMENTAL, "slabfish");
+	public static final ResourceLocation ZEBRA = new ResourceLocation(ENVIRONMENTAL, "zebra");
+	public static final ResourceLocation ZOMBIE_WOLF = new ResourceLocation(PET_CEMETERY, "zombie_wolf");
+	public static final ResourceLocation SKELETON_WOLF = new ResourceLocation(PET_CEMETERY, "skeleton_wolf");
 
 	// Effects
-	public static final ResourceLocation PERSISTENCE = ResourceLocation.fromNamespaceAndPath(ATMOSPHERIC, "persistence");
-	public static final ResourceLocation RELIEF = ResourceLocation.fromNamespaceAndPath(ATMOSPHERIC, "relief");
-	public static final ResourceLocation SUGAR_RUSH = ResourceLocation.fromNamespaceAndPath(NEAPOLITAN, "sugar_rush");
-	public static final ResourceLocation VANILLA_SCENT = ResourceLocation.fromNamespaceAndPath(NEAPOLITAN, "vanilla_scent");
-	public static final ResourceLocation AGILITY = ResourceLocation.fromNamespaceAndPath(NEAPOLITAN, "agility");
-	public static final ResourceLocation BERSERKING = ResourceLocation.fromNamespaceAndPath(NEAPOLITAN, "berserking");
-	public static final ResourceLocation HARMONY = ResourceLocation.fromNamespaceAndPath(NEAPOLITAN, "harmony");
+	public static final ResourceLocation PERSISTENCE = new ResourceLocation(ATMOSPHERIC, "persistence");
+	public static final ResourceLocation RELIEF = new ResourceLocation(ATMOSPHERIC, "relief");
+	public static final ResourceLocation SUGAR_RUSH = new ResourceLocation(NEAPOLITAN, "sugar_rush");
+	public static final ResourceLocation VANILLA_SCENT = new ResourceLocation(NEAPOLITAN, "vanilla_scent");
+	public static final ResourceLocation AGILITY = new ResourceLocation(NEAPOLITAN, "agility");
+	public static final ResourceLocation BERSERKING = new ResourceLocation(NEAPOLITAN, "berserking");
+	public static final ResourceLocation HARMONY = new ResourceLocation(NEAPOLITAN, "harmony");
 }

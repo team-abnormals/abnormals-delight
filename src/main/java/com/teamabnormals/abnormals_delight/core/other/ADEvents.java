@@ -8,7 +8,6 @@ import com.teamabnormals.abnormals_delight.core.other.tags.ADBlockTags;
 import com.teamabnormals.abnormals_delight.core.registry.ADItems;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -25,10 +24,11 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CakeBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
-import net.neoforged.neoforge.event.level.BlockEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.level.BlockEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.registries.ForgeRegistries;
 import vectorwing.farmersdelight.common.registry.ModParticleTypes;
 import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
@@ -77,7 +77,7 @@ public class ADEvents {
 		BlockPos pos = event.getPos();
 		BlockState state = level.getBlockState(pos);
 		ItemStack tool = event.getEntity().getItemInHand(event.getHand());
-		ResourceLocation name = BuiltInRegistries.BLOCK.getKey(state.getBlock());
+		ResourceLocation name = ForgeRegistries.BLOCKS.getKey(state.getBlock());
 
 		if (tool.is(ModTags.KNIVES) && name != null) {
 			if (state.is(ADBlockTags.DROPS_FLAVORED_CAKE_SLICE)) {
@@ -92,7 +92,7 @@ public class ADEvents {
 						level.removeBlock(pos, false);
 					}
 				} else {
-					level.setBlock(pos, BuiltInRegistries.BLOCK.get(SLICES_TO_CAKES.get(cakeSlice)).defaultBlockState().setValue(CakeBlock.BITES, 1), 3);
+					level.setBlock(pos, ForgeRegistries.BLOCKS.getValue(SLICES_TO_CAKES.get(cakeSlice)).defaultBlockState().setValue(CakeBlock.BITES, 1), 3);
 					Block.dropResources(state, level, pos);
 				}
 
@@ -122,7 +122,7 @@ public class ADEvents {
 		BlockState state = event.getState();
 		Player player = event.getPlayer();
 		List<ItemStack> loot = Lists.newArrayList();
-		ResourceLocation name = BuiltInRegistries.BLOCK.getKey(state.getBlock());
+		ResourceLocation name = ForgeRegistries.BLOCKS.getKey(state.getBlock());
 
 		if (player.getMainHandItem().is(ModTags.KNIVES) && name != null) {
 			if (state.is(ADBlockTags.DROPS_FLAVORED_CAKE_SLICE)) {
@@ -147,7 +147,7 @@ public class ADEvents {
 		Entity target = event.getTarget();
 		ItemStack stack = event.getItemStack();
 
-		if (target instanceof TamableAnimal entity && BuiltInRegistries.ENTITY_TYPE.getKey(target.getType()).equals(ADConstants.SLABFISH)) {
+		if (target instanceof TamableAnimal entity && ForgeRegistries.ENTITY_TYPES.getKey(target.getType()).equals(ADConstants.SLABFISH)) {
 			if (entity.isAlive() && entity.isTame() && stack.getItem().equals(ADItems.SLABDISH.get())) {
 				entity.setHealth(entity.getMaxHealth());
 				for (MobEffectInstance effect : SlabdishItem.EFFECTS) {

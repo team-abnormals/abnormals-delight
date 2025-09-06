@@ -7,7 +7,9 @@
           "abnormals_delight:dune_platter": {
             "conditions": {
               "item": {
-                "items": "abnormals_delight:dune_platter"
+                "items": [
+                  "abnormals_delight:dune_platter"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
@@ -15,19 +17,20 @@
           "abnormals_delight:yucca_gateau_slice": {
             "conditions": {
               "item": {
-                "items": "abnormals_delight:yucca_gateau_slice"
+                "items": [
+                  "abnormals_delight:yucca_gateau_slice"
+                ]
               }
             },
             "trigger": "minecraft:consume_item"
           }
         },
-        "indexed_requirements": [],
         "requirements": [
           [
-            "abnormals_delight:dune_platter"
+            "abnormals_delight:yucca_gateau_slice"
           ],
           [
-            "abnormals_delight:yucca_gateau_slice"
+            "abnormals_delight:dune_platter"
           ]
         ],
         "should_replace_requirements": false
@@ -39,7 +42,7 @@
     "type": "names",
     "conditions": [
       {
-        "type": "neoforge:mod_loaded",
+        "type": "forge:mod_loaded",
         "modid": "atmospheric"
       }
     ],

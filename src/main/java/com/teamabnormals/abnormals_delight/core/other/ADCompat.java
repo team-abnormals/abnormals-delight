@@ -1,18 +1,27 @@
 package com.teamabnormals.abnormals_delight.core.other;
 
-import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
-import net.minecraft.core.component.DataComponents;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.Items;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.event.ModifyDefaultComponentsEvent;
+import com.teamabnormals.abnormals_delight.core.registry.ADItems;
+import com.teamabnormals.blueprint.core.util.DataUtil;
+import net.minecraft.world.food.Foods;
 
-@EventBusSubscriber(modid = AbnormalsDelight.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class ADCompat {
 
-	@SubscribeEvent
-	public static void onModifyComponents(ModifyDefaultComponentsEvent event) {
-		event.modify(Items.COOKIE, c -> c.set(DataComponents.FOOD, new FoodProperties.Builder().nutrition(2).saturationModifier(0.3F).fast().build()));
+	public static void registerCompat() {
+		Foods.COOKIE.fastFood = true;
+		registerCompostables();
+	}
+
+	private static void registerCompostables() {
+		DataUtil.registerCompostable(ADItems.CHERRY_COOKIE.get(), 0.85F);
+		DataUtil.registerCompostable(ADItems.MULBERRY_COOKIE.get(), 0.85F);
+		DataUtil.registerCompostable(ADItems.MAPLE_COOKIE.get(), 0.85F);
+
+		DataUtil.registerCompostable(ADItems.VANILLA_CAKE_SLICE.get(), 0.85F);
+		DataUtil.registerCompostable(ADItems.CHOCOLATE_CAKE_SLICE.get(), 0.85F);
+		DataUtil.registerCompostable(ADItems.STRAWBERRY_CAKE_SLICE.get(), 0.85F);
+		DataUtil.registerCompostable(ADItems.BANANA_CAKE_SLICE.get(), 0.85F);
+		DataUtil.registerCompostable(ADItems.MINT_CAKE_SLICE.get(), 0.85F);
+		DataUtil.registerCompostable(ADItems.ADZUKI_CAKE_SLICE.get(), 0.85F);
+		DataUtil.registerCompostable(ADItems.YUCCA_GATEAU_SLICE.get(), 0.85F);
 	}
 }
