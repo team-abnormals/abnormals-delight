@@ -13,7 +13,6 @@ apply plugin: "net.minecraftforge.gradle"
 apply plugin: "eclipse"
 apply plugin: "maven-publish"
 apply plugin: "org.spongepowered.mixin"
-apply from: 'https://raw.githubusercontent.com/SizableShrimp/Forge-Class-Remapper/main/classremapper.gradle'
 
 mixin {
     add sourceSets.main, "${project.modId}.refmap.json"
@@ -94,7 +93,7 @@ dependencies {
 }
 
 repositories {
-    maven { url "https://maven.jaackson.me" }
+    maven { url "https://maven.teamabnormals.com" }
     maven { url "https://www.cursemaven.com" }
     maven { url "https://dvs1.progwml6.com/files/maven/" }
     maven { url "https://modmaven.k-4u.nl" }
