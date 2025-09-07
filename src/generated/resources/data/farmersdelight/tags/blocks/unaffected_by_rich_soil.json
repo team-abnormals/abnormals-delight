@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "atmospheric:crustose",
+      "required": false
+    },
+    {
+      "id": "atmospheric:crustose_log",
+      "required": false
+    },
+    {
+      "id": "atmospheric:crustose_wood",
+      "required": false
+    },
+    {
+      "id": "endergetic:poismoss",
+      "required": false
+    },
+    {
+      "id": "endergetic:eumus_poismoss",
+      "required": false
+    }
+  ]
+}

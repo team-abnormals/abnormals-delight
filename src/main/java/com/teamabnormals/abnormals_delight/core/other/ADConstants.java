@@ -20,6 +20,9 @@ public class ADConstants {
 	public static final String UPGRADE_AQUATIC = "upgrade_aquatic";
 
 	// Items & Blocks
+	public static final ResourceLocation CRUSTOSE = new ResourceLocation(ATMOSPHERIC, "crustose");
+	public static final ResourceLocation CRUSTOSE_LOG = new ResourceLocation(ATMOSPHERIC, "crustose_log");
+	public static final ResourceLocation CRUSTOSE_WOOD = new ResourceLocation(ATMOSPHERIC, "crustose_wood");
 	public static final ResourceLocation YUCCA_GATEAU = new ResourceLocation(ATMOSPHERIC, "yucca_gateau");
 	public static final ResourceLocation SNAIL_SHELL_PIECE = new ResourceLocation(AUTUMNITY, "snail_shell_piece");
 	public static final ResourceLocation SOUL_CANDLE_CAKE = new ResourceLocation(BUZZIER_BEES, "soul_candle_cake");
@@ -27,6 +30,8 @@ public class ADConstants {
 	public static final ResourceLocation LAVA_LAMP = new ResourceLocation(CAVERNS_AND_CHASMS, "lava_lamp");
 	public static final ResourceLocation NECROMIUM_HOE = new ResourceLocation(CAVERNS_AND_CHASMS, "necromium_hoe");
 	public static final ResourceLocation SILVER_HOE = new ResourceLocation(CAVERNS_AND_CHASMS, "silver_hoe");
+	public static final ResourceLocation POISMOSS = new ResourceLocation(ENDERGETIC, "poismoss");
+	public static final ResourceLocation EUMUS_POISMOSS = new ResourceLocation(ENDERGETIC, "eumus_poismoss");
 	public static final ResourceLocation DUCKWEED = new ResourceLocation(ENVIRONMENTAL, "duckweed");
 	public static final ResourceLocation ADZUKI_STEW = new ResourceLocation(NEAPOLITAN, "adzuki_stew");
 	public static final ResourceLocation VANILLA_CAKE = new ResourceLocation(NEAPOLITAN, "vanilla_cake");
