@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "neapolitan"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chocolate_cake_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "abnormals_delight:chocolate_cake_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "abnormals_delight:chocolate_cake_from_chocolate_cake_slice"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chocolate_cake_slice"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "abnormals_delight:chocolate_cake_from_chocolate_cake_slice"
+    ]
+  }
+}

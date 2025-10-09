@@ -11,6 +11,7 @@ import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulat
 import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.registry.ItemSubRegistryHelper;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -23,6 +24,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredItem;
+import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
@@ -112,7 +114,7 @@ public class ADItems {
 
 	public static void setupTabEditors() {
 		CreativeModeTabContentsPopulator.mod(AbnormalsDelight.MOD_ID)
-				.predicate(ADItems::fdGroupPredicate)
+				.tab(ResourceKey.create(Registries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath("farmersdelight", "farmersdelight")))
 				.addItemsAfter(modLoaded(ModItems.GOLDEN_KNIFE, ADConstants.CAVERNS_AND_CHASMS), SILVER_KNIFE)
 				.addItemsAfter(modLoaded(ModItems.NETHERITE_KNIFE, ADConstants.CAVERNS_AND_CHASMS), NECROMIUM_KNIFE)
 
@@ -206,7 +208,7 @@ public class ADItems {
 
 	public static boolean fdGroupPredicate(BuildCreativeModeTabContentsEvent event) {
 		// !ADConfig.COMMON.replaceFDItemGroup.get() &&
-		return event.getTabKey() == ModCreativeTabs.TAB_FARMERS_DELIGHT;
+		return event.getTab() == ModCreativeTabs.TAB_FARMERS_DELIGHT;
 	}
 
 	public static boolean modPredicate(BuildCreativeModeTabContentsEvent event, ResourceKey<CreativeModeTab> tab) {

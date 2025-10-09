@@ -5,10 +5,14 @@ import com.teamabnormals.abnormals_delight.core.other.ADConditions;
 import com.teamabnormals.abnormals_delight.core.registry.ADBlocks;
 import com.teamabnormals.abnormals_delight.core.registry.ADItems;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.autumnity.core.registry.AutumnityBlocks;
+import com.teamabnormals.autumnity.core.registry.AutumnityItems;
 import com.teamabnormals.blueprint.core.data.server.BlueprintRecipeProvider;
 import com.teamabnormals.buzzier_bees.core.registry.BBBlocks;
+import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
 import com.teamabnormals.upgrade_aquatic.core.registry.UABlocks;
+import com.teamabnormals.upgrade_aquatic.core.registry.UAItems;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
@@ -38,18 +42,21 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		this.buildAutumnityRecipes(output, AUTUMNITY_LOADED);
 		this.buildBuzzierBeesRecipes(output, BUZZIER_BEES_LOADED);
 		this.buildEnvironmentalRecipes(output, ENVIRONMENTAL_LOADED);
+		this.buildNeapolitanRecipes(output, NEAPOLITAN_LOADED);
 		this.buildUpgradeAquaticRecipes(output, UPGRADE_AQUATIC_LOADED);
 	}
 
 	public void buildAtmosphericRecipes(RecipeOutput output, ICondition... conditions) {
-		flowerCutting(output, AtmosphericBlocks.FIRETHORN, Items.RED_DYE, conditions);
-		flowerCutting(output, AtmosphericBlocks.FORSYTHIA, Items.YELLOW_DYE, conditions);
-		flowerCutting(output, AtmosphericBlocks.GILIA, Items.PURPLE_DYE, conditions);
-		flowerCutting(output, AtmosphericBlocks.HOT_MONKEY_BRUSH, Items.ORANGE_DYE, conditions);
-		flowerCutting(output, AtmosphericBlocks.SCALDING_MONKEY_BRUSH, Items.RED_DYE, conditions);
-		flowerCutting(output, AtmosphericBlocks.WARM_MONKEY_BRUSH, Items.YELLOW_DYE, conditions);
-		flowerCutting(output, AtmosphericBlocks.WATER_HYACINTH, Items.PURPLE_DYE, conditions);
-		flowerCutting(output, AtmosphericBlocks.YUCCA_FLOWER, Items.LIGHT_GRAY_DYE, conditions);
+		cuttingRecipe(output, AtmosphericBlocks.FIRETHORN, Items.RED_DYE, 2, conditions);
+		cuttingRecipe(output, AtmosphericBlocks.FORSYTHIA, Items.YELLOW_DYE, 2, conditions);
+		cuttingRecipe(output, AtmosphericBlocks.GILIA, Items.PURPLE_DYE, 2, conditions);
+		cuttingRecipe(output, AtmosphericBlocks.HOT_MONKEY_BRUSH, Items.ORANGE_DYE, 2, conditions);
+		cuttingRecipe(output, AtmosphericBlocks.SCALDING_MONKEY_BRUSH, Items.RED_DYE, 2, conditions);
+		cuttingRecipe(output, AtmosphericBlocks.WARM_MONKEY_BRUSH, Items.YELLOW_DYE, 2, conditions);
+		cuttingRecipe(output, AtmosphericBlocks.WATER_HYACINTH, Items.PURPLE_DYE, 2, conditions);
+		cuttingRecipe(output, AtmosphericBlocks.YUCCA_FLOWER, Items.LIGHT_GRAY_DYE, 2, conditions);
+
+		cuttingRecipe(output, AtmosphericItems.YUCCA_GATEAU, ADItems.YUCCA_GATEAU_SLICE, 10, conditions);
 
 		cabinetRecipe(output, ADBlocks.ROSEWOOD_CABINET, AtmosphericBlocks.ROSEWOOD_SLAB, AtmosphericBlocks.ROSEWOOD_TRAPDOOR, conditions);
 		cabinetRecipe(output, ADBlocks.MORADO_CABINET, AtmosphericBlocks.MORADO_SLAB, AtmosphericBlocks.MORADO_TRAPDOOR, conditions);
@@ -86,7 +93,11 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 	}
 
 	public void buildAutumnityRecipes(RecipeOutput output, ICondition... conditions) {
-		flowerCutting(output, AutumnityBlocks.AUTUMN_CROCUS, Items.MAGENTA_DYE, conditions);
+		cuttingRecipe(output, AutumnityBlocks.AUTUMN_CROCUS, Items.MAGENTA_DYE, 2, conditions);
+
+		cuttingRecipe(output, AutumnityBlocks.TURKEY, AutumnityItems.TURKEY_PIECE, 5, conditions);
+		cuttingRecipe(output, AutumnityBlocks.COOKED_TURKEY, AutumnityItems.COOKED_TURKEY_PIECE, 5, conditions);
+		cuttingRecipe(output, AutumnityBlocks.LARGE_PUMPKIN_SLICE, ModItems.PUMPKIN_SLICE.get(), 4, conditions);
 
 		cabinetRecipe(output, ADBlocks.MAPLE_CABINET, AutumnityBlocks.MAPLE_SLAB, AutumnityBlocks.MAPLE_TRAPDOOR, conditions);
 		salvagePlankFromFurniture(output, AutumnityBlocks.MAPLE_PLANKS, AutumnityBlocks.MAPLE_DOOR, AutumnityBlocks.MAPLE_TRAPDOOR, AutumnityBlocks.MAPLE_SIGNS.getFirst(), AutumnityBlocks.MAPLE_HANGING_SIGNS.getFirst(), conditions);
@@ -95,9 +106,9 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 	}
 
 	public void buildBuzzierBeesRecipes(RecipeOutput output, ICondition... conditions) {
-		flowerCutting(output, BBBlocks.BUTTERCUP, Items.YELLOW_DYE, conditions);
-		flowerCutting(output, BBBlocks.PINK_CLOVER, Items.PINK_DYE, conditions);
-		flowerCutting(output, BBBlocks.WHITE_CLOVER, Items.WHITE_DYE, conditions);
+		cuttingRecipe(output, BBBlocks.BUTTERCUP, Items.YELLOW_DYE, 2, conditions);
+		cuttingRecipe(output, BBBlocks.PINK_CLOVER, Items.PINK_DYE, 2, conditions);
+		cuttingRecipe(output, BBBlocks.WHITE_CLOVER, Items.WHITE_DYE, 2, conditions);
 	}
 
 	public void buildEnvironmentalRecipes(RecipeOutput output, ICondition... conditions) {
@@ -105,10 +116,32 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		conditionalFoodCookingRecipes(output, ADItems.VENISON_SHANKS, ADItems.COOKED_VENISON_SHANKS, conditions);
 	}
 
+	public void buildNeapolitanRecipes(RecipeOutput output, ICondition... conditions) {
+		cuttingRecipe(output, NeapolitanItems.ADZUKI_CAKE, ADItems.ADZUKI_CAKE_SLICE, 7, conditions);
+		cuttingRecipe(output, NeapolitanItems.BANANA_CAKE, ADItems.BANANA_CAKE_SLICE, 7, conditions);
+		cuttingRecipe(output, NeapolitanItems.CHOCOLATE_CAKE, ADItems.CHOCOLATE_CAKE_SLICE, 7, conditions);
+		cuttingRecipe(output, NeapolitanItems.MINT_CAKE, ADItems.MINT_CAKE_SLICE, 7, conditions);
+		cuttingRecipe(output, NeapolitanItems.STRAWBERRY_CAKE, ADItems.STRAWBERRY_CAKE_SLICE, 7, conditions);
+		cuttingRecipe(output, NeapolitanItems.VANILLA_CAKE, ADItems.VANILLA_CAKE_SLICE, 7, conditions);
+
+		cakeRecipe(output, NeapolitanItems.ADZUKI_CAKE, ADItems.ADZUKI_CAKE_SLICE, conditions);
+		cakeRecipe(output, NeapolitanItems.BANANA_CAKE, ADItems.BANANA_CAKE_SLICE, conditions);
+		cakeRecipe(output, NeapolitanItems.CHOCOLATE_CAKE, ADItems.CHOCOLATE_CAKE_SLICE, conditions);
+		cakeRecipe(output, NeapolitanItems.MINT_CAKE, ADItems.MINT_CAKE_SLICE, conditions);
+		cakeRecipe(output, NeapolitanItems.STRAWBERRY_CAKE, ADItems.STRAWBERRY_CAKE_SLICE, conditions);
+		cakeRecipe(output, NeapolitanItems.VANILLA_CAKE, ADItems.VANILLA_CAKE_SLICE, conditions);
+
+	}
+
 	public void buildUpgradeAquaticRecipes(RecipeOutput output, ICondition... conditions) {
-		flowerCutting(output, UABlocks.PICKERELWEED, Items.CYAN_DYE, conditions);
-		flowerCutting(output, UABlocks.PINK_SEAROCKET, Items.PINK_DYE, conditions);
-		flowerCutting(output, UABlocks.WHITE_SEAROCKET, Items.WHITE_DYE, conditions);
+		cuttingRecipe(output, UABlocks.PICKERELWEED, Items.CYAN_DYE, 2, conditions);
+		cuttingRecipe(output, UABlocks.PINK_SEAROCKET, Items.PINK_DYE, 2, conditions);
+		cuttingRecipe(output, UABlocks.WHITE_SEAROCKET, Items.WHITE_DYE, 2, conditions);
+
+		cuttingFish(output, UAItems.PIKE, ADItems.PIKE_SLICE, 2, conditions);
+		cuttingFish(output, UAItems.COOKED_PIKE, ADItems.COOKED_PIKE_SLICE, 2, conditions);
+		cuttingFish(output, UAItems.PERCH, ADItems.PERCH_SLICE, 2, conditions);
+		cuttingFish(output, UAItems.COOKED_PERCH, ADItems.COOKED_PERCH_SLICE, 2, conditions);
 
 		conditionalFoodCookingRecipes(output, ADItems.PERCH_SLICE, ADItems.COOKED_PERCH_SLICE, conditions);
 		conditionalFoodCookingRecipes(output, ADItems.PIKE_SLICE, ADItems.COOKED_PIKE_SLICE, conditions);
@@ -139,8 +172,12 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(hangingSign), new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), plank).save(output.withConditions(conditions));
 	}
 
-	private static void flowerCutting(RecipeOutput output, ItemLike flower, ItemLike dye, ICondition... conditions) {
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(flower), Ingredient.of(CommonTags.TOOLS_KNIFE), dye, 2).save(output.withConditions(conditions));
+	private static void cuttingRecipe(RecipeOutput output, ItemLike input, ItemLike cut, int count, ICondition... conditions) {
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(input), Ingredient.of(CommonTags.TOOLS_KNIFE), cut, count).save(output.withConditions(conditions));
+	}
+
+	private static void cuttingFish(RecipeOutput output, ItemLike input, ItemLike cut, int count, ICondition... conditions) {
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(input), Ingredient.of(CommonTags.TOOLS_KNIFE), cut, count).addResult(Items.BONE_MEAL).save(output.withConditions(conditions));
 	}
 
 	private static void stripLogForBark(RecipeOutput output, ItemLike log, ItemLike strippedLog, ICondition... conditions) {
@@ -151,6 +188,13 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(), strippedLog).addResult(ModItems.TREE_BARK.get()).addSound(SoundEvents.AXE_STRIP)
 				.addResultWithChance(chance, 0.25F)
 				.build(output.withConditions(conditions));
+	}
+
+	private void cakeRecipe(RecipeOutput output, ItemLike cake, ItemLike slice, ICondition... conditions) {
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, cake)
+				.requires(slice).requires(slice).requires(slice).requires(slice).requires(slice).requires(slice).requires(slice)
+				.unlockedBy(getHasName(slice), InventoryChangeTrigger.TriggerInstance.hasItems(slice))
+				.group("cake").save(output.withConditions(conditions), this.getModConversionRecipeName(cake, slice));
 	}
 
 	public static void conditionalFoodCookingRecipes(RecipeOutput recipeOutput, ItemLike input, ItemLike output, ICondition... conditions) {

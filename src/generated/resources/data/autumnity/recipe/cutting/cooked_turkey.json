@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "autumnity"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "autumnity:cooked_turkey"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 5,
+        "id": "autumnity:cooked_turkey_piece"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

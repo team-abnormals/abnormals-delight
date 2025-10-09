@@ -24,10 +24,10 @@
         "indexed_requirements": [],
         "requirements": [
           [
-            "abnormals_delight:yucca_gateau_slice"
+            "abnormals_delight:dune_platter"
           ],
           [
-            "abnormals_delight:dune_platter"
+            "abnormals_delight:yucca_gateau_slice"
           ]
         ],
         "should_replace_requirements": false

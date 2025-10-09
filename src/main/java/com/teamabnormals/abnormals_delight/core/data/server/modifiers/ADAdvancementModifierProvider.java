@@ -18,8 +18,8 @@ import net.neoforged.neoforge.common.conditions.NotCondition;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
+import java.util.Comparator;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 
@@ -42,22 +42,24 @@ public class ADAdvancementModifierProvider extends AdvancementModifierProvider i
 		});
 		this.entry("husbandry/balanced_diet").selects("husbandry/balanced_diet").addModifier(balancedDiet.requirements(Strategy.AND).build());
 
-		compatBalancedDiet("autumnity", AUTUMNITY_LOADED, Set.of(MAPLE_COOKIE, MAPLE_GLAZED_BACON, ESCARGOT));
-		compatBalancedDiet("atmospheric", ATMOSPHERIC_LOADED, Set.of(DUNE_PLATTER, YUCCA_GATEAU_SLICE));
-		compatBalancedDiet("environmental", ENVIRONMENTAL_LOADED, Set.of(DUCK_FILLET, COOKED_DUCK_FILLET, VENISON_SHANKS, COOKED_VENISON_SHANKS, CHERRY_COOKIE, SEARED_VENISON, DUCK_NOODLES, VENISON_WITH_BAMBOO_SHOOTS, SLABDISH));
-		compatBalancedDiet("environmental_and_atmospheric", new BlueprintAndCondition(ENVIRONMENTAL_LOADED, ATMOSPHERIC_LOADED), Set.of(PASSION_FRUIT_GLAZED_DUCK));
-		compatBalancedDiet("incubation", new NotCondition(INCUBATION_LOADED), Set.of(ModItems.FRIED_EGG));
-		compatBalancedDiet("neapolitan", NEAPOLITAN_LOADED, Set.of(VANILLA_CAKE_SLICE, CHOCOLATE_CAKE_SLICE, STRAWBERRY_CAKE_SLICE, BANANA_CAKE_SLICE, MINT_CAKE_SLICE, ADZUKI_CAKE_SLICE));
-		compatBalancedDiet("upgrade_aquatic", UPGRADE_AQUATIC_LOADED, Set.of(PIKE_SLICE, COOKED_PIKE_SLICE, PERCH_SLICE, COOKED_PERCH_SLICE, MULBERRY_COOKIE, PERCH_WITH_MUSHROOMS, PIKE_WITH_BEETROOT));
+		compatBalancedDiet("autumnity", AUTUMNITY_LOADED, List.of(MAPLE_COOKIE, MAPLE_GLAZED_BACON, ESCARGOT));
+		compatBalancedDiet("atmospheric", ATMOSPHERIC_LOADED, List.of(DUNE_PLATTER, YUCCA_GATEAU_SLICE));
+		compatBalancedDiet("environmental", ENVIRONMENTAL_LOADED, List.of(DUCK_FILLET, COOKED_DUCK_FILLET, VENISON_SHANKS, COOKED_VENISON_SHANKS, CHERRY_COOKIE, SEARED_VENISON, DUCK_NOODLES, VENISON_WITH_BAMBOO_SHOOTS, SLABDISH));
+		compatBalancedDiet("environmental_and_atmospheric", new BlueprintAndCondition(ENVIRONMENTAL_LOADED, ATMOSPHERIC_LOADED), List.of(PASSION_FRUIT_GLAZED_DUCK));
+		compatBalancedDiet("incubation", new NotCondition(INCUBATION_LOADED), List.of(ModItems.FRIED_EGG));
+		compatBalancedDiet("neapolitan", NEAPOLITAN_LOADED, List.of(VANILLA_CAKE_SLICE, CHOCOLATE_CAKE_SLICE, STRAWBERRY_CAKE_SLICE, BANANA_CAKE_SLICE, MINT_CAKE_SLICE, ADZUKI_CAKE_SLICE));
+		compatBalancedDiet("upgrade_aquatic", UPGRADE_AQUATIC_LOADED, List.of(PIKE_SLICE, COOKED_PIKE_SLICE, PERCH_SLICE, COOKED_PERCH_SLICE, MULBERRY_COOKIE, PERCH_WITH_MUSHROOMS, PIKE_WITH_BEETROOT));
 	}
 
-	private void compatBalancedDiet(String name, ICondition condition, Set<Supplier<Item>> items) {
+	private void compatBalancedDiet(String name, ICondition condition, List<Supplier<Item>> items) {
 		ConditionedResourceSelector selector = new ConditionedResourceSelector(new NamesResourceSelector("husbandry/balanced_diet"), condition);
 		CriteriaModifier.Builder balancedDiet = CriteriaModifier.builder(this.modId);
-		items.forEach(item -> {
-			if (item.get().getDefaultInstance().getFoodProperties(null) != null)
-				balancedDiet.addCriterion(BuiltInRegistries.ITEM.getKey(item.get()).getPath(), ConsumeItemTrigger.TriggerInstance.usedItem(item.get()));
-		});
+		items.stream()
+				.filter(item -> item.get().getDefaultInstance().getFoodProperties(null) != null)
+				.sorted(Comparator.comparing(item -> BuiltInRegistries.ITEM.getKey(item.get())))
+				.forEach(item -> {
+					balancedDiet.addCriterion(BuiltInRegistries.ITEM.getKey(item.get()).getPath(), ConsumeItemTrigger.TriggerInstance.usedItem(item.get()));
+				});
 		this.entry("husbandry/balanced_diet/" + name).selector(selector).addModifier(balancedDiet.requirements(Strategy.AND).build());
 	}
 }

@@ -1,5 +1,13 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "neapolitan"
+    }
+  ],
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "cake",
   "ingredients": [
     {
       "item": "abnormals_delight:banana_cake_slice"
@@ -24,12 +32,7 @@
     }
   ],
   "result": {
-    "item": "neapolitan:banana_cake"
-  },
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "neapolitan"
-    }
-  ]
+    "count": 1,
+    "id": "neapolitan:banana_cake"
+  }
 }
