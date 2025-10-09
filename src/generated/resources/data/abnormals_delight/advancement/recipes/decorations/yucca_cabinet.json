@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "atmospheric"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "abnormals_delight:yucca_cabinet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yucca_trapdoor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atmospheric:yucca_trapdoor"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_yucca_trapdoor"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "abnormals_delight:yucca_cabinet"
+    ]
+  }
+}
