@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "upgrade_aquatic"
+    }
+  ],
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:foods/raw_pike"
+    },
+    {
+      "item": "upgrade_aquatic:pickerelweed"
+    },
+    {
+      "item": "upgrade_aquatic:pickerelweed"
+    },
+    {
+      "tag": "c:crops/beetroot"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "abnormals_delight:pike_with_beetroot"
+  }
+}

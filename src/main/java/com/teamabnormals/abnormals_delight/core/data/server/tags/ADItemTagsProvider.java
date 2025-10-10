@@ -4,6 +4,8 @@ import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.teamabnormals.abnormals_delight.core.other.ADConstants;
 import com.teamabnormals.abnormals_delight.core.registry.ADBlocks;
 import com.teamabnormals.abnormals_delight.core.registry.ADItems;
+import com.teamabnormals.autumnity.core.other.tags.AutumnityItemTags;
+import com.teamabnormals.upgrade_aquatic.core.other.tags.UAItemTags;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -28,6 +30,7 @@ public class ADItemTagsProvider extends ItemTagsProvider {
 		super(output, lookupProvider, tagLookup, AbnormalsDelight.MOD_ID, helper);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	protected void addTags(Provider provider) {
 		this.tag(ModTags.WOODEN_CABINETS).add(ModBlocks.MANGROVE_CABINET.get().asItem(), ADBlocks.ROSEWOOD_CABINET.get().asItem(), ADBlocks.MORADO_CABINET.get().asItem(), ADBlocks.YUCCA_CABINET.get().asItem(), ADBlocks.KOUSA_CABINET.get().asItem(), ADBlocks.ASPEN_CABINET.get().asItem(), ADBlocks.LAUREL_CABINET.get().asItem(), ADBlocks.GRIMWOOD_CABINET.get().asItem(), ADBlocks.MAPLE_CABINET.get().asItem(), ADBlocks.AZALEA_CABINET.get().asItem(), ADBlocks.POISE_CABINET.get().asItem(), ADBlocks.WILLOW_CABINET.get().asItem(), ADBlocks.PLUM_CABINET.get().asItem(), ADBlocks.WISTERIA_CABINET.get().asItem(), ADBlocks.PINE_CABINET.get().asItem(), ADBlocks.DRIFTWOOD_CABINET.get().asItem(), ADBlocks.RIVER_CABINET.get().asItem());
@@ -35,39 +38,31 @@ public class ADItemTagsProvider extends ItemTagsProvider {
 
 		this.tag(ItemTags.MEAT).add(DUCK_FILLET.get(), COOKED_DUCK_FILLET.get(), VENISON_SHANKS.get(), COOKED_VENISON_SHANKS.get(), MAPLE_GLAZED_BACON.get());
 
-		this.tag(Tags.Items.FOODS_COOKED_MEAT).addTags(COOKED_RABBIT, COOKED_DUCK, COOKED_TURKEY, COOKED_VENISON);
-		this.tag(COOKED_DUCK).add(ADItems.COOKED_DUCK_FILLET.get());
-		this.tag(COOKED_TURKEY);
-		this.tag(COOKED_RABBIT).add(Items.COOKED_RABBIT);
-		this.tag(COOKED_VENISON).add(ADItems.COOKED_VENISON_SHANKS.get());
+		this.tag(Tags.Items.FOODS_COOKED_MEAT).addTags(FOODS_COOKED_RABBIT, FOODS_COOKED_DUCK, FOODS_COOKED_VENISON);
+		this.tag(FOODS_COOKED_DUCK).add(ADItems.COOKED_DUCK_FILLET.get());
+		this.tag(FOODS_COOKED_RABBIT).add(Items.COOKED_RABBIT);
+		this.tag(FOODS_COOKED_VENISON).add(ADItems.COOKED_VENISON_SHANKS.get());
 
-		this.tag(Tags.Items.FOODS_COOKED_FISH).addTags(COOKED_FISHES_PERCH, COOKED_FISHES_PIKE);
-		this.tag(COOKED_FISHES_PERCH).add(ADItems.COOKED_PERCH_SLICE.get());
-		this.tag(COOKED_FISHES_PIKE).add(ADItems.COOKED_PIKE_SLICE.get());
+		this.tag(UAItemTags.FOODS_COOKED_PERCH).add(ADItems.COOKED_PERCH_SLICE.get());
+		this.tag(UAItemTags.FOODS_COOKED_PIKE).add(ADItems.COOKED_PIKE_SLICE.get());
 
-		this.tag(Tags.Items.FOODS_RAW_MEAT).addTags(RAW_RABBIT, RAW_DUCK, RAW_TURKEY, RAW_VENISON);
-		this.tag(RAW_DUCK).add(ADItems.DUCK_FILLET.get());
-		this.tag(RAW_TURKEY);
-		this.tag(RAW_RABBIT).add(Items.RABBIT);
-		this.tag(RAW_VENISON).add(ADItems.VENISON_SHANKS.get());
+		this.tag(Tags.Items.FOODS_RAW_MEAT).addTags(FOODS_RAW_RABBIT, FOODS_RAW_DUCK, FOODS_RAW_VENISON);
+		this.tag(FOODS_RAW_DUCK).add(ADItems.DUCK_FILLET.get());
+		this.tag(FOODS_RAW_RABBIT).add(Items.RABBIT);
+		this.tag(FOODS_RAW_VENISON).add(ADItems.VENISON_SHANKS.get());
 
-		this.tag(Tags.Items.FOODS_RAW_FISH).addTags(RAW_FISHES_PERCH, RAW_FISHES_PIKE);
-		this.tag(RAW_FISHES_PERCH).add(ADItems.PERCH_SLICE.get());
-		this.tag(RAW_FISHES_PIKE).add(ADItems.PIKE_SLICE.get());
-
-		this.tag(FOODS_BANANA);
-
+		this.tag(UAItemTags.FOODS_RAW_PERCH).add(ADItems.PERCH_SLICE.get());
+		this.tag(UAItemTags.FOODS_RAW_PIKE).add(ADItems.PIKE_SLICE.get());
 		this.tag(CommonTags.TOOLS_KNIFE).add(ADItems.SILVER_KNIFE.get(), ADItems.NECROMIUM_KNIFE.get());
 
 		this.tag(ModTags.KNIVES).add(ADItems.SILVER_KNIFE.get(), ADItems.NECROMIUM_KNIFE.get());
-		this.tag(ModTags.CABBAGE_ROLL_INGREDIENTS).addTags(RAW_DUCK, RAW_RABBIT, RAW_VENISON);
+		this.tag(ModTags.CABBAGE_ROLL_INGREDIENTS).addTags(FOODS_RAW_DUCK, FOODS_RAW_RABBIT, FOODS_RAW_VENISON);
 
-		this.tag(BARBECUE_STICK_INGREDIENTS);
-
+		this.tag(FOODS_CHERRY);
 		this.tag(INGOTS_SILVER);
 		this.tag(INGOTS_NECROMIUM);
 
-		this.tag(SNAIL_BREEDING_ITEMS).add(ModItems.NETHER_SALAD.get());
+		this.tag(AutumnityItemTags.SNAIL_FOOD).add(ModItems.NETHER_SALAD.get());
 		this.tag(SLABFISH_FOOD).add(ADItems.SLABDISH.get());
 	}
 }

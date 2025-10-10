@@ -1,5 +1,12 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "upgrade_aquatic"
+    }
+  ],
   "type": "farmersdelight:cooking",
+  "experience": 1.0,
   "ingredients": [
     {
       "item": "upgrade_aquatic:pickerelweed"
@@ -13,14 +20,7 @@
   ],
   "recipe_book_tab": "drinks",
   "result": {
-    "item": "abnormals_delight:pickerelweed_juice"
-  },
-  "experience": 1.0,
-  "cookingtime": 200,
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "upgrade_aquatic"
-    }
-  ]
+    "count": 1,
+    "id": "abnormals_delight:pickerelweed_juice"
+  }
 }

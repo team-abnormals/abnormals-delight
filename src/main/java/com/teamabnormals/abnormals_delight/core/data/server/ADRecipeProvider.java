@@ -2,8 +2,10 @@ package com.teamabnormals.abnormals_delight.core.data.server;
 
 import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.teamabnormals.abnormals_delight.core.other.ADConditions;
+import com.teamabnormals.abnormals_delight.core.other.tags.ADItemTags;
 import com.teamabnormals.abnormals_delight.core.registry.ADBlocks;
 import com.teamabnormals.abnormals_delight.core.registry.ADItems;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericItemTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
 import com.teamabnormals.autumnity.core.registry.AutumnityBlocks;
@@ -11,6 +13,7 @@ import com.teamabnormals.autumnity.core.registry.AutumnityItems;
 import com.teamabnormals.blueprint.core.data.server.BlueprintRecipeProvider;
 import com.teamabnormals.buzzier_bees.core.registry.BBBlocks;
 import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
+import com.teamabnormals.upgrade_aquatic.core.other.tags.UAItemTags;
 import com.teamabnormals.upgrade_aquatic.core.registry.UABlocks;
 import com.teamabnormals.upgrade_aquatic.core.registry.UAItems;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -22,11 +25,16 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.ItemAbilities;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.ICondition;
+import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.crafting.ingredient.ItemAbilityIngredient;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
+import vectorwing.farmersdelight.common.tag.ModTags;
+import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
+import vectorwing.farmersdelight.data.recipe.CookingRecipes;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -38,6 +46,7 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 
 	@Override
 	public void buildRecipes(RecipeOutput output) {
+		this.buildMixedRecipes(output);
 		this.buildAtmosphericRecipes(output, ATMOSPHERIC_LOADED);
 		this.buildAutumnityRecipes(output, AUTUMNITY_LOADED);
 		this.buildBuzzierBeesRecipes(output, BUZZIER_BEES_LOADED);
@@ -47,6 +56,16 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 	}
 
 	public void buildAtmosphericRecipes(RecipeOutput output, ICondition... conditions) {
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ADItems.DUNE_PLATTER)
+				.requires(ADItemTags.FOODS_COOKED_RABBIT).requires(AtmosphericItems.ALOE_LEAVES).requires(Items.BOWL).requires(AtmosphericItems.ROASTED_YUCCA_FRUIT).requires(AtmosphericItems.YELLOW_BLOSSOMS).requires(AtmosphericItems.BARREL_CACTUS)
+				.unlockedBy(getHasName(AtmosphericItems.ALOE_LEAVES), has(AtmosphericItems.ALOE_LEAVES)).unlockedBy(getHasName(AtmosphericItems.ROASTED_YUCCA_FRUIT), has(AtmosphericItems.ROASTED_YUCCA_FRUIT)).unlockedBy(getHasName(AtmosphericItems.BARREL_CACTUS), has(AtmosphericItems.BARREL_CACTUS))
+				.save(output.withConditions(conditions));
+
+		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.PASSION_ALOE_NECTAR, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+				.addIngredient(Items.HONEY_BOTTLE).addIngredient(AtmosphericItems.ALOE_LEAVES).addIngredient(AtmosphericItemTags.FOODS_PASSION_FRUIT).addIngredient(AtmosphericItemTags.FOODS_PASSION_FRUIT)
+				.unlockedBy("has_passion_fruit", has(AtmosphericItemTags.FOODS_PASSION_FRUIT)).unlockedByAnyIngredient(AtmosphericItems.ALOE_LEAVES)
+				.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS).save(output.withConditions(conditions));
+
 		cuttingRecipe(output, AtmosphericBlocks.FIRETHORN, Items.RED_DYE, 2, conditions);
 		cuttingRecipe(output, AtmosphericBlocks.FORSYTHIA, Items.YELLOW_DYE, 2, conditions);
 		cuttingRecipe(output, AtmosphericBlocks.GILIA, Items.PURPLE_DYE, 2, conditions);
@@ -93,6 +112,16 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 	}
 
 	public void buildAutumnityRecipes(RecipeOutput output, ICondition... conditions) {
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ADItems.MAPLE_GLAZED_BACON)
+				.requires(ModItems.COOKED_BACON.get()).requires(AutumnityItems.SYRUP_BOTTLE)
+				.unlockedBy(getHasName(ModItems.COOKED_BACON.get()), has(ModItems.COOKED_BACON.get()))
+				.unlockedBy(getHasName(AutumnityItems.SYRUP_BOTTLE), has(AutumnityItems.SYRUP_BOTTLE))
+				.save(output.withConditions(conditions));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ADItems.MAPLE_COOKIE, 8)
+				.requires(AutumnityItems.SYRUP_BOTTLE).requires(Items.WHEAT).requires(Items.WHEAT)
+				.unlockedBy(getHasName(AutumnityItems.SYRUP_BOTTLE), has(AutumnityItems.SYRUP_BOTTLE)).save(output.withConditions(conditions));
+
 		cuttingRecipe(output, AutumnityBlocks.AUTUMN_CROCUS, Items.MAGENTA_DYE, 2, conditions);
 
 		cuttingRecipe(output, AutumnityBlocks.TURKEY, AutumnityItems.TURKEY_PIECE, 5, conditions);
@@ -112,6 +141,25 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 	}
 
 	public void buildEnvironmentalRecipes(RecipeOutput output, ICondition... conditions) {
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ADItems.SEARED_VENISON)
+				.requires(ADItemTags.FOODS_COOKED_VENISON).requires(ADItemTags.FOODS_CHERRY).requires(Items.BOWL).requires(ADItemTags.FOODS_CHERRY).requires(Items.CARROT)
+				.unlockedBy("has_cooked_venison", has(ADItemTags.FOODS_COOKED_VENISON)).unlockedBy("has_cherries", has(ADItemTags.FOODS_CHERRY))
+				.save(output.withConditions(ENVIRONMENTAL_LOADED));
+		
+		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.VENISON_WITH_BAMBOO_SHOOTS, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+				.addIngredient(ADItemTags.FOODS_RAW_VENISON).addIngredient(Items.KELP).addIngredient(Items.BAMBOO).addIngredient(Items.BAMBOO).addIngredient(Tags.Items.FOODS_VEGETABLE)
+				.unlockedBy("has_raw_venison", has(ADItemTags.FOODS_RAW_VENISON)).unlockedByAnyIngredient(Items.KELP, Items.BAMBOO)
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
+
+		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.DUCK_NOODLES, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+				.addIngredient(ADItemTags.FOODS_RAW_DUCK).addIngredient(CommonTags.FOODS_PASTA).addIngredient(Items.CARROT).addIngredient(Tags.Items.FOODS_VEGETABLE)
+				.unlockedBy("has_raw_duck", has(ADItemTags.FOODS_RAW_DUCK)).unlockedByAnyIngredient(ModItems.RAW_PASTA.get())
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ADItems.CHERRY_COOKIE, 8)
+				.requires(ADItemTags.FOODS_CHERRY).requires(Items.WHEAT).requires(Items.WHEAT)
+				.unlockedBy("has_cherries", has(ADItemTags.FOODS_CHERRY)).save(output.withConditions(conditions));
+
 		conditionalFoodCookingRecipes(output, ADItems.DUCK_FILLET, ADItems.COOKED_DUCK_FILLET, conditions);
 		conditionalFoodCookingRecipes(output, ADItems.VENISON_SHANKS, ADItems.COOKED_VENISON_SHANKS, conditions);
 	}
@@ -134,6 +182,25 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 	}
 
 	public void buildUpgradeAquaticRecipes(RecipeOutput output, ICondition... conditions) {
+		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.PICKERELWEED_JUICE, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+				.addIngredient(UABlocks.PICKERELWEED).addIngredient(UABlocks.PICKERELWEED).addIngredient(Items.SUGAR)
+				.unlockedByAnyIngredient(UABlocks.PICKERELWEED)
+				.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS).save(output.withConditions(conditions));
+
+		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.PERCH_WITH_MUSHROOMS, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+				.addIngredient(UAItemTags.FOODS_RAW_PERCH).addIngredient(ModItems.RED_MUSHROOM_COLONY.get()).addIngredient(CommonTags.CROPS_RICE).addIngredient(CommonTags.CROPS_TOMATO)
+				.unlockedByAnyIngredient(UAItems.PERCH, ModItems.RED_MUSHROOM_COLONY.get(), ModItems.RICE.get(), ModItems.TOMATO.get())
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
+
+		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.PIKE_WITH_BEETROOT, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+				.addIngredient(UAItemTags.FOODS_RAW_PIKE).addIngredient(UABlocks.PICKERELWEED).addIngredient(UABlocks.PICKERELWEED).addIngredient(Tags.Items.CROPS_BEETROOT)
+				.unlockedByAnyIngredient(UAItems.PERCH, UABlocks.PICKERELWEED, Items.BEETROOT)
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ADItems.MULBERRY_COOKIE, 8)
+				.requires(UAItems.MULBERRY).requires(Items.WHEAT).requires(Items.WHEAT)
+				.unlockedBy(getHasName(UAItems.MULBERRY), has(UAItems.MULBERRY)).save(output.withConditions(conditions));
+
 		cuttingRecipe(output, UABlocks.PICKERELWEED, Items.CYAN_DYE, 2, conditions);
 		cuttingRecipe(output, UABlocks.PINK_SEAROCKET, Items.PINK_DYE, 2, conditions);
 		cuttingRecipe(output, UABlocks.WHITE_SEAROCKET, Items.WHITE_DYE, 2, conditions);
@@ -156,6 +223,18 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		stripLogForBark(output, UABlocks.DRIFTWOOD, UABlocks.STRIPPED_DRIFTWOOD, conditions);
 		stripLogForBark(output, UABlocks.RIVER_LOG, UABlocks.STRIPPED_RIVER_LOG, conditions);
 		stripLogForBark(output, UABlocks.RIVER_WOOD, UABlocks.STRIPPED_RIVER_WOOD, conditions);
+	}
+
+	public void buildMixedRecipes(RecipeOutput output) {
+		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.CHERRY_CREAM_SODA, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+				.addIngredient(CommonTags.FOODS_MILK).addIngredient(Items.SUGAR).addIngredient(ADItemTags.FOODS_CHERRY).addIngredient(ADItemTags.FOODS_CHERRY).addIngredient(NeapolitanItems.DRIED_VANILLA_PODS)
+				.unlockedBy("has_cherries", has(ADItemTags.FOODS_CHERRY)).unlockedByAnyIngredient(NeapolitanItems.DRIED_VANILLA_PODS)
+				.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS).save(output.withConditions(ENVIRONMENTAL_LOADED, NEAPOLITAN_LOADED));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ADItems.PASSION_FRUIT_GLAZED_DUCK)
+				.requires(ADItemTags.FOODS_COOKED_DUCK).requires(AtmosphericItemTags.FOODS_PASSION_FRUIT).requires(Items.BOWL).requires(Items.BAKED_POTATO).requires(CommonTags.CROPS_ONION)
+				.unlockedBy("has_cooked_duck", has(ADItemTags.FOODS_COOKED_DUCK)).unlockedBy("has_passion_fruit", has(AtmosphericItemTags.FOODS_PASSION_FRUIT))
+				.save(output.withConditions(ATMOSPHERIC_LOADED, ENVIRONMENTAL_LOADED));
 	}
 
 	public static void cabinetRecipe(RecipeOutput output, ItemLike block, ItemLike slab, ItemLike trapdoor, ICondition... conditions) {
@@ -181,13 +260,13 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 	}
 
 	private static void stripLogForBark(RecipeOutput output, ItemLike log, ItemLike strippedLog, ICondition... conditions) {
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(), strippedLog).addResult(ModItems.TREE_BARK.get()).addSound(SoundEvents.AXE_STRIP).build(output.withConditions(conditions));
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(), strippedLog).addResult(ModItems.TREE_BARK.get()).addSound(SoundEvents.AXE_STRIP).save(output.withConditions(conditions));
 	}
 
 	private static void stripLogForBarkWithChance(RecipeOutput output, ItemLike log, ItemLike strippedLog, ItemLike chance, ICondition... conditions) {
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(), strippedLog).addResult(ModItems.TREE_BARK.get()).addSound(SoundEvents.AXE_STRIP)
 				.addResultWithChance(chance, 0.25F)
-				.build(output.withConditions(conditions));
+				.save(output.withConditions(conditions));
 	}
 
 	private void cakeRecipe(RecipeOutput output, ItemLike cake, ItemLike slice, ICondition... conditions) {

@@ -1,11 +1,21 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "atmospheric"
+    }
+  ],
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
-      "tag": "forge:cooked_rabbit"
+      "tag": "c:foods/cooked_rabbit"
     },
     {
       "item": "atmospheric:aloe_leaves"
+    },
+    {
+      "item": "minecraft:bowl"
     },
     {
       "item": "atmospheric:roasted_yucca_fruit"
@@ -15,19 +25,10 @@
     },
     {
       "item": "atmospheric:barrel_cactus"
-    },
-    {
-      "item": "minecraft:bowl"
     }
   ],
-  "recipe_book_tab": "meals",
   "result": {
-    "item": "abnormals_delight:dune_platter"
-  },
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "atmospheric"
-    }
-  ]
+    "count": 1,
+    "id": "abnormals_delight:dune_platter"
+  }
 }

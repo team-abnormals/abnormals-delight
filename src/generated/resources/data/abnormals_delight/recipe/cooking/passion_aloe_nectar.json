@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "atmospheric"
+    }
+  ],
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "item": "atmospheric:aloe_leaves"
+    },
+    {
+      "tag": "c:foods/passion_fruit"
+    },
+    {
+      "tag": "c:foods/passion_fruit"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 1,
+    "id": "abnormals_delight:passion_aloe_nectar"
+  }
+}

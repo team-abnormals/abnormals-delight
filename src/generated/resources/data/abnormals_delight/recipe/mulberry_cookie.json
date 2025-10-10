@@ -1,5 +1,12 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "upgrade_aquatic"
+    }
+  ],
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
       "item": "upgrade_aquatic:mulberry"
@@ -12,13 +19,7 @@
     }
   ],
   "result": {
-    "item": "abnormals_delight:mulberry_cookie",
-    "count": 8
-  },
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "upgrade_aquatic"
-    }
-  ]
+    "count": 8,
+    "id": "abnormals_delight:mulberry_cookie"
+  }
 }
