@@ -4,6 +4,7 @@ import com.teamabnormals.abnormals_delight.core.data.client.ADBlockStateProvider
 import com.teamabnormals.abnormals_delight.core.data.client.ADItemModelProvider;
 import com.teamabnormals.abnormals_delight.core.data.client.ADLanguageProvider;
 import com.teamabnormals.abnormals_delight.core.data.server.ADDataMapProvider;
+import com.teamabnormals.abnormals_delight.core.data.server.ADGlobalLootModifierProvider;
 import com.teamabnormals.abnormals_delight.core.data.server.ADLootTableProvider;
 import com.teamabnormals.abnormals_delight.core.data.server.ADRecipeProvider;
 import com.teamabnormals.abnormals_delight.core.data.server.modifiers.ADAdvancementModifierProvider;
@@ -16,6 +17,7 @@ import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -65,10 +67,15 @@ public class AbnormalsDelight {
 		generator.addProvider(server, new ADAdvancementModifierProvider(output, provider));
 		generator.addProvider(server, new ADDataMapProvider(output, provider));
 		generator.addProvider(server, new ADRecipeProvider(output, provider));
+		generator.addProvider(server, new ADGlobalLootModifierProvider(output, provider));
 
 		boolean client = event.includeClient();
 		generator.addProvider(client, new ADBlockStateProvider(output, helper));
 		generator.addProvider(client, new ADItemModelProvider(output, helper));
 		generator.addProvider(client, new ADLanguageProvider(output));
+	}
+
+	public static ResourceLocation location(String path) {
+		return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
 	}
 }

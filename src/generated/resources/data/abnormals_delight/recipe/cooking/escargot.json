@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "autumnity"
+    }
+  ],
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "autumnity:snail_shell_piece"
+  },
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "autumnity:snail_goo"
+    },
+    {
+      "item": "autumnity:snail_goo"
+    },
+    {
+      "tag": "c:crops/onion"
+    },
+    {
+      "tag": "c:foods/milk"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "abnormals_delight:escargot"
+  }
+}

@@ -12,6 +12,8 @@ import com.teamabnormals.autumnity.core.registry.AutumnityBlocks;
 import com.teamabnormals.autumnity.core.registry.AutumnityItems;
 import com.teamabnormals.blueprint.core.data.server.BlueprintRecipeProvider;
 import com.teamabnormals.buzzier_bees.core.registry.BBBlocks;
+import com.teamabnormals.incubation.core.registry.IncubationItems;
+import com.teamabnormals.neapolitan.core.other.tags.NeapolitanItemTags;
 import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
 import com.teamabnormals.upgrade_aquatic.core.other.tags.UAItemTags;
 import com.teamabnormals.upgrade_aquatic.core.registry.UABlocks;
@@ -20,6 +22,7 @@ import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -27,11 +30,11 @@ import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.ICondition;
+import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.crafting.ingredient.ItemAbilityIngredient;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
-import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 import vectorwing.farmersdelight.data.recipe.CookingRecipes;
@@ -51,6 +54,7 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		this.buildAutumnityRecipes(output, AUTUMNITY_LOADED);
 		this.buildBuzzierBeesRecipes(output, BUZZIER_BEES_LOADED);
 		this.buildEnvironmentalRecipes(output, ENVIRONMENTAL_LOADED);
+		this.buildIncubationRecipes(output, INCUBATION_LOADED);
 		this.buildNeapolitanRecipes(output, NEAPOLITAN_LOADED);
 		this.buildUpgradeAquaticRecipes(output, UPGRADE_AQUATIC_LOADED);
 	}
@@ -112,6 +116,11 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 	}
 
 	public void buildAutumnityRecipes(RecipeOutput output, ICondition... conditions) {
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, AutumnityItems.PUMPKIN_BREAD, 2)
+				.requires(AutumnityItems.SYRUP_BOTTLE).requires(ModItems.PUMPKIN_SLICE.get())
+				.requires(Items.WHEAT, 2).unlockedBy(getHasName(AutumnityItems.SYRUP_BOTTLE), has(AutumnityItems.SYRUP_BOTTLE))
+				.save(output.withConditions(AUTUMNITY_LOADED), wrapRecipeID(AutumnityItems.PUMPKIN_BREAD));
+
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ADItems.MAPLE_GLAZED_BACON)
 				.requires(ModItems.COOKED_BACON.get()).requires(AutumnityItems.SYRUP_BOTTLE)
 				.unlockedBy(getHasName(ModItems.COOKED_BACON.get()), has(ModItems.COOKED_BACON.get()))
@@ -121,6 +130,27 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ADItems.MAPLE_COOKIE, 8)
 				.requires(AutumnityItems.SYRUP_BOTTLE).requires(Items.WHEAT).requires(Items.WHEAT)
 				.unlockedBy(getHasName(AutumnityItems.SYRUP_BOTTLE), has(AutumnityItems.SYRUP_BOTTLE)).save(output.withConditions(conditions));
+
+		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.ESCARGOT, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, AutumnityItems.SNAIL_SHELL_PIECE)
+				.addIngredient(AutumnityBlocks.SNAIL_GOO, 2).addIngredient(CommonTags.CROPS_ONION).addIngredient(CommonTags.FOODS_MILK)
+				.unlockedByAnyIngredient(AutumnityBlocks.SNAIL_GOO, AutumnityItems.SNAIL_SHELL_PIECE)
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
+
+		CookingPotRecipeBuilder.cookingPotRecipe(AutumnityItems.FOUL_SOUP, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+				.addIngredient(AutumnityItems.FOUL_BERRIES, 2).addIngredient(Items.SPIDER_EYE).addIngredient(CommonTags.CROPS_ONION)
+				.unlockedByAnyIngredient(AutumnityItems.FOUL_BERRIES)
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
+
+		CookingPotRecipeBuilder.cookingPotRecipe(ModItems.STUFFED_PUMPKIN_BLOCK.get(), 1, CookingRecipes.SLOW_COOKING, CookingRecipes.LARGE_EXP, AutumnityBlocks.LARGE_PUMPKIN_SLICE)
+				.addIngredient(CommonTags.CROPS_RICE)
+				.addIngredient(CommonTags.CROPS_ONION)
+				.addIngredient(Items.BROWN_MUSHROOM)
+				.addIngredient(Items.POTATO)
+				.addIngredient(Tags.Items.FOODS_BERRY)
+				.addIngredient(Tags.Items.FOODS_VEGETABLE)
+				.unlockedByItems(getHasName(AutumnityBlocks.LARGE_PUMPKIN_SLICE), AutumnityBlocks.LARGE_PUMPKIN_SLICE)
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+				.save(output.withConditions(conditions));
 
 		cuttingRecipe(output, AutumnityBlocks.AUTUMN_CROCUS, Items.MAGENTA_DYE, 2, conditions);
 
@@ -145,7 +175,7 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 				.requires(ADItemTags.FOODS_COOKED_VENISON).requires(ADItemTags.FOODS_CHERRY).requires(Items.BOWL).requires(ADItemTags.FOODS_CHERRY).requires(Items.CARROT)
 				.unlockedBy("has_cooked_venison", has(ADItemTags.FOODS_COOKED_VENISON)).unlockedBy("has_cherries", has(ADItemTags.FOODS_CHERRY))
 				.save(output.withConditions(ENVIRONMENTAL_LOADED));
-		
+
 		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.VENISON_WITH_BAMBOO_SHOOTS, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
 				.addIngredient(ADItemTags.FOODS_RAW_VENISON).addIngredient(Items.KELP).addIngredient(Items.BAMBOO).addIngredient(Items.BAMBOO).addIngredient(Tags.Items.FOODS_VEGETABLE)
 				.unlockedBy("has_raw_venison", has(ADItemTags.FOODS_RAW_VENISON)).unlockedByAnyIngredient(Items.KELP, Items.BAMBOO)
@@ -164,7 +194,45 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		conditionalFoodCookingRecipes(output, ADItems.VENISON_SHANKS, ADItems.COOKED_VENISON_SHANKS, conditions);
 	}
 
+	public void buildIncubationRecipes(RecipeOutput output, ICondition... conditions) {
+		conditionalFoodCookingRecipes(output, Items.EGG, ModItems.FRIED_EGG.get(), INCUBATION_NOT_LOADED);
+
+		CookingPotRecipeBuilder.cookingPotRecipe(IncubationItems.SCRAMBLED_EGGS, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+				.addIngredient(Tags.Items.EGGS).addIngredient(Tags.Items.EGGS).addIngredient(CommonTags.FOODS_MILK)
+				.unlockedBy("has_eggs", has(Tags.Items.EGGS))
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
+	}
+
 	public void buildNeapolitanRecipes(RecipeOutput output, ICondition... conditions) {
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.MELON_POPSICLE.get(), 1)
+				.pattern(" mm").pattern("imm").pattern("-i ").define('m', Items.MELON_SLICE).define('i', Items.ICE).define('-', Items.STICK)
+				.unlockedBy(getHasName(Items.MELON_SLICE), has(Items.MELON_SLICE)).save(output.withConditions(NEAPOLITAN_NOT_LOADED));
+
+		ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.MELON_POPSICLE.get(), 1)
+				.pattern(" mm").pattern("imm").pattern("-i ").define('m', Items.MELON_SLICE).define('i', NeapolitanItems.ICE_CUBES).define('-', Items.STICK)
+				.unlockedBy(getHasName(Items.MELON_SLICE), has(Items.MELON_SLICE)).save(output.withConditions(NEAPOLITAN_LOADED), wrapRecipeID(ModItems.MELON_POPSICLE.get()));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, NeapolitanItems.ADZUKI_CURRY)
+				.requires(NeapolitanItems.ROASTED_ADZUKI_BEANS)
+				.requires(NeapolitanItems.DRIED_BANANA)
+				.requires(Items.CARROT).requires(ModItems.PUMPKIN_SLICE.get())
+				.requires(Items.BOWL)
+				.unlockedBy(getHasName(NeapolitanItems.ROASTED_ADZUKI_BEANS.get()), has(NeapolitanItems.ROASTED_ADZUKI_BEANS.get()))
+				.save(output, wrapRecipeID(NeapolitanItems.ADZUKI_CURRY));
+
+		CookingPotRecipeBuilder.cookingPotRecipe(NeapolitanItems.ADZUKI_CURRY, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+				.addIngredient(NeapolitanItems.ADZUKI_BEANS).addIngredient(NeapolitanItemTags.FOODS_BANANA).addIngredient(Tags.Items.CROPS_CARROT).addIngredient(ModItems.PUMPKIN_SLICE.get())
+				.unlockedBy(getHasName(NeapolitanItems.ADZUKI_BEANS.get()), has(NeapolitanItems.ADZUKI_BEANS.get()))
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
+
+		CookingPotRecipeBuilder.cookingPotRecipe(NeapolitanItems.ADZUKI_STEW, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+				.addIngredient(NeapolitanItems.ADZUKI_BEANS, 2).addIngredient(Tags.Items.CROPS_BEETROOT).addIngredient(CommonTags.CROPS_TOMATO).addIngredient(Items.BROWN_MUSHROOM)
+				.unlockedBy(getHasName(NeapolitanItems.ADZUKI_BEANS.get()), has(NeapolitanItems.ADZUKI_BEANS.get()))
+				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
+
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.MILK_BOTTLE.get(), 4).requires(Items.MILK_BUCKET).requires(Items.GLASS_BOTTLE, 4).unlockedBy("has_milk_bucket", has(Items.MILK_BUCKET)).save(output.withConditions(NEAPOLITAN_NOT_LOADED));
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.MILK_BUCKET).requires(Items.BUCKET).requires(ModItems.MILK_BOTTLE.get(), 4).unlockedBy(getHasName(ModItems.MILK_BOTTLE.get()), has(ModItems.MILK_BOTTLE.get())).save(output.withConditions(NEAPOLITAN_NOT_LOADED), ResourceLocation.fromNamespaceAndPath(FarmersDelight.MODID, "milk_bucket_from_bottles"));
+
 		cuttingRecipe(output, NeapolitanItems.ADZUKI_CAKE, ADItems.ADZUKI_CAKE_SLICE, 7, conditions);
 		cuttingRecipe(output, NeapolitanItems.BANANA_CAKE, ADItems.BANANA_CAKE_SLICE, 7, conditions);
 		cuttingRecipe(output, NeapolitanItems.CHOCOLATE_CAKE, ADItems.CHOCOLATE_CAKE_SLICE, 7, conditions);
@@ -284,5 +352,9 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(input), RecipeCategory.FOOD, output, xp, baseCookTime).unlockedBy(getHasName(input), has(input)).save(recipeOutput.withConditions(conditions));
 		SimpleCookingRecipeBuilder.smoking(Ingredient.of(input), RecipeCategory.FOOD, output, xp, baseCookTime / 2).unlockedBy(getHasName(input), has(input)).save(recipeOutput.withConditions(conditions), RecipeBuilder.getDefaultRecipeId(output) + "_from_smoking");
 		SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(input), RecipeCategory.FOOD, output, xp, baseCookTime * 3).unlockedBy(getHasName(input), has(input)).save(recipeOutput.withConditions(conditions), RecipeBuilder.getDefaultRecipeId(output) + "_from_campfire_cooking");
+	}
+
+	public static ResourceLocation wrapRecipeID(ItemLike itemLike) {
+		return AbnormalsDelight.location(RecipeBuilder.getDefaultRecipeId(itemLike).getPath());
 	}
 }
