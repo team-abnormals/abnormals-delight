@@ -132,7 +132,7 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 				.unlockedBy(getHasName(AutumnityItems.SYRUP_BOTTLE), has(AutumnityItems.SYRUP_BOTTLE)).save(output.withConditions(conditions));
 
 		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.ESCARGOT, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, AutumnityItems.SNAIL_SHELL_PIECE)
-				.addIngredient(AutumnityBlocks.SNAIL_GOO, 2).addIngredient(CommonTags.CROPS_ONION).addIngredient(CommonTags.FOODS_MILK)
+				.addIngredient(AutumnityBlocks.SNAIL_GOO, 2).addIngredient(CommonTags.CROPS_ONION).addIngredient(Tags.Items.DRINKS_MILK)
 				.unlockedByAnyIngredient(AutumnityBlocks.SNAIL_GOO, AutumnityItems.SNAIL_SHELL_PIECE)
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
 
@@ -198,7 +198,7 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		conditionalFoodCookingRecipes(output, Items.EGG, ModItems.FRIED_EGG.get(), INCUBATION_NOT_LOADED);
 
 		CookingPotRecipeBuilder.cookingPotRecipe(IncubationItems.SCRAMBLED_EGGS, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
-				.addIngredient(Tags.Items.EGGS).addIngredient(Tags.Items.EGGS).addIngredient(CommonTags.FOODS_MILK)
+				.addIngredient(Tags.Items.EGGS).addIngredient(Tags.Items.EGGS).addIngredient(Tags.Items.DRINKS_MILK)
 				.unlockedBy("has_eggs", has(Tags.Items.EGGS))
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
 	}
@@ -295,7 +295,7 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 
 	public void buildMixedRecipes(RecipeOutput output) {
 		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.CHERRY_CREAM_SODA, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
-				.addIngredient(CommonTags.FOODS_MILK).addIngredient(Items.SUGAR).addIngredient(ADItemTags.FOODS_CHERRY).addIngredient(ADItemTags.FOODS_CHERRY).addIngredient(NeapolitanItems.DRIED_VANILLA_PODS)
+				.addIngredient(Tags.Items.DRINKS_MILK).addIngredient(Items.SUGAR).addIngredient(ADItemTags.FOODS_CHERRY).addIngredient(ADItemTags.FOODS_CHERRY).addIngredient(NeapolitanItems.DRIED_VANILLA_PODS)
 				.unlockedBy("has_cherries", has(ADItemTags.FOODS_CHERRY)).unlockedByAnyIngredient(NeapolitanItems.DRIED_VANILLA_PODS)
 				.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS).save(output.withConditions(ENVIRONMENTAL_LOADED, NEAPOLITAN_LOADED));
 

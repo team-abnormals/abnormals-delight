@@ -41,7 +41,6 @@ public class ADGlobalLootModifierProvider extends GlobalLootModifierProvider {
 	}
 
 	public static class WrappedAddItemModifier extends AddItemModifier {
-
 		public WrappedAddItemModifier(LootItemCondition[] conditionsIn, Item addedItemIn, int count) {
 			super(conditionsIn, addedItemIn, count);
 		}

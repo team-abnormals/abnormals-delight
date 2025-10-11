@@ -22,6 +22,7 @@ public class ADConstants {
 	// Items & Blocks
 	public static final ResourceLocation YUCCA_GATEAU = ResourceLocation.fromNamespaceAndPath(ATMOSPHERIC, "yucca_gateau");
 	public static final ResourceLocation SNAIL_SHELL_PIECE = ResourceLocation.fromNamespaceAndPath(AUTUMNITY, "snail_shell_piece");
+	public static final ResourceLocation LARGE_PUMPKIN_SLICE = ResourceLocation.fromNamespaceAndPath(AUTUMNITY, "large_pumpkin_slice");
 	public static final ResourceLocation SOUL_CANDLE_CAKE = ResourceLocation.fromNamespaceAndPath(BUZZIER_BEES, "soul_candle_cake");
 	public static final ResourceLocation CUPRIC_CANDLE_CAKE = ResourceLocation.fromNamespaceAndPath(CAVERNS_AND_CHASMS, "cupric_candle_cake");
 	public static final ResourceLocation LAVA_LAMP = ResourceLocation.fromNamespaceAndPath(CAVERNS_AND_CHASMS, "lava_lamp");
@@ -35,7 +36,6 @@ public class ADConstants {
 	public static final ResourceLocation BANANA_CAKE = ResourceLocation.fromNamespaceAndPath(NEAPOLITAN, "banana_cake");
 	public static final ResourceLocation MINT_CAKE = ResourceLocation.fromNamespaceAndPath(NEAPOLITAN, "mint_cake");
 	public static final ResourceLocation ADZUKI_CAKE = ResourceLocation.fromNamespaceAndPath(NEAPOLITAN, "adzuki_cake");
-	public static final ResourceLocation GLOWING_OBSIDIAN = ResourceLocation.fromNamespaceAndPath(NETHER_EXTENSION, "glowing_obsidian");
 
 	// Tags
 	public static final ResourceLocation BRAZIERS = ResourceLocation.fromNamespaceAndPath(CAVERNS_AND_CHASMS, "braziers");
