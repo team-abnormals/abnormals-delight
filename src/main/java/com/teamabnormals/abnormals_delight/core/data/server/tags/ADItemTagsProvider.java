@@ -12,6 +12,7 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
@@ -47,7 +48,10 @@ public class ADItemTagsProvider extends ItemTagsProvider {
 
 		this.tag(UAItemTags.FOODS_RAW_PERCH).add(PERCH_SLICE.get());
 		this.tag(UAItemTags.FOODS_RAW_PIKE).add(PIKE_SLICE.get());
+
 		this.tag(CommonTags.TOOLS_KNIFE).add(SILVER_KNIFE.get(), NECROMIUM_KNIFE.get());
+
+		this.tag(Tags.Items.FOODS_COOKIE).add(CHERRY_COOKIE.get(), MAPLE_COOKIE.get(), MULBERRY_COOKIE.get());
 
 		this.tag(ModTags.KNIVES).add(SILVER_KNIFE.get(), NECROMIUM_KNIFE.get());
 		this.tag(ModTags.CABBAGE_ROLL_INGREDIENTS).addTags(EnvironmentalItemTags.RAW_DUCK, EnvironmentalItemTags.RAW_VENISON).add(Items.RABBIT);
