@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "environmental"
+    }
+  ],
+  "type": "farmersdelight:cooking",
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:foods/raw_fish"
+    },
+    {
+      "item": "environmental:dianthus"
+    },
+    {
+      "item": "minecraft:bone_meal"
+    },
+    {
+      "tag": "abnormals_delight:slabdish_ingredients"
+    },
+    {
+      "tag": "abnormals_delight:slabdish_ingredients"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "abnormals_delight:slabdish"
+  }
+}

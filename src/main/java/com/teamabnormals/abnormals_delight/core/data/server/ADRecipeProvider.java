@@ -12,6 +12,9 @@ import com.teamabnormals.autumnity.core.registry.AutumnityBlocks;
 import com.teamabnormals.autumnity.core.registry.AutumnityItems;
 import com.teamabnormals.blueprint.core.data.server.BlueprintRecipeProvider;
 import com.teamabnormals.buzzier_bees.core.registry.BBBlocks;
+import com.teamabnormals.environmental.core.other.tags.EnvironmentalItemTags;
+import com.teamabnormals.environmental.core.registry.EnvironmentalBlocks;
+import com.teamabnormals.environmental.core.registry.EnvironmentalItems;
 import com.teamabnormals.incubation.core.registry.IncubationItems;
 import com.teamabnormals.neapolitan.core.other.tags.NeapolitanItemTags;
 import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
@@ -61,7 +64,7 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 
 	public void buildAtmosphericRecipes(RecipeOutput output, ICondition... conditions) {
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ADItems.DUNE_PLATTER)
-				.requires(ADItemTags.FOODS_COOKED_RABBIT).requires(AtmosphericItems.ALOE_LEAVES).requires(Items.BOWL).requires(AtmosphericItems.ROASTED_YUCCA_FRUIT).requires(AtmosphericItems.YELLOW_BLOSSOMS).requires(AtmosphericItems.BARREL_CACTUS)
+				.requires(Items.COOKED_RABBIT).requires(AtmosphericItems.ALOE_LEAVES).requires(Items.BOWL).requires(AtmosphericItems.ROASTED_YUCCA_FRUIT).requires(AtmosphericItems.YELLOW_BLOSSOMS).requires(AtmosphericItems.BARREL_CACTUS)
 				.unlockedBy(getHasName(AtmosphericItems.ALOE_LEAVES), has(AtmosphericItems.ALOE_LEAVES)).unlockedBy(getHasName(AtmosphericItems.ROASTED_YUCCA_FRUIT), has(AtmosphericItems.ROASTED_YUCCA_FRUIT)).unlockedBy(getHasName(AtmosphericItems.BARREL_CACTUS), has(AtmosphericItems.BARREL_CACTUS))
 				.save(output.withConditions(conditions));
 
@@ -172,26 +175,69 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 
 	public void buildEnvironmentalRecipes(RecipeOutput output, ICondition... conditions) {
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ADItems.SEARED_VENISON)
-				.requires(ADItemTags.FOODS_COOKED_VENISON).requires(ADItemTags.FOODS_CHERRY).requires(Items.BOWL).requires(ADItemTags.FOODS_CHERRY).requires(Items.CARROT)
-				.unlockedBy("has_cooked_venison", has(ADItemTags.FOODS_COOKED_VENISON)).unlockedBy("has_cherries", has(ADItemTags.FOODS_CHERRY))
+				.requires(EnvironmentalItemTags.COOKED_VENISON).requires(EnvironmentalItemTags.FOODS_CHERRY).requires(Items.BOWL).requires(EnvironmentalItemTags.FOODS_CHERRY).requires(Items.CARROT)
+				.unlockedBy("has_cooked_venison", has(EnvironmentalItemTags.COOKED_VENISON)).unlockedBy("has_cherries", has(EnvironmentalItemTags.FOODS_CHERRY))
 				.save(output.withConditions(ENVIRONMENTAL_LOADED));
 
 		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.VENISON_WITH_BAMBOO_SHOOTS, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
-				.addIngredient(ADItemTags.FOODS_RAW_VENISON).addIngredient(Items.KELP).addIngredient(Items.BAMBOO).addIngredient(Items.BAMBOO).addIngredient(Tags.Items.FOODS_VEGETABLE)
-				.unlockedBy("has_raw_venison", has(ADItemTags.FOODS_RAW_VENISON)).unlockedByAnyIngredient(Items.KELP, Items.BAMBOO)
+				.addIngredient(EnvironmentalItemTags.RAW_VENISON).addIngredient(Items.KELP).addIngredient(Items.BAMBOO).addIngredient(Items.BAMBOO).addIngredient(Tags.Items.FOODS_VEGETABLE)
+				.unlockedBy("has_raw_venison", has(EnvironmentalItemTags.RAW_VENISON)).unlockedByAnyIngredient(Items.KELP, Items.BAMBOO)
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
 
 		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.DUCK_NOODLES, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
-				.addIngredient(ADItemTags.FOODS_RAW_DUCK).addIngredient(CommonTags.FOODS_PASTA).addIngredient(Items.CARROT).addIngredient(Tags.Items.FOODS_VEGETABLE)
-				.unlockedBy("has_raw_duck", has(ADItemTags.FOODS_RAW_DUCK)).unlockedByAnyIngredient(ModItems.RAW_PASTA.get())
+				.addIngredient(EnvironmentalItemTags.RAW_DUCK).addIngredient(CommonTags.FOODS_PASTA).addIngredient(Items.CARROT).addIngredient(Tags.Items.FOODS_VEGETABLE)
+				.unlockedBy("has_raw_duck", has(EnvironmentalItemTags.RAW_DUCK)).unlockedByAnyIngredient(ModItems.RAW_PASTA.get())
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
 
-		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ADItems.CHERRY_COOKIE, 8)
-				.requires(ADItemTags.FOODS_CHERRY).requires(Items.WHEAT).requires(Items.WHEAT)
-				.unlockedBy("has_cherries", has(ADItemTags.FOODS_CHERRY)).save(output.withConditions(conditions));
+		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.SLABDISH, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
+				.addIngredient(Tags.Items.FOODS_RAW_FISH).addIngredient(EnvironmentalBlocks.DIANTHUS).addIngredient(Items.BONE_MEAL).addIngredient(ADItemTags.SLABDISH_INGREDIENTS).addIngredient(ADItemTags.SLABDISH_INGREDIENTS)
+				.unlockedBy("has_slabdish_ingredients", has(ADItemTags.SLABDISH_INGREDIENTS)).unlockedByAnyIngredient(Items.BONE_MEAL)
+				.setRecipeBookTab(CookingPotRecipeBookTab.MISC).save(output.withConditions(conditions));
 
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ADItems.CHERRY_COOKIE, 8)
+				.requires(EnvironmentalItemTags.FOODS_CHERRY).requires(Items.WHEAT).requires(Items.WHEAT)
+				.unlockedBy("has_cherries", has(EnvironmentalItemTags.FOODS_CHERRY)).save(output.withConditions(conditions));
+
+		cuttingRecipe(output, EnvironmentalItems.DUCK, ADItems.DUCK_FILLET, 2, conditions);
+		cuttingRecipe(output, EnvironmentalItems.COOKED_DUCK, ADItems.COOKED_DUCK_FILLET, 2, conditions);
 		conditionalFoodCookingRecipes(output, ADItems.DUCK_FILLET, ADItems.COOKED_DUCK_FILLET, conditions);
+
+		cuttingRecipe(output, EnvironmentalItems.VENISON, ADItems.VENISON_SHANKS, 2, conditions);
+		cuttingRecipe(output, EnvironmentalItems.COOKED_VENISON, ADItems.COOKED_VENISON_SHANKS, 2, conditions);
 		conditionalFoodCookingRecipes(output, ADItems.VENISON_SHANKS, ADItems.COOKED_VENISON_SHANKS, conditions);
+
+		cuttingRecipe(output, EnvironmentalBlocks.BLUEBELL, Items.BLUE_DYE, 2, conditions);
+		cuttingRecipe(output, EnvironmentalBlocks.DIANTHUS, Items.LIME_DYE, 2, conditions);
+		cuttingRecipe(output, EnvironmentalBlocks.VIOLET, Items.PURPLE_DYE, 2, conditions);
+		cuttingRecipe(output, EnvironmentalBlocks.TASSELFLOWER, Items.ORANGE_DYE, 2, conditions);
+		cuttingRecipe(output, EnvironmentalBlocks.RED_LOTUS_FLOWER, Items.RED_DYE, 2, conditions);
+		cuttingRecipe(output, EnvironmentalBlocks.WHITE_LOTUS_FLOWER, Items.WHITE_DYE, 2, conditions);
+		cuttingRecipe(output, EnvironmentalBlocks.CARTWHEEL, Items.PINK_DYE, 2, conditions);
+		cuttingRecipe(output, EnvironmentalBlocks.YELLOW_HIBISCUS, Items.YELLOW_DYE, 2, conditions);
+		cuttingRecipe(output, EnvironmentalBlocks.ORANGE_HIBISCUS, Items.ORANGE_DYE, 2, conditions);
+		cuttingRecipe(output, EnvironmentalBlocks.RED_HIBISCUS, Items.RED_DYE, 2, conditions);
+		cuttingRecipe(output, EnvironmentalBlocks.PINK_HIBISCUS, Items.PINK_DYE, 2, conditions);
+		cuttingRecipe(output, EnvironmentalBlocks.MAGENTA_HIBISCUS, Items.MAGENTA_DYE, 2, conditions);
+		cuttingRecipe(output, EnvironmentalBlocks.PURPLE_HIBISCUS, Items.PURPLE_DYE, 2, conditions);
+
+		cabinetRecipe(output, ADBlocks.WILLOW_CABINET, EnvironmentalBlocks.WILLOW_SLAB, EnvironmentalBlocks.WILLOW_TRAPDOOR, conditions);
+		cabinetRecipe(output, ADBlocks.WISTERIA_CABINET, EnvironmentalBlocks.WISTERIA_SLAB, EnvironmentalBlocks.WISTERIA_TRAPDOOR, conditions);
+		cabinetRecipe(output, ADBlocks.PLUM_CABINET, EnvironmentalBlocks.PLUM_SLAB, EnvironmentalBlocks.PLUM_TRAPDOOR, conditions);
+		cabinetRecipe(output, ADBlocks.PINE_CABINET, EnvironmentalBlocks.PINE_SLAB, EnvironmentalBlocks.PINE_TRAPDOOR, conditions);
+
+		salvagePlankFromFurniture(output, EnvironmentalBlocks.WILLOW_PLANKS, EnvironmentalBlocks.WILLOW_DOOR, EnvironmentalBlocks.WILLOW_TRAPDOOR, EnvironmentalBlocks.WILLOW_SIGNS.getFirst(), EnvironmentalBlocks.WILLOW_HANGING_SIGNS.getFirst(), conditions);
+		salvagePlankFromFurniture(output, EnvironmentalBlocks.WISTERIA_PLANKS, EnvironmentalBlocks.WISTERIA_DOOR, EnvironmentalBlocks.WISTERIA_TRAPDOOR, EnvironmentalBlocks.WISTERIA_SIGNS.getFirst(), EnvironmentalBlocks.WISTERIA_HANGING_SIGNS.getFirst(), conditions);
+		salvagePlankFromFurniture(output, EnvironmentalBlocks.PLUM_PLANKS, EnvironmentalBlocks.PLUM_DOOR, EnvironmentalBlocks.PLUM_TRAPDOOR, EnvironmentalBlocks.PLUM_SIGNS.getFirst(), EnvironmentalBlocks.PLUM_HANGING_SIGNS.getFirst(), conditions);
+		salvagePlankFromFurniture(output, EnvironmentalBlocks.PINE_PLANKS, EnvironmentalBlocks.PINE_DOOR, EnvironmentalBlocks.PINE_TRAPDOOR, EnvironmentalBlocks.PINE_SIGNS.getFirst(), EnvironmentalBlocks.PINE_HANGING_SIGNS.getFirst(), conditions);
+
+		stripLogForBark(output, EnvironmentalBlocks.WILLOW_LOG, EnvironmentalBlocks.STRIPPED_WILLOW_LOG, conditions);
+		stripLogForBark(output, EnvironmentalBlocks.WILLOW_WOOD, EnvironmentalBlocks.STRIPPED_WILLOW_WOOD, conditions);
+		stripLogForBark(output, EnvironmentalBlocks.WISTERIA_LOG, EnvironmentalBlocks.STRIPPED_WISTERIA_LOG, conditions);
+		stripLogForBark(output, EnvironmentalBlocks.WISTERIA_WOOD, EnvironmentalBlocks.STRIPPED_WISTERIA_WOOD, conditions);
+		stripLogForBark(output, EnvironmentalBlocks.PLUM_LOG, EnvironmentalBlocks.STRIPPED_PLUM_LOG, conditions);
+		stripLogForBark(output, EnvironmentalBlocks.PLUM_WOOD, EnvironmentalBlocks.STRIPPED_PLUM_WOOD, conditions);
+		stripLogForBark(output, EnvironmentalBlocks.PINE_LOG, EnvironmentalBlocks.STRIPPED_PINE_LOG, conditions);
+		stripLogForBark(output, EnvironmentalBlocks.PINE_WOOD, EnvironmentalBlocks.STRIPPED_PINE_WOOD, conditions);
 	}
 
 	public void buildIncubationRecipes(RecipeOutput output, ICondition... conditions) {
@@ -275,11 +321,11 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 
 		cuttingFish(output, UAItems.PIKE, ADItems.PIKE_SLICE, 2, conditions);
 		cuttingFish(output, UAItems.COOKED_PIKE, ADItems.COOKED_PIKE_SLICE, 2, conditions);
+		conditionalFoodCookingRecipes(output, ADItems.PIKE_SLICE, ADItems.COOKED_PIKE_SLICE, conditions);
+
 		cuttingFish(output, UAItems.PERCH, ADItems.PERCH_SLICE, 2, conditions);
 		cuttingFish(output, UAItems.COOKED_PERCH, ADItems.COOKED_PERCH_SLICE, 2, conditions);
-
 		conditionalFoodCookingRecipes(output, ADItems.PERCH_SLICE, ADItems.COOKED_PERCH_SLICE, conditions);
-		conditionalFoodCookingRecipes(output, ADItems.PIKE_SLICE, ADItems.COOKED_PIKE_SLICE, conditions);
 
 		cabinetRecipe(output, ADBlocks.DRIFTWOOD_CABINET, UABlocks.DRIFTWOOD_SLAB, UABlocks.DRIFTWOOD_TRAPDOOR, conditions);
 		cabinetRecipe(output, ADBlocks.RIVER_CABINET, UABlocks.RIVER_SLAB, UABlocks.RIVER_TRAPDOOR, conditions);
@@ -295,13 +341,13 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 
 	public void buildMixedRecipes(RecipeOutput output) {
 		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.CHERRY_CREAM_SODA, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
-				.addIngredient(Tags.Items.DRINKS_MILK).addIngredient(Items.SUGAR).addIngredient(ADItemTags.FOODS_CHERRY).addIngredient(ADItemTags.FOODS_CHERRY).addIngredient(NeapolitanItems.DRIED_VANILLA_PODS)
-				.unlockedBy("has_cherries", has(ADItemTags.FOODS_CHERRY)).unlockedByAnyIngredient(NeapolitanItems.DRIED_VANILLA_PODS)
+				.addIngredient(Tags.Items.DRINKS_MILK).addIngredient(Items.SUGAR).addIngredient(EnvironmentalItemTags.FOODS_CHERRY).addIngredient(EnvironmentalItemTags.FOODS_CHERRY).addIngredient(NeapolitanItems.DRIED_VANILLA_PODS)
+				.unlockedBy("has_cherries", has(EnvironmentalItemTags.FOODS_CHERRY)).unlockedByAnyIngredient(NeapolitanItems.DRIED_VANILLA_PODS)
 				.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS).save(output.withConditions(ENVIRONMENTAL_LOADED, NEAPOLITAN_LOADED));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ADItems.PASSION_FRUIT_GLAZED_DUCK)
-				.requires(ADItemTags.FOODS_COOKED_DUCK).requires(AtmosphericItemTags.FOODS_PASSION_FRUIT).requires(Items.BOWL).requires(Items.BAKED_POTATO).requires(CommonTags.CROPS_ONION)
-				.unlockedBy("has_cooked_duck", has(ADItemTags.FOODS_COOKED_DUCK)).unlockedBy("has_passion_fruit", has(AtmosphericItemTags.FOODS_PASSION_FRUIT))
+				.requires(EnvironmentalItemTags.COOKED_DUCK).requires(AtmosphericItemTags.FOODS_PASSION_FRUIT).requires(Items.BOWL).requires(Items.BAKED_POTATO).requires(CommonTags.CROPS_ONION)
+				.unlockedBy("has_cooked_duck", has(EnvironmentalItemTags.COOKED_DUCK)).unlockedBy("has_passion_fruit", has(AtmosphericItemTags.FOODS_PASSION_FRUIT))
 				.save(output.withConditions(ATMOSPHERIC_LOADED, ENVIRONMENTAL_LOADED));
 	}
 

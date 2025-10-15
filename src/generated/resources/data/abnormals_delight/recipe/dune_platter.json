@@ -9,7 +9,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "c:foods/cooked_rabbit"
+      "item": "minecraft:cooked_rabbit"
     },
     {
       "item": "atmospheric:aloe_leaves"

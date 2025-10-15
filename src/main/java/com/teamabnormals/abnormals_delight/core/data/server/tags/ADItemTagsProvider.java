@@ -5,6 +5,7 @@ import com.teamabnormals.abnormals_delight.core.other.ADConstants;
 import com.teamabnormals.abnormals_delight.core.registry.ADBlocks;
 import com.teamabnormals.abnormals_delight.core.registry.ADItems;
 import com.teamabnormals.autumnity.core.other.tags.AutumnityItemTags;
+import com.teamabnormals.environmental.core.other.tags.EnvironmentalItemTags;
 import com.teamabnormals.upgrade_aquatic.core.other.tags.UAItemTags;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
@@ -38,31 +39,28 @@ public class ADItemTagsProvider extends ItemTagsProvider {
 
 		this.tag(ItemTags.MEAT).add(DUCK_FILLET.get(), COOKED_DUCK_FILLET.get(), VENISON_SHANKS.get(), COOKED_VENISON_SHANKS.get(), MAPLE_GLAZED_BACON.get());
 
-		this.tag(Tags.Items.FOODS_COOKED_MEAT).addTags(FOODS_COOKED_RABBIT, FOODS_COOKED_DUCK, FOODS_COOKED_VENISON);
-		this.tag(FOODS_COOKED_DUCK).add(ADItems.COOKED_DUCK_FILLET.get());
-		this.tag(FOODS_COOKED_RABBIT).add(Items.COOKED_RABBIT);
-		this.tag(FOODS_COOKED_VENISON).add(ADItems.COOKED_VENISON_SHANKS.get());
+		this.tag(Tags.Items.FOODS_COOKED_MEAT).addTags(EnvironmentalItemTags.COOKED_DUCK, EnvironmentalItemTags.COOKED_VENISON);
+		this.tag(EnvironmentalItemTags.COOKED_DUCK).add(ADItems.COOKED_DUCK_FILLET.get());
+		this.tag(EnvironmentalItemTags.COOKED_VENISON).add(ADItems.COOKED_VENISON_SHANKS.get());
 
 		this.tag(UAItemTags.FOODS_COOKED_PERCH).add(ADItems.COOKED_PERCH_SLICE.get());
 		this.tag(UAItemTags.FOODS_COOKED_PIKE).add(ADItems.COOKED_PIKE_SLICE.get());
 
-		this.tag(Tags.Items.FOODS_RAW_MEAT).addTags(FOODS_RAW_RABBIT, FOODS_RAW_DUCK, FOODS_RAW_VENISON);
-		this.tag(FOODS_RAW_DUCK).add(ADItems.DUCK_FILLET.get());
-		this.tag(FOODS_RAW_RABBIT).add(Items.RABBIT);
-		this.tag(FOODS_RAW_VENISON).add(ADItems.VENISON_SHANKS.get());
+		this.tag(Tags.Items.FOODS_RAW_MEAT).addTags(EnvironmentalItemTags.RAW_DUCK, EnvironmentalItemTags.RAW_VENISON);
+		this.tag(EnvironmentalItemTags.RAW_DUCK).add(ADItems.DUCK_FILLET.get());
+		this.tag(EnvironmentalItemTags.RAW_VENISON).add(ADItems.VENISON_SHANKS.get());
 
 		this.tag(UAItemTags.FOODS_RAW_PERCH).add(ADItems.PERCH_SLICE.get());
 		this.tag(UAItemTags.FOODS_RAW_PIKE).add(ADItems.PIKE_SLICE.get());
 		this.tag(CommonTags.TOOLS_KNIFE).add(ADItems.SILVER_KNIFE.get(), ADItems.NECROMIUM_KNIFE.get());
 
 		this.tag(ModTags.KNIVES).add(ADItems.SILVER_KNIFE.get(), ADItems.NECROMIUM_KNIFE.get());
-		this.tag(ModTags.CABBAGE_ROLL_INGREDIENTS).addTags(FOODS_RAW_DUCK, FOODS_RAW_RABBIT, FOODS_RAW_VENISON);
+		this.tag(ModTags.CABBAGE_ROLL_INGREDIENTS).addTags(EnvironmentalItemTags.RAW_DUCK, EnvironmentalItemTags.RAW_VENISON).add(Items.RABBIT);
 
-		this.tag(FOODS_CHERRY);
 		this.tag(INGOTS_SILVER);
 		this.tag(INGOTS_NECROMIUM);
 
 		this.tag(AutumnityItemTags.SNAIL_FOOD).add(ModItems.NETHER_SALAD.get());
-		this.tag(SLABFISH_FOOD).add(ADItems.SLABDISH.get());
+		this.tag(EnvironmentalItemTags.SLABFISH_FOOD).add(ADItems.SLABDISH.get());
 	}
 }

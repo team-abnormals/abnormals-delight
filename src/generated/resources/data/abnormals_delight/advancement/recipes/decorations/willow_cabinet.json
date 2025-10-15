@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "environmental"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "abnormals_delight:willow_cabinet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_willow_trapdoor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "environmental:willow_trapdoor"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_willow_trapdoor"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "abnormals_delight:willow_cabinet"
+    ]
+  }
+}
