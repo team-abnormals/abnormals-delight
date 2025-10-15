@@ -163,8 +163,8 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 
 		cabinetRecipe(output, ADBlocks.MAPLE_CABINET, AutumnityBlocks.MAPLE_SLAB, AutumnityBlocks.MAPLE_TRAPDOOR, conditions);
 		salvagePlankFromFurniture(output, AutumnityBlocks.MAPLE_PLANKS, AutumnityBlocks.MAPLE_DOOR, AutumnityBlocks.MAPLE_TRAPDOOR, AutumnityBlocks.MAPLE_SIGNS.getFirst(), AutumnityBlocks.MAPLE_HANGING_SIGNS.getFirst(), conditions);
-		stripLogForBarkWithChance(output, AutumnityBlocks.MAPLE_LOG, AutumnityBlocks.STRIPPED_MAPLE_LOG, AutumnityBlocks.SAPPY_MAPLE_LOG, conditions);
-		stripLogForBarkWithChance(output, AutumnityBlocks.MAPLE_WOOD, AutumnityBlocks.STRIPPED_MAPLE_WOOD, AutumnityBlocks.SAPPY_MAPLE_WOOD, conditions);
+		stripLogForBark(output, AutumnityBlocks.MAPLE_LOG, AutumnityBlocks.STRIPPED_MAPLE_LOG, conditions);
+		stripLogForBark(output, AutumnityBlocks.MAPLE_WOOD, AutumnityBlocks.STRIPPED_MAPLE_WOOD, conditions);
 	}
 
 	public void buildBuzzierBeesRecipes(RecipeOutput output, ICondition... conditions) {
@@ -375,12 +375,6 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 
 	private static void stripLogForBark(RecipeOutput output, ItemLike log, ItemLike strippedLog, ICondition... conditions) {
 		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(), strippedLog).addResult(ModItems.TREE_BARK.get()).addSound(SoundEvents.AXE_STRIP).save(output.withConditions(conditions));
-	}
-
-	private static void stripLogForBarkWithChance(RecipeOutput output, ItemLike log, ItemLike strippedLog, ItemLike chance, ICondition... conditions) {
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(), strippedLog).addResult(ModItems.TREE_BARK.get()).addSound(SoundEvents.AXE_STRIP)
-				.addResultWithChance(chance, 0.25F)
-				.save(output.withConditions(conditions));
 	}
 
 	private void cakeRecipe(RecipeOutput output, ItemLike cake, ItemLike slice, ICondition... conditions) {

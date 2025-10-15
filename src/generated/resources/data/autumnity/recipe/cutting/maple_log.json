@@ -23,13 +23,6 @@
         "count": 1,
         "id": "farmersdelight:tree_bark"
       }
-    },
-    {
-      "chance": 0.25,
-      "item": {
-        "count": 1,
-        "id": "autumnity:sappy_maple_log"
-      }
     }
   ],
   "sound": {
