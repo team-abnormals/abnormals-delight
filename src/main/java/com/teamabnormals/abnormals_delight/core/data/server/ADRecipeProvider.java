@@ -175,18 +175,18 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 
 	public void buildEnvironmentalRecipes(RecipeOutput output, ICondition... conditions) {
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ADItems.SEARED_VENISON)
-				.requires(EnvironmentalItemTags.COOKED_VENISON).requires(EnvironmentalItemTags.FOODS_CHERRY).requires(Items.BOWL).requires(EnvironmentalItemTags.FOODS_CHERRY).requires(Items.CARROT)
-				.unlockedBy("has_cooked_venison", has(EnvironmentalItemTags.COOKED_VENISON)).unlockedBy("has_cherries", has(EnvironmentalItemTags.FOODS_CHERRY))
+				.requires(EnvironmentalItemTags.FOODS_COOKED_VENISON).requires(EnvironmentalItemTags.FOODS_CHERRY).requires(Items.BOWL).requires(EnvironmentalItemTags.FOODS_CHERRY).requires(Items.CARROT)
+				.unlockedBy("has_cooked_venison", has(EnvironmentalItemTags.FOODS_COOKED_VENISON)).unlockedBy("has_cherries", has(EnvironmentalItemTags.FOODS_CHERRY))
 				.save(output.withConditions(ENVIRONMENTAL_LOADED));
 
 		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.VENISON_WITH_BAMBOO_SHOOTS, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
-				.addIngredient(EnvironmentalItemTags.RAW_VENISON).addIngredient(Items.KELP).addIngredient(Items.BAMBOO).addIngredient(Items.BAMBOO).addIngredient(Tags.Items.FOODS_VEGETABLE)
-				.unlockedBy("has_raw_venison", has(EnvironmentalItemTags.RAW_VENISON)).unlockedByAnyIngredient(Items.KELP, Items.BAMBOO)
+				.addIngredient(EnvironmentalItemTags.FOODS_RAW_VENISON).addIngredient(Items.KELP).addIngredient(Items.BAMBOO).addIngredient(Items.BAMBOO).addIngredient(Tags.Items.FOODS_VEGETABLE)
+				.unlockedBy("has_raw_venison", has(EnvironmentalItemTags.FOODS_RAW_VENISON)).unlockedByAnyIngredient(Items.KELP, Items.BAMBOO)
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
 
 		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.DUCK_NOODLES, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
-				.addIngredient(EnvironmentalItemTags.RAW_DUCK).addIngredient(CommonTags.FOODS_PASTA).addIngredient(Items.CARROT).addIngredient(Tags.Items.FOODS_VEGETABLE)
-				.unlockedBy("has_raw_duck", has(EnvironmentalItemTags.RAW_DUCK)).unlockedByAnyIngredient(ModItems.RAW_PASTA.get())
+				.addIngredient(EnvironmentalItemTags.FOODS_RAW_DUCK).addIngredient(CommonTags.FOODS_PASTA).addIngredient(Items.CARROT).addIngredient(Tags.Items.FOODS_VEGETABLE)
+				.unlockedBy("has_raw_duck", has(EnvironmentalItemTags.FOODS_RAW_DUCK)).unlockedByAnyIngredient(ModItems.RAW_PASTA.get())
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
 
 		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.SLABDISH, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
@@ -346,8 +346,8 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 				.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS).save(output.withConditions(ENVIRONMENTAL_LOADED, NEAPOLITAN_LOADED));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ADItems.PASSION_FRUIT_GLAZED_DUCK)
-				.requires(EnvironmentalItemTags.COOKED_DUCK).requires(AtmosphericItemTags.FOODS_PASSION_FRUIT).requires(Items.BOWL).requires(Items.BAKED_POTATO).requires(CommonTags.CROPS_ONION)
-				.unlockedBy("has_cooked_duck", has(EnvironmentalItemTags.COOKED_DUCK)).unlockedBy("has_passion_fruit", has(AtmosphericItemTags.FOODS_PASSION_FRUIT))
+				.requires(EnvironmentalItemTags.FOODS_COOKED_DUCK).requires(AtmosphericItemTags.FOODS_PASSION_FRUIT).requires(Items.BOWL).requires(Items.BAKED_POTATO).requires(CommonTags.CROPS_ONION)
+				.unlockedBy("has_cooked_duck", has(EnvironmentalItemTags.FOODS_COOKED_DUCK)).unlockedBy("has_passion_fruit", has(AtmosphericItemTags.FOODS_PASSION_FRUIT))
 				.save(output.withConditions(ATMOSPHERIC_LOADED, ENVIRONMENTAL_LOADED));
 	}
 

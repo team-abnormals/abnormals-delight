@@ -40,11 +40,11 @@ public class ADItemTagsProvider extends ItemTagsProvider {
 		this.tag(UAItemTags.FOODS_COOKED_PERCH).add(COOKED_PERCH_SLICE.get());
 		this.tag(UAItemTags.FOODS_COOKED_PIKE).add(COOKED_PIKE_SLICE.get());
 
-		this.tag(EnvironmentalItemTags.COOKED_DUCK).add(COOKED_DUCK_FILLET.get());
-		this.tag(EnvironmentalItemTags.COOKED_VENISON).add(COOKED_VENISON_SHANKS.get());
+		this.tag(EnvironmentalItemTags.FOODS_COOKED_DUCK).add(COOKED_DUCK_FILLET.get());
+		this.tag(EnvironmentalItemTags.FOODS_COOKED_VENISON).add(COOKED_VENISON_SHANKS.get());
 
-		this.tag(EnvironmentalItemTags.RAW_DUCK).add(DUCK_FILLET.get());
-		this.tag(EnvironmentalItemTags.RAW_VENISON).add(VENISON_SHANKS.get());
+		this.tag(EnvironmentalItemTags.FOODS_RAW_DUCK).add(DUCK_FILLET.get());
+		this.tag(EnvironmentalItemTags.FOODS_RAW_VENISON).add(VENISON_SHANKS.get());
 
 		this.tag(UAItemTags.FOODS_RAW_PERCH).add(PERCH_SLICE.get());
 		this.tag(UAItemTags.FOODS_RAW_PIKE).add(PIKE_SLICE.get());
@@ -54,7 +54,7 @@ public class ADItemTagsProvider extends ItemTagsProvider {
 		this.tag(Tags.Items.FOODS_COOKIE).add(CHERRY_COOKIE.get(), MAPLE_COOKIE.get(), MULBERRY_COOKIE.get());
 
 		this.tag(ModTags.KNIVES).add(SILVER_KNIFE.get(), NECROMIUM_KNIFE.get());
-		this.tag(ModTags.CABBAGE_ROLL_INGREDIENTS).addTags(EnvironmentalItemTags.RAW_DUCK, EnvironmentalItemTags.RAW_VENISON).add(Items.RABBIT);
+		this.tag(ModTags.CABBAGE_ROLL_INGREDIENTS).addTags(EnvironmentalItemTags.FOODS_RAW_DUCK, EnvironmentalItemTags.FOODS_RAW_VENISON).add(Items.RABBIT);
 		this.tag(ModTags.MEALS).add(SEARED_VENISON.get(), PASSION_FRUIT_GLAZED_DUCK.get(), DUNE_PLATTER.get(), DUCK_NOODLES.get(), PERCH_WITH_MUSHROOMS.get(), PIKE_WITH_BEETROOT.get(), VENISON_WITH_BAMBOO_SHOOTS.get());
 		this.tag(ModTags.DRINKS).add(CHERRY_CREAM_SODA.get(), PASSION_ALOE_NECTAR.get(), PICKERELWEED_JUICE.get());
 

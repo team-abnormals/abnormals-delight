@@ -48,13 +48,13 @@ dependencies {
 
     implementation "maven.modrinth:farmers-delight:${project.mc_version}-${project.farmers_delight}"
 
-    implementation("maven.modrinth:incubation:5.0.0")
+    implementation("maven.modrinth:incubation:5.0.1")
     implementation("maven.modrinth:buzzier-bees:7.0.1")
-    implementation("maven.modrinth:atmospheric:7.0.0")
-    implementation("maven.modrinth:autumnity:6.0.0")
-    implementation("maven.modrinth:environmental:5.0.0")
-    implementation("maven.modrinth:neapolitan:6.0.0")
-    implementation("maven.modrinth:upgrade-aquatic:7.0.0")
+    implementation("maven.modrinth:atmospheric:7.0.1")
+    implementation("maven.modrinth:autumnity:6.0.1")
+    implementation("maven.modrinth:environmental:5.0.1")
+    implementation("maven.modrinth:neapolitan:6.0.1")
+    implementation("maven.modrinth:upgrade-aquatic:7.0.1")
 
     implementation("com.teamabnormals:boatload:${project.mc_version}-${project.boatload}")
     implementation("com.teamabnormals:clayworks:${project.mc_version}-${project.clayworks}")
