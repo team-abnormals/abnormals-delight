@@ -1,28 +1,6 @@
 {
   "values": [
-    {
-      "id": "neapolitan:vanilla_cake",
-      "required": false
-    },
-    {
-      "id": "neapolitan:chocolate_cake",
-      "required": false
-    },
-    {
-      "id": "neapolitan:strawberry_cake",
-      "required": false
-    },
-    {
-      "id": "neapolitan:banana_cake",
-      "required": false
-    },
-    {
-      "id": "neapolitan:mint_cake",
-      "required": false
-    },
-    {
-      "id": "neapolitan:adzuki_cake",
-      "required": false
-    }
+    "#abnormals_delight:drops_flavored_cake_slice",
+    "#abnormals_delight:drops_yucca_gateau_slice"
   ]
 }
