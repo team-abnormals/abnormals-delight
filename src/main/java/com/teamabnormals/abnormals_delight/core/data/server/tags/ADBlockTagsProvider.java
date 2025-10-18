@@ -34,6 +34,7 @@ public class ADBlockTagsProvider extends BlockTagsProvider {
 		this.tag(ADBlockTags.DROPS_BANANA_CAKE_SLICE);
 		this.tag(ADBlockTags.DROPS_MINT_CAKE_SLICE);
 		this.tag(ADBlockTags.DROPS_ADZUKI_CAKE_SLICE);
+		this.tag(ADBlockTags.DROPS_YUCCA_GATEAU_SLICE);
 
 		this.tag(ModTags.UNAFFECTED_BY_RICH_SOIL).addOptional(ADConstants.CRUSTOSE).addOptional(ADConstants.CRUSTOSE_LOG).addOptional(ADConstants.CRUSTOSE_WOOD).addOptional(ADConstants.POISMOSS).addOptional(ADConstants.EUMUS_POISMOSS);
 

@@ -6,6 +6,7 @@ import com.teamabnormals.abnormals_delight.common.item.SlabdishItem;
 import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.teamabnormals.abnormals_delight.core.other.tags.ADBlockTags;
 import com.teamabnormals.abnormals_delight.core.registry.ADItems;
+import com.teamabnormals.atmospheric.common.block.YuccaGateauBlock;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -24,6 +25,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CakeBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -36,11 +38,14 @@ import vectorwing.farmersdelight.common.utility.MathUtils;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Supplier;
 
 @EventBusSubscriber(modid = AbnormalsDelight.MOD_ID)
 public class ADEvents {
-	public static final IntegerProperty BITES = IntegerProperty.create("bites", 0, 9);
+	public static Optional<IntegerProperty> yuccaGateauBites(BlockState state) {
+		return state.getProperties().stream().filter(p -> p.getName().equals("bites") && p instanceof IntegerProperty).map(p -> (IntegerProperty) p).findFirst();
+	}
 
 	public static final HashMap<Supplier<Item>, ResourceLocation> SLICES_TO_CAKES = Util.make(Maps.newHashMap(), (list) -> {
 		list.put(ADItems.VANILLA_CAKE_SLICE, ADConstants.VANILLA_CAKE);
@@ -80,7 +85,28 @@ public class ADEvents {
 		ResourceLocation name = BuiltInRegistries.BLOCK.getKey(state.getBlock());
 
 		if (tool.is(ModTags.KNIVES) && name != null) {
-			if (state.is(ADBlockTags.DROPS_FLAVORED_CAKE_SLICE)) {
+			if (state.is(ADBlockTags.DROPS_YUCCA_GATEAU_SLICE)) {
+				int bites = 1;
+				Optional<IntegerProperty> property = yuccaGateauBites(state);
+				if (property.isPresent()) {
+					bites = state.getValue(property.get());
+					if (bites < 9) {
+						level.setBlock(pos, state.setValue(property.get(), bites + 1), 3);
+					} else {
+						level.removeBlock(pos, false);
+					}
+				} else {
+					BlockState yuccaGateau = BuiltInRegistries.BLOCK.get(ADConstants.YUCCA_GATEAU).defaultBlockState();
+					level.setBlock(pos, yuccaGateau.setValue(yuccaGateauBites(yuccaGateau).get(), 1), 3);
+					Block.dropResources(state, level, pos);
+				}
+
+				ItemUtils.spawnItemEntity(level, new ItemStack(ADItems.YUCCA_GATEAU_SLICE.get()), pos.getX() + (bites * 0.075F), pos.getY() + 0.2F, pos.getZ() + 0.5F, -0.05F, 0.0F, 0.0F);
+				level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
+
+				event.setCancellationResult(InteractionResult.SUCCESS);
+				event.setCanceled(true);
+			} else if (state.is(ADBlockTags.DROPS_FLAVORED_CAKE_SLICE)) {
 				Supplier<Item> cakeSlice = getCakeSlice(state);
 				float offset = 0.0F;
 				if (state.hasProperty(CakeBlock.BITES)) {
@@ -100,19 +126,6 @@ public class ADEvents {
 				level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
 				event.setCancellationResult(InteractionResult.SUCCESS);
 				event.setCanceled(true);
-			} else if (name.equals(ADConstants.YUCCA_GATEAU)) {
-				int bites = state.getValue(BITES);
-				if (bites < 9) {
-					level.setBlock(pos, state.setValue(BITES, bites + 1), 3);
-				} else {
-					level.removeBlock(pos, false);
-				}
-
-				ItemUtils.spawnItemEntity(level, new ItemStack(ADItems.YUCCA_GATEAU_SLICE.get()), pos.getX() + (bites * 0.075F), pos.getY() + 0.2F, pos.getZ() + 0.5F, -0.05F, 0.0F, 0.0F);
-				level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
-
-				event.setCancellationResult(InteractionResult.SUCCESS);
-				event.setCanceled(true);
 			}
 		}
 	}
@@ -125,12 +138,14 @@ public class ADEvents {
 		ResourceLocation name = BuiltInRegistries.BLOCK.getKey(state.getBlock());
 
 		if (player.getMainHandItem().is(ModTags.KNIVES) && name != null) {
-			if (state.is(ADBlockTags.DROPS_FLAVORED_CAKE_SLICE)) {
+			if (state.is(ADBlockTags.DROPS_YUCCA_GATEAU_SLICE)) {
+				Optional<IntegerProperty> property = yuccaGateauBites(state);
+				int subtraction = property.map(state::getValue).orElse(0);
+				loot.add(new ItemStack(ADItems.YUCCA_GATEAU_SLICE.get(), 10 - subtraction));
+			} else if (state.is(ADBlockTags.DROPS_FLAVORED_CAKE_SLICE)) {
 				Supplier<Item> cakeSlice = getCakeSlice(state);
 				int subtraction = !state.hasProperty(CakeBlock.BITES) ? 0 : state.getValue(CakeBlock.BITES);
 				loot.add(new ItemStack(cakeSlice.get(), 7 - subtraction));
-			} else if (name.equals(ADConstants.YUCCA_GATEAU)) {
-				loot.add(new ItemStack(ADItems.YUCCA_GATEAU_SLICE.get(), 10 - state.getValue(BITES)));
 			}
 
 			if (!loot.isEmpty() && event.getLevel() instanceof Level) {

@@ -18,6 +18,8 @@ public class ADBlockTags {
 	public static final TagKey<Block> DROPS_MINT_CAKE_SLICE = blockTag("drops_mint_cake_slice");
 	public static final TagKey<Block> DROPS_ADZUKI_CAKE_SLICE = blockTag("drops_adzuki_cake_slice");
 
+	public static final TagKey<Block> DROPS_YUCCA_GATEAU_SLICE = blockTag("drops_yucca_gateau_slice");
+
 	private static TagKey<Block> blockTag(String name) {
 		return TagUtil.blockTag(AbnormalsDelight.MOD_ID, name);
 	}
