@@ -26,6 +26,8 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
+import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -41,6 +43,8 @@ public class AbnormalsDelight {
 		bus.addListener(this::commonSetup);
 		bus.addListener(this::clientSetup);
 		bus.addListener(this::dataSetup);
+
+		bus.addListener(this::addBlockEntityTypes);
 
 		container.registerConfig(ModConfig.Type.COMMON, ADConfig.COMMON_SPEC);
 	}
@@ -73,6 +77,12 @@ public class AbnormalsDelight {
 		generator.addProvider(client, new ADBlockStateProvider(output, helper));
 		generator.addProvider(client, new ADItemModelProvider(output, helper));
 		generator.addProvider(client, new ADLanguageProvider(output));
+	}
+
+	private void addBlockEntityTypes(BlockEntityTypeAddBlocksEvent event) {
+		ADBlocks.BLOCKS.getDeferredRegister().getEntries().forEach(block -> {
+			event.modify(ModBlockEntityTypes.CABINET.get(), block.get());
+		});
 	}
 
 	public static ResourceLocation location(String path) {
