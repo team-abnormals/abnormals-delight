@@ -15,7 +15,6 @@ public class ADConstants {
 	public static final String CAVERNS_AND_CHASMS = "caverns_and_chasms";
 	public static final String INCUBATION = "incubation";
 	public static final String NEAPOLITAN = "neapolitan";
-	public static final String NETHER_EXTENSION = "nether_extension";
 	public static final String PET_CEMETERY = "pet_cemetery";
 	public static final String UPGRADE_AQUATIC = "upgrade_aquatic";
 
@@ -25,7 +24,6 @@ public class ADConstants {
 	public static final ResourceLocation CRUSTOSE_WOOD = ResourceLocation.fromNamespaceAndPath(ATMOSPHERIC, "crustose_wood");
 	public static final ResourceLocation YUCCA_GATEAU = ResourceLocation.fromNamespaceAndPath(ATMOSPHERIC, "yucca_gateau");
 	public static final ResourceLocation SNAIL_SHELL_PIECE = ResourceLocation.fromNamespaceAndPath(AUTUMNITY, "snail_shell_piece");
-	public static final ResourceLocation LARGE_PUMPKIN_SLICE = ResourceLocation.fromNamespaceAndPath(AUTUMNITY, "large_pumpkin_slice");
 	public static final ResourceLocation SOUL_CANDLE_CAKE = ResourceLocation.fromNamespaceAndPath(BUZZIER_BEES, "soul_candle_cake");
 	public static final ResourceLocation CUPRIC_CANDLE_CAKE = ResourceLocation.fromNamespaceAndPath(CAVERNS_AND_CHASMS, "cupric_candle_cake");
 	public static final ResourceLocation LAVA_LAMP = ResourceLocation.fromNamespaceAndPath(CAVERNS_AND_CHASMS, "lava_lamp");
@@ -34,7 +32,6 @@ public class ADConstants {
 	public static final ResourceLocation POISMOSS = ResourceLocation.fromNamespaceAndPath(ENDERGETIC, "poismoss");
 	public static final ResourceLocation EUMUS_POISMOSS = ResourceLocation.fromNamespaceAndPath(ENDERGETIC, "eumus_poismoss");
 	public static final ResourceLocation DUCKWEED = ResourceLocation.fromNamespaceAndPath(ENVIRONMENTAL, "duckweed");
-	public static final ResourceLocation ADZUKI_STEW = ResourceLocation.fromNamespaceAndPath(NEAPOLITAN, "adzuki_stew");
 	public static final ResourceLocation VANILLA_CAKE = ResourceLocation.fromNamespaceAndPath(NEAPOLITAN, "vanilla_cake");
 	public static final ResourceLocation CHOCOLATE_CAKE = ResourceLocation.fromNamespaceAndPath(NEAPOLITAN, "chocolate_cake");
 	public static final ResourceLocation STRAWBERRY_CAKE = ResourceLocation.fromNamespaceAndPath(NEAPOLITAN, "strawberry_cake");

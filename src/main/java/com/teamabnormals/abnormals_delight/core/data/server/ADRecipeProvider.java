@@ -264,7 +264,7 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 				.requires(Items.CARROT).requires(ModItems.PUMPKIN_SLICE.get())
 				.requires(Items.BOWL)
 				.unlockedBy(getHasName(NeapolitanItems.ROASTED_ADZUKI_BEANS.get()), has(NeapolitanItems.ROASTED_ADZUKI_BEANS.get()))
-				.save(output, wrapRecipeID(NeapolitanItems.ADZUKI_CURRY));
+				.save(output.withConditions(conditions), wrapRecipeID(NeapolitanItems.ADZUKI_CURRY));
 
 		CookingPotRecipeBuilder.cookingPotRecipe(NeapolitanItems.ADZUKI_CURRY, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
 				.addIngredient(NeapolitanItems.ADZUKI_BEANS).addIngredient(NeapolitanItemTags.FOODS_BANANA).addIngredient(Tags.Items.CROPS_CARROT).addIngredient(ModItems.PUMPKIN_SLICE.get())
