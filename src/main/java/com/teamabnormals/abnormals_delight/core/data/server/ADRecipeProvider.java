@@ -135,18 +135,18 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 				.unlockedBy(getHasName(AutumnityItems.SYRUP_BOTTLE), has(AutumnityItems.SYRUP_BOTTLE)).save(output.withConditions(conditions));
 
 		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.ESCARGOT, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP, AutumnityItems.SNAIL_SHELL_PIECE)
-				.addIngredient(AutumnityBlocks.SNAIL_GOO, 2).addIngredient(CommonTags.CROPS_ONION).addIngredient(Tags.Items.DRINKS_MILK)
+				.addIngredient(AutumnityBlocks.SNAIL_GOO, 2).addIngredient(CommonTags.Items.CROPS_ONION).addIngredient(Tags.Items.DRINKS_MILK)
 				.unlockedByAnyIngredient(AutumnityBlocks.SNAIL_GOO, AutumnityItems.SNAIL_SHELL_PIECE)
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
 
 		CookingPotRecipeBuilder.cookingPotRecipe(AutumnityItems.FOUL_SOUP, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
-				.addIngredient(AutumnityItems.FOUL_BERRIES, 2).addIngredient(Items.SPIDER_EYE).addIngredient(CommonTags.CROPS_ONION)
+				.addIngredient(AutumnityItems.FOUL_BERRIES, 2).addIngredient(Items.SPIDER_EYE).addIngredient(CommonTags.Items.CROPS_ONION)
 				.unlockedByAnyIngredient(AutumnityItems.FOUL_BERRIES)
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
 
 		CookingPotRecipeBuilder.cookingPotRecipe(ModItems.STUFFED_PUMPKIN_BLOCK.get(), 1, CookingRecipes.SLOW_COOKING, CookingRecipes.LARGE_EXP, AutumnityBlocks.LARGE_PUMPKIN_SLICE)
-				.addIngredient(CommonTags.CROPS_RICE)
-				.addIngredient(CommonTags.CROPS_ONION)
+				.addIngredient(CommonTags.Items.CROPS_RICE)
+				.addIngredient(CommonTags.Items.CROPS_ONION)
 				.addIngredient(Items.BROWN_MUSHROOM)
 				.addIngredient(Items.POTATO)
 				.addIngredient(Tags.Items.FOODS_BERRY)
@@ -185,7 +185,7 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
 
 		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.DUCK_NOODLES, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
-				.addIngredient(EnvironmentalItemTags.FOODS_RAW_DUCK).addIngredient(CommonTags.FOODS_PASTA).addIngredient(Items.CARROT).addIngredient(Tags.Items.FOODS_VEGETABLE)
+				.addIngredient(EnvironmentalItemTags.FOODS_RAW_DUCK).addIngredient(CommonTags.Items.FOODS_PASTA).addIngredient(Items.CARROT).addIngredient(Tags.Items.FOODS_VEGETABLE)
 				.unlockedBy("has_raw_duck", has(EnvironmentalItemTags.FOODS_RAW_DUCK)).unlockedByAnyIngredient(ModItems.RAW_PASTA.get())
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
 
@@ -272,7 +272,7 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
 
 		CookingPotRecipeBuilder.cookingPotRecipe(NeapolitanItems.ADZUKI_STEW, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
-				.addIngredient(NeapolitanItems.ADZUKI_BEANS, 2).addIngredient(Tags.Items.CROPS_BEETROOT).addIngredient(CommonTags.CROPS_TOMATO).addIngredient(Items.BROWN_MUSHROOM)
+				.addIngredient(NeapolitanItems.ADZUKI_BEANS, 2).addIngredient(Tags.Items.CROPS_BEETROOT).addIngredient(CommonTags.Items.CROPS_TOMATO).addIngredient(Items.BROWN_MUSHROOM)
 				.unlockedBy(getHasName(NeapolitanItems.ADZUKI_BEANS.get()), has(NeapolitanItems.ADZUKI_BEANS.get()))
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
 
@@ -302,7 +302,7 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 				.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS).save(output.withConditions(conditions));
 
 		CookingPotRecipeBuilder.cookingPotRecipe(ADItems.PERCH_WITH_MUSHROOMS, 1, CookingRecipes.NORMAL_COOKING, CookingRecipes.MEDIUM_EXP)
-				.addIngredient(UAItemTags.FOODS_RAW_PERCH).addIngredient(ModItems.RED_MUSHROOM_COLONY.get()).addIngredient(CommonTags.CROPS_RICE).addIngredient(CommonTags.CROPS_TOMATO)
+				.addIngredient(UAItemTags.FOODS_RAW_PERCH).addIngredient(ModItems.RED_MUSHROOM_COLONY.get()).addIngredient(CommonTags.Items.CROPS_RICE).addIngredient(CommonTags.Items.CROPS_TOMATO)
 				.unlockedByAnyIngredient(UAItems.PERCH, ModItems.RED_MUSHROOM_COLONY.get(), ModItems.RICE.get(), ModItems.TOMATO.get())
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS).save(output.withConditions(conditions));
 
@@ -346,7 +346,7 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 				.setRecipeBookTab(CookingPotRecipeBookTab.DRINKS).save(output.withConditions(ENVIRONMENTAL_LOADED, NEAPOLITAN_LOADED));
 
 		ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ADItems.PASSION_FRUIT_GLAZED_DUCK)
-				.requires(EnvironmentalItemTags.FOODS_COOKED_DUCK).requires(AtmosphericItemTags.FOODS_PASSION_FRUIT).requires(Items.BOWL).requires(Items.BAKED_POTATO).requires(CommonTags.CROPS_ONION)
+				.requires(EnvironmentalItemTags.FOODS_COOKED_DUCK).requires(AtmosphericItemTags.FOODS_PASSION_FRUIT).requires(Items.BOWL).requires(Items.BAKED_POTATO).requires(CommonTags.Items.CROPS_ONION)
 				.unlockedBy("has_cooked_duck", has(EnvironmentalItemTags.FOODS_COOKED_DUCK)).unlockedBy("has_passion_fruit", has(AtmosphericItemTags.FOODS_PASSION_FRUIT))
 				.save(output.withConditions(ATMOSPHERIC_LOADED, ENVIRONMENTAL_LOADED));
 	}
@@ -366,11 +366,11 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 	}
 
 	private static void cuttingRecipe(RecipeOutput output, ItemLike input, ItemLike cut, int count, ICondition... conditions) {
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(input), Ingredient.of(CommonTags.TOOLS_KNIFE), cut, count).save(output.withConditions(conditions));
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(input), Ingredient.of(CommonTags.Items.TOOLS_KNIFE), cut, count).save(output.withConditions(conditions));
 	}
 
 	private static void cuttingFish(RecipeOutput output, ItemLike input, ItemLike cut, int count, ICondition... conditions) {
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(input), Ingredient.of(CommonTags.TOOLS_KNIFE), cut, count).addResult(Items.BONE_MEAL).save(output.withConditions(conditions));
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(input), Ingredient.of(CommonTags.Items.TOOLS_KNIFE), cut, count).addResult(Items.BONE_MEAL).save(output.withConditions(conditions));
 	}
 
 	private static void stripLogForBark(RecipeOutput output, ItemLike log, ItemLike strippedLog, ICondition... conditions) {

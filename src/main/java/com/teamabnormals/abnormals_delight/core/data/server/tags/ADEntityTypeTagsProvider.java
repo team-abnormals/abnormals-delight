@@ -20,9 +20,9 @@ public class ADEntityTypeTagsProvider extends EntityTypeTagsProvider {
 
 	@Override
 	protected void addTags(Provider provider) {
-		this.tag(ModTags.DOG_FOOD_USERS).addOptional(ADConstants.ZOMBIE_WOLF).addOptional(ADConstants.SKELETON_WOLF);
-		this.tag(ModTags.HORSE_FEED_TEMPTED).addOptional(ADConstants.ZEBRA);
-		this.tag(ModTags.HORSE_FEED_USERS).addOptional(ADConstants.ZEBRA);
+		this.tag(ModTags.EntityTypes.DOG_FOOD_USERS).addOptional(ADConstants.ZOMBIE_WOLF).addOptional(ADConstants.SKELETON_WOLF);
+		this.tag(ModTags.EntityTypes.HORSE_FEED_TEMPTED).addOptional(ADConstants.ZEBRA);
+		this.tag(ModTags.EntityTypes.HORSE_FEED_USERS).addOptional(ADConstants.ZEBRA);
 		this.tag(ADEntityTypeTags.SCAVENGES_FEATHER).add(EntityType.CHICKEN).addOptional(ADConstants.DUCK).addOptional(ADConstants.TURKEY);
 		this.tag(ADEntityTypeTags.SCAVENGES_LEATHER).add(EntityType.COW, EntityType.DONKEY, EntityType.HORSE, EntityType.LLAMA, EntityType.MULE).addOptional(ADConstants.DEER).addOptional(ADConstants.REINDEER);
 	}

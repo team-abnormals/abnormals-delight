@@ -252,6 +252,14 @@
             },
             "trigger": "minecraft:consume_item"
           },
+          "abnormals_delight:gleaming_salad": {
+            "conditions": {
+              "item": {
+                "items": "farmersdelight:gleaming_salad"
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
           "abnormals_delight:glow_berry_custard": {
             "conditions": {
               "item": {
@@ -388,6 +396,14 @@
             },
             "trigger": "minecraft:consume_item"
           },
+          "abnormals_delight:onion_soup": {
+            "conditions": {
+              "item": {
+                "items": "farmersdelight:onion_soup"
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
           "abnormals_delight:pasta_with_meatballs": {
             "conditions": {
               "item": {
@@ -408,6 +424,14 @@
             "conditions": {
               "item": {
                 "items": "farmersdelight:pie_crust"
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "abnormals_delight:pumpkin_pie_slice": {
+            "conditions": {
+              "item": {
+                "items": "farmersdelight:pumpkin_pie_slice"
               }
             },
             "trigger": "minecraft:consume_item"
@@ -665,6 +689,9 @@
             "abnormals_delight:chocolate_pie_slice"
           ],
           [
+            "abnormals_delight:pumpkin_pie_slice"
+          ],
+          [
             "abnormals_delight:sweet_berry_cookie"
           ],
           [
@@ -755,6 +782,9 @@
             "abnormals_delight:noodle_soup"
           ],
           [
+            "abnormals_delight:onion_soup"
+          ],
+          [
             "abnormals_delight:bacon_and_eggs"
           ],
           [
@@ -795,6 +825,9 @@
           ],
           [
             "abnormals_delight:shepherds_pie"
+          ],
+          [
+            "abnormals_delight:gleaming_salad"
           ],
           [
             "abnormals_delight:dog_food"

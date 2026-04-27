@@ -1,1 +1,1 @@
-* Fixed a crash when placing Cabinets
+* Fixed crashes with Farmer's Delight 1.3.0

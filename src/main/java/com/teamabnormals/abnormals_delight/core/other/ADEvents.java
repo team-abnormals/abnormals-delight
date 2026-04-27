@@ -84,7 +84,7 @@ public class ADEvents {
 		ItemStack tool = event.getEntity().getItemInHand(event.getHand());
 		ResourceLocation name = BuiltInRegistries.BLOCK.getKey(state.getBlock());
 
-		if (tool.is(ModTags.KNIVES) && name != null) {
+		if (tool.is(ModTags.Items.KNIVES) && name != null) {
 			if (state.is(ADBlockTags.DROPS_YUCCA_GATEAU_SLICE)) {
 				int bites = 1;
 				Optional<IntegerProperty> property = yuccaGateauBites(state);
@@ -137,7 +137,7 @@ public class ADEvents {
 		List<ItemStack> loot = Lists.newArrayList();
 		ResourceLocation name = BuiltInRegistries.BLOCK.getKey(state.getBlock());
 
-		if (player.getMainHandItem().is(ModTags.KNIVES) && name != null) {
+		if (player.getMainHandItem().is(ModTags.Items.KNIVES) && name != null) {
 			if (state.is(ADBlockTags.DROPS_YUCCA_GATEAU_SLICE)) {
 				Optional<IntegerProperty> property = yuccaGateauBites(state);
 				int subtraction = property.map(state::getValue).orElse(0);

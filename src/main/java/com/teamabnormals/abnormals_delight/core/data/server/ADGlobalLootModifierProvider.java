@@ -29,13 +29,13 @@ public class ADGlobalLootModifierProvider extends GlobalLootModifierProvider {
 	protected void start() {
 		this.add("scavenging_leather", new WrappedAddItemModifier(
 				new LootItemCondition[]{
-						LootItemEntityPropertyCondition.hasProperties(EntityTarget.ATTACKER, EntityPredicate.Builder.entity().equipment(EntityEquipmentPredicate.Builder.equipment().mainhand(ItemPredicate.Builder.item().of(ModTags.KNIVES)).build())).build(),
+						LootItemEntityPropertyCondition.hasProperties(EntityTarget.ATTACKER, EntityPredicate.Builder.entity().equipment(EntityEquipmentPredicate.Builder.equipment().mainhand(ItemPredicate.Builder.item().of(ModTags.Items.KNIVES)).build())).build(),
 						LootItemEntityPropertyCondition.hasProperties(EntityTarget.THIS, EntityPredicate.Builder.entity().entityType(EntityTypePredicate.of(ADEntityTypeTags.SCAVENGES_LEATHER))).build()
 				}, Items.LEATHER, 1));
 
 		this.add("scavenging_feather", new WrappedAddItemModifier(
 				new LootItemCondition[]{
-						LootItemEntityPropertyCondition.hasProperties(EntityTarget.ATTACKER, EntityPredicate.Builder.entity().equipment(EntityEquipmentPredicate.Builder.equipment().mainhand(ItemPredicate.Builder.item().of(ModTags.KNIVES)).build())).build(),
+						LootItemEntityPropertyCondition.hasProperties(EntityTarget.ATTACKER, EntityPredicate.Builder.entity().equipment(EntityEquipmentPredicate.Builder.equipment().mainhand(ItemPredicate.Builder.item().of(ModTags.Items.KNIVES)).build())).build(),
 						LootItemEntityPropertyCondition.hasProperties(EntityTarget.THIS, EntityPredicate.Builder.entity().entityType(EntityTypePredicate.of(ADEntityTypeTags.SCAVENGES_FEATHER))).build()
 				}, Items.FEATHER, 1));
 	}

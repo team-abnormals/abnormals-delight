@@ -17,6 +17,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
+import vectorwing.farmersdelight.common.tag.ModTags.Blocks;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -32,7 +33,7 @@ public class ADItemTagsProvider extends ItemTagsProvider {
 	@SuppressWarnings("unchecked")
 	@Override
 	protected void addTags(Provider provider) {
-		this.tag(ModTags.WOODEN_CABINETS).add(ADBlocks.ROSEWOOD_CABINET.asItem(), ADBlocks.MORADO_CABINET.asItem(), ADBlocks.YUCCA_CABINET.asItem(), ADBlocks.KOUSA_CABINET.asItem(), ADBlocks.ASPEN_CABINET.asItem(), ADBlocks.LAUREL_CABINET.asItem(), ADBlocks.GRIMWOOD_CABINET.asItem(), ADBlocks.MAPLE_CABINET.asItem(), ADBlocks.AZALEA_CABINET.asItem(), ADBlocks.POISE_CABINET.asItem(), ADBlocks.WILLOW_CABINET.asItem(), ADBlocks.PLUM_CABINET.asItem(), ADBlocks.WISTERIA_CABINET.asItem(), ADBlocks.PINE_CABINET.asItem(), ADBlocks.DRIFTWOOD_CABINET.asItem(), ADBlocks.RIVER_CABINET.asItem());
+		this.copy(ModTags.Blocks.CABINETS_WOODEN, ModTags.Items.CABINETS_WOODEN);
 		this.tag(SLABDISH_INGREDIENTS).add(Items.LILY_PAD, Items.SEAGRASS, ModItems.RICE_PANICLE.get()).addOptional(ADConstants.DUCKWEED);
 
 		this.tag(ItemTags.MEAT).add(DUCK_FILLET.get(), COOKED_DUCK_FILLET.get(), VENISON_SHANKS.get(), COOKED_VENISON_SHANKS.get(), MAPLE_GLAZED_BACON.get());
@@ -49,14 +50,13 @@ public class ADItemTagsProvider extends ItemTagsProvider {
 		this.tag(UAItemTags.FOODS_RAW_PERCH).add(PERCH_SLICE.get());
 		this.tag(UAItemTags.FOODS_RAW_PIKE).add(PIKE_SLICE.get());
 
-		this.tag(CommonTags.TOOLS_KNIFE).add(SILVER_KNIFE.get(), NECROMIUM_KNIFE.get());
+		this.tag(CommonTags.Items.TOOLS_KNIFE).add(SILVER_KNIFE.get(), NECROMIUM_KNIFE.get());
 
 		this.tag(Tags.Items.FOODS_COOKIE).add(CHERRY_COOKIE.get(), MAPLE_COOKIE.get(), MULBERRY_COOKIE.get());
 
-		this.tag(ModTags.KNIVES).add(SILVER_KNIFE.get(), NECROMIUM_KNIFE.get());
-		this.tag(ModTags.CABBAGE_ROLL_INGREDIENTS).addTags(EnvironmentalItemTags.FOODS_RAW_DUCK, EnvironmentalItemTags.FOODS_RAW_VENISON).add(Items.RABBIT);
-		this.tag(ModTags.MEALS).add(SEARED_VENISON.get(), PASSION_FRUIT_GLAZED_DUCK.get(), DUNE_PLATTER.get(), DUCK_NOODLES.get(), PERCH_WITH_MUSHROOMS.get(), PIKE_WITH_BEETROOT.get(), VENISON_WITH_BAMBOO_SHOOTS.get());
-		this.tag(ModTags.DRINKS).add(CHERRY_CREAM_SODA.get(), PASSION_ALOE_NECTAR.get(), PICKERELWEED_JUICE.get());
+		this.tag(ModTags.Items.KNIVES).add(SILVER_KNIFE.get(), NECROMIUM_KNIFE.get());
+		this.tag(ModTags.Items.MEALS).add(SEARED_VENISON.get(), PASSION_FRUIT_GLAZED_DUCK.get(), DUNE_PLATTER.get(), DUCK_NOODLES.get(), PERCH_WITH_MUSHROOMS.get(), PIKE_WITH_BEETROOT.get(), VENISON_WITH_BAMBOO_SHOOTS.get());
+		this.tag(ModTags.Items.DRINKS).add(CHERRY_CREAM_SODA.get(), PASSION_ALOE_NECTAR.get(), PICKERELWEED_JUICE.get());
 
 		this.tag(INGOTS_SILVER);
 		this.tag(INGOTS_NECROMIUM);

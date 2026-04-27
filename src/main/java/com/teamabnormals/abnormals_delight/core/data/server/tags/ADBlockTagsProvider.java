@@ -22,11 +22,12 @@ public class ADBlockTagsProvider extends BlockTagsProvider {
 	@SuppressWarnings("unchecked")
 	@Override
 	protected void addTags(Provider provider) {
+		this.tag(ModTags.Blocks.CABINETS_WOODEN).add(ADBlocks.ROSEWOOD_CABINET.get(), ADBlocks.MORADO_CABINET.get(), ADBlocks.YUCCA_CABINET.get(), ADBlocks.KOUSA_CABINET.get(), ADBlocks.ASPEN_CABINET.get(), ADBlocks.LAUREL_CABINET.get(), ADBlocks.GRIMWOOD_CABINET.get(), ADBlocks.MAPLE_CABINET.get(), ADBlocks.AZALEA_CABINET.get(), ADBlocks.POISE_CABINET.get(), ADBlocks.WILLOW_CABINET.get(), ADBlocks.PLUM_CABINET.get(), ADBlocks.WISTERIA_CABINET.get(), ADBlocks.PINE_CABINET.get(), ADBlocks.DRIFTWOOD_CABINET.get(), ADBlocks.RIVER_CABINET.get());
 		this.tag(BlockTags.MINEABLE_WITH_AXE).add(ADBlocks.ROSEWOOD_CABINET.get(), ADBlocks.MORADO_CABINET.get(), ADBlocks.YUCCA_CABINET.get(), ADBlocks.KOUSA_CABINET.get(), ADBlocks.ASPEN_CABINET.get(), ADBlocks.LAUREL_CABINET.get(), ADBlocks.GRIMWOOD_CABINET.get(), ADBlocks.MAPLE_CABINET.get(), ADBlocks.AZALEA_CABINET.get(), ADBlocks.POISE_CABINET.get(), ADBlocks.WILLOW_CABINET.get(), ADBlocks.PLUM_CABINET.get(), ADBlocks.WISTERIA_CABINET.get(), ADBlocks.PINE_CABINET.get(), ADBlocks.DRIFTWOOD_CABINET.get(), ADBlocks.RIVER_CABINET.get());
-		this.tag(ModTags.TRAY_HEAT_SOURCES).addOptionalTag(ADConstants.BRAZIERS).addOptional(ADConstants.LAVA_LAMP);
-		this.tag(ModTags.MINEABLE_WITH_KNIFE).addTags(ADBlockTags.DROPS_FLAVORED_CAKE_SLICE, ADBlockTags.DROPS_YUCCA_GATEAU_SLICE);
+		this.tag(ModTags.Blocks.TRAY_HEAT_SOURCES).addOptionalTag(ADConstants.BRAZIERS).addOptional(ADConstants.LAVA_LAMP);
+		this.tag(ModTags.Blocks.MINEABLE_WITH_KNIFE).addTags(ADBlockTags.DROPS_FLAVORED_CAKE_SLICE, ADBlockTags.DROPS_YUCCA_GATEAU_SLICE);
 
-		this.tag(ModTags.DROPS_CAKE_SLICE).addOptional(ADConstants.SOUL_CANDLE_CAKE).addOptional(ADConstants.CUPRIC_CANDLE_CAKE);
+		this.tag(ModTags.Blocks.DROPS_CAKE_SLICE).addOptional(ADConstants.SOUL_CANDLE_CAKE).addOptional(ADConstants.CUPRIC_CANDLE_CAKE);
 		this.tag(ADBlockTags.DROPS_FLAVORED_CAKE_SLICE).addTags(ADBlockTags.DROPS_VANILLA_CAKE_SLICE, ADBlockTags.DROPS_CHOCOLATE_CAKE_SLICE, ADBlockTags.DROPS_STRAWBERRY_CAKE_SLICE, ADBlockTags.DROPS_BANANA_CAKE_SLICE, ADBlockTags.DROPS_MINT_CAKE_SLICE, ADBlockTags.DROPS_ADZUKI_CAKE_SLICE);
 		this.tag(ADBlockTags.DROPS_VANILLA_CAKE_SLICE);
 		this.tag(ADBlockTags.DROPS_CHOCOLATE_CAKE_SLICE);
@@ -36,7 +37,7 @@ public class ADBlockTagsProvider extends BlockTagsProvider {
 		this.tag(ADBlockTags.DROPS_ADZUKI_CAKE_SLICE);
 		this.tag(ADBlockTags.DROPS_YUCCA_GATEAU_SLICE);
 
-		this.tag(ModTags.UNAFFECTED_BY_RICH_SOIL).addOptional(ADConstants.CRUSTOSE).addOptional(ADConstants.CRUSTOSE_LOG).addOptional(ADConstants.CRUSTOSE_WOOD).addOptional(ADConstants.POISMOSS).addOptional(ADConstants.EUMUS_POISMOSS);
+		this.tag(ModTags.Blocks.UNAFFECTED_BY_RICH_SOIL).addOptional(ADConstants.CRUSTOSE).addOptional(ADConstants.CRUSTOSE_LOG).addOptional(ADConstants.CRUSTOSE_WOOD).addOptional(ADConstants.POISMOSS).addOptional(ADConstants.EUMUS_POISMOSS);
 
 		this.tag(ADBlockTags.INCORRECT_FOR_SILVER_TOOL);
 		this.tag(ADBlockTags.INCORRECT_FOR_NECROMIUM_TOOL);
