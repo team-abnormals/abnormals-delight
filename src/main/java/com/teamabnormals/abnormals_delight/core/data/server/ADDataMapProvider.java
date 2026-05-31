@@ -1,6 +1,10 @@
 package com.teamabnormals.abnormals_delight.core.data.server;
 
+import com.teamabnormals.abnormals_delight.core.other.ADConditions;
 import com.teamabnormals.abnormals_delight.core.registry.ADItems;
+import com.teamabnormals.caverns_and_chasms.core.other.CCDataMaps;
+import com.teamabnormals.caverns_and_chasms.core.other.CCDataMaps.OxidizableItem;
+import com.teamabnormals.caverns_and_chasms.core.other.CCDataMaps.WaxableItem;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.DataMapProvider;
@@ -51,5 +55,16 @@ public class ADDataMapProvider extends DataMapProvider {
 				.add(ADItems.MINT_CAKE_SLICE, new Compostable(0.85F), false)
 				.add(ADItems.ADZUKI_CAKE_SLICE, new Compostable(0.85F), false)
 				.add(ADItems.YUCCA_GATEAU_SLICE, new Compostable(0.85F), false);
+
+		this.builder(CCDataMaps.OXIDIZABLES)
+				.add(ADItems.COPPER_KNIFE, new OxidizableItem(ADItems.EXPOSED_COPPER_KNIFE.get()), false, ADConditions.CAVERNS_AND_CHASMS_LOADED)
+				.add(ADItems.EXPOSED_COPPER_KNIFE, new OxidizableItem(ADItems.WEATHERED_COPPER_KNIFE.get()), false, ADConditions.CAVERNS_AND_CHASMS_LOADED)
+				.add(ADItems.WEATHERED_COPPER_KNIFE, new OxidizableItem(ADItems.OXIDIZED_COPPER_KNIFE.get()), false, ADConditions.CAVERNS_AND_CHASMS_LOADED);
+
+		this.builder(CCDataMaps.WAXABLES)
+				.add(ADItems.COPPER_KNIFE, new WaxableItem(ADItems.WAXED_COPPER_KNIFE.get()), false, ADConditions.CAVERNS_AND_CHASMS_LOADED)
+				.add(ADItems.EXPOSED_COPPER_KNIFE, new WaxableItem(ADItems.WAXED_EXPOSED_COPPER_KNIFE.get()), false, ADConditions.CAVERNS_AND_CHASMS_LOADED)
+				.add(ADItems.WEATHERED_COPPER_KNIFE, new WaxableItem(ADItems.WAXED_WEATHERED_COPPER_KNIFE.get()), false, ADConditions.CAVERNS_AND_CHASMS_LOADED)
+				.add(ADItems.OXIDIZED_COPPER_KNIFE, new WaxableItem(ADItems.OXIDIZED_COPPER_KNIFE.get()), false, ADConditions.CAVERNS_AND_CHASMS_LOADED);
 	}
 }

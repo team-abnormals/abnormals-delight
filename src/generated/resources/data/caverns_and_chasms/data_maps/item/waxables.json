@@ -1,0 +1,40 @@
+{
+  "values": {
+    "abnormals_delight:copper_knife": {
+      "neoforge:conditions": [
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "caverns_and_chasms"
+        }
+      ],
+      "waxed": "abnormals_delight:waxed_copper_knife"
+    },
+    "abnormals_delight:exposed_copper_knife": {
+      "neoforge:conditions": [
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "caverns_and_chasms"
+        }
+      ],
+      "waxed": "abnormals_delight:waxed_exposed_copper_knife"
+    },
+    "abnormals_delight:oxidized_copper_knife": {
+      "neoforge:conditions": [
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "caverns_and_chasms"
+        }
+      ],
+      "waxed": "abnormals_delight:oxidized_copper_knife"
+    },
+    "abnormals_delight:weathered_copper_knife": {
+      "neoforge:conditions": [
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "caverns_and_chasms"
+        }
+      ],
+      "waxed": "abnormals_delight:waxed_weathered_copper_knife"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "abnormals_delight:waxed_oxidized_copper_knife"
+  },
+  "result": {
+    "count": 1,
+    "id": "caverns_and_chasms:waxed_oxidized_copper_ingot"
+  }
+}

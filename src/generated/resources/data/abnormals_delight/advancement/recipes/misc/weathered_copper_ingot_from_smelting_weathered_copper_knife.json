@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "abnormals_delight:weathered_copper_ingot_from_smelting_weathered_copper_knife"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_weathered_copper_knife": {
+      "conditions": {
+        "items": [
+          {
+            "items": "abnormals_delight:weathered_copper_knife"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_weathered_copper_knife"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "abnormals_delight:weathered_copper_ingot_from_smelting_weathered_copper_knife"
+    ]
+  }
+}

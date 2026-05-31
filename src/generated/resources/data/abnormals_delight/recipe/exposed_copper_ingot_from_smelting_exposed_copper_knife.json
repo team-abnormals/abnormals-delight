@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "abnormals_delight:exposed_copper_knife"
+  },
+  "result": {
+    "count": 1,
+    "id": "caverns_and_chasms:exposed_copper_ingot"
+  }
+}

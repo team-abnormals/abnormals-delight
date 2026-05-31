@@ -2,7 +2,6 @@ package com.teamabnormals.abnormals_delight.core.data.server.tags;
 
 import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.teamabnormals.abnormals_delight.core.other.ADConstants;
-import com.teamabnormals.abnormals_delight.core.registry.ADBlocks;
 import com.teamabnormals.autumnity.core.other.tags.AutumnityItemTags;
 import com.teamabnormals.environmental.core.other.tags.EnvironmentalItemTags;
 import com.teamabnormals.upgrade_aquatic.core.other.tags.UAItemTags;
@@ -17,7 +16,6 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
-import vectorwing.farmersdelight.common.tag.ModTags.Blocks;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -30,7 +28,6 @@ public class ADItemTagsProvider extends ItemTagsProvider {
 		super(output, lookupProvider, tagLookup, AbnormalsDelight.MOD_ID, helper);
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	protected void addTags(Provider provider) {
 		this.copy(ModTags.Blocks.CABINETS_WOODEN, ModTags.Items.CABINETS_WOODEN);
@@ -50,16 +47,14 @@ public class ADItemTagsProvider extends ItemTagsProvider {
 		this.tag(UAItemTags.FOODS_RAW_PERCH).add(PERCH_SLICE.get());
 		this.tag(UAItemTags.FOODS_RAW_PIKE).add(PIKE_SLICE.get());
 
-		this.tag(CommonTags.Items.TOOLS_KNIFE).add(SILVER_KNIFE.get(), NECROMIUM_KNIFE.get());
+		this.tag(COPPER_KNIVES).add(COPPER_KNIFE.get(), EXPOSED_COPPER_KNIFE.get(), WEATHERED_COPPER_KNIFE.get(), OXIDIZED_COPPER_KNIFE.get(), WAXED_COPPER_KNIFE.get(), WAXED_EXPOSED_COPPER_KNIFE.get(), WAXED_WEATHERED_COPPER_KNIFE.get(), WAXED_OXIDIZED_COPPER_KNIFE.get());
+		this.tag(CommonTags.Items.TOOLS_KNIFE).addTag(COPPER_KNIVES).add(SILVER_KNIFE.get(), NECROMIUM_KNIFE.get());
 
 		this.tag(Tags.Items.FOODS_COOKIE).add(CHERRY_COOKIE.get(), MAPLE_COOKIE.get(), MULBERRY_COOKIE.get());
 
 		this.tag(ModTags.Items.KNIVES).add(SILVER_KNIFE.get(), NECROMIUM_KNIFE.get());
 		this.tag(ModTags.Items.MEALS).add(SEARED_VENISON.get(), PASSION_FRUIT_GLAZED_DUCK.get(), DUNE_PLATTER.get(), DUCK_NOODLES.get(), PERCH_WITH_MUSHROOMS.get(), PIKE_WITH_BEETROOT.get(), VENISON_WITH_BAMBOO_SHOOTS.get());
 		this.tag(ModTags.Items.DRINKS).add(CHERRY_CREAM_SODA.get(), PASSION_ALOE_NECTAR.get(), PICKERELWEED_JUICE.get());
-
-		this.tag(INGOTS_SILVER);
-		this.tag(INGOTS_NECROMIUM);
 
 		this.tag(AutumnityItemTags.SNAIL_FOOD).add(ModItems.NETHER_SALAD.get());
 		this.tag(EnvironmentalItemTags.SLABFISH_FOOD).add(SLABDISH.get());

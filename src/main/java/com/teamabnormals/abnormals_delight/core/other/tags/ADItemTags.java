@@ -7,9 +7,7 @@ import net.minecraft.world.item.Item;
 
 public class ADItemTags {
 	public static final TagKey<Item> SLABDISH_INGREDIENTS = itemTag("slabdish_ingredients");
-
-	public static final TagKey<Item> INGOTS_NECROMIUM = TagUtil.itemTag("c", "ingots/necromium");
-	public static final TagKey<Item> INGOTS_SILVER = TagUtil.itemTag("c", "ingots/silver");
+	public static final TagKey<Item> COPPER_KNIVES = itemTag("copper_knives");
 
 	private static TagKey<Item> itemTag(String name) {
 		return TagUtil.itemTag(AbnormalsDelight.MOD_ID, name);

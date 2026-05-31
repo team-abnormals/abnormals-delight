@@ -1,9 +1,6 @@
 package com.teamabnormals.abnormals_delight.core.registry;
 
-import com.teamabnormals.abnormals_delight.common.item.CakeSliceItem;
-import com.teamabnormals.abnormals_delight.common.item.ContainerConsumableItem;
-import com.teamabnormals.abnormals_delight.common.item.NectarItem;
-import com.teamabnormals.abnormals_delight.common.item.SlabdishItem;
+import com.teamabnormals.abnormals_delight.common.item.*;
 import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.teamabnormals.abnormals_delight.core.other.ADConstants;
 import com.teamabnormals.abnormals_delight.core.other.ADItemTiers;
@@ -22,6 +19,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.WeatheringCopper.WeatherState;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredItem;
 import vectorwing.farmersdelight.common.FoodValues;
@@ -41,6 +39,15 @@ import static net.minecraft.world.item.crafting.Ingredient.of;
 
 public class ADItems {
 	public static final ItemSubRegistryHelper ITEMS = AbnormalsDelight.REGISTRY_HELPER.getItemSubHelper();
+
+	public static final DeferredItem<Item> COPPER_KNIFE = ITEMS.createItem("copper_knife", ADItemTiers.createCopperKnife(WeatherState.UNAFFECTED));
+	public static final DeferredItem<Item> EXPOSED_COPPER_KNIFE = ITEMS.createItem("exposed_copper_knife", ADItemTiers.createCopperKnife(WeatherState.EXPOSED));
+	public static final DeferredItem<Item> WEATHERED_COPPER_KNIFE = ITEMS.createItem("weathered_copper_knife", ADItemTiers.createCopperKnife(WeatherState.WEATHERED));
+	public static final DeferredItem<Item> OXIDIZED_COPPER_KNIFE = ITEMS.createItem("oxidized_copper_knife", ADItemTiers.createCopperKnife(WeatherState.OXIDIZED));
+	public static final DeferredItem<Item> WAXED_COPPER_KNIFE = ITEMS.createItem("waxed_copper_knife", ADItemTiers.createCopperKnife());
+	public static final DeferredItem<Item> WAXED_EXPOSED_COPPER_KNIFE = ITEMS.createItem("waxed_exposed_copper_knife", ADItemTiers.createCopperKnife());
+	public static final DeferredItem<Item> WAXED_WEATHERED_COPPER_KNIFE = ITEMS.createItem("waxed_weathered_copper_knife", ADItemTiers.createCopperKnife());
+	public static final DeferredItem<Item> WAXED_OXIDIZED_COPPER_KNIFE = ITEMS.createItem("waxed_oxidized_copper_knife", ADItemTiers.createCopperKnife());
 
 	public static final DeferredItem<Item> SILVER_KNIFE = ITEMS.createItem("silver_knife", () -> new KnifeItem(ADItemTiers.SILVER, ModItems.knifeItem(ADItemTiers.SILVER)));
 	public static final DeferredItem<Item> NECROMIUM_KNIFE = ITEMS.createItem("necromium_knife", () -> new KnifeItem(ADItemTiers.NECROMIUM, ModItems.knifeItem(ADItemTiers.NECROMIUM).fireResistant()));
@@ -114,6 +121,7 @@ public class ADItems {
 	public static void setupTabEditors() {
 		CreativeModeTabContentsPopulator.mod(AbnormalsDelight.MOD_ID)
 				.tab(ResourceKey.create(Registries.CREATIVE_MODE_TAB, ResourceLocation.fromNamespaceAndPath("farmersdelight", "farmersdelight")))
+				.addItemsAfter(modLoaded(ModItems.FLINT_KNIFE, ADConstants.CAVERNS_AND_CHASMS), COPPER_KNIFE)
 				.addItemsAfter(modLoaded(ModItems.GOLDEN_KNIFE, ADConstants.CAVERNS_AND_CHASMS), SILVER_KNIFE)
 				.addItemsAfter(modLoaded(ModItems.NETHERITE_KNIFE, ADConstants.CAVERNS_AND_CHASMS), NECROMIUM_KNIFE)
 
