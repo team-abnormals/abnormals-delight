@@ -12,6 +12,8 @@ import com.teamabnormals.autumnity.core.registry.AutumnityBlocks;
 import com.teamabnormals.autumnity.core.registry.AutumnityItems;
 import com.teamabnormals.blueprint.core.data.server.BlueprintRecipeProvider;
 import com.teamabnormals.buzzier_bees.core.registry.BBBlocks;
+import com.teamabnormals.caverns_and_chasms.core.other.tags.CCItemTags;
+import com.teamabnormals.caverns_and_chasms.core.registry.CCBlocks;
 import com.teamabnormals.environmental.core.other.tags.EnvironmentalItemTags;
 import com.teamabnormals.environmental.core.registry.EnvironmentalBlocks;
 import com.teamabnormals.environmental.core.registry.EnvironmentalItems;
@@ -56,6 +58,7 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		this.buildAtmosphericRecipes(output, ATMOSPHERIC_LOADED);
 		this.buildAutumnityRecipes(output, AUTUMNITY_LOADED);
 		this.buildBuzzierBeesRecipes(output, BUZZIER_BEES_LOADED);
+		this.buildCavernsAndChasmsRecipes(output, CAVERNS_AND_CHASMS_LOADED);
 		this.buildEnvironmentalRecipes(output, ENVIRONMENTAL_LOADED);
 		this.buildIncubationRecipes(output, INCUBATION_LOADED);
 		this.buildNeapolitanRecipes(output, NEAPOLITAN_LOADED);
@@ -171,6 +174,16 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		cuttingRecipe(output, BBBlocks.BUTTERCUP, Items.YELLOW_DYE, 2, conditions);
 		cuttingRecipe(output, BBBlocks.PINK_CLOVER, Items.PINK_DYE, 2, conditions);
 		cuttingRecipe(output, BBBlocks.WHITE_CLOVER, Items.WHITE_DYE, 2, conditions);
+	}
+
+	public void buildCavernsAndChasmsRecipes(RecipeOutput output, ICondition... conditions) {
+		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ADItems.SILVER_KNIFE.get()).pattern("m").pattern("s").define('m', CCItemTags.INGOTS_SILVER).define('s', Items.STICK).unlockedBy("has_silver_ingot", has(CCItemTags.INGOTS_SILVER)).save(output.withConditions(conditions));
+		SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(ModItems.DIAMOND_KNIFE.get()), Ingredient.of(Items.NETHERITE_INGOT), RecipeCategory.COMBAT, ModItems.NETHERITE_KNIFE.get()).unlocks("has_necromium_ingot", has(CCItemTags.INGOTS_NECROMIUM)).save(output.withConditions(conditions), AbnormalsDelight.MOD_ID + ":necromium_knife_smithing");
+
+		cabinetRecipe(output, ADBlocks.AZALEA_CABINET, CCBlocks.AZALEA_SLAB, CCBlocks.AZALEA_TRAPDOOR, conditions);
+		salvagePlankFromFurniture(output, CCBlocks.AZALEA_PLANKS, CCBlocks.AZALEA_DOOR, CCBlocks.AZALEA_TRAPDOOR, CCBlocks.AZALEA_SIGNS.getFirst(), CCBlocks.AZALEA_HANGING_SIGNS.getFirst(), conditions);
+		stripLogForBark(output, CCBlocks.AZALEA_LOG, CCBlocks.STRIPPED_AZALEA_LOG, conditions);
+		stripLogForBark(output, CCBlocks.AZALEA_WOOD, CCBlocks.STRIPPED_AZALEA_WOOD, conditions);
 	}
 
 	public void buildEnvironmentalRecipes(RecipeOutput output, ICondition... conditions) {

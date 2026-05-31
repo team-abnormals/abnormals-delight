@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_azalea_trapdoor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "caverns_and_chasms:azalea_trapdoor"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "abnormals_delight:azalea_cabinet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_azalea_trapdoor"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "abnormals_delight:azalea_cabinet"
+    ]
+  }
+}

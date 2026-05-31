@@ -7,6 +7,7 @@ public interface ADConditions {
 	ModLoadedCondition AUTUMNITY_LOADED = new ModLoadedCondition(ADConstants.AUTUMNITY);
 	ModLoadedCondition ATMOSPHERIC_LOADED = new ModLoadedCondition(ADConstants.ATMOSPHERIC);
 	ModLoadedCondition BUZZIER_BEES_LOADED = new ModLoadedCondition(ADConstants.BUZZIER_BEES);
+	ModLoadedCondition CAVERNS_AND_CHASMS_LOADED = new ModLoadedCondition(ADConstants.CAVERNS_AND_CHASMS);
 	ModLoadedCondition ENVIRONMENTAL_LOADED = new ModLoadedCondition(ADConstants.ENVIRONMENTAL);
 	ModLoadedCondition INCUBATION_LOADED = new ModLoadedCondition(ADConstants.INCUBATION);
 	ModLoadedCondition NEAPOLITAN_LOADED = new ModLoadedCondition(ADConstants.NEAPOLITAN);
