@@ -52,7 +52,7 @@ public class ADItemTagsProvider extends ItemTagsProvider {
 
 		this.tag(Tags.Items.FOODS_COOKIE).add(CHERRY_COOKIE.get(), MAPLE_COOKIE.get(), MULBERRY_COOKIE.get());
 
-		this.tag(ModTags.Items.KNIVES).add(SILVER_KNIFE.get(), NECROMIUM_KNIFE.get());
+		this.tag(ModTags.Items.KNIVES).addTag(COPPER_KNIVES).add(SILVER_KNIFE.get(), NECROMIUM_KNIFE.get());
 		this.tag(ModTags.Items.MEALS).add(SEARED_VENISON.get(), PASSION_FRUIT_GLAZED_DUCK.get(), DUNE_PLATTER.get(), DUCK_NOODLES.get(), PERCH_WITH_MUSHROOMS.get(), PIKE_WITH_BEETROOT.get(), VENISON_WITH_BAMBOO_SHOOTS.get());
 		this.tag(ModTags.Items.DRINKS).add(CHERRY_CREAM_SODA.get(), PASSION_ALOE_NECTAR.get(), PICKERELWEED_JUICE.get());
 
