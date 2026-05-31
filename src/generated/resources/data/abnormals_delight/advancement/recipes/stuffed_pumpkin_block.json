@@ -19,7 +19,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/stuffed_pumpkin_block"
+        "recipe": "abnormals_delight:stuffed_pumpkin_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -32,7 +32,7 @@
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/stuffed_pumpkin_block"
+      "abnormals_delight:stuffed_pumpkin_block"
     ]
   }
 }

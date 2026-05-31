@@ -156,7 +156,7 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 				.addIngredient(Tags.Items.FOODS_VEGETABLE)
 				.unlockedByItems(getHasName(AutumnityBlocks.LARGE_PUMPKIN_SLICE), AutumnityBlocks.LARGE_PUMPKIN_SLICE)
 				.setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-				.save(output.withConditions(conditions));
+				.save(output.withConditions(conditions), AbnormalsDelight.location(RecipeBuilder.getDefaultRecipeId(ModItems.STUFFED_PUMPKIN_BLOCK.get()).getPath()));
 
 		cuttingRecipe(output, AutumnityBlocks.AUTUMN_CROCUS, Items.MAGENTA_DYE, 2, conditions);
 
@@ -178,7 +178,7 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 
 	public void buildCavernsAndChasmsRecipes(RecipeOutput output, ICondition... conditions) {
 		ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ADItems.SILVER_KNIFE.get()).pattern("m").pattern("s").define('m', CCItemTags.INGOTS_SILVER).define('s', Items.STICK).unlockedBy("has_silver_ingot", has(CCItemTags.INGOTS_SILVER)).save(output.withConditions(conditions));
-		SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(ModItems.DIAMOND_KNIFE.get()), Ingredient.of(Items.NETHERITE_INGOT), RecipeCategory.COMBAT, ModItems.NETHERITE_KNIFE.get()).unlocks("has_necromium_ingot", has(CCItemTags.INGOTS_NECROMIUM)).save(output.withConditions(conditions), AbnormalsDelight.MOD_ID + ":necromium_knife_smithing");
+		SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(ModItems.DIAMOND_KNIFE.get()), Ingredient.of(Items.NETHERITE_INGOT), RecipeCategory.COMBAT, ModItems.NETHERITE_KNIFE.get()).unlocks("has_necromium_ingot", has(CCItemTags.INGOTS_NECROMIUM)).save(output.withConditions(conditions), AbnormalsDelight.location("necromium_knife_smithing"));
 
 		cabinetRecipe(output, ADBlocks.AZALEA_CABINET, CCBlocks.AZALEA_SLAB, CCBlocks.AZALEA_TRAPDOOR, conditions);
 		salvagePlankFromFurniture(output, CCBlocks.AZALEA_PLANKS, CCBlocks.AZALEA_DOOR, CCBlocks.AZALEA_TRAPDOOR, CCBlocks.AZALEA_SIGNS.getFirst(), CCBlocks.AZALEA_HANGING_SIGNS.getFirst(), conditions);
