@@ -6,7 +6,7 @@ import com.teamabnormals.abnormals_delight.common.item.NectarItem;
 import com.teamabnormals.abnormals_delight.common.item.SlabdishItem;
 import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.teamabnormals.abnormals_delight.core.other.ADConstants;
-import com.teamabnormals.abnormals_delight.core.other.ADTiers;
+import com.teamabnormals.abnormals_delight.core.other.ADItemTiers;
 import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
 import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.registry.ItemSubRegistryHelper;
@@ -24,7 +24,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredItem;
-import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
@@ -43,8 +42,8 @@ import static net.minecraft.world.item.crafting.Ingredient.of;
 public class ADItems {
 	public static final ItemSubRegistryHelper ITEMS = AbnormalsDelight.REGISTRY_HELPER.getItemSubHelper();
 
-	public static final DeferredItem<Item> SILVER_KNIFE = ITEMS.createItem("silver_knife", () -> new KnifeItem(ADTiers.SILVER, new Item.Properties()));
-	public static final DeferredItem<Item> NECROMIUM_KNIFE = ITEMS.createItem("necromium_knife", () -> new KnifeItem(ADTiers.NECROMIUM, new Item.Properties().fireResistant()));
+	public static final DeferredItem<Item> SILVER_KNIFE = ITEMS.createItem("silver_knife", () -> new KnifeItem(ADItemTiers.SILVER, ModItems.knifeItem(ADItemTiers.SILVER)));
+	public static final DeferredItem<Item> NECROMIUM_KNIFE = ITEMS.createItem("necromium_knife", () -> new KnifeItem(ADItemTiers.NECROMIUM, ModItems.knifeItem(ADItemTiers.NECROMIUM).fireResistant()));
 
 	public static final DeferredItem<Item> DUCK_FILLET = ITEMS.createItem("duck_fillet", () -> new Item(new Item.Properties().food(ADFoods.DUCK_FILLET)));
 	public static final DeferredItem<Item> COOKED_DUCK_FILLET = ITEMS.createItem("cooked_duck_fillet", () -> new Item(new Item.Properties().food(ADFoods.COOKED_DUCK_FILLET)));

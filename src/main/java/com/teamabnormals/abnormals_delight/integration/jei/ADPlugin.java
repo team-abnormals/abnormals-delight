@@ -2,7 +2,7 @@ package com.teamabnormals.abnormals_delight.integration.jei;
 
 import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.teamabnormals.abnormals_delight.core.other.ADConstants;
-import com.teamabnormals.abnormals_delight.core.other.ADTiers;
+import com.teamabnormals.abnormals_delight.core.other.ADItemTiers;
 import com.teamabnormals.abnormals_delight.core.registry.ADItems;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
@@ -40,8 +40,8 @@ public class ADPlugin implements IModPlugin {
 		);
 
 		Stream<RepairData> ccTools = Stream.of(
-				new RepairData(ADTiers.SILVER.getRepairIngredient(), new ItemStack(ADItems.SILVER_KNIFE.get())),
-				new RepairData(ADTiers.NECROMIUM.getRepairIngredient(), new ItemStack(ADItems.NECROMIUM_KNIFE.get()))
+				new RepairData(ADItemTiers.SILVER.getRepairIngredient(), new ItemStack(ADItems.SILVER_KNIFE.get())),
+				new RepairData(ADItemTiers.NECROMIUM.getRepairIngredient(), new ItemStack(ADItems.NECROMIUM_KNIFE.get()))
 		);
 
 		return ModList.get().isLoaded(ADConstants.CAVERNS_AND_CHASMS) ? Stream.concat(fdTools, ccTools) : fdTools;
