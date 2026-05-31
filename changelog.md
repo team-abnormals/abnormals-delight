@@ -1,1 +1,6 @@
-* Fixed crashes with Farmer's Delight 1.3.0
+* Re-enabled Caverns & Chasms integration 
+  * Azalea Cabinet
+  * Silver Knife
+  * Necromium Knife
+* Added Copper Knives when Caverns & Chasms is present
+* Fixed Stuffed Pumpkin recipe sometimes being overridden

@@ -7,14 +7,14 @@
   ],
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "minecraft:netherite_ingot"
+    "tag": "c:ingots/necromium"
   },
   "base": {
     "item": "farmersdelight:diamond_knife"
   },
   "result": {
     "count": 1,
-    "id": "farmersdelight:netherite_knife"
+    "id": "abnormals_delight:necromium_knife"
   },
   "template": {
     "item": "minecraft:netherite_upgrade_smithing_template"

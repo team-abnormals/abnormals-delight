@@ -194,7 +194,7 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(SILVER_KNIFE), MISC, CCItems.SILVER_NUGGET, 0.1F, 200).unlockedBy("has_silver_knife", has(SILVER_KNIFE)).save(output.withConditions(conditions), AbnormalsDelight.location("silver_nugget_from_smelting_knife"));
 		SimpleCookingRecipeBuilder.blasting(Ingredient.of(SILVER_KNIFE), MISC, CCItems.SILVER_NUGGET, 0.1F, 100).unlockedBy("has_silver_knife", has(SILVER_KNIFE)).save(output.withConditions(conditions), AbnormalsDelight.location("silver_nugget_from_blasting_knife"));
 
-		SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(ModItems.DIAMOND_KNIFE.get()), Ingredient.of(Items.NETHERITE_INGOT), COMBAT, ModItems.NETHERITE_KNIFE.get()).unlocks("has_necromium_ingot", has(CCItemTags.INGOTS_NECROMIUM)).save(output.withConditions(conditions), AbnormalsDelight.location("necromium_knife_smithing"));
+		SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(ModItems.DIAMOND_KNIFE.get()), Ingredient.of(CCItemTags.INGOTS_NECROMIUM), COMBAT, NECROMIUM_KNIFE.get()).unlocks("has_necromium_ingot", has(CCItemTags.INGOTS_NECROMIUM)).save(output.withConditions(conditions), AbnormalsDelight.location("necromium_knife_smithing"));
 
 		cabinetRecipe(output, AZALEA_CABINET, CCBlocks.AZALEA_SLAB, CCBlocks.AZALEA_TRAPDOOR, conditions);
 		salvagePlankFromFurniture(output, CCBlocks.AZALEA_PLANKS, CCBlocks.AZALEA_DOOR, CCBlocks.AZALEA_TRAPDOOR, CCBlocks.AZALEA_SIGNS.getFirst(), CCBlocks.AZALEA_HANGING_SIGNS.getFirst(), conditions);
@@ -206,7 +206,6 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		ShapedRecipeBuilder.shaped(COMBAT, knife).pattern("m").pattern("s").define('m', block).define('s', Items.STICK).unlockedBy("has_copper_block", has(block)).save(output.withConditions(conditions));
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(knife), MISC, ingot, 0.1F, 200).unlockedBy(getHasName(knife), has(knife)).save(output.withConditions(conditions), AbnormalsDelight.location(getSmeltingRecipeName(ingot)).withSuffix("_" + getItemName(knife)));
 		SimpleCookingRecipeBuilder.blasting(Ingredient.of(knife), MISC, ingot, 0.1F, 100).unlockedBy(getHasName(knife), has(knife)).save(output.withConditions(conditions), AbnormalsDelight.location(getBlastingRecipeName(ingot)).withSuffix("_" + getItemName(knife)));
-
 	}
 
 	public void buildEnvironmentalRecipes(RecipeOutput output, ICondition... conditions) {
@@ -328,7 +327,6 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		cakeRecipe(output, NeapolitanItems.MINT_CAKE, MINT_CAKE_SLICE, conditions);
 		cakeRecipe(output, NeapolitanItems.STRAWBERRY_CAKE, STRAWBERRY_CAKE_SLICE, conditions);
 		cakeRecipe(output, NeapolitanItems.VANILLA_CAKE, VANILLA_CAKE_SLICE, conditions);
-
 	}
 
 	public void buildUpgradeAquaticRecipes(RecipeOutput output, ICondition... conditions) {
