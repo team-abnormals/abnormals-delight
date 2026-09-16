@@ -1,0 +1,41 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "atmospheric"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "boatload"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "atmospheric:rosewood_furnace_boat"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "atmospheric:rosewood_boat"
+      }
+    },
+    {
+      "item": {
+        "count": 1,
+        "id": "minecraft:furnace"
+      }
+    }
+  ],
+  "tool": [
+    {
+      "type": "farmersdelight:item_ability",
+      "action": "hoe_dig"
+    },
+    {
+      "tag": "minecraft:hoes"
+    }
+  ]
+}

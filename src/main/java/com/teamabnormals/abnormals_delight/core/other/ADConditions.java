@@ -6,6 +6,7 @@ import net.neoforged.neoforge.common.conditions.NotCondition;
 public interface ADConditions {
 	ModLoadedCondition AUTUMNITY_LOADED = new ModLoadedCondition(ADConstants.AUTUMNITY);
 	ModLoadedCondition ATMOSPHERIC_LOADED = new ModLoadedCondition(ADConstants.ATMOSPHERIC);
+	ModLoadedCondition BOATLOADED = new ModLoadedCondition(ADConstants.BOATLOAD);
 	ModLoadedCondition BUZZIER_BEES_LOADED = new ModLoadedCondition(ADConstants.BUZZIER_BEES);
 	ModLoadedCondition CAVERNS_AND_CHASMS_LOADED = new ModLoadedCondition(ADConstants.CAVERNS_AND_CHASMS);
 	ModLoadedCondition ENVIRONMENTAL_LOADED = new ModLoadedCondition(ADConstants.ENVIRONMENTAL);

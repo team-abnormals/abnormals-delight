@@ -1,0 +1,37 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "boatload"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "boatload:crimson_chest_boat"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "boatload:crimson_boat"
+      }
+    },
+    {
+      "item": {
+        "count": 1,
+        "id": "minecraft:chest"
+      }
+    }
+  ],
+  "tool": [
+    {
+      "type": "farmersdelight:item_ability",
+      "action": "hoe_dig"
+    },
+    {
+      "tag": "minecraft:hoes"
+    }
+  ]
+}

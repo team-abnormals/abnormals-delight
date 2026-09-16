@@ -9,6 +9,7 @@ public class ADConstants {
 	// Mod IDs
 	public static final String ATMOSPHERIC = "atmospheric";
 	public static final String AUTUMNITY = "autumnity";
+	public static final String BOATLOAD = "boatload";
 	public static final String BUZZIER_BEES = "buzzier_bees";
 	public static final String ENDERGETIC = "endergetic";
 	public static final String ENVIRONMENTAL = "environmental";

@@ -1,0 +1,64 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "atmospheric"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "atmospheric:aspen_door"
+        },
+        {
+          "item": "atmospheric:aspen_trapdoor"
+        },
+        {
+          "item": "atmospheric:aspen_sign"
+        },
+        {
+          "item": "atmospheric:aspen_hanging_sign"
+        },
+        {
+          "item": "atmospheric:aspen_fence"
+        },
+        {
+          "item": "atmospheric:aspen_fence_gate"
+        },
+        {
+          "item": "atmospheric:aspen_pressure_plate"
+        },
+        {
+          "item": "atmospheric:aspen_button"
+        },
+        {
+          "item": "atmospheric:aspen_boat"
+        },
+        {
+          "item": "abnormals_delight:aspen_cabinet"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "chance": 0.75,
+      "item": {
+        "count": 1,
+        "id": "atmospheric:aspen_planks"
+      }
+    }
+  ],
+  "tool": [
+    {
+      "type": "farmersdelight:item_ability",
+      "action": "axe_dig"
+    },
+    {
+      "tag": "minecraft:axes"
+    }
+  ]
+}

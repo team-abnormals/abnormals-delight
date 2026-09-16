@@ -2,48 +2,63 @@ package com.teamabnormals.abnormals_delight.core.data.server;
 
 import com.teamabnormals.abnormals_delight.core.AbnormalsDelight;
 import com.teamabnormals.abnormals_delight.core.other.ADConditions;
+import com.teamabnormals.abnormals_delight.core.other.ADConstants;
 import com.teamabnormals.abnormals_delight.core.other.tags.ADItemTags;
+import com.teamabnormals.atmospheric.core.other.AtmosphericProperties;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericItemTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericItems;
+import com.teamabnormals.atmospheric.integration.boatload.AtmosphericBoatTypes;
 import com.teamabnormals.autumnity.core.registry.AutumnityBlocks;
+import com.teamabnormals.autumnity.core.registry.AutumnityBlocks.AutumnityProperties;
 import com.teamabnormals.autumnity.core.registry.AutumnityItems;
+import com.teamabnormals.autumnity.integration.boatload.AutumnityBoatTypes;
 import com.teamabnormals.blueprint.core.data.server.BlueprintRecipeProvider;
+import com.teamabnormals.boatload.core.api.BoatloadBoatType;
 import com.teamabnormals.buzzier_bees.core.registry.BBBlocks;
 import com.teamabnormals.caverns_and_chasms.core.other.tags.CCItemTags;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCBlocks;
+import com.teamabnormals.caverns_and_chasms.core.registry.CCBlocks.CCProperties;
 import com.teamabnormals.caverns_and_chasms.core.registry.CCItems;
+import com.teamabnormals.caverns_and_chasms.integration.boatload.CCBoatTypes;
+import com.teamabnormals.environmental.core.other.EnvironmentalProperties;
 import com.teamabnormals.environmental.core.other.tags.EnvironmentalItemTags;
 import com.teamabnormals.environmental.core.registry.EnvironmentalBlocks;
 import com.teamabnormals.environmental.core.registry.EnvironmentalItems;
+import com.teamabnormals.environmental.integration.boatload.EnvironmentalBoatTypes;
 import com.teamabnormals.incubation.core.registry.IncubationItems;
 import com.teamabnormals.neapolitan.core.other.tags.NeapolitanItemTags;
 import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
 import com.teamabnormals.upgrade_aquatic.core.other.tags.UAItemTags;
 import com.teamabnormals.upgrade_aquatic.core.registry.UABlocks;
+import com.teamabnormals.upgrade_aquatic.core.registry.UABlocks.UAProperties;
 import com.teamabnormals.upgrade_aquatic.core.registry.UAItems;
+import com.teamabnormals.upgrade_aquatic.integration.boatload.UABoatTypes;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.levelgen.WorldDimensions.Complete;
-import net.neoforged.neoforge.common.ItemAbilities;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.ICondition;
+import org.apache.commons.lang3.ArrayUtils;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
-import vectorwing.farmersdelight.common.crafting.ingredient.ItemAbilityIngredient;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 import vectorwing.farmersdelight.data.recipe.CookingRecipes;
+import vectorwing.farmersdelight.data.recipe.CuttingRecipes;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import static com.teamabnormals.abnormals_delight.core.registry.ADBlocks.*;
@@ -61,6 +76,7 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		this.buildMixedRecipes(output);
 		this.buildAtmosphericRecipes(output, ATMOSPHERIC_LOADED);
 		this.buildAutumnityRecipes(output, AUTUMNITY_LOADED);
+		this.buildBoatloadRecipes(output, BOATLOADED);
 		this.buildBuzzierBeesRecipes(output, BUZZIER_BEES_LOADED);
 		this.buildCavernsAndChasmsRecipes(output, CAVERNS_AND_CHASMS_LOADED);
 		this.buildEnvironmentalRecipes(output, ENVIRONMENTAL_LOADED);
@@ -99,13 +115,21 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		cabinetRecipe(output, LAUREL_CABINET, AtmosphericBlocks.LAUREL_SLAB, AtmosphericBlocks.LAUREL_TRAPDOOR, conditions);
 		cabinetRecipe(output, GRIMWOOD_CABINET, AtmosphericBlocks.GRIMWOOD_SLAB, AtmosphericBlocks.GRIMWOOD_TRAPDOOR, conditions);
 
-		salvagePlankFromFurniture(output, AtmosphericBlocks.ROSEWOOD_PLANKS, AtmosphericBlocks.ROSEWOOD_DOOR, AtmosphericBlocks.ROSEWOOD_TRAPDOOR, AtmosphericBlocks.ROSEWOOD_SIGNS.getFirst(), AtmosphericBlocks.ROSEWOOD_HANGING_SIGNS.getFirst(), conditions);
-		salvagePlankFromFurniture(output, AtmosphericBlocks.MORADO_PLANKS, AtmosphericBlocks.MORADO_DOOR, AtmosphericBlocks.MORADO_TRAPDOOR, AtmosphericBlocks.MORADO_SIGNS.getFirst(), AtmosphericBlocks.MORADO_HANGING_SIGNS.getFirst(), conditions);
-		salvagePlankFromFurniture(output, AtmosphericBlocks.YUCCA_PLANKS, AtmosphericBlocks.YUCCA_DOOR, AtmosphericBlocks.YUCCA_TRAPDOOR, AtmosphericBlocks.YUCCA_SIGNS.getFirst(), AtmosphericBlocks.YUCCA_HANGING_SIGNS.getFirst(), conditions);
-		salvagePlankFromFurniture(output, AtmosphericBlocks.KOUSA_PLANKS, AtmosphericBlocks.KOUSA_DOOR, AtmosphericBlocks.KOUSA_TRAPDOOR, AtmosphericBlocks.KOUSA_SIGNS.getFirst(), AtmosphericBlocks.KOUSA_HANGING_SIGNS.getFirst(), conditions);
-		salvagePlankFromFurniture(output, AtmosphericBlocks.ASPEN_PLANKS, AtmosphericBlocks.ASPEN_DOOR, AtmosphericBlocks.ASPEN_TRAPDOOR, AtmosphericBlocks.ASPEN_SIGNS.getFirst(), AtmosphericBlocks.ASPEN_HANGING_SIGNS.getFirst(), conditions);
-		salvagePlankFromFurniture(output, AtmosphericBlocks.LAUREL_PLANKS, AtmosphericBlocks.LAUREL_DOOR, AtmosphericBlocks.LAUREL_TRAPDOOR, AtmosphericBlocks.LAUREL_SIGNS.getFirst(), AtmosphericBlocks.LAUREL_HANGING_SIGNS.getFirst(), conditions);
-		salvagePlankFromFurniture(output, AtmosphericBlocks.GRIMWOOD_PLANKS, AtmosphericBlocks.GRIMWOOD_DOOR, AtmosphericBlocks.GRIMWOOD_TRAPDOOR, AtmosphericBlocks.GRIMWOOD_SIGNS.getFirst(), AtmosphericBlocks.GRIMWOOD_HANGING_SIGNS.getFirst(), conditions);
+		salvagePlankFromFurniture(output, AtmosphericProperties.ROSEWOOD_WOOD_TYPE, AtmosphericBlocks.ROSEWOOD_PLANKS, List.of(AtmosphericBlocks.ROSEWOOD_DOOR, AtmosphericBlocks.ROSEWOOD_TRAPDOOR, AtmosphericBlocks.ROSEWOOD_SIGNS.getFirst(), AtmosphericBlocks.ROSEWOOD_HANGING_SIGNS.getFirst(), AtmosphericBlocks.ROSEWOOD_FENCE, AtmosphericBlocks.ROSEWOOD_FENCE_GATE, AtmosphericBlocks.ROSEWOOD_PRESSURE_PLATE, AtmosphericBlocks.ROSEWOOD_BUTTON, AtmosphericItems.ROSEWOOD_BOAT, ROSEWOOD_CABINET), conditions);
+		salvagePlankFromFurniture(output, AtmosphericProperties.MORADO_WOOD_TYPE, AtmosphericBlocks.MORADO_PLANKS, List.of(AtmosphericBlocks.MORADO_DOOR, AtmosphericBlocks.MORADO_TRAPDOOR, AtmosphericBlocks.MORADO_SIGNS.getFirst(), AtmosphericBlocks.MORADO_HANGING_SIGNS.getFirst(), AtmosphericBlocks.MORADO_FENCE, AtmosphericBlocks.MORADO_FENCE_GATE, AtmosphericBlocks.MORADO_PRESSURE_PLATE, AtmosphericBlocks.MORADO_BUTTON, AtmosphericItems.MORADO_BOAT, MORADO_CABINET), conditions);
+		salvagePlankFromFurniture(output, AtmosphericProperties.YUCCA_WOOD_TYPE, AtmosphericBlocks.YUCCA_PLANKS, List.of(AtmosphericBlocks.YUCCA_DOOR, AtmosphericBlocks.YUCCA_TRAPDOOR, AtmosphericBlocks.YUCCA_SIGNS.getFirst(), AtmosphericBlocks.YUCCA_HANGING_SIGNS.getFirst(), AtmosphericBlocks.YUCCA_FENCE, AtmosphericBlocks.YUCCA_FENCE_GATE, AtmosphericBlocks.YUCCA_PRESSURE_PLATE, AtmosphericBlocks.YUCCA_BUTTON, AtmosphericItems.YUCCA_BOAT, YUCCA_CABINET), conditions);
+		salvagePlankFromFurniture(output, AtmosphericProperties.KOUSA_WOOD_TYPE, AtmosphericBlocks.KOUSA_PLANKS, List.of(AtmosphericBlocks.KOUSA_DOOR, AtmosphericBlocks.KOUSA_TRAPDOOR, AtmosphericBlocks.KOUSA_SIGNS.getFirst(), AtmosphericBlocks.KOUSA_HANGING_SIGNS.getFirst(), AtmosphericBlocks.KOUSA_FENCE, AtmosphericBlocks.KOUSA_FENCE_GATE, AtmosphericBlocks.KOUSA_PRESSURE_PLATE, AtmosphericBlocks.KOUSA_BUTTON, AtmosphericItems.KOUSA_BOAT, KOUSA_CABINET), conditions);
+		salvagePlankFromFurniture(output, AtmosphericProperties.ASPEN_WOOD_TYPE, AtmosphericBlocks.ASPEN_PLANKS, List.of(AtmosphericBlocks.ASPEN_DOOR, AtmosphericBlocks.ASPEN_TRAPDOOR, AtmosphericBlocks.ASPEN_SIGNS.getFirst(), AtmosphericBlocks.ASPEN_HANGING_SIGNS.getFirst(), AtmosphericBlocks.ASPEN_FENCE, AtmosphericBlocks.ASPEN_FENCE_GATE, AtmosphericBlocks.ASPEN_PRESSURE_PLATE, AtmosphericBlocks.ASPEN_BUTTON, AtmosphericItems.ASPEN_BOAT, ASPEN_CABINET), conditions);
+		salvagePlankFromFurniture(output, AtmosphericProperties.LAUREL_WOOD_TYPE, AtmosphericBlocks.LAUREL_PLANKS, List.of(AtmosphericBlocks.LAUREL_DOOR, AtmosphericBlocks.LAUREL_TRAPDOOR, AtmosphericBlocks.LAUREL_SIGNS.getFirst(), AtmosphericBlocks.LAUREL_HANGING_SIGNS.getFirst(), AtmosphericBlocks.LAUREL_FENCE, AtmosphericBlocks.LAUREL_FENCE_GATE, AtmosphericBlocks.LAUREL_PRESSURE_PLATE, AtmosphericBlocks.LAUREL_BUTTON, AtmosphericItems.LAUREL_BOAT, LAUREL_CABINET), conditions);
+		salvagePlankFromFurniture(output, AtmosphericProperties.GRIMWOOD_WOOD_TYPE, AtmosphericBlocks.GRIMWOOD_PLANKS, List.of(AtmosphericBlocks.GRIMWOOD_DOOR, AtmosphericBlocks.GRIMWOOD_TRAPDOOR, AtmosphericBlocks.GRIMWOOD_SIGNS.getFirst(), AtmosphericBlocks.GRIMWOOD_HANGING_SIGNS.getFirst(), AtmosphericBlocks.GRIMWOOD_FENCE, AtmosphericBlocks.GRIMWOOD_FENCE_GATE, AtmosphericBlocks.GRIMWOOD_PRESSURE_PLATE, AtmosphericBlocks.GRIMWOOD_BUTTON, AtmosphericItems.GRIMWOOD_BOAT, GRIMWOOD_CABINET), conditions);
+
+		salvageBlockFromVehicle(output, AtmosphericBoatTypes.ROSEWOOD, conditions);
+		salvageBlockFromVehicle(output, AtmosphericBoatTypes.MORADO, conditions);
+		salvageBlockFromVehicle(output, AtmosphericBoatTypes.YUCCA, conditions);
+		salvageBlockFromVehicle(output, AtmosphericBoatTypes.KOUSA, conditions);
+		salvageBlockFromVehicle(output, AtmosphericBoatTypes.ASPEN, conditions);
+		salvageBlockFromVehicle(output, AtmosphericBoatTypes.LAUREL, conditions);
+		salvageBlockFromVehicle(output, AtmosphericBoatTypes.GRIMWOOD, conditions);
 
 		stripLogForBark(output, AtmosphericBlocks.ROSEWOOD_LOG, AtmosphericBlocks.STRIPPED_ROSEWOOD_LOG, conditions);
 		stripLogForBark(output, AtmosphericBlocks.ROSEWOOD, AtmosphericBlocks.STRIPPED_ROSEWOOD, conditions);
@@ -169,9 +193,24 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		cuttingRecipe(output, AutumnityBlocks.LARGE_PUMPKIN_SLICE, ModItems.PUMPKIN_SLICE.get(), 4, conditions);
 
 		cabinetRecipe(output, MAPLE_CABINET, AutumnityBlocks.MAPLE_SLAB, AutumnityBlocks.MAPLE_TRAPDOOR, conditions);
-		salvagePlankFromFurniture(output, AutumnityBlocks.MAPLE_PLANKS, AutumnityBlocks.MAPLE_DOOR, AutumnityBlocks.MAPLE_TRAPDOOR, AutumnityBlocks.MAPLE_SIGNS.getFirst(), AutumnityBlocks.MAPLE_HANGING_SIGNS.getFirst(), conditions);
+		salvagePlankFromFurniture(output, AutumnityProperties.MAPLE_WOOD_TYPE, AutumnityBlocks.MAPLE_PLANKS, List.of(AutumnityBlocks.MAPLE_DOOR, AutumnityBlocks.MAPLE_TRAPDOOR, AutumnityBlocks.MAPLE_SIGNS.getFirst(), AutumnityBlocks.MAPLE_HANGING_SIGNS.getFirst(), AutumnityBlocks.MAPLE_FENCE, AutumnityBlocks.MAPLE_FENCE_GATE, AutumnityBlocks.MAPLE_PRESSURE_PLATE, AutumnityBlocks.MAPLE_BUTTON, AutumnityItems.MAPLE_BOAT.getFirst(), MAPLE_CABINET), conditions);
+		salvageBlockFromVehicle(output, AutumnityBoatTypes.MAPLE, conditions);
 		stripLogForBark(output, AutumnityBlocks.MAPLE_LOG, AutumnityBlocks.STRIPPED_MAPLE_LOG, conditions);
 		stripLogForBark(output, AutumnityBlocks.MAPLE_WOOD, AutumnityBlocks.STRIPPED_MAPLE_WOOD, conditions);
+	}
+
+	public void buildBoatloadRecipes(RecipeOutput output, ICondition... conditions) {
+		salvageBlockFromVehicle(output, BoatloadBoatType.OAK, conditions);
+		salvageBlockFromVehicle(output, BoatloadBoatType.BIRCH, conditions);
+		salvageBlockFromVehicle(output, BoatloadBoatType.SPRUCE, conditions);
+		salvageBlockFromVehicle(output, BoatloadBoatType.JUNGLE, conditions);
+		salvageBlockFromVehicle(output, BoatloadBoatType.ACACIA, conditions);
+		salvageBlockFromVehicle(output, BoatloadBoatType.DARK_OAK, conditions);
+		salvageBlockFromVehicle(output, BoatloadBoatType.MANGROVE, conditions);
+		salvageBlockFromVehicle(output, BoatloadBoatType.CHERRY, conditions);
+		salvageBlockFromVehicle(output, BoatloadBoatType.BAMBOO, conditions);
+		salvageBlockFromVehicle(output, BoatloadBoatType.CRIMSON, conditions);
+		salvageBlockFromVehicle(output, BoatloadBoatType.WARPED, conditions);
 	}
 
 	public void buildBuzzierBeesRecipes(RecipeOutput output, ICondition... conditions) {
@@ -195,13 +234,18 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		SimpleCookingRecipeBuilder.blasting(Ingredient.of(SILVER_KNIFE), MISC, CCItems.SILVER_NUGGET, 0.1F, 100).unlockedBy("has_silver_knife", has(SILVER_KNIFE)).save(output.withConditions(conditions), AbnormalsDelight.location("silver_nugget_from_blasting_knife"));
 
 		SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(ModItems.DIAMOND_KNIFE.get()), Ingredient.of(CCItemTags.INGOTS_NECROMIUM), COMBAT, NECROMIUM_KNIFE.get()).unlocks("has_necromium_ingot", has(CCItemTags.INGOTS_NECROMIUM)).save(output.withConditions(conditions), AbnormalsDelight.location("necromium_knife_smithing"));
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CCItems.TMT_MINECART), CuttingRecipes.HOES, Items.MINECART).addResult(CCBlocks.TMT).addSound(SoundEvents.METAL_BREAK).salvaging().save(output.withConditions(conditions));
+
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CCBlocks.LAPIS_LAZULI_BRICKS.get()), CuttingRecipes.PICKAXES, Items.LAPIS_LAZULI, 4).salvaging().save(output.withConditions(conditions));
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CCBlocks.SPINEL_BRICKS.get()), CuttingRecipes.PICKAXES, CCItems.SPINEL.get(), 4).salvaging().save(output.withConditions(conditions));
 
 		cabinetRecipe(output, AZALEA_CABINET, CCBlocks.AZALEA_SLAB, CCBlocks.AZALEA_TRAPDOOR, conditions);
-		salvagePlankFromFurniture(output, CCBlocks.AZALEA_PLANKS, CCBlocks.AZALEA_DOOR, CCBlocks.AZALEA_TRAPDOOR, CCBlocks.AZALEA_SIGNS.getFirst(), CCBlocks.AZALEA_HANGING_SIGNS.getFirst(), conditions);
+		salvagePlankFromFurniture(output, CCProperties.AZALEA_WOOD_TYPE, CCBlocks.AZALEA_PLANKS, List.of(CCBlocks.AZALEA_DOOR, CCBlocks.AZALEA_TRAPDOOR, CCBlocks.AZALEA_SIGNS.getFirst(), CCBlocks.AZALEA_HANGING_SIGNS.getFirst(), CCBlocks.AZALEA_FENCE, CCBlocks.AZALEA_FENCE_GATE, CCBlocks.AZALEA_PRESSURE_PLATE, CCBlocks.AZALEA_BUTTON, CCItems.AZALEA_BOAT.getFirst(), AZALEA_CABINET), conditions);
+		salvageBlockFromVehicle(output, CCBoatTypes.AZALEA, conditions);
 		stripLogForBark(output, CCBlocks.AZALEA_LOG, CCBlocks.STRIPPED_AZALEA_LOG, conditions);
 		stripLogForBark(output, CCBlocks.AZALEA_WOOD, CCBlocks.STRIPPED_AZALEA_WOOD, conditions);
 	}
-	
+
 	public static void copperKnifeRecipes(RecipeOutput output, ItemLike knife, ItemLike block, ItemLike ingot, ICondition... conditions) {
 		ShapedRecipeBuilder.shaped(COMBAT, knife).pattern("m").pattern("s").define('m', block).define('s', Items.STICK).unlockedBy("has_copper_block", has(block)).save(output.withConditions(conditions));
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(knife), MISC, ingot, 0.1F, 200).unlockedBy(getHasName(knife), has(knife)).save(output.withConditions(conditions), AbnormalsDelight.location(getSmeltingRecipeName(ingot)).withSuffix("_" + getItemName(knife)));
@@ -260,10 +304,15 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		cabinetRecipe(output, PLUM_CABINET, EnvironmentalBlocks.PLUM_SLAB, EnvironmentalBlocks.PLUM_TRAPDOOR, conditions);
 		cabinetRecipe(output, PINE_CABINET, EnvironmentalBlocks.PINE_SLAB, EnvironmentalBlocks.PINE_TRAPDOOR, conditions);
 
-		salvagePlankFromFurniture(output, EnvironmentalBlocks.WILLOW_PLANKS, EnvironmentalBlocks.WILLOW_DOOR, EnvironmentalBlocks.WILLOW_TRAPDOOR, EnvironmentalBlocks.WILLOW_SIGNS.getFirst(), EnvironmentalBlocks.WILLOW_HANGING_SIGNS.getFirst(), conditions);
-		salvagePlankFromFurniture(output, EnvironmentalBlocks.WISTERIA_PLANKS, EnvironmentalBlocks.WISTERIA_DOOR, EnvironmentalBlocks.WISTERIA_TRAPDOOR, EnvironmentalBlocks.WISTERIA_SIGNS.getFirst(), EnvironmentalBlocks.WISTERIA_HANGING_SIGNS.getFirst(), conditions);
-		salvagePlankFromFurniture(output, EnvironmentalBlocks.PLUM_PLANKS, EnvironmentalBlocks.PLUM_DOOR, EnvironmentalBlocks.PLUM_TRAPDOOR, EnvironmentalBlocks.PLUM_SIGNS.getFirst(), EnvironmentalBlocks.PLUM_HANGING_SIGNS.getFirst(), conditions);
-		salvagePlankFromFurniture(output, EnvironmentalBlocks.PINE_PLANKS, EnvironmentalBlocks.PINE_DOOR, EnvironmentalBlocks.PINE_TRAPDOOR, EnvironmentalBlocks.PINE_SIGNS.getFirst(), EnvironmentalBlocks.PINE_HANGING_SIGNS.getFirst(), conditions);
+		salvagePlankFromFurniture(output, EnvironmentalProperties.WILLOW_WOOD_TYPE, EnvironmentalBlocks.WILLOW_PLANKS, List.of(EnvironmentalBlocks.WILLOW_DOOR, EnvironmentalBlocks.WILLOW_TRAPDOOR, EnvironmentalBlocks.WILLOW_SIGNS.getFirst(), EnvironmentalBlocks.WILLOW_HANGING_SIGNS.getFirst(), EnvironmentalBlocks.WILLOW_FENCE, EnvironmentalBlocks.WILLOW_FENCE_GATE, EnvironmentalBlocks.WILLOW_PRESSURE_PLATE, EnvironmentalBlocks.WILLOW_BUTTON, EnvironmentalItems.WILLOW_BOAT.getFirst(), WILLOW_CABINET), conditions);
+		salvagePlankFromFurniture(output, EnvironmentalProperties.WISTERIA_WOOD_TYPE, EnvironmentalBlocks.WISTERIA_PLANKS, List.of(EnvironmentalBlocks.WISTERIA_DOOR, EnvironmentalBlocks.WISTERIA_TRAPDOOR, EnvironmentalBlocks.WISTERIA_SIGNS.getFirst(), EnvironmentalBlocks.WISTERIA_HANGING_SIGNS.getFirst(), EnvironmentalBlocks.WISTERIA_FENCE, EnvironmentalBlocks.WISTERIA_FENCE_GATE, EnvironmentalBlocks.WISTERIA_PRESSURE_PLATE, EnvironmentalBlocks.WISTERIA_BUTTON, EnvironmentalItems.WISTERIA_BOAT.getFirst(), WISTERIA_CABINET), conditions);
+		salvagePlankFromFurniture(output, EnvironmentalProperties.PLUM_WOOD_TYPE, EnvironmentalBlocks.PLUM_PLANKS, List.of(EnvironmentalBlocks.PLUM_DOOR, EnvironmentalBlocks.PLUM_TRAPDOOR, EnvironmentalBlocks.PLUM_SIGNS.getFirst(), EnvironmentalBlocks.PLUM_HANGING_SIGNS.getFirst(), EnvironmentalBlocks.PLUM_FENCE, EnvironmentalBlocks.PLUM_FENCE_GATE, EnvironmentalBlocks.PLUM_PRESSURE_PLATE, EnvironmentalBlocks.PLUM_BUTTON, EnvironmentalItems.PLUM_BOAT.getFirst(), PLUM_CABINET), conditions);
+		salvagePlankFromFurniture(output, EnvironmentalProperties.PINE_WOOD_TYPE, EnvironmentalBlocks.PINE_PLANKS, List.of(EnvironmentalBlocks.PINE_DOOR, EnvironmentalBlocks.PINE_TRAPDOOR, EnvironmentalBlocks.PINE_SIGNS.getFirst(), EnvironmentalBlocks.PINE_HANGING_SIGNS.getFirst(), EnvironmentalBlocks.PINE_FENCE, EnvironmentalBlocks.PINE_FENCE_GATE, EnvironmentalBlocks.PINE_PRESSURE_PLATE, EnvironmentalBlocks.PINE_BUTTON, EnvironmentalItems.PINE_BOAT.getFirst(), PINE_CABINET), conditions);
+
+		salvageBlockFromVehicle(output, EnvironmentalBoatTypes.WILLOW, conditions);
+		salvageBlockFromVehicle(output, EnvironmentalBoatTypes.WISTERIA, conditions);
+		salvageBlockFromVehicle(output, EnvironmentalBoatTypes.PLUM, conditions);
+		salvageBlockFromVehicle(output, EnvironmentalBoatTypes.PINE, conditions);
 
 		stripLogForBark(output, EnvironmentalBlocks.WILLOW_LOG, EnvironmentalBlocks.STRIPPED_WILLOW_LOG, conditions);
 		stripLogForBark(output, EnvironmentalBlocks.WILLOW_WOOD, EnvironmentalBlocks.STRIPPED_WILLOW_WOOD, conditions);
@@ -364,8 +413,11 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 		cabinetRecipe(output, DRIFTWOOD_CABINET, UABlocks.DRIFTWOOD_SLAB, UABlocks.DRIFTWOOD_TRAPDOOR, conditions);
 		cabinetRecipe(output, RIVER_CABINET, UABlocks.RIVER_SLAB, UABlocks.RIVER_TRAPDOOR, conditions);
 
-		salvagePlankFromFurniture(output, UABlocks.DRIFTWOOD_PLANKS, UABlocks.DRIFTWOOD_DOOR, UABlocks.DRIFTWOOD_TRAPDOOR, UABlocks.DRIFTWOOD_SIGNS.getFirst(), UABlocks.DRIFTWOOD_HANGING_SIGNS.getFirst(), conditions);
-		salvagePlankFromFurniture(output, UABlocks.RIVER_PLANKS, UABlocks.RIVER_DOOR, UABlocks.RIVER_TRAPDOOR, UABlocks.RIVER_SIGNS.getFirst(), UABlocks.RIVER_HANGING_SIGNS.getFirst(), conditions);
+		salvagePlankFromFurniture(output, UAProperties.DRIFTWOOD_WOOD_TYPE, UABlocks.DRIFTWOOD_PLANKS, List.of(UABlocks.DRIFTWOOD_DOOR, UABlocks.DRIFTWOOD_TRAPDOOR, UABlocks.DRIFTWOOD_SIGNS.getFirst(), UABlocks.DRIFTWOOD_HANGING_SIGNS.getFirst(), UABlocks.DRIFTWOOD_FENCE, UABlocks.DRIFTWOOD_FENCE_GATE, UABlocks.DRIFTWOOD_PRESSURE_PLATE, UABlocks.DRIFTWOOD_BUTTON, UAItems.DRIFTWOOD_BOAT.getFirst(), DRIFTWOOD_CABINET), conditions);
+		salvagePlankFromFurniture(output, UAProperties.RIVER_WOOD_TYPE, UABlocks.RIVER_PLANKS, List.of(UABlocks.RIVER_DOOR, UABlocks.RIVER_TRAPDOOR, UABlocks.RIVER_SIGNS.getFirst(), UABlocks.RIVER_HANGING_SIGNS.getFirst(), UABlocks.RIVER_FENCE, UABlocks.RIVER_FENCE_GATE, UABlocks.RIVER_PRESSURE_PLATE, UABlocks.RIVER_BUTTON, UAItems.RIVER_BOAT.getFirst(), RIVER_CABINET), conditions);
+
+		salvageBlockFromVehicle(output, UABoatTypes.DRIFTWOOD, conditions);
+		salvageBlockFromVehicle(output, UABoatTypes.RIVER, conditions);
 
 		stripLogForBark(output, UABlocks.DRIFTWOOD_LOG, UABlocks.STRIPPED_DRIFTWOOD_LOG, conditions);
 		stripLogForBark(output, UABlocks.DRIFTWOOD, UABlocks.STRIPPED_DRIFTWOOD, conditions);
@@ -392,23 +444,29 @@ public class ADRecipeProvider extends BlueprintRecipeProvider implements ADCondi
 				.group("fd_cabinet").save(output.withConditions(conditions));
 	}
 
-	private static void salvagePlankFromFurniture(RecipeOutput output, ItemLike plank, ItemLike door, ItemLike trapdoor, ItemLike sign, ItemLike hangingSign, ICondition... conditions) {
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(door), new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), plank).save(output.withConditions(conditions));
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(trapdoor), new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), plank).save(output.withConditions(conditions));
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(sign), new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), plank).save(output.withConditions(conditions));
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(hangingSign), new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), plank).save(output.withConditions(conditions));
+	private static void salvagePlankFromFurniture(RecipeOutput output, WoodType woodType, ItemLike plank, List<? extends ItemLike> furniture, ICondition... conditions) {
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(furniture.stream().map(ItemStack::new)), CuttingRecipes.AXES, plank, 1, 0.75F).salvaging().save(output.withConditions(conditions), ResourceLocation.parse(woodType.name()).withPrefix("salvaging/").withSuffix("_furniture"));
+	}
+
+	private static void salvageBlockFromVehicle(RecipeOutput output, BoatloadBoatType boatType, ICondition... conditions) {
+		if (!boatType.registryName().getNamespace().equals(ADConstants.BOATLOAD) || boatType.fireproof()) {
+			CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(boatType.chestBoat().get()), CuttingRecipes.HOES, boatType.boat().get()).addResult(Items.CHEST).salvaging().save(output.withConditions(conditions));
+		}
+
+		ICondition[] boatloadConditions = Arrays.stream(conditions).anyMatch(condition -> condition == BOATLOADED) ? conditions : ArrayUtils.add(conditions, BOATLOADED);
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(boatType.furnaceBoat().get()), CuttingRecipes.HOES, boatType.boat().get()).addResult(Items.FURNACE).salvaging().save(output.withConditions(boatloadConditions));
 	}
 
 	private static void cuttingRecipe(RecipeOutput output, ItemLike input, ItemLike cut, int count, ICondition... conditions) {
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(input), Ingredient.of(CommonTags.Items.TOOLS_KNIFE), cut, count).save(output.withConditions(conditions));
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(input), CuttingRecipes.KNIVES, cut, count).save(output.withConditions(conditions));
 	}
 
 	private static void cuttingFish(RecipeOutput output, ItemLike input, ItemLike cut, int count, ICondition... conditions) {
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(input), Ingredient.of(CommonTags.Items.TOOLS_KNIFE), cut, count).addResult(Items.BONE_MEAL).save(output.withConditions(conditions));
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(input), CuttingRecipes.KNIVES, cut, count).addResult(Items.BONE_MEAL).save(output.withConditions(conditions));
 	}
 
 	private static void stripLogForBark(RecipeOutput output, ItemLike log, ItemLike strippedLog, ICondition... conditions) {
-		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(), strippedLog).addResult(ModItems.TREE_BARK.get()).addSound(SoundEvents.AXE_STRIP).save(output.withConditions(conditions));
+		CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), CuttingRecipes.AXES_STRIP, strippedLog).addResult(ModItems.TREE_BARK.get()).addSound(SoundEvents.AXE_STRIP).save(output.withConditions(conditions));
 	}
 
 	private void cakeRecipe(RecipeOutput output, ItemLike cake, ItemLike slice, ICondition... conditions) {

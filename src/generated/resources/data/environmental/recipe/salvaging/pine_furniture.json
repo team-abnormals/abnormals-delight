@@ -1,0 +1,64 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "environmental"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "environmental:pine_door"
+        },
+        {
+          "item": "environmental:pine_trapdoor"
+        },
+        {
+          "item": "environmental:pine_sign"
+        },
+        {
+          "item": "environmental:pine_hanging_sign"
+        },
+        {
+          "item": "environmental:pine_fence"
+        },
+        {
+          "item": "environmental:pine_fence_gate"
+        },
+        {
+          "item": "environmental:pine_pressure_plate"
+        },
+        {
+          "item": "environmental:pine_button"
+        },
+        {
+          "item": "environmental:pine_boat"
+        },
+        {
+          "item": "abnormals_delight:pine_cabinet"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "chance": 0.75,
+      "item": {
+        "count": 1,
+        "id": "environmental:pine_planks"
+      }
+    }
+  ],
+  "tool": [
+    {
+      "type": "farmersdelight:item_ability",
+      "action": "axe_dig"
+    },
+    {
+      "tag": "minecraft:axes"
+    }
+  ]
+}

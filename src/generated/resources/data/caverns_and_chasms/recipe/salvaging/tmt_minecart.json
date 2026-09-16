@@ -1,0 +1,40 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "caverns_and_chasms:tmt_minecart"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "minecraft:minecart"
+      }
+    },
+    {
+      "item": {
+        "count": 1,
+        "id": "caverns_and_chasms:tmt"
+      }
+    }
+  ],
+  "sound": {
+    "sound_id": "minecraft:block.metal.break"
+  },
+  "tool": [
+    {
+      "type": "farmersdelight:item_ability",
+      "action": "hoe_dig"
+    },
+    {
+      "tag": "minecraft:hoes"
+    }
+  ]
+}

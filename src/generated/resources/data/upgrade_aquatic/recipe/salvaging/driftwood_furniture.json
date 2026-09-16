@@ -1,0 +1,64 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "upgrade_aquatic"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "upgrade_aquatic:driftwood_door"
+        },
+        {
+          "item": "upgrade_aquatic:driftwood_trapdoor"
+        },
+        {
+          "item": "upgrade_aquatic:driftwood_sign"
+        },
+        {
+          "item": "upgrade_aquatic:driftwood_hanging_sign"
+        },
+        {
+          "item": "upgrade_aquatic:driftwood_fence"
+        },
+        {
+          "item": "upgrade_aquatic:driftwood_fence_gate"
+        },
+        {
+          "item": "upgrade_aquatic:driftwood_pressure_plate"
+        },
+        {
+          "item": "upgrade_aquatic:driftwood_button"
+        },
+        {
+          "item": "upgrade_aquatic:driftwood_boat"
+        },
+        {
+          "item": "abnormals_delight:driftwood_cabinet"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "chance": 0.75,
+      "item": {
+        "count": 1,
+        "id": "upgrade_aquatic:driftwood_planks"
+      }
+    }
+  ],
+  "tool": [
+    {
+      "type": "farmersdelight:item_ability",
+      "action": "axe_dig"
+    },
+    {
+      "tag": "minecraft:axes"
+    }
+  ]
+}

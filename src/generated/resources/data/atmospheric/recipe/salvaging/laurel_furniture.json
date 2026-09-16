@@ -1,0 +1,64 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "atmospheric"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "atmospheric:laurel_door"
+        },
+        {
+          "item": "atmospheric:laurel_trapdoor"
+        },
+        {
+          "item": "atmospheric:laurel_sign"
+        },
+        {
+          "item": "atmospheric:laurel_hanging_sign"
+        },
+        {
+          "item": "atmospheric:laurel_fence"
+        },
+        {
+          "item": "atmospheric:laurel_fence_gate"
+        },
+        {
+          "item": "atmospheric:laurel_pressure_plate"
+        },
+        {
+          "item": "atmospheric:laurel_button"
+        },
+        {
+          "item": "atmospheric:laurel_boat"
+        },
+        {
+          "item": "abnormals_delight:laurel_cabinet"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "chance": 0.75,
+      "item": {
+        "count": 1,
+        "id": "atmospheric:laurel_planks"
+      }
+    }
+  ],
+  "tool": [
+    {
+      "type": "farmersdelight:item_ability",
+      "action": "axe_dig"
+    },
+    {
+      "tag": "minecraft:axes"
+    }
+  ]
+}

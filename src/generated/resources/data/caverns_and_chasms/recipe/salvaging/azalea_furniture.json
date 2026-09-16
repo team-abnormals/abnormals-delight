@@ -1,0 +1,64 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "caverns_and_chasms"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "neoforge:compound",
+      "children": [
+        {
+          "item": "caverns_and_chasms:azalea_door"
+        },
+        {
+          "item": "caverns_and_chasms:azalea_trapdoor"
+        },
+        {
+          "item": "caverns_and_chasms:azalea_sign"
+        },
+        {
+          "item": "caverns_and_chasms:azalea_hanging_sign"
+        },
+        {
+          "item": "caverns_and_chasms:azalea_fence"
+        },
+        {
+          "item": "caverns_and_chasms:azalea_fence_gate"
+        },
+        {
+          "item": "caverns_and_chasms:azalea_pressure_plate"
+        },
+        {
+          "item": "caverns_and_chasms:azalea_button"
+        },
+        {
+          "item": "caverns_and_chasms:azalea_boat"
+        },
+        {
+          "item": "abnormals_delight:azalea_cabinet"
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "chance": 0.75,
+      "item": {
+        "count": 1,
+        "id": "caverns_and_chasms:azalea_planks"
+      }
+    }
+  ],
+  "tool": [
+    {
+      "type": "farmersdelight:item_ability",
+      "action": "axe_dig"
+    },
+    {
+      "tag": "minecraft:axes"
+    }
+  ]
+}
