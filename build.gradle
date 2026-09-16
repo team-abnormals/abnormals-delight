@@ -123,7 +123,7 @@ publishMods {
     changelog = providers.fileContents(layout.projectDirectory.file("changelog.md")).asText
     type = STABLE
     modLoaders.add("neoforge")
-    version = "project.mod_version"
+    version = project.mod_version
     displayName = "${project.mod_name} ${project.mc_version} - ${project.mod_version}"
 
     modrinth {
@@ -139,7 +139,7 @@ publishMods {
         announcementTitle = "<:curseforge:1428950488358850581> Download from CurseForge!"
         accessToken = providers.gradleProperty("CURSEFORGE_API_KEY")
         projectId = project.curseforge_id
-        projectSlug = project.mod_id
+        projectSlug = project.mod_id.replace('_', '-')
         minecraftVersions.add(project.mc_version)
         clientRequired = true
         serverRequired = true
